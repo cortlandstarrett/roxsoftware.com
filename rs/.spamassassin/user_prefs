@@ -1,0 +1,140 @@
+# SpamAssassin user preferences file.  See 'perldoc Mail::SpamAssassin::Conf'
+# for details of what can be tweaked.
+###########################################################################
+
+# Change the subject line to use less stars.
+subject_tag *SPAM*
+
+# How many hits before a mail is considered spam.
+required_hits 3
+remove_header ham Status
+remove_header ham Level
+
+# Whitelist and blacklist addresses are now file-glob-style patterns, so
+# "friend@somewhere.com", "*@isp.com", or "*.domain.net" will all work.
+# whitelist_from	someone@somewhere.com
+
+# Add your own customised scores for some tests below.  The default scores are
+# read from the installed spamassassin rules files, but you can override them
+# here.  To see the list of tests and their default scores, go to
+# http://spamassassin.org/tests.html .
+#
+# score SYMBOLIC_TEST_NAME n.nn
+
+# Speakers of Asian languages, like Chinese, Japanese and Korean, will almost
+# definitely want to uncomment the following lines.  They will switch off some
+# rules that detect 8-bit characters, which commonly trigger on mails using CJK
+# character sets, or that assume a western-style charset is in use. 
+# 
+# score HEADER_8BITS		0
+# score HTML_COMMENT_8BITS	0
+# score SUBJ_FULL_OF_8BITS	0
+# score UPPERCASE_25_50		0
+# score UPPERCASE_50_75		0
+# score UPPERCASE_75_100	0
+
+rewrite_subject  1
+
+blacklist_from  *@123greetings.com
+blacklist_from  *@andale.com
+blacklist_from  communications@thomson.delphion.com
+blacklist_from  *@dailyripple.com
+blacklist_from  *@dailyripple2.com
+blacklist_from  *DirectGardening.com
+blacklist_from  *@emailfactories.net
+blacklist_from  *@enews.buy.com
+blacklist_from  *@golfshore.com
+blacklist_from  leoburd@media.mit.edu
+blacklist_from  *@postsnet.com
+blacklist_to    cort@insightbb.com
+
+whitelist_from	*@amazon.com
+whitelist_from	*@bioanalytical.com
+whitelist_from	*@coopersecurity.co.uk
+whitelist_from	*@counterpane.com
+whitelist_from	*@delphi.com
+whitelist_from	*@girtz.com
+whitelist_from	support@faxzero.com
+whitelist_from	*@harris.com
+whitelist_from	*@hertz.com
+whitelist_from	*@ibm.com
+whitelist_from  *@mailcode.com
+whitelist_from  *@mbna.com
+whitelist_from	*@mentor.com
+whitelist_from	*@mentorg.com
+whitelist_from	*@modelint.com
+whitelist_from	*@myuhc.com
+whitelist_from	*@newegg.com
+whitelist_from	*@nwhite.k12.in.us
+whitelist_from  *@pb.com
+whitelist_from  *@projtech.com
+whitelist_from	*@psigroupinc.com
+whitelist_from	*@quickbooks.com
+whitelist_from  *@raisor.com
+whitelist_from  *@redshad.com
+whitelist_from	*@ruarkeng.com
+whitelist_from	*@service.discovercard.com
+whitelist_from	*@sjm.com
+whitelist_from	*@toyo.co.jp
+whitelist_from	*@truittraylaw.com
+whitelist_from	*@us.ibm.com
+whitelist_from	*@usairways.com
+whitelist_from	*@varianinc.com
+
+whitelist_from	admin@he.net
+whitelist_from	alan.guess@us.army.mil
+whitelist_from	amyvince@netzero.net
+whitelist_from	annstarr45@hotmail.com
+whitelist_from	assistant@bgbc.org
+whitelist_from	associate@bgbc.org
+whitelist_from	bcmillen@insightbb.com
+whitelist_from	bgracyjr@earthlink.net
+whitelist_from	blacksd@purdue.edu
+whitelist_from	brent-cathy@insightbb.com
+whitelist_from	clarissas_mom@yahoo.com
+whitelist_from	Eric.Mintz@OOArchitect.com
+whitelist_from	FJT105@cs.com
+whitelist_from	gnats@roxsoftware.com
+whitelist_from	gottfrie@purdue.edu
+whitelist_from	guess@insightbb.com
+whitelist_from	hassenplug@mail.com
+whitelist_from	huttshead@yahoo.com
+whitelist_from	jacqui@iquest.net
+whitelist_from	Jay.Case@worldnet.att.net
+whitelist_from	JCris76614@aol.com
+whitelist_from	jimyers1@earthlink.net
+whitelist_from	jumorell10@hotmail.com
+whitelist_from	kirschqm@purdue.edu
+whitelist_from	kirschqm@quesopolis.com
+whitelist_from	kscloehe@msn.com
+whitelist_from	pkloehe@yahoo.com
+whitelist_from	mohare@SoundView.com
+whitelist_from	Mrkoleary@aol.com
+whitelist_from	msfights@gte.net
+whitelist_from	msfights@verizon.net
+whitelist_from	neil@ose-ltd.com
+whitelist_from	no-reply@mail.southwest.com
+whitelist_from	noreply@sourceforge.net
+whitelist_from	online.communications@comcast.net
+whitelist_from	OrderDetails@buy.com
+whitelist_from	pastor@bgbc.org
+whitelist_from	pb_jelly_99@yahoo.com
+whitelist_from	rdavisdc8@att.net
+whitelist_from	ronjet@xtra.co.nz
+whitelist_from	rox@roxsoftware.com
+whitelist_from	Schoonoverboots@aol.com
+whitelist_from	sec@bgbc.org
+whitelist_from	sevina@juno.com
+whitelist_from	sjsrds@juno.com
+whitelist_from	sklart4joy@aol.com
+whitelist_from	stephrineh@yahoo.com
+whitelist_from	steve@mcobject.com
+whitelist_from	support@he.net
+whitelist_from	tanialabib@hotmail.com
+whitelist_from	ted_fritsche@yahoo.com
+whitelist_from	tflecht@hotmail.com
+whitelist_from	tflecht@roxsoftware.com
+whitelist_from	TheBargers@bigfoot.com
+whitelist_from	travel@expedia.com
+whitelist_from	tushar_kale@hotmail.com
+whitelist_from	Alpraz33@aol.com

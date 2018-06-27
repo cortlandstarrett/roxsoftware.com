@@ -1,0 +1,22 @@
+0 Wheel Rear Assembly (2x)
+0 Name: WheelRearAssembly.dat
+0 Author: MLCad
+0 Unofficial Model
+0 ROTATION CENTER 0 0 0 1 "Custom" 
+0 ROTATION CONFIG 0 0
+1 0 20 0 0 1 0 0 0 1 0 0 0 1 3707.DAT
+0 STEP
+1 7 -36 0 0 0 0 1 0 1 0 -1 0 0 4265C.DAT
+0 STEP
+1 0 -20 0 0 0 0 1 0 1 0 -1 0 0 2902.DAT
+1 15 -20 0 0 0 0 1 0 1 0 -1 0 0 2903.DAT
+0 STEP
+1 7 0 0 0 0 0 1 0 1 0 -1 0 0 3713.DAT
+1 0 0 -62 0 1 0 0 0 1 0 0 0 1 6558.DAT
+1 0 0 62 0 1 0 0 0 1 0 0 0 1 6558.DAT
+0 STEP
+1 0 20 0 0 0 0 1 0 1 0 -1 0 0 2902.DAT
+1 15 20 0 0 0 0 1 0 1 0 -1 0 0 2903.DAT
+0 STEP
+1 7 36 0 0 0 0 1 0 1 0 -1 0 0 4265C.DAT
+0

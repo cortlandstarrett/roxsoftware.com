@@ -1,0 +1,85 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_PAA_ASG.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_PAA_ASG.h
+ *
+ * Object:     probe_assignment  (PAA)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef A_PAA_ASG_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+    
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_PAA_Asg_s
+ * Structural representation of application object assigner:
+ *   'probe_assignment'  (PAA)
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_PAA_Asg_s</FONT>
+{
+  Escher_StateNumber_t mc_current_state;
+};
+
+<STRONG><FONT COLOR="#4169E1">extern void A_PAA_AssignerInit( void )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_PAA_AssignerFini( void )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State Action Methods
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void A_PAA_ASG_Action_1( A_PAA_Asg_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_PAA_ASG_Action_2( A_PAA_Asg_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_PAA_ASG_Action_3( A_PAA_Asg_s *, const OoaEvent_t * const )</FONT></STRONG>;
+
+<STRONG><FONT COLOR="#4169E1">extern void A_PAA_ASG_Dispatch( OoaEvent_t * )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model states for object
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_STATE_1 1  </FONT><FONT COLOR="#B22222">/* State [1]: 'waiting on row' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_STATE_2 2  </FONT><FONT COLOR="#B22222">/* State [2]: 'waiting on probe' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_STATE_3 3  </FONT><FONT COLOR="#B22222">/* State [3]: 'assigning pair' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model event numbers
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_EVENT_PAA_A1 0  </FONT><FONT COLOR="#B22222">/* 'row_needs_probe' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_EVENT_PAA_A2 1  </FONT><FONT COLOR="#B22222">/* 'probe_available' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_EVENT_PAA_A3 2  </FONT><FONT COLOR="#B22222">/* 'probe_assigned' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_PAA_ASG_EVENT_PAA_A4 3  </FONT><FONT COLOR="#B22222">/* 'carousel_complete' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* A_PAA_ASG_H */</FONT><FONT COLOR="#A020F0"></FONT>
+</PRE>
+</BODY>
+
+</HTML>

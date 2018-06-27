@@ -1,0 +1,197 @@
+
+<HTML>
+<HEAD>
+<TITLE>sys_init.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  sys_init.c
+ *
+ * Description:
+ * Main entrance and parameters of the wild thing...
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include &lt;stdlib.h&gt;</FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_objset.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_user_co.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_dom_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_dom_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * system-level domain dispatcher table
+ * This table contains pointers to dispatcher tables for each of
+ * the OOA domains generated for this system.
+ ****************************************************************************/</FONT>
+static const DomainDispatcher_t DomainDispatcherTable[ 3 ] =
+{
+  0,
+  (DomainDispatcher_t) A_DomainDispatcher,
+  (DomainDispatcher_t) EXP_DomainDispatcher
+};
+
+<STRONG><FONT COLOR="#4169E1">extern void RunApplicationInitSequence( void )</FONT></STRONG>;
+
+static bool run_flag = true;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * main process
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="main"></A>int
+main ( int argc, char * argv[] )</FONT></STRONG>
+{
+  OoaEvent_t * event;
+
+  <FONT COLOR="#B22222">/* Execute user supplied system initialization. */</FONT>
+  UserInitializationCallout();
+
+  <FONT COLOR="#B22222">/* Execute generated system initialization phase. */</FONT>
+  SystemLevelInitialization();
+
+  <FONT COLOR="#B22222">/* Execute OOA domain specific initialization phase(s). */</FONT>
+  ApplicationLevelInitialization();
+
+  <FONT COLOR="#B22222">/* Execute application analysis initialization phase(s). */</FONT>
+  UserPreOoaInitializationCallout();   <FONT COLOR="#B22222">/* User supplied pre-init.  */</FONT>
+  RunApplicationInitSequence();        <FONT COLOR="#B22222">/* OOA init object states.  */</FONT>
+  UserPostOoaInitializationCallout();  <FONT COLOR="#B22222">/* User supplied post-init. */</FONT>
+
+  <FONT COLOR="#B22222">/* Start consuming events and dispatching background processes. */</FONT>
+  <FONT COLOR="#4169E1">while</FONT> ( run_flag )
+  {
+    <FONT COLOR="#B22222">/* Dispatch an OOA self directed event.  */</FONT>
+    <FONT COLOR="#4169E1">if</FONT> ( ( event = DequeueOoaSelfEvent() ) != 0 )
+    {
+      ( *DomainDispatcherTable[ GetEventDestDomainNumber( event ) ] )( event );
+      Escher_DeleteOoaEvent( event );
+    }  <FONT COLOR="#B22222">/* end self */</FONT>
+    <FONT COLOR="#4169E1">else</FONT>
+    <FONT COLOR="#B22222">/* Dispatch one OOA non-self directed event.  */</FONT>
+    <FONT COLOR="#4169E1">if</FONT> ( ( event = DequeueOoaNonSelfEvent() ) != 0 )
+    {
+      ( *DomainDispatcherTable[ GetEventDestDomainNumber( event ) ] )( event );
+      <FONT COLOR="#4169E1">if</FONT> ( GetFsmReleasesEvent( event ) ) {
+        Escher_DeleteOoaEvent( event );
+      }
+    }  <FONT COLOR="#B22222">/* end non-self */</FONT>
+
+    <FONT COLOR="#B22222">/* Launch (interrupt) bridge actions that occurred during state.  */</FONT>
+    DispatchInterleaveBridge();
+
+    <FONT COLOR="#B22222">/* User supplied background processing callout. */</FONT>
+    UserBackgroundProcessingCallout();
+  }
+
+  <FONT COLOR="#B22222">/* Shutdown phasing */</FONT>
+  UserPreShutdownCallout();
+  ApplicationLevelShutdown();
+  SystemLevelShutdown();
+  UserPostShutdownCallout();
+
+  <FONT COLOR="#4169E1">return</FONT> 0;
+}
+ 
+<FONT COLOR="#B22222">/*****************************************************************************
+ * SystemLevelInitialization
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="SystemLevelInitialization"></A>void
+SystemLevelInitialization()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Initialize the container pool. */</FONT>
+  Escher_SetFactoryInit();
+
+  <FONT COLOR="#B22222">/* Initialize OOA event pool and queues. */</FONT>
+  InitializeOoaEventPool();
+  InitializeOoaNonSelfEventQueue();
+  InitializeOoaSelfEventQueue();
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * ApplicationLevelInitialization
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="ApplicationLevelInitialization"></A>void
+ApplicationLevelInitialization()</FONT></STRONG>
+{
+   <FONT COLOR="#B22222">/* Initialize all the domains */</FONT>
+  IntializeDomain_A();
+  IntializeDomain_EXP();
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * SystemLevelShutdown
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="SystemLevelShutdown"></A>void
+SystemLevelShutdown()</FONT></STRONG>
+{}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * ApplicationLevelShutdown
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="ApplicationLevelShutdown"></A>void
+ApplicationLevelShutdown()</FONT></STRONG>
+{
+   <FONT COLOR="#B22222">/* Shutdown all the domains */</FONT>
+  ShutdownDomain_A();
+  ShutdownDomain_EXP();
+}
+
+<STRONG><FONT COLOR="#4169E1">typedef void ( * interleaved_bridge_t )( void )</FONT></STRONG>;
+static interleaved_bridge_t interleaved_bridges[ SYS_MAX_INTERLEAVED_BRIDGES ];
+static unsigned char interleaved_bridges_tail = 0;
+<FONT COLOR="#B22222">/*****************************************************************************
+ * InterleaveBridge
+ * Post a bridge routine for execution after any executing state
+ * action completes.
+ * Protect the data structures from being clobbered by another context
+ * by disabling interrupts around the data access.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="InterleaveBridge"></A>void
+InterleaveBridge( void (vfp)(void) )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* disable interrupts */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( interleaved_bridges_tail &lt; SYS_MAX_INTERLEAVED_BRIDGES ) 
+  {
+    interleaved_bridges[ interleaved_bridges_tail++ ] = vfp;
+  }
+  <FONT COLOR="#B22222">/* enable interrupts */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * DispatchInterleaveBridge
+ * Sequentially execute each of the bridge routines that have been
+ * posted during the most recent executing state action.
+ * Protect the data structures from being clobbered by another context
+ * by disabling interrupts around the data access.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="DispatchInterleaveBridge"></A>void
+DispatchInterleaveBridge()</FONT></STRONG>
+{
+  unsigned char i = 0;
+  <FONT COLOR="#B22222">/* disable interrupts */</FONT>
+  <FONT COLOR="#4169E1">while</FONT> ( i &lt; interleaved_bridges_tail )
+  {
+    <FONT COLOR="#B22222">/* enable interrupts */</FONT>
+    interleaved_bridges[ i++ ]();  <FONT COLOR="#B22222">/* Bridge runs with interrupts enabled.  */</FONT>
+    <FONT COLOR="#B22222">/* disable interrupts */</FONT>
+  }
+  interleaved_bridges_tail = 0;
+  <FONT COLOR="#B22222">/* enable interrupts */</FONT>
+}
+</PRE>
+</BODY>
+
+</HTML>

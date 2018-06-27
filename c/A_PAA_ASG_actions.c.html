@@ -1,0 +1,192 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_PAA_ASG_actions.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       A_PAA_ASG_actions.c
+ *
+ * Description:
+ * State actions methods implementation for the following object Assigner:
+ *
+ * Object:     probe_assignment  (PAA)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [1]: 'waiting on row'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_ASG_Action_1"></A>void
+A_PAA_ASG_Action_1( A_PAA_Asg_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_ROW_s * v48;  <FONT COLOR="#B22222">/* row */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY row FROM INSTANCES OF ROW
+     WHERE (SELECTED.needs_probe == TRUE) */</FONT>
+  v48 = (A_ROW_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_ROW_s * w47;
+    Escher_Iterator_s iter49_ROW;
+    Escher_IteratorReset( &amp;iter49_ROW, pG_A_ROW_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w47 = (A_ROW_s *)Escher_IteratorNext( &amp;iter49_ROW )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( (w47-&gt;m_needs_probe == true) )
+      {
+        v48 = w47;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#B22222">/* IF (NOT_EMPTY row) */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (((v48 != 0) ? true : false)) )
+  {
+    <FONT COLOR="#B22222">/* GENERATE PAA_A1:'row_needs_probe'() TO PAA ASSIGNER */</FONT>
+    {
+      A_PAA_AsgEvent1_s * event50 = (A_PAA_AsgEvent1_s *) Escher_NewOoaEvent( (void *) 0, &amp;A_PAA_AsgEvent1_sc );
+      Escher_SendSelfEvent( (OoaEvent_t *)event50 );
+    }
+  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [2]: 'waiting on probe'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_ASG_Action_2"></A>void
+A_PAA_ASG_Action_2( A_PAA_Asg_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_SP_s * v52;  <FONT COLOR="#B22222">/* probe */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY probe FROM INSTANCES OF SP
+     WHERE (SELECTED.available == TRUE) */</FONT>
+  v52 = (A_SP_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_SP_s * w51;
+    Escher_Iterator_s iter53_SP;
+    Escher_IteratorReset( &amp;iter53_SP, pG_A_SP_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w51 = (A_SP_s *)Escher_IteratorNext( &amp;iter53_SP )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( (w51-&gt;m_available == true) )
+      {
+        v52 = w51;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#B22222">/* IF (NOT_EMPTY probe) */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (((v52 != 0) ? true : false)) )
+  {
+    <FONT COLOR="#B22222">/* GENERATE PAA_A2:'probe_available'() TO PAA ASSIGNER */</FONT>
+    {
+      A_PAA_AsgEvent2_s * event54 = (A_PAA_AsgEvent2_s *) Escher_NewOoaEvent( (void *) 0, &amp;A_PAA_AsgEvent2_sc );
+      Escher_SendSelfEvent( (OoaEvent_t *)event54 );
+    }
+  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [3]: 'assigning pair'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_ASG_Action_3"></A>void
+A_PAA_ASG_Action_3( A_PAA_Asg_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_ROW_s * v56;  <FONT COLOR="#B22222">/* row */</FONT>
+  A_SP_s * v59;  <FONT COLOR="#B22222">/* probe */</FONT>
+  A_PAA_s * v61;  <FONT COLOR="#B22222">/* assignment */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY row FROM INSTANCES OF ROW
+     WHERE (SELECTED.needs_probe == TRUE) */</FONT>
+  v56 = (A_ROW_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_ROW_s * w55;
+    Escher_Iterator_s iter57_ROW;
+    Escher_IteratorReset( &amp;iter57_ROW, pG_A_ROW_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w55 = (A_ROW_s *)Escher_IteratorNext( &amp;iter57_ROW )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( (w55-&gt;m_needs_probe == true) )
+      {
+        v56 = w55;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY probe FROM INSTANCES OF SP
+     WHERE (SELECTED.available == TRUE) */</FONT>
+  v59 = (A_SP_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_SP_s * w58;
+    Escher_Iterator_s iter60_SP;
+    Escher_IteratorReset( &amp;iter60_SP, pG_A_SP_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w58 = (A_SP_s *)Escher_IteratorNext( &amp;iter60_SP )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( (w58-&gt;m_available == true) )
+      {
+        v59 = w58;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.available = FALSE */</FONT>
+  v59-&gt;m_available = false;
+
+  <FONT COLOR="#B22222">/* ASSIGN row.needs_probe = FALSE */</FONT>
+  v56-&gt;m_needs_probe = false;
+
+  <FONT COLOR="#B22222">/* CREATE OBJECT INSTANCE assignment OF PAA */</FONT>
+  v61 = A_PAA_Create();
+
+  <FONT COLOR="#B22222">/* RELATE row TO probe ACROSS R2 USING assignment */</FONT>
+  A_PAA_R2_Link( v56, v59, v61 );
+
+  <FONT COLOR="#B22222">/* GENERATE PAA_A3:'probe_assigned'() TO PAA ASSIGNER */</FONT>
+  {
+    A_PAA_AsgEvent3_s * event62 = (A_PAA_AsgEvent3_s *) Escher_NewOoaEvent( (void *) 0, &amp;A_PAA_AsgEvent3_sc );
+    Escher_SendSelfEvent( (OoaEvent_t *)event62 );
+  }
+
+  <FONT COLOR="#B22222">/* GENERATE ROW2:'probe_assigned'() TO row */</FONT>
+  {
+    A_ROW_Event2_s * event63 = (A_ROW_Event2_s *) Escher_NewOoaEvent( (void *) v56, &amp;A_ROW_Event2_sc );
+    SetEventSendingInstance( event63, self );
+    Escher_SendEvent( (OoaEvent_t *)event63 );
+  }
+
+}
+
+</PRE>
+</BODY>
+
+</HTML>

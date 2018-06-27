@@ -1,0 +1,112 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_SP_object.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_SP_object.h
+ *
+ * Object:     sampling_probe  (SP)
+ * Subsystem:  autosampler
+ * Domain:     A
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef A_SP_OBJECT_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_SP_OBJECT_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_enums.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_user_co.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_SP_s
+ * Structural representation of application analysis object:
+ *   'sampling_probe'  (SP)
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_SP_s</FONT>
+{
+  <FONT COLOR="#B22222">/* Application analysis OIM attributes */</FONT>
+  unsigned char m_probe_ID;  <FONT COLOR="#B22222">/* * probe_ID */</FONT>
+  unsigned int m_radial_position : 7;  <FONT COLOR="#B22222">/* - radial_position */</FONT>
+  unsigned int m_theta_offset : 9;  <FONT COLOR="#B22222">/* - theta_offset */</FONT>
+  unsigned char m_current_position;  <FONT COLOR="#B22222">/* - current_position */</FONT>
+  bool m_available;  <FONT COLOR="#B22222">/* - available */</FONT>
+
+  <FONT COLOR="#B22222">/* Relationship storage */</FONT>
+  A_PAA_s * mc_PAA_R2;
+
+  <FONT COLOR="#B22222">/* State machine current state */</FONT>
+  Escher_StateNumber_t mc_current_state;
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Factory/Manipulation Methods
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void A_SP_FactoryInit( void )</FONT></STRONG>;
+extern A_SP_s * A_SP_Create( void );
+<FONT COLOR="#B22222">/* Note: No instance deletion accessor needed */</FONT>
+
+<STRONG><FONT COLOR="#228B22">#define A_SP_MAX_EXTENT_SIZE 10</FONT></STRONG>
+extern Escher_ObjectSet_s * pG_A_SP_extent;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Relationship Methods
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model states for object
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_SP_STATE_1 1  </FONT><FONT COLOR="#B22222">/* State [1]: 'up' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_SP_STATE_2 2  </FONT><FONT COLOR="#B22222">/* State [2]: 'down' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_SP_STATE_3 3  </FONT><FONT COLOR="#B22222">/* State [3]: 'raising' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_SP_STATE_4 4  </FONT><FONT COLOR="#B22222">/* State [4]: 'lowering' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model event numbers
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_SP_EVENT_SP1 0  </FONT><FONT COLOR="#B22222">/* 'finished_sampling' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_SP_EVENT_SP2 1  </FONT><FONT COLOR="#B22222">/* 'begin_sampling' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_SP_EVENT_SP3 2  </FONT><FONT COLOR="#B22222">/* 'probe_in_position' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State Action Methods
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void A_SP_Action_1( A_SP_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_SP_Action_2( A_SP_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_SP_Action_3( A_SP_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_SP_Action_4( A_SP_s *, const OoaEvent_t * const )</FONT></STRONG>;
+
+<STRONG><FONT COLOR="#4169E1">extern void A_SP_Dispatch( const OoaEvent_t * const )</FONT></STRONG>;
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* A_SP_OBJECT_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+</PRE>
+</BODY>
+
+</HTML>

@@ -1,0 +1,59 @@
+
+<HTML>
+<HEAD>
+<TITLE>EXP_FBO_bridge.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  EXP_FBO_bridge.c
+ *
+ * Description:
+ * Bridge implementation for the following application analysis object:
+ *
+ * Object:     bridge  (FBO)
+ * Domain:     EXP
+ * Subsystem:  experiment
+ * Repository: exp.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_FBO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge method:  done
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="EXP_FBO_done"></A>void
+EXP_FBO_done( void )</FONT></STRONG>
+{
+  EXP_T_s * v1;  <FONT COLOR="#B22222">/* t */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY t FROM INSTANCES OF T */</FONT>
+  v1 = (EXP_T_s *)Escher_SetGetAny( pG_EXP_T_extent );
+
+  <FONT COLOR="#B22222">/* GENERATE T2:'batch_done'() TO t */</FONT>
+  {
+    EXP_T_Event2_s * event2 = (EXP_T_Event2_s *) Escher_NewOoaEvent( (void *) v1, &amp;EXP_T_Event2_sc );
+    Escher_SendEvent( (OoaEvent_t *)event2 );
+  }
+
+}
+</PRE>
+</BODY>
+
+</HTML>

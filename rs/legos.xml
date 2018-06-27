@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\>
+<| ROX Confidential                                                  |>
+<| (C) Copyright ROX Software, Inc.  (2003)                          |>
+<| Property of ROX Software, Inc.                                    |>
+<\___________________________________________________________________/>
+</~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\>
+<| Title:               Lego Robot Page                              |>
+<| File Name:           legos.xml                                    |>
+<| Owner:               Cortland D. Starrett                         |>
+<|                                                                   |>
+<| Abstract -                                                        |>
+<|   This document provides a web page for 3020 Lego robots.         |>
+<|                                                                   |>
+<| Notes -                                                           |>
+<|                                                                   |>
+<|   To compile this document:                                       |>
+<|                                                                   |>
+     pdfjadetex legos.tex ; pdfjadetex legos.tex ; pdfjadetex legos.tex
+     jade -t sgml -i html -d cds.dsl -E 2000 legos.xml
+     xsltproc /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/xhtml/docbook.xsl legos.xml > legos.html
+<|                                                                   |>
+<| Change Log -                                                      |>
+<|                                                                   |>
+<|   Date       Modifier              Info                Change ID  |>
+<|                                                                   |>
+<|   03-Feb-23  Cortland D. Starrett  copied from 3.1        create  |>
+<|     Copied from Escher Release Notes 3.1.                         |>
+<\__________________________________________________________________-->
+<!--ROX Software, Inc., 2003, v0.001-->
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" >
+
+<article>
+  <title>UML Lego Robots</title>
+
+<sect1>
+  <title>
+  <graphic align="left" format="png" fileref="SRis_Complete_Model_small.jpg"/>
+  Rationale - Why Lego Robots?
+  <graphic align="right" format="png" fileref="rcx.gif"/>
+  </title>
+
+  <para>MC-3020 is a UML model translator ideal for small systems,
+  especially deeply embedded control systems.  Often these deeply
+  embedded control systems are running on small, 8-bit or 16-bit micros.
+  Can high-level tools such as BridgePoint be used to model and
+  efficiently generate code for such small systems?  How better to
+  demonstrate than to actually do so onto a small system.</para>
+
+  <para>The Lego RCX programmable brick runs the Renesas (formerly
+  Hitachi) H8 microcontroller.
+  (See <ulink url="http://h8300-hms.sourceforge.net/">GNU
+  Development Tools for the Hitachi H8/300 Series</ulink>
+  or
+  <ulink url="http://america.renesas.com/products/mpumcu/16bit/h8300h/index.html">H8/300H
+  Series</ulink> for more information.)</para>
+
+  <para>This microcontroller runs 32 kbytes of RAM.  It has several peripherals
+  including analog inputs, pulse width modulators, LCD interface, serial
+  interface controller, timers and more.  This is a small processor but
+  is a workhorse.  It represents an excellent example of a typical,
+  deeply embeddible microcontroller.</para>
+
+  <para>Translating UML models to run on this platform can demonstrate
+  that the tools normally thought to be for the big systems developers
+  are available for the small systems world.</para>
+
+</sect1>
+
+
+<sect1>
+  <title>General Instructions</title>
+
+  <para>
+  <orderedlist spacing="compact">
+    <listitem>Build one of the Lego robots using the step by step
+    assembly instructions provided below.</listitem>
+    <listitem>Download one of the sample UML models and import
+    into BridgePoint.</listitem>
+    <listitem>Modify the UML model to include your own design
+    ideas.</listitem>
+    <listitem>Upload and translate the UML model using the
+    <ulink url="http://12.251.222.251/ROX/login.php">MC-3020
+    UML Model Translation Server</ulink>.</listitem>
+    <listitem>Download the generated code/link from the
+    server.</listitem>
+    <listitem>Download into your Lego robot.</listitem>
+    <listitem>Run it.</listitem>
+    <listitem>Enter or host a contest!</listitem>
+  </orderedlist>
+  </para>
+
+</sect1>
+
+
+<sect1>
+  <title><ulink url="http://roxsoftware.com/legos/detinstr.html"><citetitle>(Detailed Step by Step Instructions)</citetitle></ulink></title>
+  <para></para>
+</sect1>
+
+
+<sect1>
+  <title>Sample UML Models</title>
+
+  <table colsep="1" frame="all" rowsep="1" shortentry="0"
+  tocentry="1" pgwide="1">
+  <title>Sample OOA Models</title>
+  <tgroup cols="1">
+  <colspec colnum="1" colwidth="*"/>
+  <thead>
+  <row><entry align="left">BridgePoint UML Models</entry></row>
+  </thead>
+  </tgroup>
+  <tgroup cols="3">
+  <colspec colnum="1" colwidth="*"/>
+  <colspec colnum="2" colwidth="*"/>
+  <colspec colnum="3" colwidth="*"/>
+  <tbody>
+  <row>
+    <entry><ulink url="http://ruby/legos/ooa_sumo.html">
+    sumo robot
+    <graphic align="left" format="png" fileref="ooa_sumo_cd_thumb.png"/>
+    </ulink></entry>
+    <entry><ulink url="http://ruby/legos/ooa_steering.html">
+    steering robot
+    <graphic align="left" format="png" fileref="ooa_steering_sc2_thumb.png"/>
+    </ulink></entry>
+    <entry>
+    maze robot (no model available)</entry>
+  </row>
+  </tbody>
+  </tgroup>
+  </table>
+
+</sect1>
+
+
+<sect1>
+  <title><ulink url="http://12.251.222.251/ROX/login.php">
+  MC-3020 UML Model Translation Server</ulink></title>
+  <para>The <ulink url="http://12.251.222.251/ROX/login.php">
+  MC-3020 UML Model Translation Server</ulink> provides access
+  to the UML Model Compiler that translates BridgePoint UML models
+  into C code for the H8 micro.</para>
+</sect1>
+
+
+<sect1>
+  <title>Robot Assembly Instructions</title>
+
+  <para>Below are instructions for three well-designed robots.  A sumo 
+  robot, a line-follower and a maze-solver are provided.  Contests
+  using these physical designs are common.  The instructions are
+  easy to follow and include mostly pictures.</para>
+
+  <para>Robots designed by Steve Hassenplug, famous builder of
+  <ulink url="http://perso.freelug.org/legway/LegWay.html">LegWay</ulink>.
+  </para>
+
+  <table colsep="1" frame="all" rowsep="1" shortentry="0"
+  tocentry="1" pgwide="1">
+  <title>Assembly Instructions</title>
+  <tgroup cols="1">
+  <colspec colnum="1" colwidth="*"/>
+  <thead>
+  <row><entry align="left">Step-by-Step Lego Robot Assembly Instructions</entry></row>
+  </thead>
+  </tgroup>
+  <tgroup cols="3">
+  <colspec colnum="1" colwidth="*"/>
+  <colspec colnum="2" colwidth="*"/>
+  <colspec colnum="3" colwidth="*"/>
+  <tbody>
+  <row>
+    <entry>
+      <table colsep="0" frame="none" rowsep="0" shortentry="0"
+      tocentry="0" pgwide="0">
+      <tgroup cols="2">
+      <colspec colnum="1" colwidth="*"/>
+      <colspec colnum="2" colwidth="*"/>
+      <tbody>
+      <row>
+      <entry>
+      <ulink url="http://www.brickshelf.com/cgi-bin/gallery.cgi?f=44221">
+      sumo robot simple
+      <graphic align="left" format="png" fileref="SRis_Complete_Model_small.jpg"/>
+      </ulink> or
+      </entry>
+      <entry>
+      <ulink url="http://perso.freelug.org/legway/Robots/SRis/">
+      sumo robot beautiful
+      <graphic align="left" format="png" fileref="SRis_Complete_Model_small.jpg"/>
+      </ulink>
+      </entry>
+      </row>
+      </tbody>
+      </tgroup>
+      </table>
+    </entry>
+    <entry><ulink url="http://www.brickshelf.com/cgi-bin/gallery.cgi?f=44223">
+    steering robot
+    <graphic align="left" format="png" fileref="SRis_steering.jpg"/>
+    </ulink></entry>
+    <entry><ulink url="http://www.brickshelf.com/cgi-bin/gallery.cgi?f=44231">
+    maze robot
+    <graphic align="left" format="png" fileref="SRis_amazing.jpg"/>
+    </ulink></entry>
+  </row>
+  </tbody>
+  </tgroup>
+  </table>
+
+</sect1>
+
+
+<sect1>
+  <title>Contest Rules</title>
+
+  <para>A contest is a great way to provide incentive for good
+  robot building and programming.  If robot mechanics are fixed
+  (everyone using same robot design) then the challenge becomes
+  a dual of superior modeling/programming.</para>
+
+  <para>These <ulink url="http://www.24tooth.com/Rules.html">rules
+  pages</ulink> are rules for several contests.  The table below has
+  rules for contests using the robots with building instructions
+  above.
+
+  <table colsep="1" frame="all" rowsep="1" shortentry="0"
+  tocentry="1" pgwide="1">
+  <title>Contest Rules</title>
+  <tgroup cols="1">
+  <colspec colnum="1" colwidth="*"/>
+  <thead>
+  <row><entry align="left">Rules</entry></row>
+  </thead>
+  </tgroup>
+  <tgroup cols="3">
+  <colspec colnum="1" colwidth="*"/>
+  <colspec colnum="2" colwidth="*"/>
+  <tbody>
+  <row>
+    <entry>
+    <ulink url="http://www.24tooth.com/SumobotRules.html">
+    sumo contest
+    <graphic align="left" format="png" fileref="SumoCMRing.jpg"/>
+    </ulink></entry>
+    <entry><ulink url="http://www.24tooth.com/LineFollowingRules.html">
+    line following contest
+    <graphic align="left" format="png" fileref="LF2002Course.png"/>
+    </ulink></entry>
+    <entry><ulink url="http://www.24tooth.com/MazeSolvingRules.html">
+    maze solving
+    <graphic align="left" format="png" fileref="maze_thumb.png"/>
+    </ulink></entry>
+  </row>
+  </tbody>
+  </tgroup>
+  </table>
+  </para>
+
+</sect1>
+
+
+<sect1>
+  <title>Other Stuff You Will Need</title>
+  <itemizedlist>
+    <listitem><ulink url="brickOS.srec"><filename>brickOS.srec</filename>
+    </ulink> - This is the firmware image of the small embedded
+    operating system for the Lego RCX programmable brick.  It provides
+    system call interfaces to the H8 peripherals (timers, etc).
+    See <ulink url="http://brickos.sourceforge.net/">
+    brickos.sourceforge.net</ulink> for more information on the
+    brickOS executive.</listitem>
+    <listitem><ulink url="firmdl.exe"><command>firmdl.exe</command>
+    </ulink> - This is used to download the
+    <filename>brickOS.srec</filename> into the Lego RCX programmable
+    brick.</listitem>
+    <listitem><ulink url="dll.exe"><command>dll.exe</command>
+    </ulink> - This utility downloads
+    your compiled application into the Lego RCX.</listitem>
+    <listitem><ulink url="http://www.robotroom.com/SumoCircleMini.html">
+    Instructions</ulink> for building a sumo ring.</listitem>
+    <listitem><ulink url="http://www.24tooth.com/MazeSolvingRules.html">
+    Pictures</ulink> of a maze challenge.</listitem>
+  </itemizedlist>
+</sect1>
+
+
+</article>

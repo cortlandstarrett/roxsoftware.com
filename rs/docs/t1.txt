@@ -1,0 +1,115 @@
+
+MC-3020 1.2 Feature Discussion (ROX/PT Confidential)
+
+   ROX Software, Inc.
+   Copyright © 1999 by ROX Software, Inc.
+   
+   
+Introduction
+
+   MC-3020 1.2 will further extend and improve upon the theme of MC-3020
+   1.0 and 1.1. The theme continues to be tight, fast and suitable for
+   deeply embedded applications.
+   
+New for MC-3020 1.2
+
+   Feature additions focus on extending the capability of MC-3020.
+   
+General Clean Up
+
+   Kill bugs. Provide ease of use enhancements and esthetic improvements.
+   
+Empty Handle Fault Handling
+
+   Callouts/macros/hooks for architecture level fault detection will be
+   extended. MC-3020 does not enforce relationship conditionality at
+   compile time. However, detection of empty reference use will be
+   generated into the code. No attempt at recovery will be designed. This
+   is a detection and transfer of control (to the user) approach.
+   
+Optimized Blind Select
+
+   Hashing techniques will be used to provide constant time resolution of
+   select any ... from instances of ... where commands that test for only
+   equality against identifiers. Currently in MC-3020, an intermediate
+   level of optimization is provided. The following functionality
+   describes the capability delivered in 1.2.
+   
+     * where clause characterization and recognition of optimizable
+       conditions
+     * code space minimization (and ease of debug) by intelligent
+       packaging of instance search and retrieval code.
+       
+   1.2 will add
+   
+     * default hash
+     * hooks for user defined hashing
+       
+   to the 1.2 capabilities.
+   
+Encrypted Archetypes
+
+   Changes in the build environment will be made to support encrypted
+   archetypes.
+   
+Future Features
+
+   These features are under consideration for future releases.
+   
+Unbounded Extents
+
+   Support for unbounded extents will be provided.
+   
+Events from Interrupt Handlers
+
+   This feature would allow for interrupt handlers by protecting shared
+   architectural contructs (namely the event queues) across contexts.
+   Support would be provided through a set of special bridge invocations.
+   
+Object Mapping into Fixed Memory Locations
+
+   This feature allows objects to be colored to be located at fixed
+   addresses in memory space. With this capability, hardware can be
+   directly accessed as object attributes.
+   
+Singleton Support
+
+   ?Is this space optimization to elimate collection oriented overhead?
+   
+Independence from BridgePoint Repository
+
+   This feature will allow builds to operate on extracted model
+   information without ever invoking/consulting the repository. This will
+   make integration with source library systems easier. This also paves
+   the way for the long awaited translation server.
+   
+Read-only Objects
+
+   Space optimization by using ROM instead of RAM.
+   
+Instance Population by Table
+
+   Other means of initialization (e.g. snapshotting) are under
+   consideration.
+   
+Instrumentation
+
+   hundreds of things to improve debug capability...
+   
+High Water Marks
+
+   queue depth and extent depth (etc) analysis
+   
+Speed/Size Coloring
+
+   Mostly thinking of state machines and dispatchers here...
+   
+Volatile Qualifier
+
+   This would be colored along with other types. This is related to fixed
+   location object mapping.
+   
+Selective Logging
+
+   This instrumentation coloring option provides finer granularity than
+   is currently implemented.

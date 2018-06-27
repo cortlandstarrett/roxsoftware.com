@@ -1,0 +1,84 @@
+From rs@roxsoftware.com Fri Jan 17 10:53:59 2003
+Date: Mon, 13 Jan 2003 19:24:17 -0800 (PST)
+From: Cortland D. Starrett <rs@roxsoftware.com>
+Reply-To: cort@roxsoftware.com
+To: dmurley@projtech.com
+Cc: tanner@projtech.com, jrwolfe@projtech.com
+Subject: spec
+
+Dear David,
+
+Here is the body of an e-mail sent 12/9.  I will follow with more
+on version 0.8 spec.
+
+Let's put it away accurate and useful as a starting point for
+future endeavors.  It was a worthwhile exercise.  If nothing else,
+it captured our agreement as we went.
+
+Cort
+------------------------------------------------------------------------
+12/9/2002
+Dear David,
+
+Sorry for dissing you this afternoon.  It was not intentional.  I had
+someone on the other line when you called, and it took way more than the
+five or minutes expected...
+
+Here is more feedback to finalize the spec.
+
+Feature Matrix:
+
+1.2 -  The only issue here is that I've never read the UML Debugger
+Project Specification.  I read an early "Blue" design note...
+
+1.3  What exactly is a build specification?  Are these command line
+options to make?  Do I need to automatically color debugging if 3020
+sees this option?
+
+1.4  Same as 1.3.
+
+1.5  It will actually be ROX_TM_ENABLED for consistency with all
+other similar compile options and flags.
+
+2.2  Same as 1.2.
+
+2.3  Same as 1.2.
+
+4.3  MC-3020 does not use attribute accessors but writes directly.
+
+5.7  Let's do as this says.  We will document the danger of creating
+identical pre-existing instances.  (Note, however, that identical
+instances not specifically an initialization issue.)  We will also
+document the danger of "unique_id" type identifiers and PEIs
+defined in data.  These unique_ids are pointer values dumped from
+a previous build.  There is the possibility of clashing unique_ids
+from PEIs in data with new instances!
+
+6.2  Never did hear from Shaun.  My research indicates no problem.
+There will be credit, disclosure of GPL and access to the web site, etc.
+[This is a different 6.2 than in the 0.8 spec.]
+
+At bottom is an update of the schedule.  The additions from the spec
+(tagging functions for init, etc) have not so much affected the progress
+as the Unicode support and Reflexives issues.  With your permission, I
+would like to slip the schedule to Christmas and deliver before year
+end.
+
+Let me know.
+
+Cort
+-----------------------------------------------------------------
+1/13/2003
+
+For 5.7, MC-3020 will support generation of initial instances using
+executable programming language statements for any classes regardless
+of whether or not they have PEIs defined in data.  Data PEIs and
+dynamic PEIs are completely independent.
+
+For 6.1, we did go with TagInitializationFunction.
+
+Everything else looks good.
+
+Cort
+
+

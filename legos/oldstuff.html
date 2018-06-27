@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>ROX Software</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="MM_preloadImages('/img/PT_over.gif','#968774779110')">
+<table width="700" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="1" align="left" valign="top"><img src="/img/header.gif" width="658" height="48"><a href="http://www.projtech.com/" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.PT','document.PT','/img/PT_over.gif','#968774779110')"><img src="/img/PT.gif" width="42" height="48" border="0" name="PT"></a></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top">
+      <table width="100%" border="0" cellpadding="10">
+        <tr>
+
+
+
+
+<!------------------------------------------------------------------- -->
+    <td>
+<font size=+2>Standard Robot Instructions</font>
+<p><a href="http://www.workshop3d.com/rcx/printlinerobot.htm">Standard Robot Instructions</a>
+tells how to build the standard line follower robot.</p>
+
+
+<font size=+2>MC-3020 Modeling Parameters</font>
+<p>
+TIM services will be provided using the sample supplied with MC-3020.
+</p>
+
+<font size=+2>Realized Domain Bridge Operations</font>
+<p>
+A model of a realized domain will be supplied with the following
+bridge operations (domain functions):
+</p>
+
+<code>
+ubyte_t light_sensor( sensor:s );
+<br>
+/* sensor is of type sensor_selector_t which is an enumerated type
+<br>
+   with values light_sensor_1, light_sensor_2, light_sensor_3.    */
+<br>
+
+void motor_direction( motor:m, direction:d );
+<br>
+void motor_speed( motor:m, speed:s );
+<br>
+/* motor is of type motor_selector_t which is an enumerated type
+<br>
+   with values motor_brake, motor_coast, motor_forward, motor_reverse.
+<br>
+   direction is of type motor_direction_t which is an enumerated type
+<br>
+   with values motor_brake, motor_coast, motor_forward, motor_reverse.
+<br>
+   speed is of type ubyte_t (unsigned char) with values ranging
+<br>
+   from 0 to 255.  0 is the least power; 255 is the most power.   */
+<br>
+</code>
+
+
+<p><a href="/dl/legospio.zip">LegOS PIO Domain</a> provides
+a sample of the domain interface to LegOS.  Motor and light
+sensor interfaces are provided.</p>
+
+<font size=+2>ToDo</font>
+<p>
+  <ul>
+  <li>get list of competitors
+  <li>print brackets
+  <li>print courses
+  <li>get models
+  <li>print models
+  <li>translate models
+  <li>test executables
+  <li>make the two racing robots identical
+  <li>get lots of fresh batteries
+  <li>reserve tables for the courses
+  <li>get prizes
+  <li>arrange for video coverage (CM)
+  <li>Build sample model and publish (with generated code).
+  <li>Publish PIO domain with bridges and types defined.
+  </ul>
+</p>
+
+    </td>
+<!------------------------------------------------------------------- -->
+
+
+
+
+
+        </tr>
+      </table>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="1" align="left" valign="top"><img src="/img/footer.gif" width="700" height="30"></td>
+  </tr>
+</table>
+</body>
+</html>

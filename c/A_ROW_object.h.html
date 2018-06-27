@@ -1,0 +1,127 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_ROW_object.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_ROW_object.h
+ *
+ * Object:     row  (ROW)
+ * Subsystem:  autosampler
+ * Domain:     A
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef A_ROW_OBJECT_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_OBJECT_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_user_co.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_s
+ * Structural representation of application analysis object:
+ *   'row'  (ROW)
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_s</FONT>
+{
+  <FONT COLOR="#B22222">/* Application analysis OIM attributes */</FONT>
+  int m_radius;  <FONT COLOR="#B22222">/* * radius */</FONT>
+  unsigned char m_current_sampling_position;  <FONT COLOR="#B22222">/* - current_sampling_position */</FONT>
+  unsigned char m_next_sampling_position;  <FONT COLOR="#B22222">/* - next_sampling_position */</FONT>
+  unsigned char m_maximum_sampling_positions;  <FONT COLOR="#B22222">/* - maximum_sampling_positions */</FONT>
+  <FONT COLOR="#B22222">/* - carousel_ID (R1) */</FONT>  <FONT COLOR="#B22222">/* OPTIMIZED OUT */</FONT>
+  int m_sampling_time;  <FONT COLOR="#B22222">/* - sampling_time */</FONT>
+  bool m_needs_probe;  <FONT COLOR="#B22222">/* - needs_probe */</FONT>
+
+  <FONT COLOR="#B22222">/* Relationship storage */</FONT>
+  A_CAR_s * mc_CAR_R1;
+  A_PAA_s * mc_PAA_R2;
+
+  <FONT COLOR="#B22222">/* State machine current state */</FONT>
+  Escher_StateNumber_t mc_current_state;
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Factory/Manipulation Methods
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_FactoryInit( void )</FONT></STRONG>;
+extern A_ROW_s * A_ROW_Create( void );
+<FONT COLOR="#B22222">/* Note: No instance deletion accessor needed */</FONT>
+
+<STRONG><FONT COLOR="#228B22">#define A_ROW_MAX_EXTENT_SIZE 10</FONT></STRONG>
+extern Escher_ObjectSet_s * pG_A_ROW_extent;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Where clause instance selection against identifying attribute set(s).
+ ****************************************************************************/</FONT>
+extern A_ROW_s * A_ROW_AnyWhere1( const int );
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Relationship Methods
+ ****************************************************************************/</FONT>
+
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_R1_Link( A_CAR_s *, A_ROW_s * )</FONT></STRONG>;
+<FONT COLOR="#B22222">/* Note: No CAR&lt;-R1-&gt;ROW unrelate accessor needed */</FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model states for object
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_STATE_1 1  </FONT><FONT COLOR="#B22222">/* State [1]: 'idle' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_STATE_2 2  </FONT><FONT COLOR="#B22222">/* State [2]: 'waiting' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_STATE_3 3  </FONT><FONT COLOR="#B22222">/* State [3]: 'positioning' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_STATE_4 4  </FONT><FONT COLOR="#B22222">/* State [4]: 'sampling' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_STATE_5 5  </FONT><FONT COLOR="#B22222">/* State [5]: 'checking' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model event numbers
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENT_ROW1 0  </FONT><FONT COLOR="#B22222">/* 'probe_request' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENT_ROW2 1  </FONT><FONT COLOR="#B22222">/* 'probe_assigned' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENT_ROW3 2  </FONT><FONT COLOR="#B22222">/* 'carousel_move_complete' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENT_ROW4 3  </FONT><FONT COLOR="#B22222">/* 'sample_complete' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENT_ROW5 4  </FONT><FONT COLOR="#B22222">/* 'next_sample' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENT_ROW6 5  </FONT><FONT COLOR="#B22222">/* 'sampling_complete' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State Action Methods
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_Action_1( A_ROW_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_Action_2( A_ROW_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_Action_3( A_ROW_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_Action_4( A_ROW_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_Action_5( A_ROW_s *, const OoaEvent_t * const )</FONT></STRONG>;
+
+<STRONG><FONT COLOR="#4169E1">extern void A_ROW_Dispatch( const OoaEvent_t * const )</FONT></STRONG>;
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* A_ROW_OBJECT_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+</PRE>
+</BODY>
+
+</HTML>

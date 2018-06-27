@@ -1,0 +1,120 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_PAA_ASG.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_PAA_ASG.c
+ *
+ * Object:     probe_assignment  (PAA)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State-Event Matrix (SEM)
+ * Row Index is object's current (MC enumerated) current state.
+ * Row zero is the unitialized state (e.g., for creation event transitions).
+ * Column Index is (MC enumerated) state machine events.
+ *****************************************************************************/</FONT>
+static const Escher_StateNumber_t
+A_PAA_AssignerStateEventMatrix[4][4] =
+{
+  <FONT COLOR="#B22222">/* Row 0: 'Unitialized' */</FONT>
+  { EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN },
+  <FONT COLOR="#B22222">/* Row 1: A_PAA_ASG_STATE_1 'waiting on row' */</FONT>
+  { A_PAA_ASG_STATE_2, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED },
+  <FONT COLOR="#B22222">/* Row 2: A_PAA_ASG_STATE_2 'waiting on probe' */</FONT>
+  { EVENT_IS_IGNORED, A_PAA_ASG_STATE_3, EVENT_IS_IGNORED, EVENT_IS_IGNORED },
+  <FONT COLOR="#B22222">/* Row 3: A_PAA_ASG_STATE_3 'assigning pair' */</FONT>
+  { EVENT_IS_IGNORED, EVENT_IS_IGNORED, A_PAA_ASG_STATE_1, EVENT_IS_IGNORED }
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Array of pointers to the object's state action methods.
+ * Index is the (MC enumerated) number of the state action method to execute.
+ ****************************************************************************/</FONT>
+static const StateAction_t
+A_PAA_ASG_Actions[4] =
+{
+  (StateAction_t) 0,
+  (StateAction_t) A_PAA_ASG_Action_1,  <FONT COLOR="#B22222">/* 'waiting on row' */</FONT>
+  (StateAction_t) A_PAA_ASG_Action_2,  <FONT COLOR="#B22222">/* 'waiting on probe' */</FONT>
+  (StateAction_t) A_PAA_ASG_Action_3   <FONT COLOR="#B22222">/* 'assigning pair' */</FONT>
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * A_PAA_ASG_Dispatch - Assigner State model level event dispatching.
+ ****************************************************************************/</FONT>
+static A_PAA_Asg_s self;
+
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_ASG_Dispatch"></A>void
+A_PAA_ASG_Dispatch( OoaEvent_t * event )</FONT></STRONG>
+{
+  Escher_EventNumber_t event_number;
+  Escher_StateNumber_t current_state;
+  Escher_StateNumber_t next_state;
+
+  event_number = GetOoaEventNumber( event );
+  current_state = self.mc_current_state;
+  next_state = A_PAA_AssignerStateEventMatrix[ current_state ][ event_number ];
+
+  <FONT COLOR="#4169E1">if</FONT> ( next_state &lt;= 3 )
+  {
+    <FONT COLOR="#B22222">/* Execute the state action and update 'current state' */</FONT>
+    ( *A_PAA_ASG_Actions[ next_state ] )( &amp;self, event );
+    self.mc_current_state = next_state;
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    <FONT COLOR="#4169E1">if</FONT> ( next_state == EVENT_CANT_HAPPEN )
+    {
+      <FONT COLOR="#B22222">/* Event can't happen.  */</FONT>
+      UserEventCantHappenCallout( current_state, next_state, event_number );
+    }
+    <FONT COLOR="#4169E1">else</FONT> <FONT COLOR="#4169E1">if</FONT> ( next_state == EVENT_IS_IGNORED )
+    {
+      <FONT COLOR="#B22222">/* Event ignored */</FONT>
+    }
+    <FONT COLOR="#4169E1">else</FONT>
+    {
+      <FONT COLOR="#B22222">/* Translation/memory/stack error, etc - TBD */</FONT>
+    }
+  }
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_AssignerInit"></A>void A_PAA_AssignerInit()</FONT></STRONG>
+{
+  self.mc_current_state = A_PAA_ASG_STATE_1;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_AssignerFini"></A>void A_PAA_AssignerFini()</FONT></STRONG>
+{
+}
+
+</PRE>
+</BODY>
+
+</HTML>

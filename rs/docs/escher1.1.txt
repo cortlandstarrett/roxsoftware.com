@@ -1,0 +1,96 @@
+Introduction
+
+MC-3020 1.1 will extend and improve upon the theme of MC-3020 1.0.
+The theme continues to be tight, fast and suitable for deeply
+embedded applications.
+
+New for MC-3020 1.1
+
+Feature additions focus on extending the capability of MC-3020.
+
+General Clean Up
+
+Kill bugs. Provide ease of maintenance enhancements and esthetic
+improvements. This will result in substantial change to the overall
+structure of the archetypes. Further partitioning of the archetypes
+along architecture meta-model bounds will be evident in the 1.1
+delivery.
+
+Licensing
+
+At minimum this will involve establishing a cleaned up end user
+license agreement and placing copyright and licensing notices into
+clear view.
+
+Solaris, W9X Support
+
+MC-3020 1.0 will operate on Solaris, however no installation script
+exists.  MC-3020 has been run on W95/W98, but does not install and is
+not supported. MC-3020 1.1 will support these platforms. Build
+frameworks for known compilers on these platforms will be added.
+
+International Character Set Support
+
+Support for the ``$t'' capability of BridgePoint Generator will be
+built into MC-3020 1.1. Switches will be available to bypass this
+support. Hooks for ``$t'' will be provided by the model compiler;
+actual translation of character sets will be provided in association
+with BridgePoint Generator.
+
+Fault Handling
+
+Callouts/macros/hooks for architecture level fault detection will be
+provided.  This will include ``can't happen'' scenarios in state
+models, extent and queue overflows, etc. No attempt at recovery will
+be designed. This is a detection and transfer of control (to the
+user) approach. No specific interface back into analysis land will be
+provided; normal bridge operations will serve this purpose.
+
+External Stimulus Interface
+
+Call-outs at various points during initialization, execution and shut
+down are provided in 1.0 and will be extended in 1.1. These hooks
+into the realm of user defined source can be leveraged to define many
+possible interfaces to the containing system.
+
+Prioritization
+
+Prioritization of OOA events will be supported. The elegance of the
+current bridging strategy as implemented in 1.0 will be leveraged and
+remain intact. All prioritization will be handled within OOA domains.
+Prioritization of ``external events'' will be handled in boundary
+(FBO) objects. Prioritization will be based on a scheme employing
+multiple event queues.
+
+Instrumentation
+
+Macro hooks for state trace and action language statement trace will
+be provided. Default definitions for these macro hooks are defined.
+
+Memory Management Features
+
+Additional options beyond the 1.0 flavor of allocation from pools of
+pre-allocated instances will be available in MC-3020 1.1.
+
+Optimized Blind Select
+
+In a future version of MC-3020, hashing techniques will be used to
+provide constant time resolution of select any ... from instances of
+...  where commands that test for only equality against identifiers.
+In MC-3020 1.1, an intermediate level of optimization is provided.
+The following functionality describes the capability delivered in
+1.1. 
+
+    where clause characterization and recognition of optimizable
+    conditions
+
+    code space minimization (and ease of debug) by intelligent
+    packaging of instance search and retrieval code.
+
+Future versions will add 
+
+    default hash
+
+    hooks for user defined hashing
+
+to the 1.1 capabilities.

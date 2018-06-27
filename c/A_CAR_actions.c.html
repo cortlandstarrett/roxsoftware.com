@@ -1,0 +1,140 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_CAR_actions.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       A_CAR_actions.c
+ *
+ * Description:
+ * State actions methods implementation for the following object:
+ *
+ * Object:     carousel  (CAR)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_enums.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"CARPIO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [1]: 'resting'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_CAR_Action_1"></A>void
+A_CAR_Action_1( A_CAR_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_ROW_s * v3;  <FONT COLOR="#B22222">/* row */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_position = CARPIO::current_position(car_id:SELF.carousel_ID) */</FONT>
+  self-&gt;m_current_position = CARPIO_current_position( self-&gt;m_carousel_ID );
+
+  <FONT COLOR="#B22222">/* IF (SELF.current_position != SELF.destination) */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (self-&gt;m_current_position != self-&gt;m_destination) )
+  {  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ONE row RELATED BY SELF-&gt;ROW[R1] */</FONT>
+  v3 = self-&gt;mc_ROW_R1;
+
+  <FONT COLOR="#B22222">/* GENERATE ROW3:'carousel_move_complete'() TO row */</FONT>
+  {
+    A_ROW_Event3_s * event4 = (A_ROW_Event3_s *) Escher_NewOoaEvent( (void *) v3, &amp;A_ROW_Event3_sc );
+    SetEventSendingInstance( event4, self );
+    Escher_SendEvent( (OoaEvent_t *)event4 );
+  }
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [2]: 'going'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_CAR_Action_2"></A>void
+A_CAR_Action_2( A_CAR_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_CAR_Event1_s * rcvd_evt = (A_CAR_Event1_s *)event;
+  A_SP_s * v8;  <FONT COLOR="#B22222">/* probe */</FONT>
+  int v5;  <FONT COLOR="#B22222">/* delta */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.destination = RCVD_EVT.destination */</FONT>
+  self-&gt;m_destination = rcvd_evt-&gt;m_destination;
+
+  <FONT COLOR="#B22222">/* ASSIGN delta = SELF.destination - SELF.current_position */</FONT>
+  v5 = self-&gt;m_destination - self-&gt;m_current_position;
+
+  <FONT COLOR="#B22222">/* IF (delta == 0) */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (v5 == 0) )
+  {
+    <FONT COLOR="#B22222">/* GENERATE CAR2:'there'() TO SELF */</FONT>
+    {
+      A_CAR_Event2_s * event6 = (A_CAR_Event2_s *) Escher_NewOoaEvent( (void *) self, &amp;A_CAR_Event2_sc );
+      Escher_SendSelfEvent( (OoaEvent_t *)event6 );
+    }
+  }
+  <FONT COLOR="#B22222">/* ELSE */</FONT>
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    <FONT COLOR="#B22222">/* SELECT ANY probe FROM INSTANCES OF SP
+       WHERE (SELECTED.current_position == 'down') */</FONT>
+    v8 = (A_SP_s *)0;
+    { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+      A_SP_s * w7;
+      Escher_Iterator_s iter9_SP;
+      Escher_IteratorReset( &amp;iter9_SP, pG_A_SP_extent );
+      <FONT COLOR="#4169E1">while</FONT> ( (w7 = (A_SP_s *)Escher_IteratorNext( &amp;iter9_SP )) != 0 )
+      {
+        <FONT COLOR="#4169E1">if</FONT> ( (w7-&gt;m_current_position == A_position_down_e) )
+        {
+          v8 = w7;
+          <FONT COLOR="#4169E1">break</FONT>;
+        }
+      }
+    } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+    <FONT COLOR="#B22222">/* IF (NOT_EMPTY probe) */</FONT>
+    <FONT COLOR="#4169E1">if</FONT> ( (((v8 != 0) ? true : false)) )
+    {
+      <FONT COLOR="#B22222">/* GENERATE CAR2:'there'() TO SELF */</FONT>
+      {
+        A_CAR_Event2_s * event10 = (A_CAR_Event2_s *) Escher_NewOoaEvent( (void *) self, &amp;A_CAR_Event2_sc );
+        Escher_SendSelfEvent( (OoaEvent_t *)event10 );
+      }
+    }
+    <FONT COLOR="#B22222">/* ELSE */</FONT>
+    <FONT COLOR="#4169E1">else</FONT>
+    {
+      <FONT COLOR="#B22222">/* BRIDGE CARPIO::carousel_spin(car_id:SELF.carousel_ID, destination:delta) */</FONT>
+      CARPIO_carousel_spin( self-&gt;m_carousel_ID, v5 );
+    }
+    <FONT COLOR="#B22222">/* END IF */</FONT>
+  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+}
+
+</PRE>
+</BODY>
+
+</HTML>

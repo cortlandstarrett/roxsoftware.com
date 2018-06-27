@@ -1,0 +1,130 @@
+
+<HTML>
+<HEAD>
+<TITLE>sys_init.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  sys_init.h
+ *
+ * Description:
+ * Main entrance and parameters of the wild thing...
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef SYS_INIT_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define SYS_INIT_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System Name:  a.out
+ * System ID:    1
+ *
+ * Model Compiler Product Information:
+ * Product:  MC3020
+ * Version:  V1.3.0
+ * S/N:      
+ *
+ * System default/colored values:
+ * MaxStringLen:  32
+ * MaxObjExtent:  0
+ * MaxRelExtent:  0
+ * MaxSelectExtent:  0
+ * MaxSelfEvents:  0
+ * MaxNonSelfEvents:  0
+ * MaxTimers:  0
+ * MaxInterleavedBridges:  0
+ ****************************************************************************/</FONT>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_STRING_LEN 32</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_OBJECT_EXTENT 50</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_RELATIONSHIP_EXTENT 0</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_TRANSIENT_EXTENT 0</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_CONTAINERS ( SYS_MAX_OBJECT_EXTENT + SYS_MAX_RELATIONSHIP_EXTENT + SYS_MAX_TRANSIENT_EXTENT )</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_SELF_EVENTS 3</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_NON_SELF_EVENTS 7</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_OOA_EVENTS ( SYS_MAX_SELF_EVENTS + SYS_MAX_NON_SELF_EVENTS )</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_OOA_TIMERS 1</FONT></STRONG>
+
+<STRONG><FONT COLOR="#228B22">#define SYS_MAX_INTERLEAVED_BRIDGES 2</FONT></STRONG>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Domain Name:         A
+ * Domain ID:           1
+ * Repository:          as2
+ * OOA Version:         7
+ *
+ * MaxObjExtent:        40
+ * MaxRelExtent:        0
+ * MaxSelectExtent:     0
+ * MaxSelfEvents:       2
+ * MaxNonSelfEvents:    4
+ * MaxPriorityEvents:   2
+ * MaxTimers:           1
+ * InterleavedBridges:  2
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Domain Name:         EXP
+ * Domain ID:           2
+ * Repository:          exp
+ * OOA Version:         3
+ *
+ * MaxObjExtent:        10
+ * MaxRelExtent:        0
+ * MaxSelectExtent:     0
+ * MaxSelfEvents:       1
+ * MaxNonSelfEvents:    3
+ * MaxPriorityEvents:   0
+ * MaxTimers:           0
+ * InterleavedBridges:  0
+ ****************************************************************************/</FONT>
+
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * OOA domain identification numbers 
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_DOMAIN_ID  1</FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define EXP_DOMAIN_ID  2</FONT></STRONG>
+
+<STRONG><FONT COLOR="#4169E1">extern void SystemLevelInitialization( void )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void ApplicationLevelInitialization( void )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void SystemLevelShutdown( void )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void ApplicationLevelShutdown( void )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void InterleaveBridge( void (vfp)(void) )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void DispatchInterleaveBridge( void )</FONT></STRONG>;
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* SYS_INIT_H */</FONT><FONT COLOR="#A020F0"></FONT>
+</PRE>
+</BODY>
+
+</HTML>

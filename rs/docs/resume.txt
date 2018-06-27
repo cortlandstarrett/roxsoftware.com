@@ -1,0 +1,130 @@
+Cortland D. Starrett
+1192 East Dollar Court
+Brookston, Indiana 47923
+(765)563-3338
+cort@roxsoftware.com
+
+Education:
+  Purdue University - West Lafayette, Indiana:
+    Bachelor of Science Computer and Electrical Engineering
+    GPA = 3.55 / 4.00
+  University of Arizona - Tucson, Arizona (and Purdue):
+    Post Graduate Computer Engineering Research
+    GPA = 4.00 / 4.00
+  Design Methodology Training - Tucson, Arizona, on-site:
+    Techniques of structured analysis and design (Demarco)
+    Object Oriented Analysis and Recursive Design (Shlaer/Mellor)
+  IBM Professional Development School - Armonk, New York:
+    Management training, credit toward MBA
+
+Work Experience:
+  Bioanalytical Systems, Inc:  West Lafayette, Indiana
+  October 1993 - present
+  Embedded Software Team Leader
+  * Planned, staffed, designed, implemented, tested and supported several
+    products for the biological and electrochemical instrumentation
+    industry.  Devices included high pressure pumps, electrochemical
+    detectors, liquid chromatographs and robotic fraction collectors.
+    Primarily responsible for embedded software development.
+  * Served as MIS director managing installation and maintenance of the
+    local area network and Internet firewall serving e-mail and web
+    access.  Platfroms included Windows NT/98/95/3.1, Linux and commercial
+    Unix flavors.  Also maintained the inventory control system and
+    accounting computers and software.
+
+  Project Technology, Inc:  Tucson, Arizona
+  March 1995 - present
+  Contract Software Architect, Researcher and Methodology Instructor
+  * Provided software engineering design and consulting in the development
+    of an object oriented software architecture providing direct ``design
+    by translation.''
+  * Assisted in the research and development of the first implementation
+    of an ``action language'' compiler for use within a CASE tool
+    environment.  Developed the lexical analyzer, parser, symbol table,
+    abstract syntax trees and prototype back ends.
+  * Instructed classes at various corporations in the use of Shlaer-Mellor
+    Object Oriented Analysis and Recursive Design.
+
+  IBM Corporation - Storage Systems Division:  Tucson, Arizona
+  June 1988 - September 1993
+  Staff Technical Team Leader
+  * Architected high performance SCSI-2 RAID disk storage subsystem.
+    Responsible for all aspects of product design, implementation, test
+    and delivery to customer.  This included coordination of
+    hardware/software development, finances, travel, tools, test and
+    specifically the staffing and leadership of the software design team
+    (12 engineers/programmers).
+  * Designed ESCON fiber channel adapter for 3990-6 storage control unit.
+    Led a team of 8 electrical engineers and computer scientists.
+    Employed advanced design methodologies (object oriented) and exceeded
+    performance requirements while maintaining strict adherence to
+    architecture.
+  Manager
+  * Managed a department of 17 engineers and programmers.  The department
+    provided simulation environment testing of 3990 family storage
+    controllers.  My responsibilities included personnel support as well
+    as coordination of testing services across multiple product
+    deliveries.
+  Design Engineer
+  * Designed and implemented 3990 Serial Error Recovery Procedures.  This
+    code achieved levels of quality previously unmatched in the area.
+  * Initiated, supported and consulted on the use of Computer Aided
+    Software Engineering (CASE) tools and methodologies in the design of
+    storage controllers, tape products and magneto-optical disk products.
+    This included the design, documentation and implementation of
+    approximately 100 UNIX utilities for process automation.
+  * Installed, configured and maintained a network of 100 Unix workstation
+    servers, clients and X-terminals (RS/6K, IBM RTPC).
+  * Designed a computer programming language for use in real-time embedded
+    control applications.  The language supported an object oriented
+    architecture while providing remarkably fast and efficient execution.
+  * Tested and debugged storage products in the laboratory environment
+    using logic analyzers, tracers, signal generators and test automation
+    toolery.
+  * Trained fellow engineers and programmers in the application of
+    software engineering principles to the design of 3990 storage
+    controllers.
+
+  Purdue University - Purdue Residence Hall System:  West Lafayette, Indiana
+  August 1987 - May 1988
+  * Held responsibility for the administration, support and discipline of
+    45 student residents.
+  * Provided counseling to students for academic, professional and
+    personal matters.
+
+  NL Industries, Inc. - Technology Systems Division:  Houston, Texas
+  May 1984 - May 1987
+  * Designed and prototyped a device to monitor and control the state of a
+    microprocessor.
+  * Worked as member of a team in the design of a memory system for a
+    "downhole" embedded computer system.
+  * Designed and built several computer systems/interfaces for controlling
+    automated testing.
+
+Patents and Papers
+  * Dynamic Sequencing for the Efficient Response to Interrupts
+      This patent covers an idea that was implemented to provide
+      performance.  It is a combination hardware/software design that aids
+      in swift and elegant handling of OO "events" and interrupts.
+  * Technique for Channel Lockout Prevention and Load Balancing
+      This invention describes a method and means used to allow fast
+      channels and slow channels to share common resources.
+  (Information regarding other disclosures available upon request.)
+  * "Management Apprehension Syndrome"
+  * "On the Nature of Creative Bent"
+  * "Puzzling with Strange Attractors"
+
+Achievements and Awards:
+  Identified for Accelerated Career Development (fast-track) at IBM.
+  Cash Quality award for the design/documentation of 3990 Serial Error
+  Recovery.
+  Management Appreciation Award for Workstation LAN security package.
+
+Interests and Affiliations:
+  Teaching/administering 5th and 6th grade Sunday School and missionary
+  activities.
+  IEEE, member
+  Music (listening and playing), reading, writing, mathematics, camping.
+  ROX Software, Inc.
+
+References available upon request

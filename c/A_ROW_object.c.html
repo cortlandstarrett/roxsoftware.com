@@ -1,0 +1,238 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_ROW_object.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_ROW_object.c
+ *
+ * Object:     row  (ROW)
+ * Subsystem:  autosampler
+ * Domain:     A
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+    
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Statically allocate space for the instance population for this object.
+ * Allocate space for the object and its attributes.
+ * Depending on the collection scheme, allocate containoids (collection
+ * nodes) for gathering instances into free and active extents.
+ ****************************************************************************/</FONT>
+static A_ROW_s A_ROW_ObjectPool_s[ A_ROW_MAX_EXTENT_SIZE ];
+static Escher_ObjectSet_s A_ROW_ActiveExtent_s; <FONT COLOR="#B22222">/* set container */</FONT>
+Escher_ObjectSet_s * pG_A_ROW_extent;
+static Escher_ObjectSet_s * p_A_ROW_inanimate;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Initialize object factory services.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_FactoryInit"></A>void
+A_ROW_FactoryInit()</FONT></STRONG>
+{
+  unsigned int i;
+  Escher_ObjectSet_s s;
+  Escher_InitSet( &amp;s );
+
+  <FONT COLOR="#B22222">/* Initialize object instance storage free pool (inanimate list)
+   * by linking the containoids into a linear, null-terminated,
+   * singly linked list.  */</FONT>
+  <FONT COLOR="#4169E1">for</FONT> ( i = 0; i &lt; A_ROW_MAX_EXTENT_SIZE; i++ )
+  {
+    Escher_SetInsertElement( &amp;s, &amp;A_ROW_ObjectPool_s[ i ] );
+  }
+  p_A_ROW_inanimate = s.next; <FONT COLOR="#B22222">/* free list head */</FONT>
+
+  <FONT COLOR="#B22222">/* Initialize object class extent (animate list) to empty.  */</FONT>
+  Escher_InitSet( &amp;A_ROW_ActiveExtent_s );
+  pG_A_ROW_extent = &amp;A_ROW_ActiveExtent_s;
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Creation Accessor
+ ****************************************************************************/</FONT>
+A_ROW_s *
+<STRONG><FONT COLOR="#4169E1"><A NAME="_ROW_Create"></A>A_ROW_Create()</FONT></STRONG>
+{
+  Escher_ObjectSet_s * node;
+  A_ROW_s * self;
+
+  <FONT COLOR="#B22222">/* Check if object pool is empty.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( !p_A_ROW_inanimate ) {
+    UserObjectPoolEmptyCallout( <FONT COLOR="#666666">"as2"</FONT>, <FONT COLOR="#666666">"row"</FONT> );
+    <FONT COLOR="#4169E1">return</FONT> (A_ROW_s *) 0;
+  }
+
+  <FONT COLOR="#B22222">/* Acquire instance storage from object free pool.  */</FONT>
+  node = p_A_ROW_inanimate;
+  p_A_ROW_inanimate = p_A_ROW_inanimate-&gt;next;
+  self = (A_ROW_s *) node-&gt;object;
+
+  <FONT COLOR="#B22222">/* Initialize application analysis object attributes.  */</FONT>
+  self-&gt;m_radius = 0;
+  self-&gt;m_current_sampling_position = 0;
+  self-&gt;m_next_sampling_position = 0;
+  self-&gt;m_maximum_sampling_positions = 0;
+  self-&gt;m_sampling_time = 0;
+  self-&gt;m_needs_probe = false;
+
+  <FONT COLOR="#B22222">/* Initialize relationship storage */</FONT>
+  self-&gt;mc_CAR_R1 = 0;
+  self-&gt;mc_PAA_R2 = 0;
+
+  self-&gt;mc_current_state = A_ROW_STATE_1;
+
+  <FONT COLOR="#B22222">/* Insert instance into active extent (animate).  */</FONT>
+  node-&gt;next = pG_A_ROW_extent-&gt;next;
+  pG_A_ROW_extent-&gt;next = node;
+
+  <FONT COLOR="#4169E1">return</FONT> self;
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * A_ROW_AnyWhere1
+ ****************************************************************************/</FONT>
+A_ROW_s *
+<STRONG><FONT COLOR="#4169E1"><A NAME="_ROW_AnyWhere1"></A>A_ROW_AnyWhere1( const int w_radius )</FONT></STRONG>
+{
+  A_ROW_s * w; 
+  Escher_Iterator_s iter_ROW;
+  Escher_IteratorReset( &amp;iter_ROW, pG_A_ROW_extent );
+
+  <FONT COLOR="#4169E1">while</FONT> ( (w = (A_ROW_s *)Escher_IteratorNext( &amp;iter_ROW )) != 0 )
+  {
+    <FONT COLOR="#4169E1">if</FONT> ( w-&gt;m_radius == w_radius )
+    {
+      <FONT COLOR="#4169E1">return</FONT> w;
+    }
+  }
+
+  <FONT COLOR="#4169E1">return</FONT> (A_ROW_s *)0;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * RELATE CAR TO ROW ACROSS R1
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_R1_Link"></A>void
+A_ROW_R1_Link( A_CAR_s * part, A_ROW_s * form )</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( !part || !form )
+  {
+    <FONT COLOR="#4169E1">return</FONT>;
+  }
+  form-&gt;mc_CAR_R1 = part;
+  part-&gt;mc_ROW_R1 = form;
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State-Event Matrix (SEM)
+ * Row Index is object's current (MC enumerated) current state.
+ * Row zero is the unitialized state (e.g., for creation event transitions).
+ * Column Index is (MC enumerated) state machine events.
+ *****************************************************************************/</FONT>
+static const Escher_StateNumber_t
+A_ROW_StateEventMatrix[6][6] =
+{
+  <FONT COLOR="#B22222">/* Row 0: 'Unitialized' */</FONT>
+  { EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN, EVENT_CANT_HAPPEN },
+  <FONT COLOR="#B22222">/* Row 1: A_ROW_STATE_1 'idle' */</FONT>
+  { A_ROW_STATE_2, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED },
+  <FONT COLOR="#B22222">/* Row 2: A_ROW_STATE_2 'waiting' */</FONT>
+  { EVENT_IS_IGNORED, A_ROW_STATE_3, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED },
+  <FONT COLOR="#B22222">/* Row 3: A_ROW_STATE_3 'positioning' */</FONT>
+  { EVENT_IS_IGNORED, EVENT_IS_IGNORED, A_ROW_STATE_4, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED },
+  <FONT COLOR="#B22222">/* Row 4: A_ROW_STATE_4 'sampling' */</FONT>
+  { EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED, A_ROW_STATE_5, EVENT_IS_IGNORED, EVENT_IS_IGNORED },
+  <FONT COLOR="#B22222">/* Row 5: A_ROW_STATE_5 'checking' */</FONT>
+  { EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED, EVENT_IS_IGNORED, A_ROW_STATE_3, A_ROW_STATE_1 }
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Array of pointers to the object's state action methods.
+ * Index is the (MC enumerated) number of the state action method to execute.
+ ****************************************************************************/</FONT>
+static const StateAction_t
+A_ROW_Actions[6] =
+{
+  (StateAction_t) 0,
+  (StateAction_t) A_ROW_Action_1,  <FONT COLOR="#B22222">/* 'idle' */</FONT>
+  (StateAction_t) A_ROW_Action_2,  <FONT COLOR="#B22222">/* 'waiting' */</FONT>
+  (StateAction_t) A_ROW_Action_3,  <FONT COLOR="#B22222">/* 'positioning' */</FONT>
+  (StateAction_t) A_ROW_Action_4,  <FONT COLOR="#B22222">/* 'sampling' */</FONT>
+  (StateAction_t) A_ROW_Action_5   <FONT COLOR="#B22222">/* 'checking' */</FONT>
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * A_ROW_Dispatch - State model level event dispatching.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Dispatch"></A>void
+A_ROW_Dispatch( const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_ROW_s * instance = (A_ROW_s *)GetEventTargetInstance( event );
+  Escher_EventNumber_t event_number = GetOoaEventNumber( event );
+  Escher_StateNumber_t current_state;
+  Escher_StateNumber_t next_state;
+
+  <FONT COLOR="#4169E1">if</FONT> ( instance )
+  {
+    current_state = instance-&gt;mc_current_state;
+    <FONT COLOR="#4169E1">if</FONT> ( current_state &gt; 5 )
+    {
+      <FONT COLOR="#B22222">/* Instance validation failure (deleted while event in flight) - TBD */</FONT>
+    }
+    <FONT COLOR="#4169E1">else</FONT>
+    {
+      next_state = A_ROW_StateEventMatrix[ current_state ][ event_number ];
+      <FONT COLOR="#4169E1">if</FONT> ( next_state &lt;= 5 )
+      {
+        <FONT COLOR="#B22222">/* Execute the state action and update 'current state' */</FONT>
+        ( *A_ROW_Actions[ next_state ] )( instance, event );
+        instance-&gt;mc_current_state = next_state;
+      }
+      <FONT COLOR="#4169E1">else</FONT>
+      {
+        <FONT COLOR="#4169E1">if</FONT> ( next_state == EVENT_CANT_HAPPEN )
+        {
+          <FONT COLOR="#B22222">/* Event can't happen */</FONT>
+          UserEventCantHappenCallout( current_state, next_state, event_number );
+        }
+        <FONT COLOR="#4169E1">else</FONT> <FONT COLOR="#4169E1">if</FONT> ( next_state == EVENT_IS_IGNORED )
+        {
+          <FONT COLOR="#B22222">/* Event ignored */</FONT>
+        }
+        <FONT COLOR="#4169E1">else</FONT>
+        {
+          <FONT COLOR="#B22222">/* Translation/memory/stack error, etc - TBD */</FONT>
+        }
+      }
+    }
+  }
+}
+
+
+</PRE>
+</BODY>
+
+</HTML>

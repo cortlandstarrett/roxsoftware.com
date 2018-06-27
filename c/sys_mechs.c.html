@@ -1,0 +1,236 @@
+
+<HTML>
+<HEAD>
+<TITLE>sys_mechs.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  sys_mechs.c
+ *
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include &lt;stdlib.h&gt;</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_objset.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ ****************************************************************************/</FONT>
+static Escher_ObjectSet_s * node1_FreeList = (Escher_ObjectSet_s *) 0;
+static Escher_ObjectSet_s node1s[ SYS_MAX_CONTAINERS ];
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Initialize the node1 instances by linking them into a collection.
+ * These containoids will be collected into a null-terminated,
+ * singly linked list (slist).
+ * This needs to be called during architecture initialization.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SetFactoryInit"></A>void
+Escher_SetFactoryInit()</FONT></STRONG>
+{
+  unsigned int i;
+  node1_FreeList = &amp;node1s[ 0 ];
+  <FONT COLOR="#B22222">/* Build the collection (linked list) of node1 instances.  */</FONT>
+  <FONT COLOR="#4169E1">for</FONT> ( i = 0; i &lt; ( SYS_MAX_CONTAINERS - 1 ); i++ )
+  {
+    node1s[ i ].next = &amp;node1s[ i + 1 ];
+    node1s[ i ].object = 0;
+  }
+  node1s[ SYS_MAX_CONTAINERS - 1 ].next = (Escher_ObjectSet_s *) 0;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_CopySet
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_CopySet"></A>void 
+Escher_CopySet( Escher_ObjectSet_s * const to_set,
+                Escher_ObjectSet_s * const from_set )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * slot;
+
+  <FONT COLOR="#B22222">/* May be copying into an existing set, release target collection nodes.  */</FONT>
+  Escher_ClearSet( to_set );
+  Escher_InitSet( to_set );
+
+  <FONT COLOR="#4169E1">for</FONT> ( slot = from_set-&gt;next; slot; slot = slot-&gt;next )
+  {
+    Escher_SetInsertElement( to_set, slot-&gt;object ); 
+  }
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_ClearSet
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_ClearSet"></A>void
+Escher_ClearSet( Escher_ObjectSet_s * const set )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * slot, * new_slot;
+
+  <FONT COLOR="#4169E1">for</FONT> ( slot = set-&gt;next; slot; )
+  {
+    new_slot = slot-&gt;next;
+    Escher_SetRemoveElement( set, slot-&gt;object ); 
+    slot = new_slot;
+  }
+  Escher_InitSet( set );
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_SetInsertElement
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SetInsertElement"></A>void
+Escher_SetInsertElement( Escher_ObjectSet_s * const set,
+                         void * const element )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * slot;
+
+  <FONT COLOR="#4169E1">if</FONT> ( ! node1_FreeList )
+  {
+    UserNodeListEmptyCallout(); <FONT COLOR="#B22222">/* Bad news!  No more nodes.         */</FONT>
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    slot = node1_FreeList;   <FONT COLOR="#B22222">/* Extract node from head of free list.  */</FONT>
+    node1_FreeList = node1_FreeList-&gt;next;
+    slot-&gt;object = element;
+    slot-&gt;next = set-&gt;next;  <FONT COLOR="#B22222">/* Insert element at front of list.  */</FONT>
+    set-&gt;next = slot;
+  }
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_SetRemoveNode
+ ****************************************************************************/</FONT>
+Escher_ObjectSet_s *
+<STRONG><FONT COLOR="#4169E1"><A NAME="scher_SetRemoveNode"></A>Escher_SetRemoveNode( Escher_ObjectSet_s * const set,
+                      const void * const d )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * t = set-&gt;next; <FONT COLOR="#B22222">/* Start with first node.      */</FONT>
+  <FONT COLOR="#B22222">/* Find node containing data and unlink from list.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( t-&gt;object == d )         <FONT COLOR="#B22222">/* Element found at head.            */</FONT>
+  {
+    set-&gt;next = t-&gt;next;        <FONT COLOR="#B22222">/* Unlink it from the list.          */</FONT>
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    Escher_ObjectSet_s * t_old;
+    <FONT COLOR="#4169E1">do</FONT>                          <FONT COLOR="#B22222">/* Search for data element.          */</FONT>
+    {
+      t_old = t;
+      t = t-&gt;next;
+      <FONT COLOR="#4169E1">if</FONT> ( t == (Escher_ObjectSet_s *) 0 ) <FONT COLOR="#4169E1">return</FONT> 0; <FONT COLOR="#B22222">/* absent       */</FONT>
+    } <FONT COLOR="#4169E1">while</FONT> ( t-&gt;object != d );
+    t_old-&gt;next = t-&gt;next;      <FONT COLOR="#B22222">/* Unlink element from the list.     */</FONT>
+  }
+  <FONT COLOR="#4169E1">return</FONT> t;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_SetRemoveElement
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SetRemoveElement"></A>void
+Escher_SetRemoveElement( Escher_ObjectSet_s * const set,
+                         const void * const d )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * t;
+  <FONT COLOR="#4169E1">if</FONT> ( ! set-&gt;next ) <FONT COLOR="#4169E1">return</FONT>;    <FONT COLOR="#B22222">/* empty set */</FONT>
+  t = Escher_SetRemoveNode( set, d );
+  <FONT COLOR="#B22222">/* Return node to architecture collection (free list).             */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( t )
+  {
+    t-&gt;next = node1_FreeList;
+    node1_FreeList = t;
+  }
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Return true when the set contains the given data element.
+ * Return false if not found.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SetContains"></A>bool
+Escher_SetContains( Escher_ObjectSet_s * const set,
+                    const void * const element )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * t = set;
+
+  <FONT COLOR="#4169E1">while</FONT> ( ( t = t-&gt;next ) != 0 )
+  {
+    <FONT COLOR="#4169E1">if</FONT> ( t-&gt;object == element ) <FONT COLOR="#4169E1">return</FONT> true;  <FONT COLOR="#B22222">/* found  */</FONT>
+  }
+  <FONT COLOR="#4169E1">return</FONT> false;                               <FONT COLOR="#B22222">/* absent */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_SetCardinality
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SetCardinality"></A>int 
+Escher_SetCardinality( const Escher_ObjectSet_s * const set )</FONT></STRONG>
+{
+  int result = 0;
+  Escher_ObjectSet_s * node;
+
+  <FONT COLOR="#4169E1">for</FONT> ( node = set-&gt;next; node; node = node-&gt;next )
+  {
+    result++;
+  }
+
+  <FONT COLOR="#4169E1">return</FONT> result;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_SetEquality
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SetEquality"></A>bool
+Escher_SetEquality( Escher_ObjectSet_s * const left_set,
+                    Escher_ObjectSet_s * const right_set )</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( !left_set || !right_set )
+    <FONT COLOR="#4169E1">return</FONT> false;
+
+  <FONT COLOR="#4169E1">if</FONT> ( Escher_SetCardinality( left_set ) != Escher_SetCardinality( right_set ) )
+    <FONT COLOR="#4169E1">return</FONT> false;
+
+  <FONT COLOR="#4169E1">return</FONT> true;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * The iterator uses a cursor external to the set (or extent).
+ * This cursor maintains a flavor of current element.
+ ****************************************************************************/</FONT>
+void * 
+<STRONG><FONT COLOR="#4169E1"><A NAME="scher_IteratorNext"></A>Escher_IteratorNext( Escher_Iterator_s * const iter )</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( !iter-&gt;cursor )
+  {
+    <FONT COLOR="#4169E1">return</FONT> (void *) 0;
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    void * element;
+    element = iter-&gt;cursor-&gt;object;
+    iter-&gt;cursor = iter-&gt;cursor-&gt;next;
+    <FONT COLOR="#4169E1">return</FONT> element;
+  }
+}
+
+
+
+</PRE>
+</BODY>
+
+</HTML>

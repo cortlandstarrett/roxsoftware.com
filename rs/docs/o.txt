@@ -1,0 +1,172 @@
+From rs@roxsoftware.com Wed Oct 01 23:18:53 2003
+Date: Sun, 6 Jul 2003 21:53:21 -0700 (PDT)
+From: Cortland D. Starrett <rs@roxsoftware.com>
+Reply-To: cort@roxsoftware.com
+To: swanton@toyo.co.jp, suzuki@toyo.co.jp, tanner@projtech.com,
+     john.wolfe@projtech.com, dmurley@projtech.com, jim.lange@projtech.com,
+     support@projtech.com
+Cc: tflect@roxsoftware.com
+Subject: MC-3020 MISRA Summary
+
+Dear MISRAers,
+
+Let me report on the latest report from the autosampler/experiment model
+QAC/MISRA-C static analyzer.  We went from 785 errors to 78 legitimate
+QAC complaints.  There is a bit more work to get us lower.
+
+Note that the almost all of changes made to date have been "good"
+MC-3020 changes.  The generated code is more robust.  Additional
+changes will require coloring to swap in/out code that will be bigger
+and slower than the non-MISRA compliant (albeit safe) counterparts.
+
+
+Here is a summary of the latest (7/6/03) counts of the violations.
+
+RULE COUNT DESCRIPTION
+
+22:A  10   variables at file scope
+33:    1   side effects in boolean expr
+35:   15   assignment in boolean expr
+43:    5   implicit casting
+44:A   8   redundant casting
+45:   19   pointer casting
+55:    4   label
+56:    4   goto
+58:   14   break
+82:A   5   multiple returns
+105:   2   type mismatch (c versus uc)
+106:   3   assignment of static
+109:   1   unions
+127:   1   time.h
+
+
+Here is the summary with comments and thoughts.
+
+22:A  10   variables at file scope
+
+This represents a problem in QAC.  QAC complains that I should
+define a variable below file scope level.  However, two functions
+in the file access the variables in questions (<D>_<OBJ>_container
+and <D>_<OBJ>_ObjectPool_s).
+
+Perhaps we need to try to change the code such that QAC can better
+"see" the access to these variables (assuming QAC is not going
+to change).
+
+33:    1   side effects in boolean expr
+
+QAC seems to be confused with a three term &&.  We can split
+it into two separate expressions (cascaded ifs).
+
+35:   15   assignment in boolean expr
+
+13 of these are in SELECT and WHERE.  The other two are in the
+dispatcher.  We can eliminate these with bigger/slower code that
+can be colored in/out.
+
+43:    5   implicit casting
+
+Most of these are bad typing at the analysis level.  However, MISRA
+is pretty brutal and does not allow implicit casting to a larger
+type (like char to short or short to long).  More analysis is needed
+here.
+
+44:A   8   redundant casting
+
+These have been drastically reduced but will be associated with
+rule 45.  Some events can be of the generic type, but any events
+carrying supplemental data are event class specific.  "Newing" and
+"sending" these events may or may not require a cast (rule 45).
+So in the case where a cast is there to cover both cases, it is
+possible to have a redundant (unnecessary) cast.
+
+45:   19   pointer casting
+
+Almost all of the casting occurs with events.  MC-3020 has a generic
+event handler that can send and dispatch events of every type.  There
+is a Cish flavor of base event class.  We cast when we use the
+non-generic events (events carrying supplemental data).
+
+55:    4   label
+
+The RETURN statement in semantic actions uses gotos and labels
+to perform the return (deallocating selection sets before actually
+exiting).  The TailLight model does not use this construct.  We
+could potentially disallow the use of RETURN anywhere other than
+the end of a semantic action and get rid of the gotos and labels.
+
+56:    4   goto
+
+See rule 55.
+
+58:   14   break
+
+As in rule 35, the break statement is associated with the selection
+logic.  10 are in the selection logic.  4 are in set and event
+mechanism code.  All can be eliminated when colored for MISRA.
+We simply need to carefully supply alternate code that does
+exacly the same thing.
+
+82:A   5   multiple returns
+
+Same as rule 58.
+
+105:   2   type mismatch (c versus uc)
+
+This can be fixed.
+
+106:   3   assignment of static
+
+This can be fixed.  QAC is not interpretting the code correctly,
+but it will be pretty simple to do something differently.
+
+109:   1   unions
+
+This is the grand event union as described in my last note.  This
+will take a significant design change, but I have some ideas.  Worst
+case we could hard color the size of the largest event to avoid
+the union typing.
+
+127:   1   time.h
+
+This is only an issue when using the sample TIM.  Users in the
+embedded world are expected to supply/change this code.
+
+
+Here is a summary with projected action against these rules.
+
+RULE COUNT DESCRIPTION
+
+22:A  10   QAC bug, we'll try to change the code so QAC sees better (2 days)
+33:    1   QAC bug, I know we can get around this one.  (1 hour)
+35:   15   write new select/where routines  (3 days)
+43:    5   more analysis needed, worst case is restriction of one int type
+44:A   8   no solution pending
+45:   19   no solution pending (design ideas under consideration)
+55:    4   coloring and analysis restriction
+56:    4   coloring and analysis restriction
+58:   14   write new select/where routines  (3 days)
+82:A   5   write new select/where routines  (3 days)
+105:   2   change character typing (1 day)
+106:   3   QAC bug, change shape of code (1 day)
+109:   1   no solution pending (design ideas under consideration)
+127:   1   remove sample TIM (1 day)
+
+Again, we went from 785 errors to 78 legitimate QAC complaints.
+
+Doing the easy work above, within a couple of weeks we could have
+a list that looked like:
+
+43:   5
+44:   8
+45:  19
+55:   4
+56:   4
+109:  1
+
+Are there recommendations for next steps?
+
+I am confident that we can be MISRA compliant-ready within two
+or three months.
+
+Cort

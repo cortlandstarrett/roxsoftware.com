@@ -1,0 +1,115 @@
+
+<HTML>
+<HEAD>
+<TITLE>EXP_dom_init.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File: EXP_dom_init.c
+ *
+ * Initialization services for the following domain:
+ * Domain:     EXP
+ * Repository: exp.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_FBO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_dom_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Initialization Object: experiment init  (INIT)
+ *
+ * State [1]: 'INIT'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="EXP_INIT_InitState_1"></A>void
+EXP_INIT_InitState_1()</FONT></STRONG>
+{
+  EXP_T_s * v1;  <FONT COLOR="#B22222">/* t */</FONT>
+
+  <FONT COLOR="#B22222">/* CREATE OBJECT INSTANCE t OF T */</FONT>
+  v1 = EXP_T_Create();
+
+  <FONT COLOR="#B22222">/* ASSIGN t.start = 0 */</FONT>
+  v1-&gt;m_start = 0;
+
+  <FONT COLOR="#B22222">/* ASSIGN t.end = 60 */</FONT>
+  v1-&gt;m_end = 60;
+
+  <FONT COLOR="#B22222">/* ASSIGN t.number_of_batches = 2 */</FONT>
+  v1-&gt;m_number_of_batches = 2;
+
+  <FONT COLOR="#B22222">/* ASSIGN t.current_batch = 0 */</FONT>
+  v1-&gt;m_current_batch = 0;
+
+  <FONT COLOR="#B22222">/* BRIDGE A::INIT() */</FONT>
+  A_FBO_INIT();
+
+  <FONT COLOR="#B22222">/* GENERATE T1:'go'() TO t */</FONT>
+  {
+    EXP_T_Event1_s * event2 = (EXP_T_Event1_s *) Escher_NewOoaEvent( (void *) v1, &amp;EXP_T_Event1_sc );
+    Escher_SendEvent( (OoaEvent_t *)event2 );
+  }
+
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Array of pointers to the object event dispather method.
+ * Index is the (MC enumerated) number of the state model.
+ ****************************************************************************/</FONT>
+static const EventTaker_t
+EXP_EventDispatcher[ EXP_STATE_MODELS + 1 ] =
+{
+  (EventTaker_t) 0, <FONT COLOR="#B22222">/* Unused - instrumentation hook */</FONT>
+  (EventTaker_t) EXP_T_Dispatch
+};
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="EXP_DomainDispatcher"></A>void 
+EXP_DomainDispatcher( OoaEvent_t * event )</FONT></STRONG>
+{
+  ( *EXP_EventDispatcher[ GetEventDestObjectNumber( event ) ] )( event );
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System initialization method for domain: EXP
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="IntializeDomain_EXP"></A>void
+IntializeDomain_EXP()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Open object factories */</FONT>
+  EXP_T_FactoryInit();
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System shutdown method for domain: EXP
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="ShutdownDomain_EXP"></A>void
+ShutdownDomain_EXP()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Close object factories */</FONT>
+}
+
+</PRE>
+</BODY>
+
+</HTML>

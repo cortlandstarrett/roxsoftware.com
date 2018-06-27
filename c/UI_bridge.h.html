@@ -1,0 +1,52 @@
+
+<HTML>
+<HEAD>
+<TITLE>UI_bridge.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       UI_bridge.h
+ *
+ * Description:
+ *
+ * External Entity: 'User Interface'  (UI)
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef UI_BRIDGE_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define UI_BRIDGE_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge:  display_position
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void UI_display_position(
+    const int ee_length,
+    const char * ee_s )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge:  display_state
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void UI_display_state(
+    const int ee_length,
+    const char * ee_s )</FONT></STRONG>;
+
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* UI_BRIDGE_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+</PRE>
+</BODY>
+
+</HTML>

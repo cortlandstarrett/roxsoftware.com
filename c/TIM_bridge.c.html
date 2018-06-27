@@ -1,0 +1,501 @@
+
+<HTML>
+<HEAD>
+<TITLE>TIM_bridge.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * File:  TIM_bridge.c
+ *
+ * External Entity:  Time (TIM)
+ *                            
+ * Description:
+ * This file provides an implementation of the standard Shlaer-Mellor
+ * timer functionality.  Usage is conformed to the bridge interface
+ * as described in the BridgePoint Action Language Users Guide.
+ *
+ * Modify this file to match project design requirements.  Simply add
+ * or remove code.  Special comments draw attention to where
+ * modifications can most easily be made.
+ *
+ * Only a subset of the TIM interfaces are provided in this simple
+ * prototype implementation.  Recurring timers and timer expiration
+ * modification are not supported.  Long integers are used to store
+ * time values thus limiting the duration of timers and the system
+ * ticker to about 71 minutes.  The sample implementation uses
+ * the localtime, mktime, ftime and time library routines.
+ *
+ * For this example implementation to work, TIM_init() must be
+ * invoked at start-up (perhaps from UserInitializationCallout).
+ * Also, TIM_tick() must be invoked periodically and as often
+ * as practical (perhaps from UserBackgroundProcessingCallout).
+ * The resolution of the timers is driven largely by the frequency
+ * of invocation of TIM_tick().
+ *
+ * Notice:
+ * (C) Copyright 1999, 2000 ROX Software, Inc.
+ *     All rights reserved.
+ *-------------------------------------------------------------------*/</FONT>
+
+<FONT COLOR="#A020F0">#include &lt;sys/timeb.h&gt;</FONT>
+<FONT COLOR="#A020F0">#include &lt;time.h&gt;</FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"TIM_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#4169E1">typedef unsigned long ETimer_time_t;</FONT>
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * Timer "Object" Structure Declaration
+ *    [next] is the mechanism used to collect and sequence timers.
+ *    Timer instances are strung together in an active (animate)
+ *    list and an inactive (inanimate) list.  The next pointer
+ *    provides the "hole for the beads".
+ *    [expiration] is the system clock time at which this
+ *    timer will pop.
+ *    [t0] (not used) is the system time at installation and
+ *    would be useful with recurring timers.
+ *    [event] is the handle of the event that the timer will
+ *    generate upon expiration.
+ *    [flags] (not used) provides boolean variables useful to
+ *    indicate whether the timer has popped or whether it is
+ *    a recurring timer.
+ *-------------------------------------------------------------------*/</FONT>
+<FONT COLOR="#4169E1">typedef struct ETimer_s ETimer_t;</FONT>
+<FONT COLOR="#4169E1">struct ETimer_s</FONT> {
+  ETimer_t * next;
+  ETimer_time_t expiration;
+  OoaEvent_t * event;
+};
+
+static ETimer_t swtimers[ SYS_MAX_OOA_TIMERS ];  <FONT COLOR="#B22222">/* system.clr color */</FONT>
+static ETimer_t * animate = (ETimer_t *) 0, * inanimate = (ETimer_t *) 0;
+static ETimer_time_t tinit = 0;
+static <FONT COLOR="#4169E1">struct timeb</FONT> systyme;
+
+<STRONG><FONT COLOR="#4169E1">static void timer_insert_sorted( ETimer_t * )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">static void timer_fire( ETimer_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">static ETimer_time_t ETimer_msec_time( void )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">static ETimer_t *timer_start( const ETimer_time_t, OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">static bool timer_cancel( ETimer_t * )</FONT></STRONG>;
+
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;timer_inst_ref_var&gt; = TIM::timer_start(
+ *   microseconds:&lt;integer_var&gt;,
+ *   event_inst:&lt;event_inst_var&gt; )
+ * This bridge starts up an instance of a one-shot S-M OOA timer.
+ *===================================================================*/</FONT>
+Escher_Timer_t *
+<STRONG><FONT COLOR="#4169E1"><A NAME="IM_timer_start"></A>TIM_timer_start(
+    Escher_OoaEvent_s * ee_event_inst,
+    const Escher_uSec_t ee_microseconds )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> (Escher_Timer_t *) timer_start( ee_microseconds/1000, ee_event_inst );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;timer_inst_ref_var&gt; = TIM::timer_start_recurring(
+ *   microseconds:&lt;integer_var&gt;,
+ *   event_inst:&lt;event_inst_var&gt; )
+ * This bridge starts up an instance of a recurring S-M OOA timer.
+ *===================================================================*/</FONT>
+Escher_Timer_t *
+<STRONG><FONT COLOR="#4169E1"><A NAME="IM_timer_start_recurring"></A>TIM_timer_start_recurring(
+    Escher_OoaEvent_s * ee_event_inst,
+    const Escher_uSec_t ee_microseconds )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  Escher_Timer_t * result = (Escher_Timer_t *) 0;
+  <FONT COLOR="#4169E1">return</FONT> result;
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::timer_remaining_time(
+ *   timer_inst_ref:&lt;timer_inst_ref_var&gt; )
+ * Return the remaining time of the specified timer.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_timer_remaining_time"></A>Escher_uSec_t
+TIM_timer_remaining_time(
+    const Escher_Timer_t * const ee_timer_inst_ref )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> ( ee_timer_inst_ref == (Escher_Timer_t *) 0 ) ? 0 :
+	  ( 1000 * ((ETimer_t *) ee_timer_inst_ref)-&gt;expiration );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;was_running_flag&gt; = TIM_timer_reset_time(
+ *   microseconds:&lt;integer_var&gt;,
+ *   timer_inst_ref:&lt;timer_inst_ref_var&gt; )
+ * Try to change expiration of an existing timer.
+ * If successful, return true.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_timer_reset_time"></A>bool
+TIM_timer_reset_time(
+    const Escher_uSec_t ee_microseconds,
+    Escher_Timer_t * const ee_timer_inst_ref )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> ( false );             <FONT COLOR="#B22222">/* not implemented */</FONT>
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;was_running_flag&gt; = TIM_timer_add_time(
+ *   microseconds:&lt;integer_var&gt;,
+ *   timer_inst_ref:&lt;timer_inst_ref_var&gt; )
+ * Try to add time to an existing timer.
+ * If successful, return true.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_timer_add_time"></A>bool
+TIM_timer_add_time(
+    const Escher_uSec_t ee_microseconds,
+    Escher_Timer_t * const ee_timer_inst_ref )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> ( false );             <FONT COLOR="#B22222">/* not implemented */</FONT>
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;was_running_flag&gt; = TIM::timer_cancel(
+ *   timer_inst_ref:&lt;timer_inst_ref_var&gt; )
+ * This attempts to cancel the specified timer.
+ * Return true if we actually cancelled the timer.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_timer_cancel"></A>bool
+TIM_timer_cancel(
+    Escher_Timer_t * const ee_timer_inst_ref )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> timer_cancel( (ETimer_t *) ee_timer_inst_ref );
+}
+
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;date_var&gt; = TIM::current_date()
+ * Return a variable representing the current calendar date.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_current_date"></A>Escher_Date_t
+TIM_current_date()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> ( (Escher_Date_t) time( 0 ) );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;date_var&gt; = TIM::create_date(
+ *   day:&lt;integer_var&gt;,
+ *   hour:&lt;integer_var&gt;,
+ *   minute:&lt;integer_var&gt;,
+ *   month:&lt;integer_var&gt;,
+ *   second:&lt;integer_var&gt;,
+ *   year:&lt;integer_var&gt; )
+ * Return a variable representing the calendar date as specified
+ * by the input components.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_create_date"></A>Escher_Date_t
+TIM_create_date(
+    const int ee_day,
+    const int ee_hour,
+    const int ee_minute,
+    const int ee_month,
+    const int ee_second,
+    const int ee_year )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> t;
+  t.tm_mday = ee_day;
+  t.tm_hour = ee_hour;
+  t.tm_min = ee_minute;
+  t.tm_mon = ee_month;
+  t.tm_sec = ee_second;
+  t.tm_year = ee_year;
+  t.tm_year = ee_year;
+  <FONT COLOR="#4169E1">return</FONT> ( (Escher_Date_t) mktime( &amp;t ) );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::get_second(
+ *   date:&lt;integer_var&gt; )
+ * Return the year field of the date variable.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_get_second"></A>int
+TIM_get_second(
+    const Escher_Date_t ee_date )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> * tp;
+  tp = localtime( &amp;ee_date );
+  <FONT COLOR="#4169E1">return</FONT> ( tp-&gt;tm_sec );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::get_minute(
+ *   date:&lt;integer_var&gt; )
+ * Return the year field of the date variable.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_get_minute"></A>int
+TIM_get_minute(
+    const Escher_Date_t ee_date )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> * tp;
+  tp = localtime( &amp;ee_date );
+  <FONT COLOR="#4169E1">return</FONT> ( tp-&gt;tm_min );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::get_hour(
+ *   date:&lt;integer_var&gt; )
+ * Return the year field of the date variable.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_get_hour"></A>int
+TIM_get_hour(
+    const Escher_Date_t ee_date )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> * tp;
+  tp = localtime( &amp;ee_date );
+  <FONT COLOR="#4169E1">return</FONT> ( tp-&gt;tm_hour );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::get_day(
+ *   date:&lt;integer_var&gt; )
+ * Return the year field of the date variable.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_get_day"></A>int
+TIM_get_day(
+    const Escher_Date_t ee_date )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> * tp;
+  tp = localtime( &amp;ee_date );
+  <FONT COLOR="#4169E1">return</FONT> ( tp-&gt;tm_mday );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::get_month(
+ *   date:&lt;integer_var&gt; )
+ * Return the year field of the date variable.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_get_month"></A>int
+TIM_get_month(
+    const Escher_Date_t ee_date )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> * tp;
+  tp = localtime( &amp;ee_date );
+  <FONT COLOR="#4169E1">return</FONT> ( tp-&gt;tm_mon );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;integer_var&gt; = TIM::get_year(
+ *   date:&lt;integer_var&gt; )
+ * Return the year field of the date variable.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_get_year"></A>int
+TIM_get_year(
+    const Escher_Date_t ee_date )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">struct tm</FONT> * tp;
+  tp = localtime( &amp;ee_date );
+  <FONT COLOR="#4169E1">return</FONT> ( tp-&gt;tm_year );
+}
+
+<FONT COLOR="#B22222">/*=====================================================================
+ * BridgePoint Primitive:
+ * &lt;timestamp_var&gt; = TIM::current_clock()
+ * This bridge returns a system dependent time value.
+ *===================================================================*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_current_clock"></A>Escher_TimeStamp_t
+TIM_current_clock()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+  <FONT COLOR="#4169E1">return</FONT> ( ETimer_msec_time() );
+}
+
+
+<FONT COLOR="#B22222">/* Routines below are implementation specific.  Modify to taste.     */</FONT>
+
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * Get a timer instance from the inanimate list, provide the
+ * expiration time and insert it into its proper location among
+ * the currently ticking timers.
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="timer_start"></A>static ETimer_t *timer_start(
+  const ETimer_time_t duration,
+  OoaEvent_t * const event
+)</FONT></STRONG>
+{
+  ETimer_t * t = inanimate;
+	<FONT COLOR="#4169E1">if</FONT> ( t == (ETimer_t *) 0 ) <FONT COLOR="#4169E1">return</FONT> (ETimer_t *) 0;
+  inanimate = inanimate-&gt;next;
+  t-&gt;event = event;
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#B22222">/* Calculate the timer expiration time.                            */</FONT>
+  <FONT COLOR="#B22222">/* Note:  Add one to the duration to make sure that delay is       */</FONT>
+  <FONT COLOR="#B22222">/* at least as long as duration.                                   */</FONT>
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  t-&gt;expiration = ETimer_msec_time() + duration + 1;
+  timer_insert_sorted( t );
+  <FONT COLOR="#4169E1">return</FONT> ( t );
+}
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * Insert a timer into the list of ticking timers maintaining
+ * an order that fires timers chronologically.
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="timer_insert_sorted"></A>static void timer_insert_sorted(
+  ETimer_t * t
+)</FONT></STRONG>
+{
+  ETimer_time_t poptime = t-&gt;expiration;
+  <FONT COLOR="#4169E1">if</FONT> ( animate == (ETimer_t *) 0 ) {                  <FONT COLOR="#B22222">/* empty list   */</FONT>
+    t-&gt;next = (ETimer_t *) 0;
+    animate = t;
+  } <FONT COLOR="#4169E1">else</FONT> <FONT COLOR="#4169E1">if</FONT> ( poptime &lt;= animate-&gt;expiration ) {     <FONT COLOR="#B22222">/* before head  */</FONT>
+    t-&gt;next = animate;
+    animate = t;         
+  } <FONT COLOR="#4169E1">else</FONT> {                                           <FONT COLOR="#B22222">/* find bigger  */</FONT>
+    ETimer_t * prev = animate;
+    ETimer_t * cursor;
+    <FONT COLOR="#4169E1">while</FONT> ( ( cursor = prev-&gt;next ) != (ETimer_t *) 0 ) {
+      <FONT COLOR="#4169E1">if</FONT> ( poptime &lt;= cursor-&gt;expiration ) {
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+      prev = cursor;
+    }
+    prev-&gt;next = t;                                  <FONT COLOR="#B22222">/* link in      */</FONT>
+    t-&gt;next = cursor;
+  }
+}
+
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * Insert a timer into the list of ticking timers maintaining
+ * an order that fires timers chronologically.
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="timer_cancel"></A>static bool timer_cancel(
+  ETimer_t * t
+)</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( t == (ETimer_t *) 0 ) {
+    <FONT COLOR="#4169E1">return</FONT> ( false );
+  }
+  <FONT COLOR="#4169E1">if</FONT> ( animate == (ETimer_t *) 0 ) {
+    <FONT COLOR="#4169E1">return</FONT> ( false );
+  }
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#B22222">/* Check to see if the timer has already been reset.  This check   */</FONT>
+  <FONT COLOR="#B22222">/* is probabilistic.  It could have a hole if multitasked.         */</FONT>
+  <FONT COLOR="#B22222">/* We need to try to unlink and see if we actually unlinked.       */</FONT>
+  <FONT COLOR="#B22222">/* Attempt to remove the timer from the list of running timers.    */</FONT>
+  <FONT COLOR="#B22222">/* If we succeed, then we can cancel/delete the timer.  If the     */</FONT>
+  <FONT COLOR="#B22222">/* timer is not in the list, then there is no point in attempting  */</FONT>
+  <FONT COLOR="#B22222">/* to do any more.                                                 */</FONT>
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( t == animate ) {
+    animate = animate-&gt;next;
+  } <FONT COLOR="#4169E1">else</FONT> {
+    ETimer_t * prev = animate;
+    ETimer_t * cursor;
+    <FONT COLOR="#4169E1">while</FONT> ( ( cursor = prev-&gt;next ) != t ) {           <FONT COLOR="#B22222">/* find */</FONT>
+      <FONT COLOR="#4169E1">if</FONT> ( cursor == (ETimer_t *) 0 ) {
+        <FONT COLOR="#4169E1">return</FONT> ( false );
+      }
+      prev = cursor;
+    }
+    prev-&gt;next = t-&gt;next;                     <FONT COLOR="#B22222">/* unlink */</FONT>
+  }
+  t-&gt;next = inanimate;
+  inanimate = t;
+  <FONT COLOR="#4169E1">return</FONT> ( true );
+}
+
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * Generate delayed event to the application.
+ * Deactivate fired timer.
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="timer_fire"></A>static void timer_fire(
+  ETimer_t * const t
+)</FONT></STRONG>
+{
+  Escher_SendEvent( t-&gt;event );
+  animate = animate-&gt;next;      <FONT COLOR="#B22222">/* Remove from active list.          */</FONT>
+  t-&gt;next = inanimate;          <FONT COLOR="#B22222">/* Connect to inactive list.         */</FONT>
+  inanimate = t;
+}
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * This is the low level mechanism for monotonically increasing
+ * at a constant rate.  Substitute code here to read some
+ * sort of hardware timer.
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="ETimer_msec_time"></A>static ETimer_time_t ETimer_msec_time()</FONT></STRONG>
+{
+  ETimer_time_t t;
+  ftime( &amp;systyme );
+  t = ( systyme.time * 1000 ) + systyme.millitm;
+  <FONT COLOR="#4169E1">return</FONT> ( t - tinit );
+}
+ 
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * Initialize the tick mechanism and the timer instances.
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_init"></A>void TIM_init()</FONT></STRONG>
+{
+  int i;
+  ftime( &amp;systyme );            <FONT COLOR="#B22222">/* Initialize the hardware ticker.   */</FONT>
+  tinit = ( systyme.time * 1000 ) + systyme.millitm;
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#B22222">/* Build the collection (linked list) of timers.                   */</FONT>
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#4169E1">for</FONT> ( i = 0; i &lt; SYS_MAX_OOA_TIMERS; i++ ) {
+    swtimers[ i ].expiration = 0;
+    swtimers[ i ].event = (OoaEvent_t *) 0;
+    swtimers[ i ].next = inanimate;
+    inanimate = &amp;swtimers[ i ];
+  }
+}
+
+<FONT COLOR="#B22222">/*---------------------------------------------------------------------
+ * This is the repetitively invoked timer poller.
+ * This routine needs to be run periodically.       
+ *-------------------------------------------------------------------*/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="TIM_tick"></A>void TIM_tick()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#B22222">/* Check to see if there are timers in the ticking timers list.    */</FONT>
+  <FONT COLOR="#B22222">/*-----------------------------------------------------------------*/</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( animate != (ETimer_t *) 0 ) {
+    <FONT COLOR="#4169E1">if</FONT> ( animate-&gt;expiration &lt;= ETimer_msec_time() ) {
+      timer_fire( animate );
+    }
+  }
+}
+</PRE>
+</BODY>
+
+</HTML>

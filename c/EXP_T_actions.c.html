@@ -1,0 +1,88 @@
+
+<HTML>
+<HEAD>
+<TITLE>EXP_T_actions.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       EXP_T_actions.c
+ *
+ * Description:
+ * State actions methods implementation for the following object:
+ *
+ * Object:     technique  (T)
+ * Domain:     EXP
+ * Subsystem:  experiment
+ * Repository: exp.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_enums.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_FBO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_T_xform.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [1]: 'idle'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="EXP_T_Action_1"></A>void
+EXP_T_Action_1( EXP_T_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_batch = 0 */</FONT>
+  self-&gt;m_current_batch = 0;
+
+  <FONT COLOR="#B22222">/* TRANSFORM T::done() */</FONT>
+  EXP_T_Xform_done();
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [2]: 'running'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="EXP_T_Action_2"></A>void
+EXP_T_Action_2( EXP_T_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_batch = SELF.current_batch + 1 */</FONT>
+  self-&gt;m_current_batch = self-&gt;m_current_batch + 1;
+
+  <FONT COLOR="#B22222">/* IF (SELF.current_batch &lt;= SELF.number_of_batches) */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (self-&gt;m_current_batch &lt;= self-&gt;m_number_of_batches) )
+  {
+    <FONT COLOR="#B22222">/* BRIDGE A::stopandgo(directive:'go') */</FONT>
+    A_FBO_stopandgo( A_order_go_e );
+  }
+  <FONT COLOR="#B22222">/* ELSE */</FONT>
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    <FONT COLOR="#B22222">/* GENERATE T3:'stop'() TO SELF */</FONT>
+    {
+      EXP_T_Event3_s * event1 = (EXP_T_Event3_s *) Escher_NewOoaEvent( (void *) self, &amp;EXP_T_Event3_sc );
+      Escher_SendSelfEvent( (OoaEvent_t *)event1 );
+    }
+  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+}
+
+</PRE>
+</BODY>
+
+</HTML>

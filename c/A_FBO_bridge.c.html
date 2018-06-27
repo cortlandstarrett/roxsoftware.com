@@ -1,0 +1,194 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_FBO_bridge.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_FBO_bridge.c
+ *
+ * Description:
+ * Bridge implementation for the following application analysis object:
+ *
+ * Object:     bridge  (FBO)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_enums.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_FBO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge method:  INIT
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_FBO_INIT"></A>void
+A_FBO_INIT( void )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Dummy up instance handle for event generation.  */</FONT>
+  static Escher_InstanceHandle_t self = &amp;self;
+  A_CAR_s * v1;  <FONT COLOR="#B22222">/* car */</FONT>
+  A_ROW_s * v2;  <FONT COLOR="#B22222">/* row */</FONT>
+  A_SP_s * v3;  <FONT COLOR="#B22222">/* probe */</FONT>
+
+  <FONT COLOR="#B22222">/* CREATE OBJECT INSTANCE car OF CAR */</FONT>
+  v1 = A_CAR_Create();
+
+  <FONT COLOR="#B22222">/* ASSIGN car.carousel_ID = 10 */</FONT>
+  v1-&gt;m_carousel_ID = 10;
+
+  <FONT COLOR="#B22222">/* ASSIGN car.current_position = 10 */</FONT>
+  v1-&gt;m_current_position = 10;
+
+  <FONT COLOR="#B22222">/* CREATE OBJECT INSTANCE row OF ROW */</FONT>
+  v2 = A_ROW_Create();
+
+  <FONT COLOR="#B22222">/* RELATE row TO car ACROSS R1 */</FONT>
+  A_ROW_R1_Link( v1, v2 );
+
+  <FONT COLOR="#B22222">/* ASSIGN row.radius = 10 */</FONT>
+  v2-&gt;m_radius = 10;
+
+  <FONT COLOR="#B22222">/* ASSIGN row.current_sampling_position = 0 */</FONT>
+  v2-&gt;m_current_sampling_position = 0;
+
+  <FONT COLOR="#B22222">/* ASSIGN row.maximum_sampling_positions = 20 */</FONT>
+  v2-&gt;m_maximum_sampling_positions = 20;
+
+  <FONT COLOR="#B22222">/* ASSIGN row.sampling_time = 3000000 */</FONT>
+  v2-&gt;m_sampling_time = 3000000;
+
+  <FONT COLOR="#B22222">/* ASSIGN row.needs_probe = FALSE */</FONT>
+  v2-&gt;m_needs_probe = false;
+
+  <FONT COLOR="#B22222">/* CREATE OBJECT INSTANCE probe OF SP */</FONT>
+  v3 = A_SP_Create();
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.probe_ID = 1 */</FONT>
+  v3-&gt;m_probe_ID = 1;
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.radial_position = 20 */</FONT>
+  v3-&gt;m_radial_position = 20;
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.theta_offset = 40 */</FONT>
+  v3-&gt;m_theta_offset = 40;
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.current_position = 'up' */</FONT>
+  v3-&gt;m_current_position = A_position_up_e;
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.available = TRUE */</FONT>
+  v3-&gt;m_available = true;
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge method:  genC2there
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">static void A_FBO_genC2there2( void )</FONT></STRONG>; <FONT COLOR="#B22222">/* Declare posted routine.  */</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_FBO_genC2there"></A>void
+A_FBO_genC2there( void )</FONT></STRONG>
+{
+  InterleaveBridge( A_FBO_genC2there2 );
+}
+
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_FBO_genC2there2"></A>static void
+A_FBO_genC2there2( void )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Dummy up instance handle for event generation.  */</FONT>
+  static Escher_InstanceHandle_t self = &amp;self;
+  A_CAR_s * v4;  <FONT COLOR="#B22222">/* c */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY c FROM INSTANCES OF CAR */</FONT>
+  v4 = (A_CAR_s *)Escher_SetGetAny( pG_A_CAR_extent );
+
+  <FONT COLOR="#B22222">/* GENERATE CAR2:'there'() TO c */</FONT>
+  {
+    A_CAR_Event2_s * event5 = (A_CAR_Event2_s *) Escher_NewOoaEvent( (void *) v4, &amp;A_CAR_Event2_sc );
+    SetEventSendingInstance( event5, self );
+    Escher_SendEvent( (OoaEvent_t *)event5 );
+  }
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge method:  genP3pip
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">static void A_FBO_genP3pip2( void )</FONT></STRONG>; <FONT COLOR="#B22222">/* Declare posted routine.  */</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_FBO_genP3pip"></A>void
+A_FBO_genP3pip( void )</FONT></STRONG>
+{
+  InterleaveBridge( A_FBO_genP3pip2 );
+}
+
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_FBO_genP3pip2"></A>static void
+A_FBO_genP3pip2( void )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Dummy up instance handle for event generation.  */</FONT>
+  static Escher_InstanceHandle_t self = &amp;self;
+  A_SP_s * v6;  <FONT COLOR="#B22222">/* p */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY p FROM INSTANCES OF SP */</FONT>
+  v6 = (A_SP_s *)Escher_SetGetAny( pG_A_SP_extent );
+
+  <FONT COLOR="#B22222">/* GENERATE SP3:'probe_in_position'(altitude:p.current_position) TO p */</FONT>
+  {
+    A_SP_Event3_s * event7 = (A_SP_Event3_s *) Escher_NewOoaEvent( (void *) v6, &amp;A_SP_Event3_sc );
+    event7-&gt;m_altitude = v6-&gt;m_current_position;
+    SetEventSendingInstance( event7, self );
+    Escher_SendEvent( (OoaEvent_t *)event7 );
+  }
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge method:  stopandgo
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_FBO_stopandgo"></A>void
+A_FBO_stopandgo( 
+    const int s_directive )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Dummy up instance handle for event generation.  */</FONT>
+  static Escher_InstanceHandle_t self = &amp;self;
+  A_ROW_s * v8;  <FONT COLOR="#B22222">/* row */</FONT>
+
+  <FONT COLOR="#B22222">/* IF (RCVD_EVT.directive == 'go') */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (s_directive == A_order_go_e) )
+  {
+    <FONT COLOR="#B22222">/* SELECT ANY row FROM INSTANCES OF ROW */</FONT>
+    v8 = (A_ROW_s *)Escher_SetGetAny( pG_A_ROW_extent );
+
+    <FONT COLOR="#B22222">/* GENERATE ROW1:'probe_request'() TO row */</FONT>
+    {
+      A_ROW_Event1_s * event9 = (A_ROW_Event1_s *) Escher_NewOoaEvent( (void *) v8, &amp;A_ROW_Event1_sc );
+      SetEventSendingInstance( event9, self );
+      Escher_SendEvent( (OoaEvent_t *)event9 );
+    }
+  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+}
+</PRE>
+</BODY>
+
+</HTML>

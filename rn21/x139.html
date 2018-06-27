@@ -1,0 +1,257 @@
+<HTML
+><HEAD
+><TITLE
+>Change Highlights</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"/><LINK
+REL="HOME"
+TITLE="MC-3020 2.1 Release Notes"
+HREF="t1.html"/><LINK
+REL="PREVIOUS"
+TITLE="Installation"
+HREF="x99.html"/></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>MC-3020 2.1 Release Notes</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x99.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"/></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN139"
+>Change Highlights</A
+></H1
+><P
+>MC-3020 2.1 has refined its support for the features 
+  of BridgePoint 5 and has fixed problems discovered in 1.x and 2.0 versions of
+  MC-3020.</P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN142"
+>Enhancements</A
+></H2
+><P
+>Bridge operations colored as safe for interrupts can now pass
+    parameters into the domain.  These "Interleaved Bridges" allow
+    control and data to be passed from one microprocessor context
+    (interrupt service routine, process, task, etc.) into the
+    modeled OOA domain.  These data are protected from cross context
+    corruption while traversing from the interrupt context (or
+    parallel/concurrent task) into the OOA context.  Interrupt Service
+    Routines may now pass multiple data arguments into synchronous
+    service bridge operations colored as safe for interrupts.</P
+><P
+>Polymorphic events can now be generated to leaf subtypes.  This
+    will also allow for polymorphic event to self even when the
+    instance referred to by self is a subtype below in hierarchy from
+    the supertype for which the event is named.</P
+><P
+>Some minor enhancements in compatibility between the coloring
+    of MC-3020 and MC-2020 have been applied to MC-3020.  Further
+    consistency between these two model compilers is planned.</P
+><P
+>A mechanism has been added to allow the idle loop to be shut
+    down cleanly and gracefully permitting main to exit.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN148"
+>Fixes</A
+></H2
+><P
+></P
+><DL
+><DT
+>Field Issue 41:  Spelling error in init function
+      declaration</DT
+><DD
+><P
+>Corrected.</P
+></DD
+><DT
+>Field Issue 362:  Sending PE to self and
+      leaf subtype</DT
+><DD
+><P
+>New archetype code was added to allow polymorphic
+      events to be directed at instances below the top of the object
+      hierarchy including the "leaf" instance.  This also allows a
+      polymorphic event to be generated to self.
+      </P
+></DD
+><DT
+>Field Issue 216:  Request to be able to halt
+      main loop</DT
+><DD
+><P
+><PRE
+CLASS="PROGRAMLISTING"
+>Escher_run_flag</PRE
+>
+      has been made globally visible.  Setting this value to false
+      will cause the main loop to exit allowing shutdown processing
+      to occur.  The ideal place to set this value is in
+      <PRE
+CLASS="PROGRAMLISTING"
+>UserBackgroundProcessingCallout</PRE
+>
+      </P
+></DD
+><DT
+>Field Issue 224:  xlating transforms when
+      descriptions are included</DT
+><DD
+><P
+>Fixed.</P
+></DD
+><DT
+>Field Issue 227:  Coloring bridge objs safe
+      for interrupts</DT
+><DD
+><P
+>Addressed with enhancement described
+      above.</P
+></DD
+><DT
+>Field Issue 228, 229, 230:  Transformer
+      and bridge coloring issues</DT
+><DD
+><P
+>Fixed.</P
+></DD
+><DT
+>Field Issue 241:  New BP5.0 Enum format
+      must be documented</DT
+><DD
+><P
+>The Users Guide has been updated to provide
+      this documentation.  MC-3020 2.0 provided support the version
+      5 enumeration support in BridgePoint Model Builder.  The older method of marking
+      enumerations in attribute descriptions is supported but
+      discouraged.</P
+></DD
+><DT
+>Field Issue 311:  unary + prepended to
+      binary expression fails</DT
+><DD
+><P
+>This is fixed.  In certain circumstances,
+      unary plus and minus caused parsing problems in the model
+      compiler.</P
+></DD
+><DT
+>Internal Issue 28:  formalization using date
+      or time fails copy</DT
+><DD
+><P
+>This turned out to be a problem in support
+      code and not in the model compiler itself.  The sample timer
+      code (TIM_bridge.c) had a problem in the TIM_create_date
+      routine.  This routine has been updated for use in samples
+      and examples.</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"/><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x99.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

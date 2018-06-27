@@ -1,0 +1,317 @@
+
+<HTML>
+<HEAD>
+<TITLE>sys_evpool.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  sys_evpool.c
+ *
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include &lt;stdlib.h&gt;</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_objset.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_user_co.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#B22222">/* Include header(s) of domain level events union. */</FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: SystemOoaEvents_u
+ * 'Super-union' of all OOA events in the system. For translation patterns
+ * which can not accept dynamic memory allocation for OOA events, this union
+ * is used to predetermine the maximum size of any OOA event in the system.
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">union</FONT> SystemOoaEvents_u
+{
+  OoaEvent_t mc_event_base;
+  A_DomainEvents_u mc_events_in_domain_A;
+  EXP_DomainEvents_u mc_events_in_domain_EXP;
+};
+<FONT COLOR="#4169E1">typedef union SystemOoaEvents_u SystemOoaEvents_u;</FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Provide anchor declaration for front and back of list of events.
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">typedef struct OoaEventQueue_s OoaEventQueue_s;</FONT>
+<FONT COLOR="#4169E1">struct OoaEventQueue_s</FONT>
+{
+  OoaEvent_t * head, * tail;
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Pre-allocated memory pool for OOA events.
+ ****************************************************************************/</FONT>
+static SystemOoaEvents_u aSG_ooa_event_pool[ SYS_MAX_OOA_EVENTS ];
+static OoaEvent_t * pSG_free_event_list = (OoaEvent_t *) 0;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Link the event skeleton nodes together on the free list ready
+ * for allocation.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="InitializeOoaEventPool"></A>void
+InitializeOoaEventPool()</FONT></STRONG>
+{
+  unsigned int i;
+  <FONT COLOR="#B22222">/* String events together into a singly linked list. */</FONT>
+  pSG_free_event_list = (OoaEvent_t *) &amp;aSG_ooa_event_pool[ 0 ];
+  <FONT COLOR="#4169E1">for</FONT> ( i = 0; i &lt; SYS_MAX_OOA_EVENTS; i++ )
+  {
+    aSG_ooa_event_pool[ i ].mc_event_base.next = (OoaEvent_t *) &amp;(aSG_ooa_event_pool[ i + 1 ]);
+    aSG_ooa_event_pool[ i ].mc_event_base.prev = (OoaEvent_t *) 0;
+  }
+  aSG_ooa_event_pool[ SYS_MAX_OOA_EVENTS - 1 ].mc_event_base.next = (OoaEvent_t *) 0;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_AllocateOoaEvent
+ * Note:  event_size unused, reserved for future use, eliminated for now.
+ ****************************************************************************/</FONT>
+OoaEvent_t *
+<STRONG><FONT COLOR="#4169E1"><A NAME="scher_AllocateOoaEvent"></A>Escher_AllocateOoaEvent()</FONT></STRONG>
+{
+  OoaEvent_t * event;
+  <FONT COLOR="#4169E1">if</FONT> ( ! pSG_free_event_list )
+  {
+    UserEventFreeListEmptyCallout(); <FONT COLOR="#B22222">/* Bad news!  No more events.         */</FONT>
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    event = pSG_free_event_list;       <FONT COLOR="#B22222">/* Grab front of the free list.     */</FONT>
+    pSG_free_event_list = event-&gt;next; <FONT COLOR="#B22222">/* Unlink from front of free list.  */</FONT>
+    ClearOoaEventFlags( event );
+  }
+  <FONT COLOR="#4169E1">return</FONT> event;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_NewOoaEvent
+ * Allocate the event and initialize the base attributes.
+ ****************************************************************************/</FONT>
+OoaEvent_t *
+<STRONG><FONT COLOR="#4169E1"><A NAME="scher_NewOoaEvent"></A>Escher_NewOoaEvent( const void * const destination,
+                            const OoaEventConstant_t * const event_info )</FONT></STRONG>
+{
+  OoaEvent_t * event = Escher_AllocateOoaEvent();
+  SetEventTargetInstance( event, destination );
+  SetEventDestDomainNumber( event, event_info-&gt;destination_domain_number );
+  SetEventDestObjectNumber( event, event_info-&gt;destination_object_number );
+  SetOoaEventNumber( event, event_info-&gt;event_number );
+  SetOoaEventFlags( event, event_info-&gt;event_flags );
+  SetOoaEventPriority( event, event_info-&gt;priority );
+  <FONT COLOR="#4169E1">return</FONT> event;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Escher_DeleteOoaEvent
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_DeleteOoaEvent"></A>void
+Escher_DeleteOoaEvent( void * event )</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( event != 0 )
+  {
+    ((OoaEvent_t *) event)-&gt;next = pSG_free_event_list;
+    pSG_free_event_list = (OoaEvent_t *) event;
+  }
+}
+
+
+static OoaEventQueue_s sSG_non_self_event_queue;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Zero the anchor points for the non- self-directed event queue.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="InitializeOoaNonSelfEventQueue"></A>void
+InitializeOoaNonSelfEventQueue()</FONT></STRONG>
+{
+  sSG_non_self_event_queue.head = (OoaEvent_t *) 0;
+  sSG_non_self_event_queue.tail = (OoaEvent_t *) 0;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Send an event to the instance queue.  Use priority where applicable.
+ *
+ * The following table summarizes the construction of events as
+ * expected in Escher.  For each type of object (or pseudo-object)
+ * that may be the source or target of an event, the expected
+ * value of the source and destination handles in the event are
+ * given.
+ *
+ *   object type | as event source     | as destination
+ *   ------------+---------------------+----------------------
+ *   instance    | handle              | handle
+ *   assigner    | manufactured handle | 0
+ *   creator     | manufactured handle | 0
+ *   init        | manufactured handle | cannot be destination
+ *   FBO         | manufactured handle | cannot be destination
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SendEvent"></A>void
+Escher_SendEvent( OoaEvent_t * event )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert event into empty event queue.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( sSG_non_self_event_queue.tail == (OoaEvent_t *) 0 )
+  {
+    sSG_non_self_event_queue.head = event;    <FONT COLOR="#B22222">/* first in queue */</FONT>
+    sSG_non_self_event_queue.tail = event;    <FONT COLOR="#B22222">/* last in queue */</FONT>
+    event-&gt;next = (OoaEvent_t *) 0;
+    event-&gt;prev = (OoaEvent_t *) 0;
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  <FONT COLOR="#B22222">/* No priority, append to end of queue.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( event-&gt;priority == 0 )
+  {
+    event-&gt;next = (OoaEvent_t *) 0;           <FONT COLOR="#B22222">/* input at tail end */</FONT>
+    event-&gt;prev = sSG_non_self_event_queue.tail;
+    sSG_non_self_event_queue.tail-&gt;next = event; <FONT COLOR="#B22222">/* non empty */</FONT>
+    sSG_non_self_event_queue.tail = event;    <FONT COLOR="#B22222">/* tail points to last */</FONT>
+  }
+  <FONT COLOR="#4169E1">else</FONT>
+  <FONT COLOR="#B22222">/* Priority event, insert at proper position.  */</FONT>
+  {
+    OoaEvent_t * e = sSG_non_self_event_queue.tail;
+    <FONT COLOR="#B22222">/* Find slot before which to insert our new arrival.     */</FONT>
+    <FONT COLOR="#B22222">/* Break from the loop before the event we must follow.  */</FONT>
+    <FONT COLOR="#4169E1">while</FONT> ( e != (OoaEvent_t *) 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( event-&gt;priority &lt;= e-&gt;priority )
+        <FONT COLOR="#4169E1">break</FONT>;
+      <FONT COLOR="#4169E1">if</FONT> ( GetEventTargetInstance( event ) == GetEventTargetInstance(e) ) {
+        <FONT COLOR="#4169E1">if</FONT> ( GetEventSendingInstance( event ) == GetEventSendingInstance(e) ) {
+          <FONT COLOR="#4169E1">if</FONT> ( GetEventTargetInstance( event ) != 0 )
+            <FONT COLOR="#4169E1">break</FONT>;
+          <FONT COLOR="#4169E1">else</FONT>
+            <FONT COLOR="#B22222">/* Creator or assigner with no target instance handle.  */</FONT>
+            <FONT COLOR="#B22222">/* We must interrogate the object and domain numbers.   */</FONT>
+            <FONT COLOR="#4169E1">if</FONT> ( GetEventDestObjectNumber( event ) == GetEventDestObjectNumber( e ) )
+              <FONT COLOR="#4169E1">if</FONT> ( GetEventDestDomainNumber( event ) == GetEventDestDomainNumber( e ) )
+                <FONT COLOR="#4169E1">break</FONT>;
+        }
+      }
+      e = e-&gt;prev;
+    }
+    <FONT COLOR="#4169E1">if</FONT> ( e == (OoaEvent_t *) 0 )
+    {
+      <FONT COLOR="#B22222">/* Slot not found, insert after head.  */</FONT>
+      e = sSG_non_self_event_queue.head;
+      event-&gt;prev = (OoaEvent_t *) 0;
+      event-&gt;next = e;
+      e-&gt;prev = event;
+      sSG_non_self_event_queue.head = event;
+    }
+    <FONT COLOR="#4169E1">else</FONT>
+    {
+      <FONT COLOR="#B22222">/* Slot found, insert before.  */</FONT>
+      event-&gt;prev = e;
+      event-&gt;next = e-&gt;next;
+      e-&gt;next = event;
+      <FONT COLOR="#4169E1">if</FONT> ( event-&gt;next != (OoaEvent_t *) 0 )
+        event-&gt;next-&gt;prev = event;
+      <FONT COLOR="#4169E1">if</FONT> ( sSG_non_self_event_queue.tail == e )
+        sSG_non_self_event_queue.tail = event;
+    }
+  }
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Drag an event from the instance directed queue if there is one.  This
+ * routine also serves as the IsQueueEmpty routine.  A null return code 
+ * indicates that the queue is empty.  Otherwise the handle to the
+ * event will be returned.
+ ****************************************************************************/</FONT>
+OoaEvent_t *
+<STRONG><FONT COLOR="#4169E1"><A NAME="equeueOoaNonSelfEvent"></A>DequeueOoaNonSelfEvent()</FONT></STRONG>
+{
+  OoaEvent_t * event;
+  <FONT COLOR="#B22222">/* Assign the event from the head of the queue.  */</FONT>
+  event = sSG_non_self_event_queue.head;
+  <FONT COLOR="#B22222">/* If the list is not empty, bump the head.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( event != (OoaEvent_t *) 0 )
+  {
+    sSG_non_self_event_queue.head = event-&gt;next;
+    <FONT COLOR="#B22222">/* If empty, nullify tail.  Link prev pointers.  */</FONT>
+    <FONT COLOR="#4169E1">if</FONT> ( sSG_non_self_event_queue.head == (OoaEvent_t *) 0 )
+      sSG_non_self_event_queue.tail = (OoaEvent_t *) 0;
+    <FONT COLOR="#4169E1">else</FONT>
+      sSG_non_self_event_queue.head-&gt;prev = (OoaEvent_t *) 0;
+  }
+  <FONT COLOR="#4169E1">return</FONT> event;
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ ****************************************************************************/</FONT>
+static OoaEventQueue_s sSG_self_event_queue;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Zero the anchor points for the self-directed event queue.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="InitializeOoaSelfEventQueue"></A>void
+InitializeOoaSelfEventQueue()</FONT></STRONG>
+{
+  sSG_self_event_queue.head = (OoaEvent_t *) 0;
+  sSG_self_event_queue.tail = (OoaEvent_t *) 0;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Send an event to the self queue.  No prioritization occurs on
+ * this queue.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="Escher_SendSelfEvent"></A>void
+Escher_SendSelfEvent( OoaEvent_t * event )</FONT></STRONG>
+{
+  event-&gt;next = (OoaEvent_t *) 0;
+  <FONT COLOR="#B22222">/* Append the event to the tail end of the queue.  */</FONT>
+  <FONT COLOR="#B22222">/* No need to maintain prev pointers for self directed events.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( sSG_self_event_queue.tail == (OoaEvent_t *) 0 )
+    sSG_self_event_queue.head = event;
+  <FONT COLOR="#4169E1">else</FONT>
+    sSG_self_event_queue.tail-&gt;next = event;
+  sSG_self_event_queue.tail = event;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Drag an event from the self queue if there is one.  This routine
+ * also serves as the IsQueueEmpty routine.  A null return code 
+ * indicates that the queue is empty.  Otherwise the handle to the
+ * event will be returned.
+ ****************************************************************************/</FONT>
+OoaEvent_t *
+<STRONG><FONT COLOR="#4169E1"><A NAME="equeueOoaSelfEvent"></A>DequeueOoaSelfEvent()</FONT></STRONG>
+{
+  OoaEvent_t * event;
+  <FONT COLOR="#B22222">/* Assign the event from the head of the queue.  */</FONT>
+  event = sSG_self_event_queue.head;
+  <FONT COLOR="#B22222">/* If the list is not empty, bump the head.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( event != (OoaEvent_t *) 0 )
+  {
+    sSG_self_event_queue.head = event-&gt;next;               <FONT COLOR="#B22222">/* bump */</FONT>
+    <FONT COLOR="#B22222">/* If empty, nullify tail.  No need to maintain prev pointers
+       for the self queue.  They are not used.  */</FONT>
+    <FONT COLOR="#4169E1">if</FONT> ( sSG_self_event_queue.head == (OoaEvent_t *) 0 )
+      sSG_self_event_queue.tail = (OoaEvent_t *) 0;
+  }
+  <FONT COLOR="#4169E1">return</FONT> event;
+}
+
+
+</PRE>
+</BODY>
+
+</HTML>

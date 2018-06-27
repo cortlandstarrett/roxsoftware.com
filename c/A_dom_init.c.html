@@ -1,0 +1,90 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_dom_init.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File: A_dom_init.c
+ *
+ * Initialization services for the following domain:
+ * Domain:     A
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_dom_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Array of pointers to the object event dispather method.
+ * Index is the (MC enumerated) number of the state model.
+ ****************************************************************************/</FONT>
+static const EventTaker_t
+A_EventDispatcher[ A_STATE_MODELS + 1 ] =
+{
+  (EventTaker_t) 0, <FONT COLOR="#B22222">/* Unused - instrumentation hook */</FONT>
+  (EventTaker_t) A_CAR_Dispatch,
+  (EventTaker_t) A_ROW_Dispatch,
+  (EventTaker_t) A_SP_Dispatch,
+  (EventTaker_t) A_PAA_ASG_Dispatch
+};
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_DomainDispatcher"></A>void 
+A_DomainDispatcher( OoaEvent_t * event )</FONT></STRONG>
+{
+  ( *A_EventDispatcher[ GetEventDestObjectNumber( event ) ] )( event );
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System initialization method for domain: A
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="IntializeDomain_A"></A>void
+IntializeDomain_A()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Open object factories */</FONT>
+  A_CAR_FactoryInit();
+  A_ROW_FactoryInit();
+  A_SP_FactoryInit();
+  A_PAA_FactoryInit();
+  <FONT COLOR="#B22222">/* Open object assigner singletons */</FONT>
+  A_PAA_AssignerInit();
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System shutdown method for domain: A
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="ShutdownDomain_A"></A>void
+ShutdownDomain_A()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Close object factories */</FONT>
+  <FONT COLOR="#B22222">/* Close object assigner singletons */</FONT>
+}
+
+</PRE>
+</BODY>
+
+</HTML>

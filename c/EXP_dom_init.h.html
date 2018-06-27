@@ -1,0 +1,69 @@
+
+<HTML>
+<HEAD>
+<TITLE>EXP_dom_init.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File: EXP_dom_init.h
+ *
+ * Initialization services for the following domain:
+ * Domain:     EXP
+ * Repository: exp.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef EXP_DOM_INIT_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define EXP_DOM_INIT_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System initialization method for domain: EXP
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void IntializeDomain_EXP( void )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * System shutdown method for domain: EXP
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void ShutdownDomain_EXP( void )</FONT></STRONG>;
+
+<STRONG><FONT COLOR="#4169E1">extern void EXP_DomainDispatcher( OoaEvent_t * )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/****************************************************************************
+ * Initialization object methods:
+ *
+ * Object:    experiment init  (INIT)
+ * Subsystem: experiment
+ ***************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void EXP_INIT_InitState_1( void )</FONT></STRONG>;
+
+
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* EXP_DOM_INIT_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+</PRE>
+</BODY>
+
+</HTML>

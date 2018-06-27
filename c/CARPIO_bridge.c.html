@@ -1,0 +1,113 @@
+
+<HTML>
+<HEAD>
+<TITLE>CARPIO_bridge.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       CARPIO_bridge.c
+ *
+ * Description:
+ *
+ * External Entity: 'PIO_1'  (CARPIO)
+ ****************************************************************************/</FONT>
+
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"CARPIO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/* Dummy up instance handle for event generation.  */</FONT>
+static Escher_InstanceHandle_t self = &amp;self;
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge:  current_position
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="CARPIO_current_position"></A>int
+CARPIO_current_position(
+    const int ee_car_id )</FONT></STRONG>
+{
+  int result = 0;
+
+  <FONT COLOR="#B22222">/* Replace the following instructions with your specific code.  */</FONT>
+  {
+  A_CAR_s * v2;  <FONT COLOR="#B22222">/* car */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY car FROM INSTANCES OF CAR
+     WHERE SELECTED.carousel_ID == PARAM.car_id */</FONT>
+  v2 = (A_CAR_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_CAR_s * w1;
+    Escher_Iterator_s iter3_CAR;
+    Escher_IteratorReset( &amp;iter3_CAR, pG_A_CAR_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w1 = (A_CAR_s *)Escher_IteratorNext( &amp;iter3_CAR )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( w1-&gt;m_carousel_ID == ee_car_id )
+      {
+        v2 = w1;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#4169E1">return</FONT> v2-&gt;m_destination;
+
+  }
+  
+  <FONT COLOR="#4169E1">return</FONT> result;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge:  carousel_spin
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="CARPIO_carousel_spin"></A>void
+CARPIO_carousel_spin(
+    const int ee_car_id,
+    const int ee_destination )</FONT></STRONG>
+{
+
+  <FONT COLOR="#B22222">/* Replace the following instructions with your implementation code.  */</FONT>
+  {
+  A_CAR_s * v5;  <FONT COLOR="#B22222">/* car */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY car FROM INSTANCES OF CAR
+     WHERE SELECTED.carousel_ID == PARAM.car_id */</FONT>
+  v5 = (A_CAR_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_CAR_s * w4;
+    Escher_Iterator_s iter6_CAR;
+    Escher_IteratorReset( &amp;iter6_CAR, pG_A_CAR_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w4 = (A_CAR_s *)Escher_IteratorNext( &amp;iter6_CAR )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( w4-&gt;m_carousel_ID == ee_car_id )
+      {
+        v5 = w4;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#B22222">/* GENERATE CAR2:'there'() TO car */</FONT>
+  {
+    A_CAR_Event2_s * event7 = (A_CAR_Event2_s *) Escher_NewOoaEvent( (void *) v5, &amp;A_CAR_Event2_sc );
+    SetEventSendingInstance( event7, self );
+    Escher_SendEvent( (OoaEvent_t *)event7 );
+  }
+
+  }
+
+}
+
+
+</PRE>
+</BODY>
+
+</HTML>

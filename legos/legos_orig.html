@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><title>
+  UML Lego Robots
+  
+  </title><link rel="stylesheet" href="legos.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.60.1" /></head><body><div class="article" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title"><a id="id2794481"></a>
+  <div class="informaltable"><table width="100%" border="0"><colgroup><col /></colgroup><thead></thead><tbody><tr><td align="left"><img src="header.gif" align="left" /><img src="PT.gif" align="left" /></td></tr><tr><td align="left">UML Lego Robots
+  </td></tr></tbody></table></div>
+  </h2></div></div><div></div><hr /></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="#id2796520">
+  
+  Rationale - Why Lego Robots?
+  
+  </a></dt><dt><a href="#id2796652">General Instructions</a></dt><dt><a href="#id2796712"><i class="citetitle">(Detailed Step by Step Instructions)</i></a></dt><dt><a href="#id2796731">Robot Assembly Instructions</a></dt><dt><a href="#id2796916">
+  Sample UML Models
+  </a></dt><dt><a href="#id2797163">
+  UML Model Translation Server
+  
+  </a></dt><dt><a href="#id2797210">Contest Rules</a></dt><dt><a href="#id2797384">Other Stuff You Will Need</a></dt></dl></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2796520"></a>
+  <div align="left"><img src="SRis_Complete_Model_small.jpg" align="left" /></div>
+  Rationale - Why Lego Robots?
+  <div align="right"><img src="rcx.gif" align="right" /></div>
+  </h2></div></div><div></div></div><p>MC-3020 is a UML model translator ideal for small systems,
+  especially deeply embedded control systems.  Often these deeply
+  embedded control systems are running on small, 8-bit or 16-bit micros.
+  Can high-level tools such as BridgePoint be used to model and
+  efficiently generate code for such small systems?  How better to
+  demonstrate than to actually do so onto a small system.</p><p>The Lego RCX programmable brick runs the Renesas (formerly
+  Hitachi) H8 microcontroller.
+  (See <a href="http://h8300-hms.sourceforge.net/" target="_top">GNU
+  Development Tools for the Hitachi H8/300 Series</a>
+  or
+  <a href="http://america.renesas.com/products/mpumcu/16bit/h8300h/index.html" target="_top">H8/300H
+  Series</a> for more information.)</p><p>This microcontroller runs 32 kbytes of RAM.  It has several peripherals
+  including analog inputs, pulse width modulators, LCD interface, serial
+  interface controller, timers and more.  This is a small processor but
+  is a workhorse.  It represents an excellent example of a typical,
+  deeply embeddible microcontroller.</p><p>Translating UML models to run on this platform can demonstrate
+  that the tools normally thought to be for the big systems developers
+  are available for the small systems world.
+  <a href="http://www.projtech.com/info/mda.html" target="_top">
+  Model-Driven Architecture (MDA)</a>
+  processes can operate efficiently in a hardware-centric
+  deployment environment.</p></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2796652"></a>General Instructions</h2></div></div><div></div></div><div class="orderedlist"><ol type="1" compact="compact"><li>Build one of the Lego robots using the step by step
+    assembly instructions provided below.</li><li>Download one of the sample UML models and import
+    into BridgePoint.</li><li>Modify the UML model to include your own design
+    ideas.</li><li>Translate the updated model using BridgePoint.</li>
+    <li>Compile the translated model (C code) using the gcc H8 cross-compiler.</li>
+    <li>Download into your Lego robot.</li><li>Run it.</li><li>Enter or host a contest!</li></ol></div></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2796712"></a><a href="http://roxsoftware.com/legos/detinstr.html" target="_top"><i class="citetitle">(Detailed Step by Step Instructions)</i></a></h2></div></div><div></div></div><p></p></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2796731"></a>Robot Assembly Instructions</h2></div></div><div></div></div><p>Below are instructions for three well-designed robots.  A sumo 
+  robot, a line-follower and a maze-solver are provided.  Contests
+  using these physical designs are common.  The instructions are
+  easy to follow and include mostly pictures.</p><p>Robots designed by Steve Hassenplug, famous builder of
+  <a href="http://perso.freelug.org/legway/LegWay.html" target="_top">LegWay</a>.
+  </p><div class="informaltable"><table width="100%" border="1"><colgroup><col /></colgroup><thead><tr><th align="left">Step-by-Step Lego Robot Assembly
+  Instructions</th></tr></thead></table><table width="100%" border="1"><colgroup><col /><col /><col /></colgroup><tbody><tr><td><a href="robots/SRis/Index.html" target="_top">
+    sumo robot
+    <div align="left"><img src="SRis_Complete_Model_small.jpg" align="left" /></div>
+    </a></td><td><a href="robots/SteerOne/Index.html" target="_top">
+    steering robot
+    <div align="left"><img src="Steer_One_small.jpg" align="left" /></div>
+    </a></td><td><a href="http://www.brickshelf.com/cgi-bin/gallery.cgi?f=44231" target="_top">
+    maze robot
+    <div align="left"><img src="SRis_amazing.jpg" align="left" /></div>
+    </a></td></tr></tbody></table></div></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2796916"></a>
+  <div class="informaltable"><table border="0"><colgroup><col /><col /></colgroup><thead></thead><tbody><tr><td>Sample UML Models</td><td><div align="left"><img src="uml.gif" align="left" /></div></td></tr></tbody></table></div>
+  </h2></div></div><div></div></div><p>Download one of the sample BridgePoint UML models below.
+  The models are shown in their graphical UML format as well as
+  provided in the form of BridgePoint backup (&quot;.bak&quot;) files.
+  Download and import into BridgePoint Model Builder (available
+  from <a href="http://www.mentor.com/products/sm/uml_suite/index.cfm" target="_top">Mentor
+  Graphics</a>).</p><p>The sample UML models supplied here are intentionally &quot;simple&quot;.
+  This makes the models easy to understand and learn from.  It also
+  leaves plenty of room for creativity and design improvement.  In a
+  contest, it will be the robot with the best model/design that
+  consistently wins.</p><div class="informaltable"><table width="100%" border="1"><colgroup><col /></colgroup><thead><tr><th align="left">BridgePoint UML Models</th></tr></thead></table><table width="100%" border="1"><colgroup><col /><col /><col /></colgroup><tbody><tr><td><a href="http://roxsoftware.com/legos/ooa_sumo.html" target="_top">
+    sumo robot
+    <div align="left"><img src="ooa_sumo_cd_thumb.png" align="left" /></div>
+    </a></td><td><a href="http://roxsoftware.com/legos/ooa_steering.html" target="_top">
+    steering robot
+    <div align="left"><img src="ooa_steering_sc2_thumb.png" align="left" /></div>
+    </a></td><td>
+    maze robot (no model available yet)
+    <div align="left"><img src="bplogo.gif" align="left" /></div></td></tr></tbody></table></div><p></p></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2797163"></a><a href="http://roxsoftware.com/legos/" target="_top">
+  UML Model Translation Server (not available at present, no contest running)</a>
+  <div align="right"><img src="iterative.png" align="right" /></div>
+  </h2></div></div><div></div></div><p>The <a href="http://roxsoftware.com/legos/" target="_top">
+  UML Model Translation Server</a> provides access
+  to the MC-3020 UML Model Compiler that translates BridgePoint UML
+  models into C code for the H8 micro (among other platforms).</p><p>Export your BridgePoint UML model as an sql file (without graphics).
+  Upload the model into the translation server.  Download the generated
+  and compiled code.  Examine the code and run the executable.</p></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2797210"></a>Contest Rules</h2></div></div><div></div></div><p>A contest is a great way to provide incentive for good
+  robot building and programming.  If robot mechanics are fixed
+  (everyone using same robot design) then the challenge becomes
+  a dual of superior modeling/programming.</p><p>These <a href="http://www.24tooth.com/Rules.html" target="_top">rules
+  pages</a> are rules for several contests.  The table below has
+  rules for contests using the robots with building instructions
+  above.
+
+  </p><div class="informaltable"><table width="100%" border="1"><colgroup><col /></colgroup><thead><tr><th align="left">Rules</th></tr></thead></table><table width="100%" border="1"><colgroup><col /><col /><col /></colgroup><tbody><tr><td><a href="http://www.24tooth.com/SumobotRules.html" target="_top">
+    sumo contest
+    <div align="left"><img src="SumoCMRing.jpg" align="left" /></div>
+    </a></td><td><a href="http://www.24tooth.com/LineFollowingRules.html" target="_top">
+    line following contest
+    <div align="left"><img src="LF2002Course.png" align="left" /></div>
+    </a></td><td><a href="http://www.24tooth.com/MazeSolvingRules.html" target="_top">
+    maze solving
+    <div align="left"><img src="maze_thumb.png" align="left" /></div>
+    </a></td></tr></tbody></table></div><p>
+  </p><p></p></div><div class="sect1" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2797384"></a>Other Stuff You Will Need</h2></div></div><div></div></div><div class="itemizedlist"><ul type="disc"><li><a href="brickOS.srec" target="_top"><tt class="filename">brickOS.srec</tt>
+    </a> - This is the firmware image of the small embedded
+    operating system for the Lego RCX programmable brick.  It provides
+    system call interfaces to the H8 peripherals (timers, etc).
+    See <a href="http://brickos.sourceforge.net/" target="_top">
+    brickos.sourceforge.net</a> for more information on the
+    brickOS executive.</li><li><a href="firmdl3.exe" target="_top"><b class="command">firmdl3.exe</b>
+    </a> - This is used to download the
+    <tt class="filename">brickOS.srec</tt> into the Lego RCX programmable
+    brick.</li><li><a href="dll.exe" target="_top"><b class="command">dll.exe</b>
+    </a> - This utility downloads
+    your compiled application into the Lego RCX.</li><li><a href="sumo.lx" target="_top"><tt class="filename">sumo.lx</tt>
+    </a> - This is the H8 downloadable sumo code in case you 
+    are having trouble translating your models and want to see a
+    simple executable run.  (If you depress the touch sensors,
+    the values on the LCD will change.
+    These tell you the values on the touch sensors and light sensor.
+    The light sensor hex value is in the middle.)</li><li><a href="steering.lx" target="_top"><tt class="filename">steering.lx</tt>
+    </a> - Here is the RCX downloadable image for the steering robot.
+    </li><li><a href="http://www.robotroom.com/SumoCircleMini.html" target="_top">
+    Instructions</a> for building a sumo ring.</li><li><a href="http://www.24tooth.com/MazeSolvingRules.html" target="_top">
+    Pictures</a> of a maze challenge.</li></ul></div></div></div></body></html>

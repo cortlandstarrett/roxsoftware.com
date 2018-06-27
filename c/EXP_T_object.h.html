@@ -1,0 +1,105 @@
+
+<HTML>
+<HEAD>
+<TITLE>EXP_T_object.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  EXP_T_object.h
+ *
+ * Object:     technique  (T)
+ * Subsystem:  experiment
+ * Domain:     EXP
+ * Repository: exp.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef EXP_T_OBJECT_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define EXP_T_OBJECT_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_user_co.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: EXP_T_s
+ * Structural representation of application analysis object:
+ *   'technique'  (T)
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct EXP_T_s</FONT>
+{
+  <FONT COLOR="#B22222">/* Application analysis OIM attributes */</FONT>
+  Escher_UniqueID_t m_T_ID;  <FONT COLOR="#B22222">/* * T_ID */</FONT>
+  unsigned int m_start : 2;  <FONT COLOR="#B22222">/* - start */</FONT>
+  unsigned int m_end : 6;  <FONT COLOR="#B22222">/* - end */</FONT>
+  unsigned int m_number_of_batches : 4;  <FONT COLOR="#B22222">/* - number_of_batches */</FONT>
+  unsigned int m_current_batch : 4;  <FONT COLOR="#B22222">/* - current_batch */</FONT>
+
+
+  <FONT COLOR="#B22222">/* State machine current state */</FONT>
+  Escher_StateNumber_t mc_current_state;
+};
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Factory/Manipulation Methods
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void EXP_T_FactoryInit( void )</FONT></STRONG>;
+extern EXP_T_s * EXP_T_Create( void );
+<FONT COLOR="#B22222">/* Note: No instance deletion accessor needed */</FONT>
+
+<STRONG><FONT COLOR="#228B22">#define EXP_T_MAX_EXTENT_SIZE 10</FONT></STRONG>
+extern Escher_ObjectSet_s * pG_EXP_T_extent;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Relationship Methods
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model states for object
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define EXP_T_STATE_1 1  </FONT><FONT COLOR="#B22222">/* State [1]: 'idle' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define EXP_T_STATE_2 2  </FONT><FONT COLOR="#B22222">/* State [2]: 'running' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Enumeration of state model event numbers
+ *****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#228B22">#define EXP_T_EVENT_T1 0  </FONT><FONT COLOR="#B22222">/* 'go' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define EXP_T_EVENT_T2 1  </FONT><FONT COLOR="#B22222">/* 'batch_done' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+<STRONG><FONT COLOR="#228B22">#define EXP_T_EVENT_T3 2  </FONT><FONT COLOR="#B22222">/* 'stop' */</FONT><FONT COLOR="#228B22"></FONT></STRONG>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State Action Methods
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void EXP_T_Action_1( EXP_T_s *, const OoaEvent_t * const )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern void EXP_T_Action_2( EXP_T_s *, const OoaEvent_t * const )</FONT></STRONG>;
+
+<STRONG><FONT COLOR="#4169E1">extern void EXP_T_Dispatch( const OoaEvent_t * const )</FONT></STRONG>;
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* EXP_T_OBJECT_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+</PRE>
+</BODY>
+
+</HTML>

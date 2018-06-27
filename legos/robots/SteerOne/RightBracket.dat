@@ -1,0 +1,13 @@
+0 Right Bracket
+0 Name: RightBracket.dat
+0 Author: MLCad
+0 Unofficial Model
+0 ROTATION CENTER 0 0 0 1 "Custom" 
+0 ROTATION CONFIG 0 0
+1 14 -20 60 0 1 0 0 0 0 1 0 -1 0 32009.DAT
+1 0 40 60 -10 0 -1 0 0 0 1 -1 0 0 4459.DAT
+1 0 -20 -20 -10 0 -1 0 0 0 1 -1 0 0 4459.DAT
+1 0 -20 -60 -10 0 -1 0 0 0 1 -1 0 0 4459.DAT
+1 7 58 60 -10 0 1 0 0 0 1 1 0 0 3749.DAT
+1 7 -20 -100 -10 0 1 0 0 0 1 1 0 0 3749.DAT
+0

@@ -1,0 +1,140 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_ROW_events.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       A_ROW_events.h
+ *
+ * Description:
+ * Event classes for the following object:
+ *
+ * Object:     row  (ROW)
+ * Subsystem:  autosampler
+ * Domain:     A
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef A_ROW_EVENTS_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define A_ROW_EVENTS_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/* Forward reference */</FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_Event1_s
+ * Instance Directed Event: ROW1:'probe_request'
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_Event1_s</FONT>
+{
+  OoaEvent_t mc_event_base;
+  <FONT COLOR="#B22222">/* Note: No supplemental data for this event */</FONT>
+};
+<FONT COLOR="#4169E1">typedef struct A_ROW_Event1_s A_ROW_Event1_s;</FONT>
+extern const OoaEventConstant_t A_ROW_Event1_sc;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_Event2_s
+ * Instance Directed Event: ROW2:'probe_assigned'
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_Event2_s</FONT>
+{
+  OoaEvent_t mc_event_base;
+  <FONT COLOR="#B22222">/* Note: No supplemental data for this event */</FONT>
+};
+<FONT COLOR="#4169E1">typedef struct A_ROW_Event2_s A_ROW_Event2_s;</FONT>
+extern const OoaEventConstant_t A_ROW_Event2_sc;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_Event3_s
+ * Instance Directed Event: ROW3:'carousel_move_complete'
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_Event3_s</FONT>
+{
+  OoaEvent_t mc_event_base;
+  <FONT COLOR="#B22222">/* Note: No supplemental data for this event */</FONT>
+};
+<FONT COLOR="#4169E1">typedef struct A_ROW_Event3_s A_ROW_Event3_s;</FONT>
+extern const OoaEventConstant_t A_ROW_Event3_sc;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_Event4_s
+ * Instance Directed Event: ROW4:'sample_complete'
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_Event4_s</FONT>
+{
+  OoaEvent_t mc_event_base;
+  <FONT COLOR="#B22222">/* Note: No supplemental data for this event */</FONT>
+};
+<FONT COLOR="#4169E1">typedef struct A_ROW_Event4_s A_ROW_Event4_s;</FONT>
+extern const OoaEventConstant_t A_ROW_Event4_sc;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_Event5_s
+ * Instance Directed Event: ROW5:'next_sample'
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_Event5_s</FONT>
+{
+  OoaEvent_t mc_event_base;
+  <FONT COLOR="#B22222">/* Note: No supplemental data for this event */</FONT>
+};
+<FONT COLOR="#4169E1">typedef struct A_ROW_Event5_s A_ROW_Event5_s;</FONT>
+extern const OoaEventConstant_t A_ROW_Event5_sc;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Structure: A_ROW_Event6_s
+ * Instance Directed Event: ROW6:'sampling_complete'
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">struct A_ROW_Event6_s</FONT>
+{
+  OoaEvent_t mc_event_base;
+  <FONT COLOR="#B22222">/* Note: No supplemental data for this event */</FONT>
+};
+<FONT COLOR="#4169E1">typedef struct A_ROW_Event6_s A_ROW_Event6_s;</FONT>
+extern const OoaEventConstant_t A_ROW_Event6_sc;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * A_ROW_Events_u
+ * Union of events consumable by object's state machine.
+ ****************************************************************************/</FONT>
+<FONT COLOR="#4169E1">union</FONT> A_ROW_Events_u
+{
+  A_ROW_Event1_s row1;
+  A_ROW_Event2_s row2;
+  A_ROW_Event3_s row3;
+  A_ROW_Event4_s row4;
+  A_ROW_Event5_s row5;
+  A_ROW_Event6_s row6;
+};
+<FONT COLOR="#4169E1">typedef union A_ROW_Events_u A_ROW_Events_u;</FONT>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* A_ROW_EVENTS_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+</PRE>
+</BODY>
+
+</HTML>

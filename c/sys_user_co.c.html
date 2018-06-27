@@ -1,0 +1,174 @@
+
+<HTML>
+<HEAD>
+<TITLE>sys_user_co.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File: sys_user_co.c
+ *
+ * Description:
+ * Function definitions for user supplied (non-translated) call out entry
+ * points in the generated application.
+ *
+ *
+ * Notice:
+ * (C) Copyright 1999, 2000 ROX Software, Inc.
+ *     All rights reserved.
+ * Enhancements provided by TOYO Corporation.
+ *
+ * This document contains confidential and proprietary information and
+ * property of ROX Software, Inc.  No part of this document may be
+ * reproduced without the express written permission of ROX Software, Inc.
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0"> #include </FONT><FONT COLOR="#666666">"sys_user_co.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+ <FONT COLOR="#B22222">/*****************************************************************************
+ * UserInitializationCallout
+ *
+ * This function is invoked at the immediate begining of application
+ * initialization. It is the very first function to be executed at system
+ * startup.
+ * User supplied implementation of this function should be restricted to
+ * things like memory initialization, early hardware duties, etc.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserInitializationCallout"></A>void UserInitializationCallout()</FONT></STRONG>
+{
+  TIM_init();
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserPreOoaInitializationCallout
+ *
+ * This function is invoked immediately prior to executing any OOA application
+ * analysis initialization objects.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserPreOoaInitializationCallout"></A>void UserPreOoaInitializationCallout()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserPostOoaInitializationCallout
+ *
+ * This function is invoked immediately after executing any OOA application
+ * analysis initialization objects.
+ * When this callout function returns, the system dispatcher will allow the
+ * OOA application analysis state models to start consuming events.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserPostOoaInitializationCallout"></A>void UserPostOoaInitializationCallout()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserBackgroundProcessingCallout
+ *
+ * This function is invoked once during each loop execution of the system
+ * dispather.
+ * It is invoked at the 'top' of the system dispatcher loop, immediately
+ * prior to dispatching any OOA application analysis events.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserBackgroundProcessingCallout"></A>void UserBackgroundProcessingCallout()</FONT></STRONG>
+{
+  TIM_tick();
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserPreShutdownCallout
+ *
+ * This function is invoked at termination of the system dispatcher, but
+ * prior to performing any OOA application analysis shutdown sequencing.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserPreShutdownCallout"></A>void UserPreShutdownCallout()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserPostShutdownCallout
+ *
+ * This function is invoked immediately before application exit.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserPostShutdownCallout"></A>void UserPostShutdownCallout()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserEventCantHappenCallout
+ *
+ * This function is invoked any time that an event is received that
+ * results in a "cant happen" transition.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserEventCantHappenCallout"></A>void UserEventCantHappenCallout( const Escher_StateNumber_t current_state,
+                                 const Escher_StateNumber_t next_state,
+                                 const Escher_EventNumber_t event_number )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserEventFreeListEmptyCallout
+ *
+ * This function is invoked when an attempt is made to allocate an
+ * event, but there are no more left.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserEventFreeListEmptyCallout"></A>void UserEventFreeListEmptyCallout()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserEmptyHandleDetectedCallout
+ *
+ * This function is invoked when an attempt is made to use an instance
+ * reference variable (handle) that is null (empty).
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserEmptyHandleDetectedCallout"></A>void UserEmptyHandleDetectedCallout( const char * object_keyletters,
+                                     const char * s )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserObjectPoolEmptyCallout
+ *
+ * This function is invoked when an attempt is made to create an
+ * instance of an object, but there are no instances available.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserObjectPoolEmptyCallout"></A>void UserObjectPoolEmptyCallout( const char * domain,
+                                 const char * object_name )</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UserNodeListEmptyCallout
+ *
+ * This function is invoked when an attempt is made to allocate a
+ * node, but there are no more left.
+ *
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="UserNodeListEmptyCallout"></A>void UserNodeListEmptyCallout()</FONT></STRONG>
+{
+  <FONT COLOR="#B22222">/* Insert implementation specific code here.  */</FONT>
+}
+</PRE>
+</BODY>
+
+</HTML>

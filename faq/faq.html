@@ -1,0 +1,270 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>MC-3020 Model Compiler FAQ</title><meta name="generator" content="DocBook XSL Stylesheets V1.50.0"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book"><div class="titlepage"><div><h1 class="title"><a name="id2753309"></a><span class="productname">MC-3020 Model Compiler<br></span> FAQ</h1></div><div><p class="copyright">Copyright © 2002 ROX Software, Inc.</p></div><div><p class="pubdate">28 September 2002</p></div><div><div class="abstract"><p class="title"><b>Abstract</b></p><p>This list of frequently asked questions with answers
+    represents an extension of the Users Guide and a more
+    stream-of-consciousness level of documentation.  Please
+    submit questions with or without answers to 
+    <a href="mailto:support@projtech.com" target="_top">support@projtech.com</a>.
+    </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt>1. <a href="#id2761162">Frequently Asked Questions with Answers</a></dt><dd><dl><dt><a href="#id2761174">Why do MC-3020 enumerations map to #defines?</a></dt><dt><a href="#id2805242">What are bridge and transformer skeletons?</a></dt><dt><a href="#id2805275">Can MC-3020 translate action language in bridge
+  and transformer descriptions?</a></dt><dt><a href="#id2761081">I really want to model reusable transformation processes.
+  How do I do it best?</a></dt><dt><a href="#id2761100">What are Model Builder audits?</a></dt><dt><a href="#id2761111">Can an initialization object be passive?</a></dt><dt><a href="#id2805133">How do I initialize multiple domains?</a></dt><dt><a href="#id2761402">Can we talk philosophically about initialization?</a></dt><dt><a href="#id2761449">How do I make the autosampler more interesting?</a></dt><dt><a href="#id2805164">What code goes into system/user/source?</a></dt><dt><a href="#id2805194">How do I modify the build environment?</a></dt><dt><a href="#id2761259">R207?  Unformalized relationships?</a></dt><dt><a href="#id2761277">How do I return a value from a bridge object (FBO)?</a></dt><dt><a href="#id2761303">How is an event marked as high priority?</a></dt><dt><a href="#id2761336">ACTION_SPECIFICATION: TRUE in transformer/bridge
+  descriptions?</a></dt><dt><a href="#id2760959">MC-3020 Extent Prediction and Coloring</a></dt><dt><a href="#id2762081">Does MC-3020 optimize instance selection?</a></dt><dt><a href="#id2762116">How does MC-3020 manufacture unique IDs?</a></dt><dt><a href="#id2761490">When compiling with LegOS, strncat
+  and strncpy cause the link to fail.  Why?</a></dt></dl></dd></dl></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="id2761162"></a>Chapter 1. Frequently Asked Questions with Answers</h2></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><a href="#id2761174">Why do MC-3020 enumerations map to #defines?</a></dt><dt><a href="#id2805242">What are bridge and transformer skeletons?</a></dt><dt><a href="#id2805275">Can MC-3020 translate action language in bridge
+  and transformer descriptions?</a></dt><dt><a href="#id2761081">I really want to model reusable transformation processes.
+  How do I do it best?</a></dt><dt><a href="#id2761100">What are Model Builder audits?</a></dt><dt><a href="#id2761111">Can an initialization object be passive?</a></dt><dt><a href="#id2805133">How do I initialize multiple domains?</a></dt><dt><a href="#id2761402">Can we talk philosophically about initialization?</a></dt><dt><a href="#id2761449">How do I make the autosampler more interesting?</a></dt><dt><a href="#id2805164">What code goes into system/user/source?</a></dt><dt><a href="#id2805194">How do I modify the build environment?</a></dt><dt><a href="#id2761259">R207?  Unformalized relationships?</a></dt><dt><a href="#id2761277">How do I return a value from a bridge object (FBO)?</a></dt><dt><a href="#id2761303">How is an event marked as high priority?</a></dt><dt><a href="#id2761336">ACTION_SPECIFICATION: TRUE in transformer/bridge
+  descriptions?</a></dt><dt><a href="#id2760959">MC-3020 Extent Prediction and Coloring</a></dt><dt><a href="#id2762081">Does MC-3020 optimize instance selection?</a></dt><dt><a href="#id2762116">How does MC-3020 manufacture unique IDs?</a></dt><dt><a href="#id2761490">When compiling with LegOS, strncat
+  and strncpy cause the link to fail.  Why?</a></dt></dl></div><p>We are asking and answering and always making it better.</p><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761174"></a>Why do MC-3020 enumerations map to #defines?</h2></div></div><p>Enumeration support in ANSI C is very weak.  Name spacing
+  is absent.</p><p>Consider
+  <pre class="programlisting">
+  enum rock
+  {
+    red = 1
+  };
+  enum stone
+  {
+    red = 2
+  };
+  ...
+  material_color = red;
+  </pre>
+  Since enum is not scoped by a C++(ish) class, and
+  C has no namespacing, there is no way for a C compiler to
+  distinguish which ``red'' to assign to material_color.
+  Note that these declarations may live in separate include
+  files.  Thus, MC-3020 uses ``long winded'' namespacing
+  of <b>#define</b> to avoid the C language
+  weakness.</p><p>Another weakness lies in the lack of control over
+  the storage allocated to variables declared to be of
+  enumerated type.  In resource constrained environments (say
+  an 8-bit micro), we would like our enums to take up
+  something less than an integer of storage.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2805242"></a>What are bridge and transformer skeletons?</h2></div></div><p>(From the MC-3020 UG:)  Based upon information modeled in
+  BridgePoint Model Builder, MC-3020 automatically generates source
+  code frameworks for bridge and transform implementation. These
+  skeleton files will actually compile as generated. The user is
+  saved from delving into generated code to divine interfaces
+  required for these boundary functions.  Kind and helpful comments
+  are provided to guide insertion of bridge and transform
+  implementation code.</p><p>Generated xform and bridge header files are under
+  the context and control of the translation engine.  Skeleton
+  implementation files (<tt>skel/XXX_xform.c</tt>)
+  are provided as a convenience for the user.  These provide
+  correct method signatures, requisite include files, etc.
+  The user ``inserts implementation code here''.</p><p>Note that BridgePoint Generator has some translation idiosynchracies
+  when multiple arguments are passed on a bridge or
+  transformer interface.  The order of arguments in the
+  generated code is non-deterministic.  Bridge and transformer
+  interface frameworks provide a level of indirection between
+  the code generator and the server code.</p><p>Bridge and transformer skeletons are best used as hooks, call
+  outs, to the realized domain.  Thus providing the indirection
+  between generated code and hand written or purchased code.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2805275"></a>Can MC-3020 translate action language in bridge
+  and transformer descriptions?</h2></div></div><p>Yes.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761081"></a>I really want to model reusable transformation processes.
+  How do I do it best?</h2></div></div><p>Synchronous Services are supported as of BridgePoint Model Builder version 5.0.
+  MC-3020 supports these synchronous services and recommends that
+  inter-domain bridging use this mechanism.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761100"></a>What are Model Builder audits?</h2></div></div><p>BridgePoint Model Builder provides a model auditor.  It is available
+  from the file menu on the Subsystem Component Diagram.
+  This audit function will parse the model identifying
+  syntax errors, unparsed actions, relationships that have
+  not been formalized and several other problems and dangerous
+  modeling practices.  It is not capable of catching every
+  minute anomaly, but it does provide a good check.
+  Often, a problem manifested during translation could have
+  been detected (more cheaply) by a model audit.</p><p>Be sure to run a model audit before submitting a
+  problem report against the model compiler.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761111"></a>Can an initialization object be passive?</h2></div></div><p>No.  Initialization by definition is processing.
+  Therefore, initialization objects need to be active (capable
+  of processing).</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2805133"></a>How do I initialize multiple domains?</h2></div></div><p>MC-3020 generates initialization code for the target
+  system from action language defined in each initialization
+  object.  The system bring up code invokes these initialization
+  state actions.  The sequencing of initialization objects is
+  not predictable.  Ordering of state actions within each
+  initialization object is also unpredictable.
+  This unpredictability is rooted in the data base access
+  methods of the BridgePoint tool.  No explicit ordering can be
+  assumed in the general case of <b>select many ...</b>
+  </p><p>We recommend an approach hereby dubbed ``Omnipotent
+  Domain Initialization'' (ODInit).  ODInit crowns one domain
+  as sovereign over the others in regard to initialization.
+  The Omnipotent Domain is all powerful when sequencing 
+  initialization activities.  In terms of initialization
+  sequencing requirements among all domains, the Omnipotent
+  Domain must be all knowing.  The (truly omniscient)
+  system architect (not software architect) must make this
+  so.</p><p>ODInit is accomplished with a single initialization
+  object for the entire system.  The action in this object's
+  state machine will initialize its own domain and make
+  bridge invocations into the subordinate domains.  The
+  subordinate domains will each provide one to many bridge
+  interfaces (synchronous services) to serve the Omnipotent Domain.</p><p>The ODInit approach
+  keeps the specification of initialization sequencing and
+  processing in the OOA where it belongs.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761402"></a>Can we talk philosophically about initialization?</h2></div></div><p>Sequencing of initialization of the domains is an analysis
+  issue.  Since it falls outside of any single domain, it transcends
+  the jurisdiction of the domain analysts.  The architecture can
+  distinguish only ``system'' (architecture) from ``application'' and
+  therefore sees very little if any boundary between domains.  The
+  system will initialize itself before the application.  The
+  application needs to sequence itself.  All sequencing info should
+  be captured (and modeled) by the system architect(s) (not the
+  software architects).</p><p>Consider that much of the sequencing of initialization can
+  occur after ``initialization''.  Get the domains up and breathing
+  with pre-existing instances, then start launching events and
+  bridging with your buddies to get everybody coherent.  Perhaps the
+  amount of ``populating and relating instances'' is small compared
+  to the ``coordinating and sync'ing with other domains''.  We
+  recommend going thin in your initialization object and fat on
+  application models for as much as you can.</p><p>The developer might try to imagine initialization using a
+  pre-populated data base of the OOA or by flash memory
+  instantiation.  Our init object approach should not greatly deviate
+  from this concept.  Avoid the trap of performing application
+  processing in init objects.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761449"></a>How do I make the autosampler more interesting?</h2></div></div><p>The autosampler example model is intentionally
+  small and simple.  (Even so, it nicely models a real
+  world device.)  Generating code for the autosampler is
+  an ideal first step in exploring MC-3020.  The Quick Start
+  given in the users guide holds the hand of the novice
+  during an initial drive of the model compiler.</p><p>The autosampler model is set up to get just a bit
+  farther.  With a little bridge wiring, the generated code
+  can perform more functions.</p><p>See example model with two OOA domains plus two realized
+  domains on the download page on the ROX web site.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2805164"></a>What code goes into <tt>system/user/source</tt>?</h2></div></div><p>Actually, nothing goes into
+  <tt>system/user/source</tt> unless placed there by the
+  user.  MC-3020 will generate a makefile for this code and link
+  everything it finds there.  Beyond that, it is off limits to the
+  model compiler.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2805194"></a>How do I modify the build environment?</h2></div></div><p>The build environment is designed to be easily modified.  The
+  design approach exhibits an intention to avoid anticipating and
+  mandating any rigid strategy in compilation/link/locate land.
+  MC-3020 opted for flexible and modifiable.  Makefiles are
+  generated from archetypes.  A link script is generated.  Both can
+  be tailored.  The link script is very easy to augment.  It already
+  supports various linking/locating tool environments.</p><p>Consider establishing a strategy of building realized domains
+  somewhat independently.  You could use other languages and tools if
+  you desired.  You could even go so far as to build a library module
+  of your realized code.  Use the bridge skeletons as indirection
+  hooks as described above.  Change the <b>link_sys</b>
+  script generator to link in realized ``libraries''.</p><p>To go further, modify the makefile generation to suit
+  requirements.  A modification to support subdirectories under
+  <tt>system/user/source</tt> would be minor.  However,
+  it would be better to go get the user code from a directory outside
+  the system node.  Again, this would require only a change to the
+  <b>link_sys</b> generator.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761259"></a>R207?  Unformalized relationships?</h2></div></div><p>If an error message refers to R207 (relationship 207
+  in the MC-3020 meta model), it means that the model being
+  translated has an unformalized relationship.  This sort of
+  error can be captured with an OOA audit in BridgePoint Model Builder.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761277"></a>How do I return a value from a bridge object (FBO)?</h2></div></div><p>Note that use of bridge objects is discouraged as of
+  version 5.0 of BridgePoint Model Builder.  Synchronous services are available
+  to provide cleaner bridging.</p><p>Provide an attribute of the bridge object with the
+  same name as the state name representing the synchronously
+  callable routine.  This attribute is the return value for
+  this bridge service.  In your action language, set this
+  attribute; it will be returned to the invoking domain (realized
+  or OOA).</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761303"></a>How is an event marked as high priority?</h2></div></div><p>Color each event to be given more than default (0)
+  priority by editing the <tt>event.clr</tt> coloring
+  file for the domain receiving the event.  Provide:
+  <pre class="programlisting">
+  TagPriorityEvent( &quot;label&quot;, value )
+  </pre>
+  where ``label'' is the event name.  Value is between 0 and
+  255 inclusive and represents the priority of the event.
+  Higher values are higher priority.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761336"></a><b>ACTION_SPECIFICATION: TRUE</b> in transformer/bridge
+  descriptions?</h2></div></div><p>MC-3020 version 1.3 and after translates action
+  language in bridge and transformer descriptions.  Putting
+  <b>ACTION_SPECIFICATION: TRUE</b> in a comment at the
+  beginning of the bridge or transformer description will enable this
+  code generation.</p><p>Bridges and transformers are treated alike in much of of
+  MC-3020.  For example, skeleton implementation files are generated
+  for each.  (See Bridge/Transform Skeleton Generation in the Users Guide.)
+  Both serve as hooks into the the outside world from within the
+  OOA domain.  However, description translation has some differences.</p><p>When translating the description of a transformer (tagged
+  with ACTION_SPECIFICATION: TRUE), MC-3020 will generate a file
+  into the appropriate <tt>gen/source</tt> directory
+  (instead of the <tt>skeleton</tt> directory).
+  When translating the description of a bridge (tagged appropriately),
+  MC-3020 generates translated action language into the same skeleton
+  files (source code frameworks) that are generated when not tagged.</p><p>The reason these are treated differently is because of a
+  perceived difference in usefulness.  To ROX, translated transformers
+  seem to carry natural value in the production environment.  However,
+  translated bridges seem to have value only during ``simulation'' 
+  style testing (stubbing out domains).</p><p>Note that if <b>ACTION_SPECIFICATION: FALSE</b>
+  is encountered in a bridge or transformer description that the
+  action language will not be translated.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2760959"></a>MC-3020 Extent Prediction and Coloring</h2></div></div><p>First pass translation collects statistics used to
+    conservatively estimate the number of container nodes (containoids)
+    required by the system.</p><p>There are three different uses for instance containoids:
+    class extents, association extents and selection extents.
+    Selection extents govern the total size of transient instance
+    reference set variables in the actions.  This represents values
+    in the variable type inst_ref_set.
+    The required number of containoids for each flavor is summed
+    to provide the upper limit to total containers.
+    <pre class="programlisting">#define SYS_MAX_CONTAINERS \
+    ( SYS_MAX_OBJECT_EXTENT + SYS_MAX_RELATIONSHIP_EXTENT + SYS_MAX_TRANSIENT_EXTENT )</pre></p><p>SYS_MAX_OBJECT_EXTENT is a sum of all of the extent counts across
+    all the domains of the system, which are sums of the class extents
+    in each domain.  Each class extent is allocated to be the system
+    default for class extents, a colored value of the system default
+    or the colored value for the specific class.</p><p>Selection extents are calculated by multiplying the largest
+    number of selects that can occur in any action by the largest extent
+    of any class.  Thus allowing for the worst case action to select
+    the largest class extent each time.  This value is set in
+    SYS_MAX_TRANSIENT_EXTENT.
+    <pre class="programlisting">transient containers = ( max selects ) * ( largest class extent )</pre></p><p>Relationship extents are allowed to be as big as they would
+    need to be if all instances on the MANY side were always
+    participating.  This value is set in SYS_MAX_RELATIONSHIP_EXTENT.
+    <pre class="programlisting">association containoids = ( number of MANYs ) * ( largest class extent )</pre></p><p>The following colors govern these extent sizes:
+
+    </p><div class="itemizedlist"><ul type="disc"><li><pre class="programlisting">TagObjectExtentSize( &quot;key_letters&quot;, value )</pre></li><li><pre class="programlisting">TagSystemObjectDefaultExtentSize( value )</pre></li><li><pre class="programlisting">TagMaximumRelationshipExtentSize( value )</pre></li><li><pre class="programlisting">TagMaximumSelectionExtentSize( value )</pre></li></ul></div><p>
+    
+    See the proper sections in the MC-3020 Users Guide for details
+    on these coloring parameters.</p><p>Relationship extents refer to the sets of instances
+    participating
+    in a relationship with multiplicity MANY.  Sets built from
+    linked lists are used to optimize traversal of relationships with
+    multiplicity MANY.  For example, in the following model,
+    A 1---R1---* B,
+    object B does not need an extent set; it simply needs a single
+    pointer reference to the A instance.  The A instance however does
+    need a set of instance references.  Such a set uses &quot;containoids&quot;
+    to collect the B instances related to the A instance.
+    MC-3020 calculates the worst case (biggest possible) relationship
+    extent.</p><p>The extent can be colored to be smaller than the worst case
+    maximum using TagMaximumRelationshipExtentSize.
+    <b>TagObjectExtentSize</b> will also have an effect on
+    the calculated total.</p><p>If no extent size coloring is supplied, MC-3020 will
+    calculate a worst case for a model of a higher number of
+    containers.  MC-3020 will see R1 and allow for all possible
+    instances of B to participate with instances of A.  (This is the
+    most important point!)</p><p>Another way to understand how MC-3020 calculates this maximum
+    is as follows:
+    </p><div class="orderedlist"><ol type="1"><li><p>Count the number of MANYs (---*) on a class
+      diagram.</p></li><li><p> For each MANY (---*), add the maximum object
+      extent on the MANY side (B above).</p></li><li><p>There are adjustments to be considered in the
+      case of associative objects.</p></li></ol></div><p>
+    This sum across all domains in the system will be the
+    SYS_MAX_RELATIONSHIP_EXTENT.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2762081"></a>Does MC-3020 optimize instance selection?</h2></div></div><p>ROX has researched the selection process and provided substantial
+  optimization in MC-3020.  During the first pass of translation,
+  selection statements are identified of the form 'select any [inst_ref]
+  from instances of [key_letters] where [where clause]' when the where
+  clause is checking for equality of the identifier.  Such selection
+  statements represent a common pattern seen in many applications.
+  (You may see reference in the archetypes to &quot;special where&quot; clauses.)</p><p>MC-3020 optimizes these selections for code space by consolidating
+  the searching into subroutines.  This consolidation eliminates
+  redundancy in the generated code.  In addition, these selection
+  functions allow some embedded processors to use internal registers
+  more efficiently, thus improving speed.  (Such speed-ups have been
+  experienced with 8051 and 80C167 family processors using Tasking
+  brand C compilers.)</p><p>For future feature enhancement and for flexibility of customization,
+  hooks into these scanning routines are provided at the archetype
+  and generated code level.  These hooks ease the task of providing
+  application specific collection search code.  Binary searching and
+  hashing have been considered for certain applications.  However,
+  off-the-shelf MC-3020 does not supply this application specific
+  search support.</p><p>Research performed on MC-3020 shows that collections need to be
+  substantial (hundreds or thousands) before customizations to the
+  selection algorithms provide real application reward.  The simple
+  algorithms provided are tight and fast even though very simple.</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2762116"></a>How does MC-3020 manufacture unique IDs?</h2></div></div><p>When an object is synchronously created (with a
+  <b>create object instance</b> command, any identifying
+  attribute of type unique_ID will simply get the address of the
+  instance.  This certainly relies on the single data address space
+  nature of this architecture.</p><p>The algorithm for determining the form of a unique_ID
+  is internal to the model compiler.  Any analysis assumptions
+  made about such are made at analyst peril!</p></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id2761490"></a>When compiling with LegOS, <b>strncat</b>
+  and <b>strncpy</b> cause the link to fail.  Why?</h2></div></div><p>LegOS (necessarily) provides a stripped down version
+  of the C string libraries.  <b>strncat</b> and
+  <b>strncpy</b> are not defined by LegOS.  However,
+  <b>strcat</b> and <b>strcpy</b> are.
+  Change the archetype <tt>sys_mechs.arc</tt> to
+  use these simpler (although more dangerous) versions of string
+  functions.</p><p>Note that in version 3.0 of MC-3020, the string library
+  function calls have been eliminated.  Native C is used
+  throughout.</p></div></div></div></body></html>

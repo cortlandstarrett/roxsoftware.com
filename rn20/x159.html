@@ -1,0 +1,446 @@
+<HTML
+><HEAD
+><TITLE
+>Change Highlights</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="MC-3020 2.0 Release Notes"
+HREF="t1.html"><LINK
+REL="PREVIOUS"
+TITLE="Installation"
+HREF="x119.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>MC-3020 2.0 Release Notes</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x119.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN159"
+>Change Highlights</A
+></H1
+><P
+>MC-3020 2.0 has added support for the features 
+  of BridgePoint 5.0 and has fixed problems discovered in 1.x versions of
+  MC-3020.</P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN162"
+>Enhancements</A
+></H2
+><P
+>Feature additions for this release focus on supporting the
+    extensive new feature set of BridgePoint 5.0 including polymorphic
+    events, domain functions (synchronous services), operations,
+    mathematically dependent attributes and more.  Please see the latest
+    version, 1.4, of the BridgePoint 5.0 Feature List for complete
+    details on the enhancements put into this release.
+    The feature list is available on the Project Technology, Inc. web site at
+    <A
+HREF="http://www.projtech.com/pdfs/bp/bp50feat.pdf"
+TARGET="_top"
+>    <I
+CLASS="CITETITLE"
+>BridgePoint 5.0 Feature List</I
+></A
+></P
+><P
+>Bridging into OOA domains can now occur without "Funky
+    Bridge Objects" (although FBOs remain supported).
+    Domain functions ("synchronous services") can
+    serve as bridges into the domain.  Interface declarations are
+    generated automatically and can be included by user code or code
+    from other domains.  This results in a much cleaner bridge.</P
+><P
+>The new user callout function
+    <B
+CLASS="COMMAND"
+>UserEventNoInstanceCallout( current_state, next_state, event )</B
+>
+    has been added to provide a home for detection of events landing
+    on instances that no longer exist.  This situation can indicate
+    a modeling error.  The new callout enables attention to be drawn
+    to this usually erroneous situation.
+    <B
+CLASS="COMMAND"
+>UserEventNoInstanceCallout</B
+> has the same signature
+    and is designed to behave exactly the same as
+    <B
+CLASS="COMMAND"
+>UserEventCantHappenCallout</B
+>.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN172"
+>Fixes</A
+></H2
+><P
+></P
+><DL
+><DT
+>Field Issue 188:  String Arithmetic</DT
+><DD
+><P
+>MC-3020 is targeted to the deeply embedded
+      control marketplace.  Full support for all flavors of string
+      arithmetic has the potential for drawing in additional string
+      library code making the linked image larger.  Focus has been
+      placed more on enumerated types, user-specified precision and
+      bit fields over string manipulation.  However, incorrect string
+      manipulation code needs to be corrected.</P
+><P
+>A fix has been supplied to the field and is part of the
+      2.0 release.  Simply, binary string arithmetic
+      should now be correctly supported.  result = s1 + s2 + s3 is
+      not supported.  However, the <B
+CLASS="COMMAND"
+>Escher_stradd</B
+>
+      change provides for commutativity of addition.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>  /* ASSIGN s1 = 'ROX' */
+  Escher_strcpy( v1, "ROX" );
+  /* ASSIGN s2 = 'Software' */
+  Escher_strcpy( v2, "Software" );
+  /* ASSIGN s3 = s1 + s2 */
+  Escher_strcpy( v3, Escher_stradd(v1, v2) );
+  /* ASSIGN s4 = 'ROX' */
+  Escher_strcpy( v4, "ROX" );
+  /* ASSIGN s5 = s1 + 'Software' */
+  Escher_strcpy( v5, Escher_stradd(v1, "Software") );
+  /* ASSIGN s6 = 'ROX' */
+  Escher_strcpy( v6, "ROX" );
+  /* ASSIGN s6 = s6 + 'Software' */
+  Escher_strcpy( v6, Escher_stradd(v6, "Software") );
+  /* ASSIGN s6 = s6 + 'Inc.' */
+  Escher_strcpy( v6, Escher_stradd(v6, "Inc.") );
+  /* ASSIGN s7 = 'Software' */
+  Escher_strcpy( v7, "Software" );
+  /* ASSIGN s7 = 'ROX' + s7 */
+  Escher_strcpy( v7, Escher_stradd("ROX", v7) );
+        </PRE
+>
+      </P
+></DD
+><DT
+>Field Issue 252:  Prioritized Event in
+Transformer</DT
+><DD
+><P
+>Event priority uses Self to boost its way
+      toward the front of the event queue.  Self was not accessible
+      within a transformer.  MC-3020 already maintains counts of the
+      various types of events being generated.  So a method was
+      provided in system.arc (Escher_GetSelf) which accesses a static
+      containing the target of the most recently dispatched event.
+      This method is used in transformers to access Self when
+      priority events are generated.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>int
+ABC_TEST_U_XYZ_Xform_Get_Veh_Number()
+{
+  ABC_TEST_U_XYZ_s * self = (ABC_TEST_U_XYZ_s *) Escher_GetSelf();
+....
+  /* GENERATE T_K2:'Finished'() TO t_cal_inst */
+  {
+    ABC_TEST_U_K_Event2_s * event2 = (ABC_TEST_U_K_Event2_s *) Escher_NewOoa
+    Event( (void *) v1, &amp;ABC_TEST_U_K_Event2_sc );
+    SetEventSendingInstance( event2, self );
+    Escher_SendEvent( (OoaEvent_t *)event2 );
+  }
+....
+}
+        </PRE
+>
+      </P
+></DD
+><DT
+>Field Issue 255:  CARDINALITY Selecting
+      Through Supertype</DT
+><DD
+><P
+><PRE
+CLASS="PROGRAMLISTING"
+>SELECT MANY related by one-&#62;MANYSUPER[R1]-&#62;SUB[R2]</PRE
+> returned more
+      instances than it should have.  A check on the relationship
+      navigation was missing in one place in the selection fragment
+      generator.  MC-3020 generated the direct reference instead of
+      the navigate method.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>  /* SELECT MANY cs RELATED BY a-&#62;B[R1]-&#62;C[R2] */
+  { /* Start navigation scope */
+    S_B_s * pc8_B_R1;
+    Escher_Iterator_s iter8_B_R1;
+    Escher_IteratorReset( &amp;iter8_B_R1, S_B_R1_From_A( v1 ) );
+    while ( (pc8_B_R1 = (S_B_s *)Escher_IteratorNext( &amp;iter8_B_R1 )) != 0 )
+    {
+      S_C_s * p9_C_R2 = S_C_R2_From_B( pc8_B_R1 );
+      if ( p9_C_R2 &#38;&#38; !Escher_SetContains( &amp;v10, p9_C_R2 ) )
+        Escher_SetInsertElement( &amp;v10, p9_C_R2 );
+    }
+  } /* End navigation scope */
+        </PRE
+>
+      </P
+></DD
+><DT
+>Field Issue 256:  Lost Destination Event</DT
+><DD
+><P
+>This was not a bug but a question raised in a
+      discussion.  It was claimed that MC-3020 was behaving
+      correctly.  This claim is true and has been true for all
+      versions of MC-3020.</P
+><P
+>In MC-3020, an enhancement is provided to allow the user
+      to detect when events are attempting to be delivered to
+      instances that no longer exist.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>  /* Instance validation failure (object deleted while event in flight) */
+  UserEventNoInstanceCallout( current_state, next_state, event_number );
+        </PRE
+>
+      </P
+></DD
+><DT
+>Field Issue 258:  Container Deallocation</DT
+><DD
+><P
+>This bug was introduced in the support for the
+      break, continue and return action language statements.</P
+><P
+>The container deallocation problem is another name for
+      the "break, continue, return" problem.  Break, continue and
+      return action language statements result in generated code that
+      under some circumstances involving SELECT MANY followed by a
+      loop containing a break, continue or return can leak instance
+      containers (a.k.a. containoids).  This leads to a
+      failure when all containoids are exhausted.</P
+><P
+>A fix and patch was delivered for the field.  Version
+      1.3.2 contains this fix.</P
+><P
+>The fix to the 1.x version is effective but somewhat
+      inelegant and brute force in the archetypes.  It defines a
+      macro at the beginning of an action using break/continue/return
+      that knows how to clear the reference sets.  At the end of the
+      action, the macro is invoked to clear these reference
+      sets.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>    /* SELECT MANY s_set FROM INSTANCES OF S */
+    Escher_CopySet( &amp;v2, pG_BCR_S_extent );
+    /* IF (CARDINALITY s_set &#60; 5) */
+    if ( (Escher_SetCardinality( &amp;v2 ) &#60; 5) )
+    {
+      /* BREAK */
+      { /* Container deallocation. */
+        Escher_ClearSet( &amp;v2 );  /* 's_set' */
+      }
+      break;
+    }
+    /* END IF */
+        </PRE
+>
+      </P
+><P
+> In 2.0, MC-3020 knows about "blocks" and
+      deallocates containoids in a fashion more like a stack machine.
+      Reference sets are cleared as they go out of scope.
+      </P
+></DD
+><DT
+>Field Issue 261:  Compatibility between MC-3020 and MC-2010 SARD</DT
+><DD
+><P
+>This was not a bug.  However, it is good for
+      MC-3020 to behave the same way as MC-2010 in this case.</P
+><P
+>The value of a reference variable after a loop is not
+      well defined.  Action language which assumes a value when there
+      is no break is following a loose practice.  Note that after a
+      break statement, the reference variable will contain the
+      expected (current) instance.</P
+><P
+>The (simple) change to the archetype leaves the reference
+      ("loop") variable untouched for an empty set.  The variable
+      will contain the last instance in non-empty sets.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>  /* FOR EACH b IN bs */
+  {
+    Escher_Iterator_s iter6_B;
+    S_B_s * S_B_siter6_B;
+    Escher_IteratorReset( &amp;iter6_B, &amp;v5 );
+    while ( (S_B_siter6_B = (S_B_s *)Escher_IteratorNext( &amp;iter6_B ))
+!= 0 )
+    { v2 = S_B_siter6_B;
+      ....
+    }  /* while 'v2' */
+  }
+  /* END FOR */
+        </PRE
+>
+      </P
+><P
+>Note that this code adds the use of a temporary automatic
+      which will increase the size of the code by an instruction or
+      two.
+      </P
+></DD
+><DT
+>Field Issue 265:  Select from Associated to
+      MANY Associator</DT
+><DD
+><P
+>This is a bug/shortcoming and a current
+      modeling restriction.  This has been the behavior of MC-3020
+      since its first release (1.0).</P
+><P
+>Further investigation/development is required.  Selecting
+      the many associator from the associative object is much easier
+      in a foreign key, database oriented design as in MC-2010.  The
+      optimized pointer reference strategy in MC-3020 makes this a
+      tough problem.  A design is currently being considered.
+      </P
+></DD
+><DT
+>Field Issue 266:  CARDINALITY instance_ref</DT
+><DD
+><P
+>This was a bug discovered by internal testing.
+      CARDINALITY inst_ref returned 0 when needing 1, 1 when needing
+      0.  Early testing of CARDINALITY focused on reference sets
+      while EMPTY/NOT_EMPTY testing focused on simple instance
+      handles.</P
+><P
+>        <PRE
+CLASS="PROGRAMLISTING"
+>  /* CREATE OBJECT INSTANCE a OF OA */
+  v2_a = SELECT_OA_Create();
+  /* IF (CARDINALITY a == 0) */
+  if ( (((v2_a) ? 1 : 0) == 0) )
+        </PRE
+>
+      </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x119.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

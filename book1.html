@@ -1,0 +1,576 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+><SPAN
+CLASS="PRODUCTNAME"
+>MC-3020 Model
+Compiler</SPAN
+> User's Guide</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet version 1.13"><LINK
+REL="NEXT"
+TITLE="Users Guide"
+HREF="c50.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+><DIV
+CLASS="BOOK"
+><H1
+CLASS="TITLE"
+><A
+NAME="AEN1"
+><SPAN
+CLASS="PRODUCTNAME"
+>MC-3020 Model
+Compiler</SPAN
+> User's Guide</A
+></H1
+><H3
+CLASS="CORPAUTHOR"
+>ROX Software, Inc.</H3>
+<P CLASS="COPYRIGHT"
+><a href="cr.html">Copyright</a> © 1999 by ROX Software, Inc.</P>
+</P>
+</DIV><HR><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>1. <A
+HREF="c50.html"
+>Users Guide</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c50.html#AEN54"
+>Purpose and Intended Audience</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c50.html#AEN57"
+>Purpose of the Users Guide</A
+></DT
+><DT
+><A
+HREF="c50.html#AEN69"
+>Intended Audience</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c50106.html"
+>Using the Guide</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c50106.html#AEN110"
+>Guide Organization</A
+></DT
+><DT
+><A
+HREF="c50106.html#AEN157"
+>Additional Information</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c50182.html"
+>Document Conventions</A
+></DT
+></DL
+></DD
+><DT
+>2. <A
+HREF="c206.html"
+>Features and Components</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c206.html#AEN210"
+>Features</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c206.html#AEN213"
+>Multi-Pass Corroborative Translation</A
+></DT
+><DT
+><A
+HREF="c206.html#AEN217"
+>Multi-Domain Support</A
+></DT
+><DT
+><A
+HREF="c206.html#AEN220"
+>Metrics and Reporting</A
+></DT
+><DT
+><A
+HREF="c206.html#AEN224"
+>Bridge/Transform Skeleton Generation</A
+></DT
+><DT
+><A
+HREF="c206.html#AEN227"
+>``Call Outs'' for User Code</A
+></DT
+><DT
+><A
+HREF="c206.html#AEN230"
+>UDT Precision and Pointer Types</A
+></DT
+><DT
+><A
+HREF="c206.html#AEN233"
+>Selection Optimization</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c206237.html"
+>Components</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c206237.html#AEN241"
+>Objects</A
+></DT
+><DT
+><A
+HREF="c206237.html#AEN258"
+>Relationships</A
+></DT
+><DT
+><A
+HREF="c206237.html#AEN262"
+>State Models</A
+></DT
+><DT
+><A
+HREF="c206237.html#AEN277"
+>Bridges and Transformers</A
+></DT
+><DT
+><A
+HREF="c206237.html#AEN284"
+>Miscellaneous</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c206296.html"
+>Restrictions and Limitations</A
+></DT
+></DL
+></DD
+><DT
+>3. <A
+HREF="c337.html"
+>Coloring</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c337.html#AEN344"
+>How MC-3020 Provides for Coloring</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c337.html#AEN349"
+>Domain Registration</A
+></DT
+><DT
+><A
+HREF="c337.html#AEN427"
+>Bridge Wiring</A
+></DT
+><DT
+><A
+HREF="c337.html#AEN546"
+>Specifying User Data Type Precision</A
+></DT
+><DT
+><A
+HREF="c337.html#AEN607"
+>Mapping UDT to an Implementation Pointer</A
+></DT
+><DT
+><A
+HREF="c337.html#AEN646"
+>Object Specializations</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>4. <A
+HREF="c769.html"
+>Enumerated Types</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c769.html#AEN775"
+>Overview of Enumeration Support</A
+></DT
+><DT
+><A
+HREF="c769780.html"
+>Specifying Enumerations</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c769780.html#AEN784"
+>User-Defined Data Type</A
+></DT
+><DT
+><A
+HREF="c769780.html#AEN788"
+>Contents of Description</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c769846.html"
+>Using an Enumeration</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c769846.html#AEN850"
+>Legal Uses of an Enumeration</A
+></DT
+><DT
+><A
+HREF="c769846.html#USINGENUMSIM-SECTION"
+>Using an Enumeration in
+    Simulation</A
+></DT
+><DT
+><A
+HREF="c769846.html#USINGENUMDD-SECTION"
+>Using an Enumeration from
+    Within Its Defining Domain</A
+></DT
+><DT
+><A
+HREF="c769846.html#AEN894"
+>Using an Enumeration Outside of its Defining
+    Domain</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c769936.html"
+>Enumerations and Simulation</A
+></DT
+><DT
+><A
+HREF="c769940.html"
+>Enumerations and the Target System</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c769940.html#AEN944"
+>Enumerations and Local Variables</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>5. <A
+HREF="c962.html"
+>Translation and Build</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c962.html#AEN966"
+>Files</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c962.html#AEN973"
+>System Node</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>6. <A
+HREF="c988.html"
+>System Start Up</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c988.html#AEN992"
+>Initialization</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c988.html#AEN996"
+>Preexisting Instances</A
+></DT
+><DT
+><A
+HREF="c988.html#AEN1001"
+>Initialization Objects</A
+></DT
+><DT
+><A
+HREF="c988.html#AEN1005"
+>Rules for Creating Initialization Objects</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c9881020.html"
+>Initializing in Simulation</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c9881020.html#AEN1024"
+>Creation of Initialization Object Instances</A
+></DT
+><DT
+><A
+HREF="c9881020.html#AEN1027"
+>Execution of Initialization</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c9881030.html"
+>Initializing in the Target System</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c9881030.html#AEN1034"
+>Translation of Initialization Objects</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>7. <A
+HREF="c1037.html"
+>Background</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c1037.html#AEN1042"
+>Model Compilers (Software Architectures)</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c1037.html#AEN1046"
+>Shlaer-Mellor Development</A
+></DT
+><DT
+><A
+HREF="c1037.html#AEN1050"
+>Software Architecture Components</A
+></DT
+><DT
+><A
+HREF="c1037.html#AEN1065"
+>Additional Components</A
+></DT
+><DT
+><A
+HREF="c1037.html#AEN1073"
+>Model Compiler Analogy</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="c10371082.html"
+>Components</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="c10371082.html#AEN1086"
+>Mechanisms</A
+></DT
+><DT
+><A
+HREF="c10371082.html#AEN1094"
+>Archetypes</A
+></DT
+><DT
+><A
+HREF="c10371082.html#AEN1099"
+>Colors</A
+></DT
+><DT
+><A
+HREF="c10371082.html#AEN1118"
+>Build Tools</A
+></DT
+><DT
+><A
+HREF="c10371082.html#AEN1124"
+>Capabilities</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>A. <A
+HREF="a1127.html"
+>Installation</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="a1127.html#AEN1131"
+>Windows NT</A
+></DT
+></DL
+></DD
+><DT
+>B. <A
+HREF="a1147.html"
+>Quick Start</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="a1147.html#AEN1151"
+>HOWTO</A
+></DT
+></DL
+></DD
+><DT
+>C. <A
+HREF="a1237.html"
+>Analysis Guide</A
+></DT
+><DD
+><DL
+><DT
+><A
+HREF="a1237.html#AEN1241"
+>Restrictions and Limitations</A
+></DT
+></DL
+></DD
+><DT
+><A
+HREF="i1281.html"
+>Index</A
+></DT
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c50.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Users Guide</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

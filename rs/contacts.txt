@@ -1,0 +1,1668 @@
+first_name	last_name	phone_home	phone_mobile	phone_work	email1	email2	primary_address_street	primary_address_city	primary_address_postalcode
+Jaime	Aalbregtse	7654209676					1522 Adams St	Lafayette	47905
+Jason	Abbott	219.253.8553					6055 N. Butterfield Loop	Monon	47959
+Robert	Abrams	7654470625		7654484582			1405 Holly Drive	Lafayette	47909
+Kevin	Ackison	7654533945	7654322326				2005 Capitol Hill Ct	Kokomo	46902
+Ashley	Adams	7654468077	7654041428	7654493188			324 S. 26th St	Lafayette	47904
+Christi	Adams	7654472194					3016 S. 18th St	Lafayette	47909
+Greg	Adkins	7652891979					2707 W. Burgewood Dr.	Muncie	47304
+Mara Lee	Adkins	7654778305							
+Andres	Alamo	7654499851					2927 Elk St	Lafayette	47904
+Scott	Alfano	7654710376		2196089835			3028 Pheasant Rn Dr 1916	Lafayette	47909
+Jill	Algood	2192786391					1846 N. Francis St	Monticello	47960
+Brad	Allen	7654276182					9730 W. 500 N	Delphi	46923
+Jessica	Allen	3173532454					506 E. Washinton	Lebanon	46052
+Cory	Allhands		7654121299				5925 S. 900 W	Westpoint	47992
+Janice	Alpha	574.583.6513		574.583.8626			4001 N. Denver	Monticello	47960
+Hank	Alstead			7654482507	98goldss@insightbb.com				
+Cal	Altman	5745833856					11364 W. 1200 N.	Monticello	47960
+Oscar	Alvarez		7654261350				207 E. Spies St	Boswell	47921
+Tony	Alvarez	7653612851					115 N. Vine St	Crawfordsville	47933
+Aaron	Amick	7654632575	7654275578				3708 Chancellor Way	West Lafayette	47906
+Jim	Amos	574.965.2477					7757 W. 950 N	Delphi	46923
+William	Amsler	2198435224					529 S. 1425 W	Medaryville	47957
+Boyd	Anders	7654745107					4102 George Washington Rd	Lafayette	47909
+Dale	Anderson	765.474.6995	765.414.3918				3105 New London Ct. Apt 518	Lafayette	47909
+Michael	Anderson	7658694090					202 E. Spies	Boswell	47921
+Michael	Andrews	5745836709					3410 E. 425 N	Monticello	47960
+Maria	Angeles	574.583.4913					615 N. Railroad St. Lot 3	Monticello	47960
+Jeff	Anker	219.279.2485					7870 W. 100 N	Wolcott	47995
+Erin	Anliker	2199849970					PO Box 508	Brookston	47923
+Dino	Antonelli	5745833392					3732 E. Lake Rd 28 W	Monticello	47960
+Dennis	Applegate	5742786309					6286 N. 700 E	Monticello	47960
+Dustin	Applegate	219-984-6311					834 Meridian St	Reynolds	47980
+Susan	Appleton	7654304505					1118 Revere Dr	Lafayette	47909
+Rusty	Arnett	7652942169					507 W. 9th St	Veedersburg	47987
+Don	Aschliman	7654486211		7654741156			3934 Kensington Dr	Lafayette	47905
+Jeff	Atkinson	7654915312					2604 Sequoia Dr	Lafayette	47909
+Lucas	Attinger	7654970913					2252 Us Hwy 52W Apt B2	West Lafayette	47906
+Kevin	Austin	765.563.3286					10966 S. Lehe	Brookston	47923
+Pat	Austin	574.583.5043					520 Hickory Ln	Monticello	47960
+Troy	Austin	7658635939					500 Timberlane Apt. 512	Lafayette	47905
+JB	Avila	5745837918				NULL	610 Cherrydale Dr	Monticello	47960
+Judah	Avila	574.583.2468					502 S. Maple	Monticello	47960
+Leo	Avila	7654743997				NULL	1920 Honeybrook Wy	Lafayette	47909
+Marco	Ayala	2192537663				NULL	215 N. Race St	Monon	47959
+Ginger	Babb	3173819756				NULL	2110 Historic Oaks Blvd	Indianapolis	46214
+Carol	Bailey	5745833912				NULL	1865 N. Francis St	Monticello	47960
+Eric	Bailey	7655674816	7654902340	5745836029		NULL			
+Kristin	Bair	7654639077				NULL	2550 Yeager Rd. Apt 1-2	West Lafayette	47906
+Taiwan	Bankhead	7654231106				NULL	810 Brown St	Lafayette	47901
+Denis	Bannon	7658661991				NULL	RR 2 Box 228	Ladoga	47954
+Miguel	Banuelos	7654777033	7654040159			NULL	2416 Yuma Dr	Lafayette	47905
+Tim	Barker	7655383640				NULL	13044 S. 150 E	Romney	47981
+Donald	Barkley	7654741760				NULL			
+Wes	Barnard	7655832986				NULL	8903 W. 500 N	West Lafayette	47906
+David	Barnett	7657646719				NULL	705 N. Montoe St	Williamsport	47993
+Cassie	Barnhart	7657622395				NULL	2077 N. 75 W	Williamsport	47993
+Michael	Barnhart	7657622395		7657624139		NULL			
+Shannon	Barr	5747352161				NULL	3471 N. Royale Center Pike	Logansport	46947
+Aaron	Barteck	7657622263	7655853970			NULL	607 N. Perry St	Attica	47918
+Steve	Bartlett	574.583.4176		574.583.2741-129			1173 N. Diamond Pt Ct	Monticello	47960
+Ron	Bassett	574.583.8485					206 Terrace Bay Rd	Monticello	47960
+Jeremy	Baunach	5745837218	7658700580	7654490074			3888 E. Wells Court	Monticello	47960
+Hank	Bausch	765.471.2901					4543 Cormorant Dr.	Lafayette	47909
+Scott	Baxter	7654973831				NULL	11 Grapevine Ct	West Lafayette	47906
+Pam	Beaman		7654090606	7657426479		NULL	4907 Eastbrook Dr	Lafayette	47905
+Bob	Beardsley	219.474.3406					402 N. 3rd St	Kentland	47951
+Lynn	Beck	7655232260				NULL	9950 S. 100E	Clarks Hill	47930
+M	Beck	7655232260				NULL			
+Rick	Beegle	7655695001				NULL			
+Bradley	Beeler		7654046357			NULL	3868 Leyard St	West Lafayette	47906
+Jessica	Beever	7654776254				NULL			
+Frank	Benkert	7654483978				NULL	3219 Cedar Lane	Lafayette	47905
+Graham	Benson		7654790883			NULL	501 S. 3rd St	Lafayette	47905
+Greg	Bently	7652942676				NULL	611 Walnut	Veedersburg	47987
+Lonnie	Bently			7654944545		NULL			
+Marisa	Bergery	7654973800				NULL	8803 Tenskatawa Dr	West Lafayette	47906
+	Bernard	7654474562				NULL			
+Chuck	Berry	7654972744		7654973828		NULL	1953 Greenbrier Ave	West Lafayette	47906
+Robin	Berry	5746018450				NULL	918 Stanley St	Logansport	46947
+Sandy	Best	574.583.5684					3278 N. 400 E	Monticello	47960
+Ladonna	Biczo	7655677474	7655862295			NULL	PO Box 145	Battle Ground	47920
+Chris	Biggs	2192537710				NULL	5301 E. Quiet Waters Ct	Monticello	47960
+Kristina	Bishop	7654749693				NULL	350 St Rd 25 W Apt 12	Lafayette	47909
+Debra	Blackwell	574.583.0084					664 E. Washington St	Monticello	47960
+Christopher	Blakely	7653481108	7653486095	3173475823		NULL	101 S. Southwood Dr	Hartford City	47348
+George	Bleicher	574.583.2194					701 Bluff St	Monticello	47960
+Louis	Blum	5745835017	7655644684	2198633018		NULL	3057 S. Bay Pointe Ct	Monticello	47960
+Ernie	Boggs	5745832919				NULL	725 Bluewater Dr	Monticello	47960
+Don	Bookout	7654748085	7654185839			NULL	1505 Sherwood Dr. W	Lafayette	47909
+Matt	Booth	7654483435				NULL	22 Heather Court	Lafayette	47905
+Steve	Borchert	7657722052				NULL	801 S. Wagon Wheel Trail	Lafayette	47909
+Brad	Bordon	7655383826					127 Detchon Ct	Lafayette	47909
+Scott	Borders	3172493196				NULL	14873 Drayton	Noblesville	46060
+Susan	Borgia	7654747799		8007280327		NULL	1521 Central St	Lafayette	47905
+Jonathan	Bothel	8504943156				NULL	7601 N. 9th Ave. Apt 156	Pensacola	32514
+Travis	Bothel	7654492046		7654777543		NULL	3845 Sickle Apt. A	Lafayette	47905
+Gerald	Bougher	574.583.5062					3313 N. Lakeshor Dr	Monticello	47960
+Kevin	Bowdich	7654496871				NULL	10 Huntington Way	Lafayette	47905
+Tracey	Bowers	2198668610				NULL	325 S. Van Rensselaer St	Rensselaer	47978
+Joel B.	Bowman	574.583.8838					2466 E  325 N	Monticello	47960
+Kenneth	Bowman	5745835052	5148701630			NULL	3792 E. 100 N	Monticello	47960
+Waylon	Box	5742786546				NULL			
+Robert	Braaksma	574.583.5339		574.583.3151			206 Dewey St	Monticello	47960
+Jerome	Bramer	765.446.0524	765.426.6010				625 S. 27th	Lafayette	47904
+Jerry	Bramer	765.742.1429					1506 Virginia St	Lafayette	47905
+Richard	Bramer	7654741036				NULL	1209 Rochelle Dr	Lafayette	47905
+Jarred	Bratcher	765.463.7164					1338 E. 600 N	West Lafayette	47906
+Cris	Bravo	7655439121				NULL	3815 Regal Valley Dr.	Lafayette	47909
+Joe	Brenner	7657626389	7653660389	7654633585		NULL			
+Kevin	Brower	7655646303				NULL	4853 N. 700 W	Delphi	46923
+Laurie	Brower	7652682482				NULL			
+Cory	Brown	7652341255				NULL	206 W. Washington	Waynetown	47990
+Ruth Ann	Brown	5745838389				NULL	6029 E. 200 N Lot 14	Monticello	47960
+Sandy	Brown	7653394720				NULL	Rt. 1 Box 32	New Richmond	47967
+Ken	Brummett	2199846651				NULL	2638 S. 300 W	Chalmers	47929
+Jeffrey	Bruner	7654821362				NULL	2800 N. 150 W.	Lebanon	46052
+Deena	Brunton	7655834129				NULL	5659 N. 825 E	Otterbein	47970
+Jason	Bunger	3178975210	3174454141			NULL	3604 Chokecherry Ln	Indianapolis	46235
+Kenny	Burgess	2199845899				NULL	PO Box 51	Chalmers	47929
+John	Burkhouse	7654476532				NULL	3909 Kensington Dr	Lafayette	47905
+Clarence	Bufkin	219.984.5902					Box 212	Reynolds	47980
+Jim	Burn	2192792690				NULL	10501 W. 500 S	Wolcott	47995
+Tony	Burns	765.564.3309		765.564.2413			9245 W. 225 N.	Delphi	46923
+Marla	Burton	7654641692				NULL	3411 Wyndham Way	West Lafayette	47906
+Shane	Burton	7654637502				NULL	191 Vicksburn Lane	West Lafayette	47906
+Steve	Burton		219.297.3059				315 N Benton st.	Goodland	47948
+William	Burton	574.583.5409					3676 E. Lake Rd 28W	Monticello	47960
+Virginia	Busch	7654044389				NULL			
+John	Bush	7657432142				NULL	139 E. Oak	West Lafayette	47906
+Jeff	Butz	765.446.1851		765.477.4670			3608 Platte Court	Lafayette	47905
+Steve	Buyer	574.583.8997	202.225.6806				2105 Airport Rd	Monticello	47960
+Larry	Buyers	7657436138				NULL	PO Box 213	Pine Village	47975
+Kelli	Byrd	219.279.3119	219.863.7038				115 E. Allen St	Wolcott	47995
+Roger	Cadwallader	7655649099				NULL	11188 W. Horshoe Bend Rd	Brookston	47923
+Gretchen	Cadwell	7654710899				NULL			
+Dennis	Cain	219.279.2988					7831 W. 500 N	Wolcott	47995
+Mike	Calble	5749652505				NULL	11898 W. Breezy Pt	Monticello	47960
+Toby	Caldwell	574.583.4256					4290 E. 100 N	Monticello	47960
+Victoria	Calhoun			7654468774		NULL	Box 142	Dayton	47941
+Jim	Cameron	5745833340		7654722423		NULL	2715 Airport Rd	Monticello	47960
+Larry	Campbell	765.567.2581					8731 Us 43 N	Battle Ground	47920
+Gary	Carlile	7654740574				NULL	1005 Winthrop Ave	Lafayette	47909
+Lynn	Carnahan	5742536198				NULL	1793 W. St Rd 16	Monon	47959
+Roger	Carney	7656548823				NULL	4676 N. Springwater Dr	Frankfort	46041
+Bart	Carpenter	7654642832				NULL	652 Woodsedge Ct.	Lafayette	47905
+Matthew	Carpenter	7656417464				NULL	225 Elva St	Anderson	46013
+Robert	Carpenter	7654979687				NULL	139 Maples Trailer Park	West Lafayette	47906
+Jeanine	Carr	7653626158				NULL	122 Campbell	Crawfordsville	47933
+Mark	Carrel		7654272185			NULL	5151 N. Boxman Dr	Monticello	47960
+Chuck	Carter	574.965.2454					Box 20	Yeoman	47997
+Chuck	Carter	5745834838				NULL	1468 S. Meadow Dr	Monticello	47960
+Erma	Carter	7652968587				NULL			
+James	Carter		5748700744			NULL	1279 S. 300 E	Monticello	47960
+Jamie	Carter	5745834838				NULL	1468 S. Meadow Dr	Monticello	47960
+Peter	Casares	7654719688				NULL	4608 Nottingham Dr	Lafayette	47909
+Briana	Castle	7654237857				NULL			
+Cindy	Catt	7659227806				NULL	2214 S. 800 W	Swayzee	46986
+Mike	Cauble	2199652505	7654274079	7657434955		NULL	11898 W. Breezy Pt	Monticello	47960
+Floyd R.	Cearing	5749652786				NULL	11870 W. Lake Bluff	Monticello	47960
+Paul	Chamberlain	5745836782		5745839399		NULL			
+Perry	Chemical	7654743404				NULL	2335 S. 30th St	Lafayette	47903
+Jenny	Chen	7654643353				NULL	2464 Sycamore Lane	West Lafayette	47906
+Brandon	Chenoweth	7655834037				NULL	412 S. Main St	Otterbein	47970
+John	Cherry	7654234488				NULL			
+Art	Choate	7654778405				NULL	3402 Waverly Dr	Lafayette	47909
+Brian	Choules	7655633404				NULL	11756 S. Springboro Rd	Brookston	47923
+Donald	Christian					NULL	2019 Monon Ave	Lafayette	47904
+Janet	Clark	7655898494				NULL			
+Mark	Clark	7654599576				NULL	3032 W. 200 N	Kokomo	46901
+Wayne	Clark	2192613501	2198635404	2195679171		NULL	6601 W. 1800 S	Remington	47977
+Jay	Clawson	5745838180				NULL	618 S. Main St	Monticello	47960
+Steven	Clevinger	7654636049				NULL	2511 Derbyshire Ct	West Lafayette	47906
+Louie	Coble	5748262114	5748700604	5745839700		NULL	12237 N. 250 W	Burnettsville	47926
+Doug	Coghill	574.686.2798					5880 N. 400 W	Delphi	46923
+Will	Coleman	7654479406	7654301635			NULL	401 Stanton Dr	Lafayette	47905
+Jessica	Conley	2195672875				NULL	PO Box 792	Francesville	47946
+Michael	Conley	765.477.7676	765.532.7962				4109 George Washington Rd	Lafayette	47909
+Joan	Conrad	2194746539				NULL	305 E. 6th St	Earl Park	47942
+Max	Coombs	5749654306				NULL	10934 N. Lower Lake Shore Dr	Monticello	47960
+Kevin	Coomer		7653242294			NULL	8930 W. 650 S	Colfax	46035
+Chad	Corbin	7654719766				NULL			
+Harold	Corbin	7655383234				NULL			
+Jill	Cork	3172576606				NULL	5754 N. Delaware	Indianpolis	46220
+Christian	Corrado	3172133183		3179277303		NULL	234 W. Gimber St	Indianapolis	46225
+Martin	Correa	7654718789				NULL	305 Winchester	Lafayette	47909
+Dave	Corty	7657422431				NULL	4507 E. 200 N	Lafayette	47905
+Kristy	Coulter	8128652276				NULL	585 N. Harding Apt 25	Orleans	47452
+Brandon	Covault	7654043387				NULL	3632 Spring Court N	Lafayette	47909
+Darrin	Cox	7654209242				NULL			
+Mike	Crabb	574.583.8202	574.274.5028				1675 N Royal Oaks	Monticello	47960
+Robert	Craft	7658934359				NULL	302 E. North St	West Lebanon	47991
+David	Crain	7654636631				NULL	3890 Amber Ln	West Lafayette	47906
+Kendra	Craw	7654740591	7654044576			NULL	1805 King St	Lafayette	47905
+Ken	Crawford		7655325328			NULL	3163 Pheasant Run	Lafayette	47909
+Raymond	Crawford	7654718276				NULL	3130 Portsmouth W.	Lafayette	47909
+Fairley	Creech	7653852441				NULL	402 W. Vine St	Oxford	47971
+Dan	Creigh	5745836470				NULL	11490 W. 1200 N	Monticello	47960
+Brian	Creighton	5745839840				NULL	4283 NW Shafer Dr	Monticello	47960
+Jessica	Crichefield	7654231733				NULL	3982 Amelia Ave Apt 17	Lafayette	47905
+Leonna	Crider	7655232265				NULL	9132 Oak St	Stockwell	47983
+Mey	Cristobal					NULL	88.5 N. Main St	Martinsville	46151
+Dave	Criswell	574-583-9693					Box 1013	Monticello	47960
+Crystal	Crowder	7653590842	7653662908			NULL	2440 US Route 136 W	Crawfordsville	47933
+Emily	Crum	7654772490		7654479444		NULL	2401 Southhaven Blvd	Lafayette	47909
+Bill	Crutchfield	574.583.5247	870.6296				6271 E. Us 24	Monticello	47960
+Eric	Culver	2199845186				NULL	3901 W. 700 S	Chalmers	47929
+Bill	Curtis	2192538022				NULL	PO Box 268	Monon	47959
+Jarod	Curwick	7654712318				NULL	3425 Equinox	Lafayette	47909
+Heather	Daily	7654648978				NULL	2226 Willowbrook No 105	West Lafayette	47906
+Melissa	Danner	5749845535		7654942849		NULL	PO Box 851	Chalmers	47929
+Cosetta	Davenport	765.589.7067					6806 State Rd 26 E	Lafayette	47905
+Monte	Davidson	5745837893				NULL	608 W. Jefferson St	Monticello	47960
+Apryl	Davis	7652968664				NULL	610 Faucrite Dr	Dayton	47941
+Bryce	Davis	7652968664				NULL	610 Favorite Dr	Dayton	47941
+Jim	Davis	7654740911				NULL	2949 Camanche Dr	Lafayette	47909
+Keefe	Davis	7654491121				NULL	306 Gallup Dr	Lafayette	47905
+Mike	Dawson	7654711455				NULL	3420 Plymouth Dr.	Lafayette	47909
+Robert	Deadman	7654718786				NULL	4105 Thomas Jefferson Rd	Lafayette	47909
+Sadie	Delon	2196439341				NULL	9922 N. Royale Center Pike	Royale Center	46978
+Alex	Delrio	7654470383				NULL	5405 Harvest Dr. S.	Lafayette	47905
+Rocco	Demario	5745837697				NULL	333 W. Robinwood Ct	Monticello	47960
+Bob	Denison	5745836250				NULL	5262 N. Peterson Dr	Monticello	47960
+Wendell	Dewitt	574-583-4727					6003 E. 175 N.	Monticello	47960
+Ben	Denny	2197536718				NULL	6380 W. 50 N	Logansport	47947
+Jerry	Deno	5745836596				NULL	680 S. Country Ln	Monticello	47960
+AJ	Denton	8474904104				NULL	1015 Hillcrest Blvd	Hoffman Estates	60195
+Fernando	Diaz	7654637843		7654966313		NULL	1200 Happy Hollow Rd. #705	West Lafayette	47906
+Ruth	Diener	5745836637				NULL	103 Indian Springs	Monticello	47960
+Randy	Dilly	7654479983				NULL	2915 S. St	Lafayette	47904
+Keven	Dodt	7654979751	7654275413			NULL	22 Grapevine Place	West Lafayette	47906
+Linzy	Donoho	2195836100				NULL	512 Northwestern St	Monticello	47960
+Tony	Dossett	7653622927				NULL	3 Glenway Dr	Crawfordsville	47933
+Madelyn	Dowell	7654484022				NULL	5340 Harvest Dr	Lafayette	47905
+Jay	Downham	7654475977				NULL	5008 Chimnylake Dr	Lafayette	47905
+Jerry	Downham	7654745752				NULL	1751 Millpond Ln	Lafayette	47905
+Richard	Downs	5749845616				NULL	Box 205	Reynolds	47980
+Todd	Downs	5745839453	5748702897			NULL	502 W. Marion St	Monticello	47960
+ED	Doyle		574-870-1885	574-870-2309			418 Viking Lane	Monon	47959
+Ed	Doyle	2192531311		2192792031		NULL	Box 843	Monon	47959
+Chad	Draper	7655644437	5745810368			NULL	2236 S. 800 W	Delphi	46923
+Kim	Drazer	219.943.3577					3416 N. 1300 E	Burnettsville	47920
+Jerome	Drazer	2197663824				NULL	439 E. 700 S.	Kouts	46347
+Mike	Droski	5745832049				NULL	326 Norway	Monticello	47960
+Rhonda	Dubuque	2605630635	2605714136			NULL	4136 S. 300 W	Wabash	46992
+Cynthia	Dulin		5745810512	5745836151		NULL	606 Anchor Ct. Apt 101	Monticello	47960
+Cynthia	Dulin	2192786467				NULL	4720 E. St Rd 16	Monticello	47960
+Rachel	Dunk		7657148525			NULL	642 S. 27th	Lafayette	47909
+Jennifer	Dunn	3178311180				NULL	7862 E. Foxhill Dr	Camby	46113
+Rodney	Dunseath	7654461718				NULL	1326 Castle Dr	Lafayette	47905
+Lynn	Durflinger	765.497.9781					3725 Us 52 W	West Lafayette	47906
+Beulah	Duvall	765.447.2962					3005 Union St	Lafayette	47905
+Wayne	Dye	7654970661	7654901673			NULL	626 Woodsedge Ct.	West Lafayette	47906
+Paul	Dyer	7657644824				NULL	5438 N. Riverside Rd.	Attica	47918
+Bob	Eberly	7653850142				NULL	6229 N. 200 E	Pine Village	47975
+Roger	Eberly	7653855167				NULL	2940 E. State Road 26	Pine VIllage	47975
+Jeremy	Eckert	2199433387				NULL	4108 N. 1350 E	Burnettsville	47926
+Millena	Eckert					NULL	8064 N. Adams St	Monon	47959
+Riann	Eckert	2192537345				NULL	808 N. Market St	Monon	47959
+J	Edelen	7654633309				NULL	3124 Decatur St	West Lafayette	47906
+Thomas	Eden	5745839759	7654905051			NULL	1168 N. Saddlebrook Ct.	Monticello	47960
+Todd	Edgell		7654263979	7652897186		NULL			
+Terri	Edmonds	765.443.8386					218 Brookfield Dr	Lafayette	47905
+Gerald	Edwards	7655893829				NULL	5572 200 N	Buck Creek	47924
+Donald	Ehresman	7655830094	7654041385	7657435373		NULL	43 Hillsdale Ct	West Lafayette	47906
+Milo	Eiche	5745837346				NULL	110 Van Tassel Dr.	Monticello	47960
+Linda	Eisenhut	7654741029		7654764494		NULL	2500 Brady Ln	Lafayette	47909
+Bryan	Elliott	3178450448				NULL	9707 Woodlands Dr	Fishers	46038
+Mary	Elliott	7654971721				NULL	1880 King Eider Dr	West Lafayette	47906
+Melvin	Elliott	7655722565				NULL	PO Box 13, 7016 Walnut St	Westpoint	47992
+Mich'Ell	Ellis		7086531978			NULL	920 Sherwood Lake Dr	Schererville	46375
+Brian	Emmons		7654261616	7657429030		NULL	201 Main St Suite 1000	Lafayette	47902
+Susie	England	2199846499				NULL	Box 68	Monticello	47960
+Susan	Erb	574.583.7747		574.583.5911			965 Maxwell Ave	Monticello	47960
+Enrique	Ervesun	7655325252				NULL	2455 Kestral Blvd Apt E	West Lafayette	47906
+James	Esposito	2192537383				NULL	2167 E. 475 N	Monon	47959
+Todd	Evans			7654497415		NULL			
+Tim	Fairfield	7653619134				NULL	504 Rd. 225 W	Crawfordsville	47933
+Jin	Fan	7654964055				NULL	1317 W. State Street Apt. 8	West Lafayette	47906
+Patty	Farquer	765.429.6997					206 S. 14th	Lafayette	47905
+David	Farrell	7654263912				NULL	PO Box 25	Westpoint	47992
+Dwayne	Feeney	7655382175	7654260045			NULL	11231 Us Highway 231 S.	Romney	47981
+Kenny	Felker	5745834483				NULL	3987 Driftwood Loop	Monticello	47960
+Matthew	Fellure	7654640561				NULL	4317 McClellan Lane	West Lafayette	47906
+Dennis	Fields	7655233132				NULL	8500 S. 675 E	Lafayette	47909
+Marilee	Fields	765.447.6874	765.447.6834				112 S. 27th	Lafayette	47904
+Robert	Fife	7654046867	7654046867	7654231505		NULL	8726 Arber Lake Ct. #527	Indianapolis	46268
+Joe	Filbrandt		7654095672			NULL	2891 Snowdrop Dr	West Lafayette	47906
+Daniel	Fischer	7654234481		7657421400		NULL	1304 Richards St	Lafayette	47904
+Dave	Fischer	7655663563				NULL			
+Bob	Flattery	574.583.4867					205 Dewey St	Monticello	47960
+Mike	Fletcher	7654714778				NULL	1700 S. 13th	Lafayette	47905
+Janice	Flora	5745838760				NULL	100 South Countrybrook Dr.	Monticello	47960
+Rigoberto	Flores	7654743304				NULL	944 Rochelle Dr	Lafayette	47909
+Tawanda	Fluker	7656897821				NULL	606 Anchor Ct	Monticello	47960
+Dan	Flynn	765.563.2021					9043 S. 75 E	Brookston	47923
+Doyle	Flynn	7658695194				NULL	307 N. Washington St.	Boswell	47921
+Shawn	Flynn		2177990382	2172398208		NULL			
+Colin	Fogarty	7654955255	7654261333			NULL	5503 S. 150 W	Lafayette	47909
+Marta	Foote	765.447.6547		765.420.1414			1203 Lockwood	Lafayette	47905
+Mike	Ford	7654711431				NULL	2109 Hiawatha Ln	Lafayette	47909
+Sarah	Ford	7654460821				NULL	119 D. Porsche Ln W	Lafayette	47905
+Katherine	Foreman	7655323786				NULL	116 Foster	West Lafayette	47906
+Matt	Forman		574.808.8361				1193 w. Hanawalt  lot 12	Monticello	47960
+Ron	Fosnaugh	7657427416				NULL	2614 Natalie Ct	Lafayette	47905
+Glenna	Foster	7654462865				NULL	1925 Congress Street	Lafayette	47905
+Tom	Foster	2192792239				NULL		Wolcott	47995
+Curt	Fox	6418434507				NULL			
+Kevin	Fraley	5748582332				NULL	5320 N. Grouse Ct	Warsaw	46582
+John	Franceschina	574.965.2507	765.532.2321	765.771.5670			7433 N. Us 421	Delphi	46923
+Cathy	Francis	7654478949				NULL	215 B. Porsche Ln	Lafayette	47905
+Mindy	Franks	7654779924				NULL	304 Persimmon Trail	Lafayette	47909
+William Fred	Fraser	5745837625				NULL	404 Heritage Rd	Monticello	47960
+Jeff	Freeman			7656545445		NULL	2480 Poplar Ln	Lafayette	47905
+Troy	French	7652342523				NULL	Rt 1 Box 259	Waynetown	47990
+Janet	Freshour	2199433626				NULL	12407 E. Strington Rd	Idaville	47950
+Bryan	Fry	765.742.5476					1202 Franklin St	Lafayette	47905
+Gilbert	Fugate	5745834689				NULL	165 S. 400 E	Monticello	47960
+Belinda	Fulk	7654469814		7654474000		NULL	1712 Chauncy Ct. N. Dr. Apt 8	Lafayette	47909
+Tommy	Fultz	5745833853				NULL	3536 E. Us 24	Monticello	47960
+Alvin	Furrer	2199845473				NULL	2381 W. 50 N	Reynolds	47980
+Travis	Furrer	8036557316				NULL	422 Williamette St	Oregon City	97045
+Jeff	Fyffe	7658695129	7657623198	7653662922		NULL	203 N. Clinton	Boswell	47921
+Mel	Gabel	4173481409				NULL	505 Sunnybrook Dr.	Branson	65616
+Linda	Gagle	3178448711	7654272521			NULL	13701 Smokey Ridge Dr	Carmel	46033
+James	Garbinson	5745839506				NULL	1000 Spring Dr	Monticello	47960
+Carlos	Garcia	574.583.4835					317 S. Illinois St	Monticello	47960
+Jennifer	Garcia	5745839810				NULL	107 N. Dewey St	Monticello	47960
+Laurie	Gardner	7655832295				NULL	Box 2610	West Lafayette	47906
+Brian	Garrity	7655674285				NULL	5913 Wild Cherry Dr	West Lafayette	47906
+Jason	Gates	7657944397				NULL	RR 5 Box 81	Crawfordsville	47933
+Roger	Geisler	2199654318				NULL	10448 N. 700 W	Delphi	46923
+Troy	Geisler	2199433362				NULL	10054 E. US 24	Idaville	47950
+Pat	George	7655646294	7654140325	7654945812		NULL	407 Heritage Rd	Delphi	46923
+Neal	Gerald	7652963454				NULL	5317 W. St Rd 38	Mulberry	46058
+Brandon	Giancola	7657141718				NULL	2311 N. 18th	Lafayette	47904
+Michael	Giesler	7652964401				NULL	6015 N. County Road 900 W	Mulberry	46058
+John	Gilbert	5749654511				NULL	11842 W. Lake Bluff Rd	Monticello	47960
+Phyllis J.	Ginger	7654494851				NULL	25 N. 21st St	Lafayette	47904
+Richard	Glaze	765.762.6831	765.762.6728	765.762.2424			2004 E. 50 S	Attica	47918
+Mary	Glotzbach	7654470948				NULL	2517 Salem Street	Lafayette	47904
+Richard	Goebel	7657438226				NULL	2601 Darwin Dr	West Lafayette	47906
+Steve	Godlove	574.583.6725					4468 E. Jennings Loop	Monticello	47960
+Mark	Goff	7656599002				NULL	3116 S. Co Rd 400 E	Frankfort	46041
+Jeff	Goforth	2192239013				NULL	4458 S. 250 E	Rochester	46975
+Robert	Gohn		7654276100	7654460359		NULL			
+Richard	Goins	7653620574	7653666413			NULL	283 W. Oak Hill Rd	Crawfordsville	47933
+Delores	Gonzalez	7654461631	7655325662			NULL	3625 Liberty Ave	Lafayette	47905
+Tammy	Goodman	7652968362		7654488971		NULL	133 N. Main St	Mulberry	46058
+Dave	Gorman	3177705230				NULL	9418 Lindsey Ct	Noblesville	46060
+Steve	Goss	7653423576				NULL	1280 N. Shore Dr.	Martinsville	46151
+Stephanie	Graf	7654772426		7654745411		NULL	2650 Brady Ln	Lafayette	47909
+Sheila	Graff	6018434507				NULL	1434 234th St	Britt	50423
+Floyd	Grant	574-583-5290					806 Terrace Bay Ct.	Monticello	47960
+Lindsey	Grant	2199845240				NULL	217 N. 1st	Reynolds	47980
+Thomas	Graves	7654718141	7654903469	7654748599		NULL			
+Katharine	Gray	7654471630				NULL	5001 Pioneer Dr	Lafayette	47905
+Joseph	Gregg	7652340733	7653667204			NULL	PO Box 62, 206 Orchard St	Waynetown	47990
+Corey	Gregory	7658695223				NULL	PO Box 307	Boswell	47921
+Emjai	Gregory	7654498870				NULL	2503 Grenadier Ln Apt B	Lafayette	47905
+Mike	Greski	5742787819				NULL			
+John	Gretencord	7654748847				NULL	2205 Bennett Rd	Lafayette	47909
+Junior	Griffin	7654295653		7654235653		NULL	12 S. 8th St	Lafayette	47901
+Sarah	Griffin	7655643455				NULL	7650 Summit Lane	Lafayette	47905
+John	Griffith		6185329347			NULL	1315 E. Calumet St	Centralia	62801
+Tina	Grist	5745835703	5748700149	5745832251		NULL	526 S. Bluff St	Monticello	47960
+Matt	Groff	7654918820				NULL	1020 Joseph St.	Lafayette	47905
+Brandon	Gross	5745834649				NULL	510 Freman Dr	Monticello	47960
+John	Gross	7654472337				NULL			
+Todd	Gross	5745838251				NULL			
+Anthony	Grubb	3175748667		3175758667		NULL	512 Superstar Ct	Carmel	46032
+Matt	Gunderson	7654976438				NULL	2601 Soldiers Home Rd	West Lafayette	46906
+Ramon	Gutierrez	7654490540				NULL	5548 N. Bluegrass	Lafayette	47905
+Edison	Gutwein	219.567.9291					125 Circle Dr	Francesville	47946
+Brad	Guy	574.965.4134					10738 N. Lower Lake Short Dr	Monticello	47960
+Bill	Haas	2198690118				NULL	2989 N. 200 E	Monticello	47960
+Mark	Hackerd	7654749008				NULL	1708 S. 13th St	Lafayette	47905
+Deaon	Hackley	765.446.9246					900 N. 21st #8	Lafayette	47904
+Robert	Hahn	574.583.5650					3230 E. Division Rd	Monticello	47960
+Robert	Hahn					NULL	1504 Indiana Beach Dr	Monticello	47960
+John	Hainge	7654126216				NULL	2029 Osceola Dr.	Lafayette	47909
+Brian	Hainje	765.423.2611					807 S. 4th	Lafayette	47905
+Bill	Hale	2192787506				NULL	5185 E. Shady Point Dr	Monticello	47960
+Rex	Halsema	574.583.2237		765.427.3698			1136 W. Hanawalt	Monticello	47960
+Kathy	Halverson	5745837743				NULL	1193 N. Diamond Pt Ct	Monticello	47960
+Michael	Hamilton	7654770365				NULL	2501 Tara Court	Lafayette	47909
+Misty	Hamilton	5746523114				NULL			
+Scott	Hamilton	2175971046		7654710804		NULL	3161 Pheasant Run Dr. Apt 501	Lafayette	47909
+Amanda	Han	5745837516				NULL	416 N. 300 E	Monticello	47960
+Bob	Han	574.583.7516					416 N. 300 E	Monticello	47960
+Claudia	Hanau	7657460474	7654919723	7654644515		NULL	44 Knoll Crest Ct.	West Lafayette	47906
+Robin	Hancock	2192972005				NULL	5023 S. Us Hwy 231	Wolcott	47995
+Nick	Harper	7654743519				NULL	3100 Coppergate Dr.	Lafayette	47909
+Eric	Harris	5745838197				NULL	4485 E. Lake Rd	Monticello	47960
+Eric	Harris	5745834061				NULL	5935 Cottonwood	Monticello	47960
+Kevin	Harris	765.497.0991					3205 Bowfield Way	W. Lafayette	47906
+Bobby Joe	Harrison	574.583.5088					4677 E. 100 N	Monticello	47960
+William	Harrison	7654904736				NULL	3220 Mystic Lane #3	Lafayette	47909
+Shannon	Harshbarger	7652583116		7652964520		NULL	328 W. Sheets St	Sedalia	46067
+Rod	Haskins	574-583-2350					509 Gordon Rd	Monticello	47960
+Richard	Havran	7654486500				NULL			
+Linda	Hawley	7657623612				NULL	413 West St	Attica	47918
+Mark	Hay	5745837984				NULL	4065 E. Arrowhead Rd	Monticello	47960
+Steven R.	Hayden	574.583.3845					3348 S. 300 E	Monticello	47960
+Jeff	Haygood	574.583.2262					615 Easy St.	Monticello	47960
+Jeff	Head	7654499030				NULL	1105 Beaumont	Lafayette	47905
+Danny	Heath	7654468510	7654140634			NULL	52 Point East Lot 52	Lafayette	47905
+Jeff	Heid	7654499030				NULL			
+Ron	Hekkama	219.866.8639					315 S. 250 W.	Rensselaer	47978
+Greg	Helms	7654469108				NULL	1119 Trillium Ln	Lafaeytte	47905
+Mark	Helms	5745838866				NULL	2754 N. Baeps Ct	Monticello	47960
+Robert	Helms	2199433670				NULL	9910 E. 400 N	Idaville	47950
+Steven	Henderson	7652963342				NULL	934 S. 750 E	Lafayette	47905
+Michele	Hennessey	7657644184				NULL			
+Timothy	Hensley	765.471.8945					1817 Claybrook Dr.	Lafayette	47909
+James	Herron	7653629368				NULL			
+Kyra	Herthoge	7654749950	8155493260	7654499200		NULL	1911 Stark Circle	Lafayette	47905
+Brandon	Hibbard	7654633036				NULL	3121 Pimberly Ct	West Lafayette	47906
+Derek	Hickman	7654743055				NULL	1117 Sarasota Dr	Lafayette	47909
+Amy	Hicks	7656547413				NULL	51 E. White St	Frankfort	46041
+Jace	Hicks	7654237762				NULL	1405 Elizabeth St	Lafayette	47904
+Monica	Hicks	7654269621				NULL	60 Lorilee Dr	Lafayette	47905
+Pamela	Hicks	7655833277				NULL	208 W. Oxford St	Otterbein	47970
+Steve	Hicks	7654490253				NULL	801 Eastwich Dr	Lafayette	47905
+Katie	Higbee	7655898059	2193096054			NULL	3520 Co Line	Lafayette	47905
+Thomas	Higbee	7655898623				NULL	9608 E. 500 N	Lafayette	47905
+Robert	Higman	7654772297				NULL	3223 Chelmsford Drive	Lafayette	47909
+Ronald	Hill	2199845050				NULL	Cor 1 & Walnut Chlm	Reynolds	47980
+Dwayne	Himes	7654745977				NULL	916 N. Wagon Wheel Trail	Lafayette	47909
+Alan	Hines	7654719483				NULL	2104 Brady Lane	Lafayette	47909
+Tim	Hines		2604108265			NULL	113 N. St	Lafayette	47904
+Al	Hintzman	5745836981				NULL	4213 S. Yankee Dr	Monticello	47960
+Jack	Hires	2194645039				NULL	1806 Clover Lane	Valparaiso	46383
+M.G.	Hites	574.278.7373					PO Box 237\n403 s east st.	Buffalo	47925
+Melissa	Hoaks	7654231272				NULL	2127 Monon	Lafayette	47904
+John	Hobson	7653649298				NULL	611 Binford	Crawfordsville	47933
+Jeffrey	Hogue	7654746810		7654489614		NULL	2008 Osceola Dr	Lafayette	47909
+Phyllis	Holman	765.464.2444		765.449.3044			424 Westview Circle	West Lafayette	47906
+Rob	Hood	574.583.4513					526 S. Main	Monticello	47960
+Kim	Hooper	7654744164				NULL			
+Dwayne	Hopper	5742614074				NULL	10 W. Harrison St	Remington	47977
+Jan	Horn	5745837907				NULL	601 N. Illinois	Monticello	47960
+Rhonda	Hostetter	7655644412				NULL	2410 N. 550 W	Delphi	46923
+Kenny	Houston	5745835694				NULL	808 S. Main St.	Monticello	47960
+Les	Howard	8159982875	7654275333			NULL	1003 Woodhaven Rd	Monticello	47960
+Allen	Howe		7653460919	7654517866		NULL			
+Christin	Huff	5745836484	2198632568			NULL	5250 S. Gingrick Dr	Monticello	47960
+Crystal	Hughes	7655644276				NULL			
+Jeff	Hughes		574.870.4358				1095 N. 1450 E	Burnettsville	47920
+Rigoberto	Huizar	7654743304				NULL	944 Rochelle Dr	Lafayette	47909
+Randall	Hunter	7654527313	7658607994			NULL	1226 N. Lindsay	Kokomo	46901
+Marcus	Hurly	8153723689		8123762550		NULL			
+Jim	Hutson	765.268.5101					98 E. 490 S	Cutler	46920
+Mark	Hutson	7657623570				NULL			
+Ray	Hutton	2192787251				NULL	7278 E. Redmaple Ct	Monticello	47960
+Kenichi	Ikuno	7654479742				NULL			
+Brian	Imel	7656591872				NULL	2203 S. County Rd 200 W	Frankfort	46041
+Gayla	Inman	219.816.0392					PO Box 531	Monticello	47960
+Agee	Iqbal	7657424181				NULL	3720 Ellis Dr	Lafayette	47905
+Dick	Isbell	7654489955				NULL	508 Shady Creek Dr	Lafayette	47905
+Jim	Isom	5745834269				NULL	761 N. 400 E	Monticello	47960
+Rich	Isom	5745834524				NULL	Box 202	Monticello	47960
+Archie	Jackson	3175164585				NULL			
+Damon	Jackson	3172914640	3177098836			NULL	5847 Croton Circle	Indianapolis	46254
+Ed	Jackson	5745833875				NULL	6330 Hickory Ridge Ct.	Monticello	47960
+Justin	Jackson	7654971787	7654302578			NULL	2426 Hopkins Dr	West Lafayette	47906
+Kelly	Jackson	7655722466				NULL	3156 E. 1400 N	Attica	47918
+Miller	Jackson	7653793808				NULL	3354 W. 725 S	Rossville	46065
+Mark	Jeager	7657421850		7654963157		NULL	721 S. 9th St	Lafayette	47905
+Brad	Jeffries	219.261.3107	219.986.0015				206 N. Ohio St	Remington	47977
+Dustin	Jenkins	7657423419				NULL	412.5 N. 9th St	Lafayette	47901
+Billy	Jennings	7654710435				NULL	2108 Arapahoe Dr	Lafayette	47909
+Jennifer	Jessie	765.563.6528					1464 E. Dollar Ct.	Brookston	47923
+Greg	Johns	2198262120				NULL	255 N. CR 1050 W	Logansport	46947
+Roy	Johns	574.965.2531					6941 N. 1200 W	Monticello	47960
+Bruce	Johnson	7654744811				NULL	1401 S. 18th St	Lafayette	47905
+Ginger	Johnson	7654367615				NULL	7536 N. 950 W	Thorntown	46071
+Greg	Johnson	5745834714				NULL	5638 E. 400 N	Monticello	47960
+Kevin	Johnson	7658934539				NULL	Clinton	West Lebanon	47991
+Stacey	Johnson	7658682053				NULL	708 S. Purdum St	Kokomo	46901
+Alvin	Jones	7657422433				NULL	450 S. 8th St	Lafayette	47901
+Debra	Jones	5747352232				NULL	404 Front St	Logansport	46947
+Diana	Jones	2197226896				NULL	Box 51	Logansport	46947
+Donna	Jones	219.595.7356		219.722.9800			8956 S. Chicago St	Star City	46985
+Eric	Julian	7654268241				NULL	303 Perrin	Lafayette	47904
+Roseanne	Just	7655649200				NULL	985 N. Wells St Apt A3	Delphi	47923
+Bobbi	Kain	2199842647				NULL	5489 S. 300 E	Chalmers	47929
+Marcie	Kallay	2192538693	2193956931			NULL	3727 E. Polk Loop	Monticello	47960
+Bessie	Kaniewski	7655722609				NULL	5429 S. 700 W	Westpoint	47992
+Brian	Kanoy	7655898191		7657421015		NULL			
+Denise	Kappeler	7654711904				NULL	3320 Mystic Lane Apt 303	Lafayette	47909
+George	Katsafaros	5742787694				NULL	6755 E. 775 N	Monticello	47960
+Brad	Kaufman	765.474.8698					1110 S. 3rd St	Lafayette	47905
+John	Keith	3177875654				NULL	4229 Alcove Dr	Indianapolis	46237
+Bruce	Kelley	7652969075				NULL	5510 W. Gasline Rd	Mulberry	46058
+Rodney	Kelly	7655722248				NULL	702 S. 700 W	Lafayette	47909
+Tim	Kelly	7654232350	7654911969			NULL	3123 E. 200 N	Lafayette	47905
+Douglas	Kelsey	7654749822				NULL	311 Plateau Dr	Lafayette	47909
+Micah	Kennaman	7654474794				NULL			
+Troy	Kent	7654470775				NULL	3110 Elmwood Ave	Lafayette	47904
+Jim	Kesterson	765.447.5308	765.427.4059	765.448.2615			1002 Woodmere Dr	Lafayette	47905
+Douglas	Ketterer	7657428799		7654234818		NULL	3839 Pershing	Lafayette	47905
+Randolph	Kimberly	5745839507				NULL	6125 E. 200 N.	Monticello	47960
+Pam	Kincade	7657622222				NULL	802 N. Monroe St	Williamsport	47993
+Samantha	Kincade	7653626897				NULL	1100 W. 300 N	Crawfordsville	47933
+Danielle	King	7654475161	7654140672			NULL	2412 Poplar Lane	Lafayette	47905
+Rebecca	King	765.429.4868	765.430.4405				2957 Barton Ceach Ln	Lafayette	47905
+John	Kinkle	7654140072				NULL	931 6th	West Lafayette	47906
+Jim	Kinnard	5745839284				NULL	5128 E. Highland Cove Ct	Monticello	47960
+Matt	Kinslow	7655232813	7655232814			NULL	PO Box 473	Clarks Hill	47930
+Mike	Kirkham	7654473246				NULL	1108 N. Creasy Ln	Lafayette	47905
+Jodie	Kiser	5745834735		7654978535		NULL			
+Charles	Kittle	7654636979	7654273691			NULL	2211 Kopf Ln	West Lafayette	47906
+Larenda	Klene	7654743936				NULL			
+James	Knipp		7654093457			NULL	2815 Horizan Dr	West Lafayette	47906
+Harold	Knochel	574.583.7386					615 Cherrydale	Monticello	47960
+Matt	Knogge	765.296.4843					17 W. St	Mulberry	46058
+Steven	Kochert	7655232090				NULL	7625 E. 1000 S	Clarks Hill	47930
+Melissa	Kohne			7654239388		NULL	207 Digby	Lafayette	47905
+James	Koontz	7654741561				NULL			
+Sandra	Kopf	765-589-8189		765-474-8188			410 Hickory St	Lafayette	47905
+John	Koppelman	2192537654				NULL	4337 E. Penrod Dr.	Monticello	47960
+Michael	Kordas	2626929507			mkliberty@earthlink.net	NULL	8878 Orchard Valley Rd	West Bend	53090
+John	Kretzschmar	7654498836				NULL	736 Paradise	Lafayette	47905
+Dick	Krintz	574.583.7008					109 N. Country Brooke Dr	Monticello	47960
+Jason	Krintz	574.870.2695					box	Reynolds	47980
+Brian	Krohn	7654777353				NULL	3046 Eagles Way Dr	Lafayette	47909
+Chuck	Kubly	5745839707				NULL	310 S. Main St	Monticello	47960
+Tonya	Kuhl	219.253.6164		574.583.9171			4549 E. Oakcrest Dr	Monticello	47960
+Mike	Kuhn	2199654501	7654300733	8002592101		NULL	8608 N. 975 W	Delphi	46923
+Jerry	Kyburz	219.279.2523		219.279.2116			1258 N. 800 W	Wolcott	47995
+Kevin	Lachmund	7655832851				NULL			
+Brian	Laha	5745839893		2196896622		NULL	Box 723	Monticello	47960
+Robert	Lahrman	7654745643				NULL	5008 S. 250 E	Lafayette	47909
+Veronica	Land	7655643012				NULL	5660 N. 9th St	Monticello	47960
+Lorna	Landis	574.652.2190					6929 W. Georgetown Rd	Logansport	46947
+Dick	Landrum	5745836436				NULL	607 Terry HC Dr	Monticello	47960
+Robert	Lane	7654121290	7654121274			NULL			
+Rich	Lano	7653618861				NULL	13 Park Forest Dr	Crawfordsville	47933
+Nicole	Lanum	7652426988				NULL	459 S. Harrison	Frankfort	46041
+Terry	Laorange	7653242274	7653066556			NULL	5647 S. Broadview Rd	Colfax	46035
+Boyd	Larson	765.742.4420					1504 Virginia St	Lafayette	47905
+Ron	Lashbrook	7655674837				NULL	6114 Gallegos	West Lafayette	47906
+Rob	Lear		7654300790			NULL	1412 N. 16th	Lafayette	47904
+Tina	Leatherwood Steward	7654749889				NULL	1207 S. 3rd St	Lafayette	47905
+Shon	Lebo	574.735.6621		765.474.1388			706 N. Couty Road 400 W	Logansport	46947
+Jesse	Lebrun	765.477.6406					4139 Calder Dr	Lafayette	47909
+Ron	Ledbetter	5745834562		7658544037		NULL	5251 E. 350 W	Monticello	47960
+Regina	Lehman	7655327569				NULL	801 David Ross Rd	West Lafayette	47906
+Angela	Leonard		7654911208			NULL			
+Kristin	Leuck	7658841741				NULL	203 E. 4th St	Fowler	47944
+Jim	Lewis	2198892502				NULL	2595 W. 1000 N	Lucerne	46950
+Jonathan	Lewis	7654262231	7654262231			NULL	306 S. 6th St	Lafayette	47901
+Bill	Lile	7654470678	7654903171			NULL	3320 Mystic Lane Apt 301	Lafayette	47909
+Ruth	Lind	7654643662				NULL	2622 Calvin Court	West Lafayette	47906
+Henry	List	7655636360				NULL	1881 E. State Road 18	Brookston	47923
+Jeff	Locker			7654474182		NULL	28 Staymen Ct	Lafayette	47905
+Kevin	Locker			7654474182		NULL	8930 W. 650 S	Colfax	46035
+Gary	Lockwood	7658848339				NULL	307 E. Elm St	Fowler	47944
+Dave	Loehmer	2199466309				NULL	1415 S. 75 W	Winamac	46996
+Byron	Logan	574.583.7936	574.870.0234	574.583.8971			207 N. Miller Manor Ct	Monticello	47960
+James	Logan	574.583.9601	219.869.1177	765.774.5300			201 Sandlewood	Monticello	47960
+Belinda	Long	7657420240				NULL	1002 S. 20th St	Lafayette	47905
+Felisha	Long	7654719912		7654636722		NULL	2330 Old Romney Rd	Lafayette	47909
+Jeff	Long	7653850232				NULL	305 Jill Ln	Oxford	47971
+Paul	Losiewicz	5745836598				NULL	4312 E. Blueberry Dr	Monticello	47960
+Paul	Losiewicz	2192536598				NULL	321 W. 100 N	Monticello	47960
+Jr.	Louks		7654909038			NULL	1857 Shoshone Dr. #11	Lafayette	47909
+Kevin	Lovelace	7654468694				NULL	1409 Hedgwood Dr	Lafayette	47904
+Chuck	Lovely	2199564880				NULL	382 W. 700 N	Rensselaer	47978
+Jeffrey	Lowe	7653850232				NULL	305 Jill Lane	Oxford	47971
+Glenn	Loy	7655662439		7654291719		NULL	6628 E. 250 S	Bringhurst	46913
+Ricky	Lulla	7654957512				NULL			
+Clarence "Red"	Luse	5745836389				NULL	6125 E. 200 N. Lot 16B	Monticello	47960
+Bob	Lybarger		3174016217			NULL	6406 N. St Rd 39	Lizton	46149
+Hillary	Lynch	7654468593				NULL	3958 Amelia Ave. Apt 4	Lafayette	47905
+Sandra	Lynch	2192973550		7654477636		NULL	10506 W. Hwy 24	Goodland	47948
+Tamara	Lynch	765.463.7039					1628 Lionheart Lane	West Lafayette	47906
+Kelly	Lyons		7658159558			NULL	201 N. Prairie Ave	Bradley	60915
+Lewis	Maiden	7654744779				NULL			
+Amber	Manion	7655232335	7654048050			NULL	8700 S. 725 E	Lafayette	47909
+David	Maples	8127389675		2197788080		NULL	4710 Old Forest Rd SW	Corydon	47112
+Joe	Marlin	765.463.6140					297 Woods Edge Ct	West Lafayette	47906
+Ben	Marsh	7655834321				NULL	6274 St. Rd 26	West Lafayette	47906
+Chris	Martin	765.447.7042					2004 Brady Lane	Lafayette	47909
+Michael	Martin	7654484608	7654900576			NULL	749 Meadow Ln	Dayton	47941
+John	Marx	5748264204				NULL	Box 81	Burnettsville	47926
+Angela	Masterson	2192974421				NULL	205 N. Iroguis St	Goodland	47948
+Leah	Mathews	7652967258				NULL	PO Box 447	Dayton	47941
+Ron	Matthews					NULL	Box 1106	Monticello	47960
+Rita	Matteson	7656560071	7652429074			NULL	301 E. S St.	Frankfort	46041
+Tim	Mascon	5749654561				NULL	11113 Quiet Water Dr	Monticello	47960
+Harry	Maxfield	219.253.6487					3456 E. Bailey Rd	Monticello	47960
+Jerry	Mayhill	574.583.8932					505 S. Bluff St	Monitcello	47960
+Mike	Maynard	7657626540				NULL	903 S. Carry St	Attica	47918
+Taylor	McBride	7657439869				NULL	400 N. River Rd	West Lafayette	47906
+Kyle	McCain	765.686.4777					4770 N. 150 W	Delphi	46923
+Michele	McClure	7654469395				NULL	814 S. 24th St	Lafayette	47905
+Samantha	McCoy	7653648135				NULL	802 Virginia St.	Crawfordsville	47933
+Glen	McDonald	5745837369				NULL	510 Easy St Unit B	Monticello	47960
+Mike	McDonald	5745839649				NULL	542 S. Bluff St	Monticello	47960
+Wrenna	McDonald	7658680213				NULL	1300 W. Mulberry	Kokomo	46901
+John	McIntire	2197536254				NULL	2125 Wright St	Logansport	46947
+Dody	McIntyre	7654265491				NULL	2309 N. 21st St	Lafayette	47904
+Brad	McKay	7654746574				NULL	1333 Windmill Dr	Lafayette	47909
+Stephanie	McKee	7654045717				NULL	3613 Driftwood Pl. Apt 201	Lafayette	47905
+Chad	McKinney		7653662140			NULL	302 N. Oak	Crawfordsville	47933
+Tony	McKinney	7653624299				NULL	48 Center Ln	Crawfordsville	47933
+Jim	McWhirter	575.965.4386		574.583.6402			10424 N. 1200 W	Monticello	47960
+Jess	McWilliams	574.583.6678		800.759.6543			603 Cherrydale Dr.	Monticello	47960
+Joe	McWilliams	574.583.3535					967 Maxwell St	Monticello	47960
+Arlyn	Meador	7653792959				NULL	4928 W. Couty Road 700 N	Mulberry	46058
+Nolan	Meador	7653792250				NULL	7032 W. 700 S	Rossville	46065
+Brian	Medsker	7655672654				NULL	5832 Lookout Drive	West Lafayette	47906
+Aron	Meihls	7655721223				NULL	7340 Turner Rd	Westpoint	47992
+Rob	Melin	574.583.7867					1106 Bluewater Dr	Monticello	47960
+Jessica	Mellady	7654746190				NULL	3025 Fairwood Dr.	Lafayette	47909
+Tasha	Merriman	7654904736				NULL			
+Jennifer	Merritt	7655382246				NULL	740 Cardinal Dr	Lafayette	47909
+Dan	Metro	7652967049				NULL	7931 S. 1000 E	Lafayette	47909
+C	Meyer	7653641498				NULL	9 Country Club Court	Crawfordsville	47933
+Rick	Meyer	574.965.2393					12494 W. 725 N	Monticello	47960
+Lisa	Meyers	7656593617				NULL	915 BurlingtonAve	Frankfort	46041
+Matt	Michalski	5745830929				NULL	1185 N. Saddlebrook Ct	Monticello	47960
+Kim	Mickler	7654771897		7657432595		NULL	915 Wells St	Lafayette	47905
+Janine	Miles	7654463786				NULL	Box 6855	Lafayette	47903
+Scott	Miles	7653594365				NULL			
+Connie	Miller	5745837305				NULL	320 W. Market St	Monticello	47960
+Eric	Miller	7654472623				NULL	1510 Main St	Lafayette	47901
+John	Miller	7652682288				NULL	2003 E. 500 S	Cutler	46920
+Linda	Miller	7657984945		7654961177		NULL	255 E. Us Hwy 136	Hillsboro	47949
+Robert	Miller	7652968500				NULL	1115 N. 800 W	Mulberry	46058
+Cory	Mills	7655834820	7654043210			NULL	209 N. Meadow St	Otterbein	47970
+Calvin	Minglin	5745834954				NULL	508 S. Bluff St	Monticello	47960
+Clinton	Minglin	5745833364				NULL	3702 E. Lake Rd 28 W	Monticello	47960
+Richard	Minneman	3178445964		3178145257		NULL	270 E. Carmel Dr	Carmel	46032
+Charles L.	Minnicus	2192792028				NULL	201 S. Range St	Wolcott	47995
+Robert	Minnicus	5745839540		8002850666		NULL	6929 N. 1200 W	Monticello	47960
+William	Mitchell	7654295098				NULL	1844 N. 15 St	Lafayette	47904
+Joshua	Mitton	7654490586		7657718037		NULL	1924 N. 27th St	Lafayette	47904
+Josh	Mitton	7654748467	7654717331	7657718020		NULL	3508 S. 9th St	Lafayette	47909
+Josh	Mitton	7654748467				NULL	3508 S. 100 E	Lafayette	47905
+Kenneth	Montgomery	7654633870				NULL	2312 Centenial Ct. W	West Lafayette	47906
+Kathy	Moon	219-984-6388	             207- 0097	219-279-2031			4865 W. 200 S	Reynolds	47980
+Brad	Moore	5745839534	5745812231	5745833100		NULL	1166 N. Saddlebrook Ct	Monticello	47960
+John	Moore	7656540723				NULL	4991 W. CR 2005	Frankfort	46041
+Mervin	Moore	3174300143				NULL	10330 Split Rock Way	Indianapolis	46234
+Shelly	Moore	7654832201				NULL			
+Steve	Morehouse	765.567.2880					8121 Redsteck Ln	Battle Ground	47920
+Harvey Jr.	Morrison	3175699448	7657108968			NULL	840 Indian Trail #13	Carmel	46032
+Mike	Morrison	7655643724				NULL	11848 W. Horseshoe Bend Rd	Brookson	47923
+Rev Ed	Morrow	7654749855				NULL	204 Buckingham Circle	Lafayette	47905
+Dana	Morton	765.429.5583		765.426.9045			104 Steeplechase Ct	Lafayette	47905
+Lenna	Moser	7657944732				NULL	Route 1	Crawfordsville	47933
+Donald	Mull	7654484166				NULL	3876 Baldwin Ave	Lafayette	47905
+Charlie (Grover)	Mulligan	5745836198		5745835476			810 E. Washinton	Monticello	47960
+Robert	Mulvey	7655233157				NULL	10412 Us Hwy 52 S	Clarks Hill	47930
+Aida	Munoz		7654266308			NULL	2213 S. Haven Blvd	Lafayette	47909
+Russel	Musall	5745838437				NULL	1403 S. Meadow Dr	Monticello	47960
+Ralph	Musser	5745834368				NULL	5903 E. Pierce Dr	Monticello	47960
+Jeff	Meyers	7654741024				NULL	1642 Tabor Ct	Lafayette	47909
+Amanda	Myers	7654274503				NULL	3550 Chauncy Ct. E. Dr. Apt C	Lafayette	47905
+Eric	Myers	2195679786				NULL	Box 563	Francesville	47947
+Jason	Myers	5745837904				NULL	306 W. Franklin Court	Monticello	47960
+Jeffrey	Myers	574.722.5958					1925 Spear	Logansport	46947
+Chris	Myskowski	7654710844				NULL	1802 Skyline Rd	Lafayette	47905
+Sean	Nabors	2196138118	2196130778			NULL	112 E. Oak St	Rensselaer	47978
+Gerald	Neal	7652963453				NULL	5317 W. State Rd 38	Mulberry	46058
+Sharon	Nemeth	7654477054				NULL	2213 Vancouver Dr	Lafayette	47905
+Gary	Ness	765.497.2130	765.497.2131	7654.447.7402			3540 Bethel Dr	West Lafayette	47906
+Carrie	New			7654712154		NULL			
+Terry	New	7654742393				NULL	2429 Meadow Dr	Lafayette	47909
+Linda	Newkirk	7654468278				NULL	3690 Sunbury Ct. Apt H	Lafayette	47905
+Charles	Newton	7652962331				NULL	6277 S. 1075 E	Mulberry	46058
+Eileen	Newton	7654719277				NULL	1842 Summer Time Trail Apt 12	Lafayette	47909
+Jim	Newton	5745839357				NULL	1348 Greenwood Dr	Monticello	47960
+Rosales	Nicandro	7654717828				NULL	3057 Chinook Lane	Lafayette	47909
+James	Nicole	7654636150				NULL	861 Lagrange	West Lafayette	47906
+Janice	Nicoll	2199433353				NULL	4829 W. 1100 N	Idaville	47950
+Kevin	Niebrugge	765.567.4030					5946 Battleview Dr	West Lafayette	47906
+Richard	Niedzweicki	7654712779				NULL			
+Star	Nightingale	5745834054					Box 1143	Monticello	47960
+Beth	Nisen	7652964187				NULL	2730 N. Couty Road 850 W	Mulberry	46058
+Kylee	Noah	7657146464				NULL	852 N. 350 W	West Lafayette	47906
+Helen	Noland	2172839730				NULL	728 S. Market St	Hoopston	60942
+Francis	Norris	5745838859				NULL	205 E. Fischer St #608	Monticello	47960
+Pat	Novotny	5745835898				NULL	4991 N. Canyon Lp	Monticello	47960
+Kristen	Oberle	7654972759		7654746400		NULL	3015 Fall Place	West Lafayette	47906
+Joe	Ogas	7657437634				NULL	719 N. Chauncy	West Lafayette	47906
+Brenda	Oiler	7653852368				NULL	6871 N. 300 E	Pine Village	47975
+Marcia	Oiler	5749433373				NULL			
+Jonathon	Oliver	2606678573	7654639080			NULL	2695 S. 390 W	Pleasant Lake	46779
+Lindsay	Oliver	7654278009		5747533156		NULL	PO Box 562	Peru	46970
+Kirsta	Orme	7655382140		7654743404		NULL	8639 Us Highway 231 S	Lafayette	47909
+Drew	Ott	7655636801	7654906614	7657421291		NULL	4130 E. Walnut Ridge Rd	Brookston	47923
+Rob	Outhouse	7654776556	7657148437			NULL	302 Yarmouth Ct	Lafayette	47909
+Robert III	Owen	7654497915				NULL	1128 Hedgwood Dr	Lafayette	47904
+Beecher	Owens	2195835911				NULL	1419 Hanawalt Rd	Monticello	47960
+Homer	Owens	2199652812				NULL	9910 N. 950 W.	Monticello	47960
+Dean	Oyer	2606229987				NULL	750 W. View	Ossian	46777
+Kevin	O'Brian	7654746633				NULL	1623 S. 5th St	Lafayette	47905
+Thomas	O'Brian	7654977600	7654121165	7657428814		NULL	7230 Abby Marle	West Lafayette	47906
+Ann	O'Donnell	5745839306				NULL			
+Tom	O'Malley			7654484602		NULL	Box 5358	Lafayette	47903
+Jose	Pacheco	7654749640				NULL	1216 Beck Lane	Lafayette	47909
+Kris	Padgett	7654839563				NULL	2794 N. 900 W	Thorntown	46071
+Devon	Page	7654630555				NULL	995 Evon St	West Lafayette	47906
+Melissa	Page	7654200794				NULL	1011 S. 19th St	Lafayette	47905
+Chris	Palladino	765.474.4617					6301 N. 1000 E	Lafayette	47905
+Bryan	Pancake	219.686.3114	574.965.2349				6313 N. 260 W	Delphi	47923
+Lyle	Parker	765.589.8679					6911 Goldsberry	Battle Ground	47920
+Nichole	Parker	7655639732	7655321260	7654967278		NULL	2924 Horzon Dr. Apt 2	West Lafayette	47906
+Donna	Parkevich	5747532379				NULL	1721 George St	Logansport	46947
+William	Parks	7657944610				NULL	RR 1 Box 821	Crawfordsville	47933
+Michael	Parrish	7655898111					6760 Jeffry Ln	Lafayette	47905
+Steve	Parrish	574.278.7852		219.279.4000			4353 N. 600 E	Monticello	47960
+Franklin	Pasley	7654207679				NULL	913 N. 12 St	Lafayette	47904
+Meagan	Pattengale	7654200241				NULL	1508 Ferry St	Lafayette	47901
+Jackie	Patterson			3172372557		NULL			
+Shelly	Patterson	8129344856							
+Christian	Pawlowski	2693728421		2692445441		NULL	8255 Glenwynd Dr	Kalamazoo	49009
+Shelley	Payne	7654712703				NULL	2220 Cliburn Rd	Lafayette	47909
+Mark	Peabody	7654777685				NULL	3418 Victoria Ave	Lafaeytte	47909
+Chris	Pearson	7657433661				NULL	1460 Fawn Ridge Dr	West Lafayette	47906
+Mike (Jim?)	Pechin	7655328667				NULL	3916 Shanajane Dr	Lafayette	47905
+John	Pellam	7655232063	7654913674			NULL	11401 S. 850 E	Clarks Hill	47930
+Bob	Pemberton	2192537776				NULL	6915 N. 100 W	Monon	47959
+Brent	Pepper	7655323738				NULL	1105 1/4 S. St	Lafayette	47901
+Sam	Perdue	7654483518				NULL	243 Trackside Dr	Lafayette	47905
+Amanda	Peters	7654778315				NULL	3314 Pebble Ct	Lafayette	47909
+Jack	Peters	5745834264				NULL	4967 E. 400 N.	Monticello	47960
+John	Peters	2198634301				NULL	12006 N. Upper Lake Shore Dr	Monticello	47960
+John II	Peters	7655832313				NULL	8928 E. State Road 26	Otterbein	47970
+Melissa	Peters	5746863038				NULL	Box 176	Camden	46917
+Rebecca	Peters	7652752687		7654479431		NULL	203 Main Cross, PO Box 1	Wingate	47994
+Brandon	Phelps	2194745363				NULL			
+Amy	Phillip	7654474825				NULL	3950 Amelia Ave	Lafayette	47905
+Matt	Pinkerton	7654749663	7654092168			NULL	3142 Eagles Way Dr. Apt 1591	Lafayette	47909
+Richard	Polk	3177834454				NULL	1438 Maynard Dr.	Indianapolis	46227
+Dewitt	Pollard	7655674000				NULL	404 Sherman St	Battle Ground	47920
+Jill	Poppinga		3176961675			NULL	15286 Ten Point Dr	Noblesville	46060
+Jason	Portlock	7654641675				NULL			
+Patrick	Potter	7654367123				NULL	5485 W. St Rd 47	Thorntown	46071
+Tim	Potts	7654743002				NULL			
+Katrina	Powell	3173771341				NULL	3755 N. Howthorne Ln	Indianapolis	46218
+Sarah	Poynter	7655221313				NULL	103 S. Meridian St	Roachdale	46172
+Judy	Price	8129882969				NULL	6010 Possum Trot Rd	Nashville	47468
+Mandy	Price	7652495002				NULL	7766 E. Couty Road 100 N	Frankfort	46041
+Zach	Price	2192792063		7654947140		NULL	124 E. Johnson St	Wolcott	47995
+Karissa	Prichard	7658848025	7657148612	7658848270		NULL	304 N. Washinton Ave.	Fowler	47944
+Charles	Pridgen	5742686397				NULL	1508 Popler Ave	Winona Lake	46590
+Valarie	Prieboy	7654776379				NULL			
+Michael	Priest	7655642498				NULL	2931 N. 1275 W	Delphi	46923
+Justin	Prugh	7657410246				NULL	334 Shreeve Hall	West Lafayette	47906
+Linda	Pruitt	765.446.9895					2806 Brown St	Lafayette	47904
+Pat	Purdy	2199433623				NULL	PO Box 222	Idaville	47950
+Patricia	Purdy	5745839949		574.583.9708			511 S. Park Dr	Monticello	47960
+Dana	Puterbaugh	7654635355		7654978887		NULL	210 E. Pine Ave	West Lafayette	47906
+Larry	Putts	7657439050		3175719601		NULL			
+Ken	Pyle	2196862728				NULL	1873 W. 825 N	Delphi	46923
+Tony W.	Pyle	5745834750				NULL	508 W. Foster St	Monticello	47960
+Sabiha	Qasim	7654648885				NULL	2216 Sandpiper Ct. S	West Lafayette	47906
+Mathew	Query		8128873879			NULL	2114 McCormick Rd	West Lafayette	47906
+Mark	Rader	7654298409				NULL	2012 N. 20th	Lafayette	47904
+David	Rager	4192389921				NULL	6174 John Brown Rd	Van Wert	45891
+Mark	Randolph	5745830778				NULL	5666 E. Ritchey Prk Dr	Monticello	47960
+Emily	Rashin	2196636611				NULL	12129 White Oak Dr	Crown Point	46307
+George	Rausch	219.278.7502					1970 W. 1000 S.	Star City	46985
+Amanda	Ray		7654307003			NULL	3836 Burberry Dr N.	Lafayette	47905
+Ken	Ray	2193942897				NULL	10865 W. 700 S	Rensselaer	47978
+Chester	Reagan		574.870.9586				601 Hillcrest Dr.	Monticello	47960
+Geneva	Reagan	2192536058				NULL	418 Viking Lane	Monon	47959
+Sandy	Reaves			7654298899		NULL	4916 Ruffing St	Lafayette	47905
+Bob	Reed	5745838048				NULL	563 S. 425 E	Monticello	47960
+Jeanna	Reed	2199433407				NULL	PO BOX 102	Idaville	47950
+Melissa	Rice	574-583-8114	574-581-0747	765-449-0784			702 S. Maple St.	Monticello	47960
+Terry	Reed	5749652923				NULL	PO Box 6	Yeoman	47997
+Robert	Rees	7654719212				NULL	2120 Whisper Valley Dr	Lafayette	47909
+Peggy	Reese	7655830726		7654747310		NULL	495 Kerber Rd.	Monticello	47960
+Robert	Reiff	5745837304		2199433548		NULL	221 S. Main St	Monticello	47960
+Jenny	Reister	7654639128		7654239212		NULL	141 E. Country Club Dr	Liberty	47353
+Tammy	Reneau	765.474.0044		765.772.2285			1012 Linden Dr	Lafayette	47909
+Kent	Reynolds	5745836595		2198637108		NULL	1404 S. Meadow Dr	Monticello	47960
+Josh	Reynolds	7657623819				NULL	400 Grant St	Williamsport	47993
+Shelby	Reynolds	574-583-4731					401 Fisher	Monticello	47960
+Rodney	Richardson	7656532797	7654124061	3173227200		NULL	80 Woodland Hts	Greencastle	46135
+Stephen	Richey	7653847978				NULL	3826 S. 550 W	Swayzee	46986
+Robert	Rickey	7655832636				NULL			
+Jason	Rider			7655431354		NULL			
+Gerold	Riley	7657621128				NULL	1109 S. McDonald St	Attica	47918
+Tony	Risner	2198963514				NULL	504 Keller Ave	N. Judson	46366
+Gregory	Risse	7656547408	7652423590	7656548892		NULL	1590 S. Mayberry Dr	Frankfort	46041
+Brian	Roberts	7654492735				NULL	22 S. Brookfield Dr	Lafayette	47905
+Kevin	Roberts	7654913925				NULL	7930 Pesewy Dr	Lafayette	47905
+Mathew	Roberts	765.296.2572					640 S. 1075 E	Lafayette	47905
+Amber	Robertson	7654275821		7654632542		NULL	3430 Summertime Trail	Lafayette	47909
+Jake	Robertson	5745834533				NULL	218 S. Illinois St.	Monticello	47960
+Keith	Robertson	5749652511				NULL	8618 N. 900 W	Delphi	46923
+Mark	Robertson	5745834227				NULL	700 Bluewater Dr.	Monticello	47960
+William	Robinson	765.447.4829					1804 Whitcomb	Lafayette	47904
+Ed	Rodehan	7655837657				NULL	418 W. Broadway	Monticello	47960
+Chad	Rodgers	7656282897				NULL	1109 Avalon Dr	Greentown	46936
+Jose	Rodriguez	5745830764				NULL	813 N. 3rd St	Monticello	47960
+Stacy	Rogers	765.654.8415							
+Steven	Rohler	7654712541				NULL	3125 Coppergate Circle	Lafayette	47909
+Mark	Rohrer	7654098658				NULL	409 Russel St.	West Lafayette	47906
+Sandy	Romack	7654643722		7657434955		NULL	204 Chippewa Dr.	West Lafayette	47906
+Sean	Ronkoske		7654124066			NULL	7804 E. 700 S	Lafayette	47909
+Amber	Ronnebaum	8129339002				NULL			
+John	Roscka	5745833455				NULL	212 S. Main St	Monticello	47960
+Flora	Roudebush	5742536464				NULL			
+Rob	Roy	7655636883				NULL	9012 S. 350 E	Brookston	47923
+John Jr.	Ruiz	7654049935				NULL	2120 Cliburn Rd	Lafayette	47909
+Clayton	Runnebohm	3176049631				NULL	320 Bronn St	West Lafayette	47906
+Randy	Runyan	574.870.6295	574.870.6294/hers				6288 E. Ash Ct	Monticello	47960
+Elizabeth	Rush	7658978334				NULL	PO Box 252	West Lebanon	47991
+Paul	Rush	7654972013				NULL	238 Woods Edge Ct	West Lafayette	47906
+Rob	Rush	7654710586				NULL	520 Crocket Ct	Lafayette	47909
+Mike	Rusk	574.583.2792	574.870.0862				6722 E. 250 N	Monticello	47960
+Dirk	Ryan	5745836246		7654482450		NULL	11966 W. Conrad Ct.	Monticello	47960
+Dirk	Ryan	5745836246				NULL	305 Gordon Rd	Monticello	47960
+Brian	Rznpnicki		7654900421			NULL	345 S. Chauncy Apt 3	West Lafayette	47906
+Greg	Sabens	7654742730				NULL	312 Persimmon Tr	Lafayette	47909
+Harry	Safford	2192786388				NULL	9831 N. Valley Ct	Buffalo	47925
+Izabel	Salazar	7655721243				NULL	2915 E. 1300 N	Attica	47918
+Shelly	Samuelson	7657432341	2532196624			NULL	246 S. Salsbury Apt 5	West Lafayette	47906
+James	Sandefur	7653852314		7657715300		NULL	610 N. Darcy Dr	Oxford	47971
+Mathew	Sanders		7654905097			NULL	6492 St Rd 26 W	West Lafayette	47906
+Latasha	Sandidge	765.446.0866	765.532.4913				3927 Deer Ridge Apt 3C	Indianapolis	46254
+Joseph	Sanford	7653852264				NULL	301 W. Benton St	Oxford	47971
+Richard	Satterfield	3172915163				NULL	7012 Long Run Dr	Indianapolis	46268
+Jerry	Saunders	219.984.5329	219.207.0065				Box 101	Reynolds	47980
+Thomas	Sayers	7655649910	7654277226			NULL	1189 N. Wells St Apt 2	Delphi	46923
+Missy	Sayler	5745836504				NULL	222B S. Railroad St	Monticello	47960
+Jordan	Scanlan	7654779830				NULL			
+Mark	Scharer	765.268.2500	765.430.1755				4640 S. 75 E.	Cutler	46920
+Steve	Schilling	7654746050	7654127396			NULL	2408 Foxhall Drive	Lafayette	47909
+Tracy	Schimmel	765.523.2704					6818 Attica St	Stockwell	47983
+Paula	Schleman	2198660073				NULL	647 W. 1100 S.	Wolcott	47995
+James	Schlotman	5745833955				NULL	5182 E. Highland Cove	Monticello	47960
+Jason	Schlotman	7654476208				NULL	235 Penridge Lane	Lafayette	47905
+Dan	Schluttenhofer	7654478876				NULL	2721 Greenbush	Lafayette	47904
+Richard	Schmidt	7654779130				NULL	4604 Nottingham Dr	Lafayette	47909
+Richard	Schmidt	7657426091				NULL	1120 S. 23rd St	Lafayette	47905
+Zach	Schneidt		7655323268			NULL	2232 Charter Grove Dr. Apt 3	Fairborn	45324
+Zach	Schneidt	7655323268				NULL	2408 Foxhall Dr	Lafayette	47909
+Kathy	Schroeder	7657622371		7654710804		NULL	2494 N. 225 E	Attica	47918
+Mike	Schroeder	219.984.5356					1588 W. Smithson Rd	Reynolds	47980
+Kevin	Schuh	6054847605				NULL	944B Boston Way	Coralville	52241
+David	Schultz	7654486583				NULL	522 N. 30th St	Lafayette	47904
+Judi	Schultz	574.735.2161		765.423.9382			PO Box 393	Royal Center	46978
+Mike	Schultz			7083852534		NULL	14326 Keeler	Midlothian	60445
+Barb	Schuster	7654746392				NULL	430 Eckman Lane	Lafayette	47905
+Gary	Scott			7654260053		NULL	508 Ortman Ln.	Lafayette	47909
+Jon	Scowden	7655643957				NULL	1097 N. Wells St Apt 4	Delphi	46923
+Cory	Scriven	574.965.2943					Box 21	Yeoman	47997
+Keith	Scriven	574.583.2463	574.870.2286				3875 E. Parses Road	Monticello	47960
+Melissa	Scroggins		7655327546			NULL	2544 Richmond Ave	Lafayette	47905
+Tim	Sechrist	7654473477				NULL	1812 Thompson	Lafayette	47904
+Jeff	Seibold	7654771170				NULL	3304 H. Pebble Ct	Lafayette	47909
+Gerald	Seiters	7654476707				NULL			
+Mark	Sell	5742675635				NULL	2710 Glad St	Warsaw	46582
+Kevin	Senn	5023863739				NULL	6010 Morning Glory Ln	Louisville	40258
+Genaro	Serrano	7654296658				NULL	1001 S. 19th	Lafayette	47905
+Stella	Seward	5745837762				NULL	2029 E. Us 24	Monticello	47960
+Tony	Shackelford	7654180409				NULL	123 Woodsedge Ct	West Lafayette	47906
+Kyle	Shackleferd		7654271150			NULL	1705 Normandy	Lafayette	47909
+William	Shadwick	7654477467	7654042587			NULL	4146 Doten Dr	Lafayette	47909
+William	Shadwick	765.447.7467		765.404.2587			1653 Briarwood	Lafayette	47905
+Thomas	Shafer	7657462331				NULL	1208 N. Grant St	West Lafayette	47906
+Orie	Shaffer	7657462331				NULL	1208 N. Grant St	West Lafayette	47906
+Adam	Shank	7654140405				NULL	350 St Rd 25 W	Lafayette	47909
+Jim	Shanley	2198667858				NULL	6482 N. 800 S	Rensselaer	47978
+Jennifer	Sharik	5745837582				NULL	811 E. Edgwater	Monticello	47960
+Evan	Shaw					NULL	2132 Green Hill Rd	Sebastopol	95472
+Evan	Shaw	7657430183	7078232952	7078232125		NULL	330 Sylvia St	West Lafaeytte	47906
+Jarod	Shaw	7652341279				NULL	209 S. Vine	Waynetown	47990
+Shawn	Sheely	7654489785				NULL	917 Haverford Dr.	Lafayette	47905
+Bob	Shelle	7657421088				NULL	2624 N. 400 E	Lafayette	47905
+Jeremy	Shepard	7654744549	7654272684			NULL	118 Kensal Ct	Lafayette	47909
+Arvis	Shephard	7653625172				NULL			
+Gary	Shephard	5745838949				NULL	1661 N. McCutcheon Ct.	Monticello	47960
+Shawn	Shepherd	5745830857				NULL	323 N. Beach Dr	Monticello	47960
+Mark	Sherry	7652101403				NULL			
+Loralee	Shoaf	7655830486				NULL	5430 Hillside Ln	West Lafayette	47906
+Tina	Shockley	7654636979				NULL	2211 Kopf Ln	West Lafayette	47906
+Ester	Shoemaker	5745836419				NULL	211 E. Marion St	Monticello	47960
+Margaret	Shuey	2192537539		5745835712		NULL	5190 N. E. Shafer Dr.	Monticello	47960
+Pamela	Shutters	5407761832	5405808081		pamela.shutters@mci.com	NULL	4677 Wipplewood Ct	Roanoke	24014
+John	Siemens	7657425170				NULL	1900 Perrine Street	Lafayette	47904
+Cheryl	Simmons	7653523254				NULL	1262 Lake Vista Dr	Crawfordsville	47933
+Mike (Jon?)	Simmons	7654770949	7654902677			NULL	522 Bur Oak Court W	Lafayette	47909
+Mike	Skoby	7654637503				NULL	2243 Us 52 W Apt 1511	West Lafayette	47906
+Joe	Sliwkowski		7654049089			NULL	1430 Central St	Lafayette	47905
+Brian	Smith	765.659.1674					7053 S. Co Rd 350 W	Frankfort	46041
+Chuck	Smith	5745835890				NULL	5689 E. Pleasant Valley Dr	Monticello	47960
+Dana	Smith	5749654331				NULL	7702 N. 975 W	Delphi	47923
+Danny	Smith	7654486778		7654477646		NULL	300 Timbertrail Dr. Apt 302	Lafayette	47905
+Daryl	Smith	5745835822				NULL	1790 N. Stuart Rd	Monticello	47960
+Graham	Smith			7657713453		NULL	8075 W. Nickelback Ct	Mulberry	46058
+Heidi	Smith	7654771474				NULL			
+Jim	Smith	7654274475	7654307325			NULL	213 Dryer Dr	Dayton	47941
+Kurtis	Smith	3177160197				NULL	227 Cranston Ave	Carmel	46032
+Nicholas	Smith		8124591661			NULL	1307 Columbia St. Apt 2	Lafayette	47901
+Sharon	Smith	7654971587				NULL	202 Floyd Court	West Lafayette	47906
+Terra	Snider	7652421600				NULL	2160 Washington Ave	Frankfort	46041
+Rob	Snodgrass	7654777703				NULL	1542 Crestwood Ln	Lafayette	47905
+Dorothy	Snowberger	5745834827				NULL	301 S. RR St	Monticello	47960
+Mark	Snyder	7654970829				NULL	307 Hamilton	West Lafayette	47906
+Steve	Snyder	574.583.5992					5116 S. Reagan dr.	Monticello	47960
+Wayne	Snyder		7659419339			NULL	2543 Kyle Dr	Lafayette	47909
+Levi	Sorg	260.403.4382					222 Wood St Apt 5	West Lafayette	47906
+Brian	Sparks	7656599362	7656523666			NULL	732 N. Cr 500 E	Frankfort	46041
+Jennifer	Spear	2199846185					1562 W. 200 N	Reynolds	47980
+Alan	Spears	7659734209		8005488138		NULL	412 S. 22nd	Richmond	47374
+John	Speer	574.583.2841	574.581.2841				10645 N. Us Hwy 421	Monticello	47960
+John	Speer	5749652682				NULL	10415 N. 421	Monticello	47960
+Robert	Speer	5749652682					10415 N Us Highway 421	Monticello	47960
+David	Spencer	7655898001	7654793523	7655897106		NULL	6301 N. 1000 E	Lafayette	47905
+Beryl	Spicer	2192787184				NULL	4460 E. 500 N.	Monticello	47960
+Ryan	Srbljan		7655322543			NULL	1218 Kossuth Apt 2	Lafayette	47905
+Tracy	Stanifer	7654973664	7655325424			NULL	3196 Stratis Ct	West Lafayette	47906
+Amanda	Stanley	7654231897				NULL	2025 Greenbush St #308	Lafayette	47904
+Bethany	Stanton	7654294638		7657422930		NULL	704 N. 6th St Apt 1	Lafayette	47901
+Patricia	Stark	5745839292	2198691001	5745837661		NULL	202 Meadow Brook Dr	Monticello	47960
+Cortland	Starrett	765.807.2417	765.430.7616	765.807.7091			PO Box 447	Brookston	47923
+David	Starrett	5745836337	5748704227	2199842600	shane@grandcaymanmotors.com		1252 S. Meadow Dr	Monticello	47960
+David	Starrett	574.965.2619	219.863.4450				9295 N. Paradise Beach Dr.	Monticello	47960
+Tina	Starrett		574.870.4226				1252 S. Meadow Dr	Monticello	47960
+Marty	Stearns	5745832848				NULL	1177 1/2 N. Main St	Monticello	47960
+Jared	Sterrett	2199845361				NULL	Rt 1 Road 375 N	Reynolds	47980
+Jeff	Sterrett	574.943.3076					4522 N. 1200 E	Idaville	47950
+Jim	Sterrett	2192792648				NULL	102 N. Homer	Wolcott	47995
+Ed	Steiner	765.447.2703	765.426.1369	765.429.6409			217 Pineview Ln	Lafayette	47905
+Scott	Stembaugh	7652969587				NULL			
+Allison	Stetler	7654462498				NULL	1649 Eisonhower Ct	Lafayette	47905
+Larry	Stetler	7655721199				NULL	8295 W. 200 S	Westpoint	47992
+Curtis	Stevens	7653628698				NULL			
+Tim	Stevens	7654490554				NULL	413 Brookville Dr	Lafayette	47905
+Chad	Stevenson	7654712278				NULL	48 Brazos Circle	Lafayette	47909
+Mark	Stevenson	574.583.9274					5061 N. Canyon	Monticello	47960
+Mark	Stevenson	5745839274				NULL			
+Corina	Stillwell	7656895401				NULL	2808 Castle Ct	Peru	46970
+Jerry	Stillwell	2197350768				NULL	431 Anthony St	Logansport	46947
+Kenny	Stillwell	2196439362				NULL	14558 E. St. Rd 16	Royale Center	46978
+Justin	Stingley	7655232827	7655326497			NULL	Box 94	Clarks Hill	47930
+Justin	Stingley	7655232827				NULL	11928 Division St	Clarks Hill	47930
+Jeremy	Stinson	5745839709				NULL			
+Misty	Stitt	7654553686				NULL	Box 88	Russiaville	46979
+Tim	Stone	7654777370				NULL	407 Teasdale Dr	Lafayette	47909
+Keith	Storms	7655382074				NULL	1704 S. 1000 S	Romney	47981
+Tony	Storts		7654790040		tslynn64@yahoo.com	NULL	401 N. Raymond St	Wolcott	47995
+Vincent	Stout	765.567.2210					5829 Bittersweet Dr	Battle Ground	47906
+Brian	Stone	7654301493				NULL			
+Bill	Stonebraker	5745832656				NULL	PO Box 993	Monticello	47960
+Nancy	Stover	2199845347				NULL	128 S. 400 W	Reynolds	47980
+Nicole	Strauch	765.420.0050	765.404.0105	765.772.9108			2208 N. 19th St	Lafayette	47904
+Brad	Striegel	7654640193				NULL	1603 Lionheart	West Lafayette	47906
+Kelly	Strohl	7654232039		7657426479		NULL	607 S. 15th St	Lafayette	47905
+Charles	Strong			5745833545		NULL			
+Gary	Stull	7653640291		7653649248		NULL	10 Winslow Dr	Crawfordsville	47933
+Pete	Such	765.448.3736					4262 Sunburst Trail	Lafayette	47905
+Radhika	Sundar	765.495.1256					1275 3rd St.	West Lafayette	47906
+Shane	Swaim	5745838262				NULL	Box 163	Monticello	47960
+David	Swank	7655382936				NULL	2535 W. 800 S	Lafayette	47909
+Dustin	Swank	7653616840				NULL	3800 N. 100 W	Crawfordsville	47933
+Chris	Swift	7654484340				NULL	1314 SW 28th St	Lafayette	47905
+Joe	Swisher	7655232788				NULL	6615 Newcastle Rd	Lafayette	47905
+Bill	Taggart	2199845916				NULL	2025 N. Meridian Rd	Reynolds	47980
+Jason	Talley	3178218835				NULL	6036 Riversport Court	Indianapolis	46221
+Brandon	Taylor	7652966678	7654742191			NULL	720 Cagles Mill Dr	Dayton	47941
+Kimberly	Taylor	5745833177	5748702087			NULL	165 S. 400 E	Monticello	47960
+Clayton	Temple		7654916570			NULL	5310 Harvest Ct	Lafayette	47905
+Jennifer	Terrell	5745837238				NULL	Box 1145	Monticello	47960
+Marlene	Tetzloff	5745838236	7654901090	7655642547		NULL	5684 E. Brook Court	Monticello	47960
+John	Thomas	7654778282				NULL	2305 Ellen Dr	Lafayette	47909
+Monte	Thomas	7652752243				NULL	8717 St Rd 28 W	Westpoint	47992
+Neal	Thomas	5749652178				NULL	10283 N. 1050 W	Monticello	47960
+Phillip	Thomas	7654748683				NULL	1623 E. 430 S	Lafayette	47909
+Danny	Thompson	574.965.2578					11767 W. Lake Bluff Rd	Monticello	47960
+Thomas	Thompson	5749654690	2198630499				9745 N. 850 W	Delphi	46923
+Wanda	Thompson			7654468458		NULL	503 Anchor Dr Apt 100	Lafayette	47905
+Wanda	Thompson	5745837653				NULL	605 E. South Street	Monticello	47960
+Teresa	Thor	7654576383				NULL	4512 Columbus Blvd.	Kokomo	46901
+Gregg	Thrasman	7655830094				NULL	43 Hillside Ct.	West Lafayette	47906
+Todd	Tillotta	7654633642	7654902460			NULL	1064 CUmberland Ave Apt A	West Lafayette	47906
+Bob	Tincher	574.583.2445					5411 E. Colonial Oaks Drive	Monticello	47960
+Robert	Tinney	7655644680				NULL	117 E. North St	Delphi	46923
+Bill	Tinsman	5749674692				NULL	807 S. Willow St	Flora	46929
+Gerald	Toumine	574.583.4162					627 S. Maple	Monticello	47960
+Tom	Townsley	9372486179				NULL	313 E. Reynolds St.	Verbana	43078
+Mario	Trejo	7658694834	7654047641			NULL	PO Box 115	Boswell	47921
+Heather	Trent	7656540477	7656549194			NULL	1399 N. CR 350 E	Frankfort	46041
+Pete	Tribble	7654298329				NULL	2301 Schuiler Ave	Lafayette	47904
+Jason	Turner	7654307525	7654296902			NULL	626 Ferry Apt 4	Lafayette	47901
+April	Tweddeld	7654717341				NULL	3429 Victoria Ave	Lafayette	47909
+Bob	Tyler	5745835460				NULL	515 Broadway	Monticello	47960
+Mike	Vanderkleed	7654298684	7654040131			NULL	711 S. 10th St	Lafayette	47905
+Jeremy	Vanderwall	2192850637	2198083288	2198667344		NULL	301 E. Collage Ave	Morocco	47963
+William	Van Hook	7652752150				NULL			
+Gary	Vanlaer	7654770606				NULL	3626 Kohl Rd.	Lafayette	47909
+Steve	Varys	7655832745				NULL			
+Charles	Vaughn	7654743093		7657420056		NULL	703 Central Ave	Lafayette	47905
+Sandra	Vaught	7657426720		7654235531		NULL	1005 North St	Lafayette	47904
+Kurt	Veach	7654746073	7654764853			NULL	36 Strawhat Dr	Lafayette	47909
+Stacey	Veach	7655643957				NULL	1097 N. Wells St Apt 4	Delphi	46923
+C	Vincent	7657433065				NULL	918 Vine St	West Lafayette	47906
+Linda	Viney	574.965.2691					10906 N. Drury Lane	Monticello	47960
+Jeffrey	Volts	7654490002				NULL	1019 Burberry Apt B	Lafayette	47905
+Steve	Voyak	219.253.8289					5879 N. Stahl Rd	Monon	47959
+Angela	Wagler	7654489120				NULL	17 Wildwood Dr	Lafayette	47905
+Darrin	Wagner	574.595.6252					5367 W. 750 S	Winamac	46996
+Sherry	Wagner	5749652978				NULL	6707 N. 1225 W	Monticello	47960
+Kenton	Wagoner	7653793635				NULL	7893 S. 800 W	Rossville	46065
+Richelle	Wagoner	765.429.6318					255 Green St	Lafayette	47905
+Fred	Wahl	2192612700				NULL	16889 S. CR 680 W	Remington	47977
+Harold	Waibel	2192612866				NULL	221 W. Harrison St	Remington	47977
+Ed	Wainscott	765.474.2961					956 Rochelle Dr	Lafayette	47909
+Joe	Walden	765.477.6328					314 THames Ave	Lafaeytte	47905
+Aaron	Walker	7655891787				NULL			
+Darla	Walker	7654740989				NULL	1407 Oak Ct	Lafayette	47905
+Perry	Walker	7658841924				NULL	702 S. Park Place	Fowler	47944
+Amy	Walley	5745837467				NULL	112 W. Williams St	Monticello	47960
+Jeremy	Walters		773.350.8756				3529 e bailey rd.	Monticello	47960
+Robert	Walton	7655643610				NULL	2391 N. 550 W	Delphi	46923
+Mike	Wash	2195679473				NULL	Box 34	Francesville	47946
+Leo	Waszak	219.253.8173					4359 E. Penrod Dr.	Monticello	47960
+John	Watkins		765.586.2058				2691 E. St. Rd 18	Brookston	47923
+Trinity	Watkins	7655636525	7654919880			NULL	2691 E. St Rd 18	Brookston	47923
+Angela	Watts	7654741770				NULL	3126 Eagles Way Dr Apt 1401	Lafayette	47909
+Randy	Wayberg	2198434622				NULL	PO Box 63 W. Main	Medaryville	47957
+Mike	Waymire	5746862517				NULL	Box 96	Camden	46917
+Richard	Weaver	7656592079				NULL	654 N. Columbia	Frankfort	46041
+Pete	Webb	7656594846				NULL	1904 W. Farmers Gravel Rd	Frankfort	46041
+Debria	Webster	7655721260				NULL	5331 S. 700 W	Westpoint	47992
+Joe	Webster	7654126048	7654266759			NULL	806 Candle Light Place	West Lafayette	47906
+William	Wellman	765.563.3587					9901 S. Evans Rd.	Brookston	47923
+Mandy	Werner	574.583.0914					5715 E. Ceder Pt. Ct	Monticello	47960
+Mike	Werner	5745837465				NULL	5414 E. Ceder Point Ct	Monticello	47960
+Roger	West		7654919115			NULL	2209 Bennett St	Lafayette	47909
+Andrea	Westart	7654710334	7654143842			NULL	604 Braxton Dr. S	Lafayette	47909
+Karen	Westmoreland	7654491712		7654774645		NULL	5416 Cameron Ln	Lafayette	47905
+Cheryl	Weston	7654495247				NULL	1223 S. 26th St	Lafayette	47905
+Joshua	Whaley	5746997880				NULL	PO Box 241	Galveston	46932
+John	Wheeldon		7654300479			NULL	7511 Ridgview Ln	Lafayette	47905
+Ashley	Whitaker	7654640005				NULL	2332 Hopkins Dr	West Lafayette	47906
+Ronald	Whitaker		7654305788	7654464200		NULL			
+Chad	White	2194893038				NULL	2124 Wayside Dr	Fort Wayne	46818
+Danny	White	5745835536				NULL	4025 N. Denver	Monticello	47960
+Kevin	White	7654973390	7657430504			NULL	3956 Division Rd	Lafayette	47909
+Lance	Wicker	2197320254				NULL	613 Wheatland	Logansport	46947
+Brad	Wicks	3172816382				NULL	3401 Bowen Place	Indianapolis	46221
+Tim	Widner	574.583.2175					2802 N. St Rd 39	Monticello	47960
+Page	Wiese		7654309710			NULL	8241 N. 300 W	West Lafayette	47906
+Camella	Wilkins	7653628982				NULL	RR6 Box 737	Crawfordsville	47933
+Bob	Williams	7655233274				NULL	9204 McCombs Ct.	Lafayette	47905
+Craig	Williams	765.385.2228					Box 262,  313 Delaney St.	Templeton	47986
+David	Williams	7654941156				NULL			
+Don	Williams	574.583.2747					1132  Hanawalt Rd	Monticello	47960
+Ed	Williams	2192792981					5180 N. 700 W	Wolcott	47995
+Gary	Williams	2192792815				NULL	6310 W. 325 S	Reynolds	47980
+John	Williams	7654718276				NULL	3130 Portsmouth Dr.	Lafayette	47909
+Leanne E.	Willams	5745833741				NULL	219 S. Bluff St	Monticello	47960
+Lonnie	Williams	7658840084		7654948508		NULL	202 E. 3rd St	Fowler	47944
+Marty	Williams	7654126991				NULL	8132 W. 400 N	West Lafayette	47906
+Mike	Williams					NULL	11175 S. Orange Loop	Brookston	47923
+Sarah	Williams	7654635770				NULL	2243 Us 52 W	West Lafayette	47906
+Zachary	Williams	7657623864				NULL	4702 E. 550 N	Attica	47918
+Carrie	Wilson	2192537575				NULL	400 E. 3rd St	Monon	47959
+Rick	Wilson	7653640018		7653645164		NULL			
+Tom	Wilson	7653619585				NULL	1608 Fremont St	Crawfordsville	47933
+Matt	Winchester	7654639524				NULL	1924 Greenbrier Ave	West Lafayette	47906
+Jared	Winn	7654632114				NULL	2252 Us 52 W	West Lafayette	47906
+Nita	Wireman	765.420.9361					407 Ferry St	Lafayette	47904
+Charlotte	Withers	7654749759				NULL	2933 Algonquin	Lafayette	47909
+Rob	Witvoet	219.987.3357					10040 N. 1000 W	Demotte	46310
+Thomas	Wnorowski	7348474263		4197262611		NULL	88 E. Substation	Monroe	48162
+Brandon	Woermbke	7654474743				NULL	1809 Arcadia	Lafayette	47905
+Cindy	Wolfe	7654737624				NULL	2906 Hiltop Dr	Peru	46970
+Tera	Wong	5745519090				NULL	428 S. Chauncey St. Apt 5	West Lafayette	47906
+Philip	Woollen	7655392957	7654276437			NULL	4717 Autumn Ln N.	Lafayette	47909
+Maurice	Wood	5745835619				NULL	437 Walnut St	Monticello	47960
+Ben	Woodhouse	5745836966				NULL	3778 N. 800 E	Monticello	47960
+Jim	Woodruff	2197222469				NULL	887 N. St Rd 25 N	Logansport	46947
+Jeffrey	Woods	2199846863				NULL			
+Warren Jr.	Worrell	2192537873				NULL	PO Box 1053	Monon	47959
+Bethany	Wright	7652421774				NULL	609 E. Clinton	Frankfort	46041
+Donny	Wright	7654824748		7654852886		NULL	1806 Manor Dr	Lebanon	46052
+Nikki	Wright	7652306230				NULL	1220 N. Elliott Apt B	Evansville	47711
+Nikki	Wright	7659188181				NULL	205 N. Hobson	Hillsboro	47949
+Kenneth	Wurtzbacher	765.474.8372	765.430.5211				4662 Glastonbury way	Lafayette	47909
+Bobbie	York	7653649079				NULL			
+Janice	Young	7654207641		7657729180		NULL	1829 N. 13th St	Lafayette	47904
+Richard	Young	7654231092				NULL	605 S. 14th St	Lafayette	47905
+Scott	Young	5745839239				NULL	309 Heritage Rd	Monticello	47960
+Steve	Zarse	219.984.5067					6236 S. 300 N	Chalmers	47929
+Gwyn	Zawiska	7654639119				NULL	217 Pawnee Dr	West Lafayette	47906
+Mark	Zeilmann	2198665719				NULL	302 N. Van	Rensselaer	47978
+Dennis	Zygmunt	574.583.5126					4413 E. Fairway Ct.	Monticello	47960
+Everette	Mills	NULL	NULL	765-532-2460			NULL	NULL	NULL
+Todd	Powell		317-363-3474						
+Mike	Manion	219-843-4794					502 s. 1425 w.	Medaryville	47957
+David	Guinn	765-497-2819					8707 N 75 E	W. Lafayette	47906
+Roger	Wilson	574-278-7376							
+Denny	Pfledderer		765-414-1166				po. box 573	Francesville	47946
+Chuck	Johnson		765-412-4407				6757 N. 100 E.	Lucerne	46950
+David	Burns	574-808-9038	dad/765-592-1064	wife Carrie			5279 E. 350 N.	Monticello	47980
+David	Miller	574-965-2356	765-404-6121				6609 N. 1225 W.	Monticello	47960
+Chris	Williams	219-279-2833	219-863-4348				303 W. south st.	Wolcott	47995
+P.J.	Jacks	574-753-8395					6414 w. cr. 50 s.	Logansport	47905
+Greg	Ford	765-471-0029					1301 Catula Ave.	Lafayette	47905
+Jim	Boyd		317-752-0765				1089 Shoreline Dr.	Cicero	46034
+Lyle	Bollin	219-987-2643	765.479.3132				9743 W. Rustic Dr.	Demotte	46310
+Mike	Scheurich		574-870-4613	574-583-8803			1008 N. 6th St.	Monticello	47960
+Rick	Kyle	219-279-2176	574-297-1201	219.279.2510			302 E. N st.	Wolcott	47995
+Marvin	Haygood	574-583-3740					2713 N. 300 E.	Monticello	47960
+Chris	Dodson	574-583-5790	219-863-8735	574-583-7261			804 S. Main st.	Monticello	47960
+Nicholas	Amor	765-463-2676	wife Charity	765-463-2676			4025 N. 300 W	W. Lafayette	47906
+James	Longster	219.253.6440					6619 N  300 E	Monon	47959
+Lewis	Daulton	574.583.6360					4140 N. 600 E.\n	Monticello	47960
+Elmer	Crist	219.253.6142					308 N. Arch	Monon	47959
+Jason	Anderson	574.242.1112	574.870.4633	574.583.5133			12761 N 1225 W	Monitcello	47960
+Chris	Schleman	219.866.7868					11272 W. Bunkum Road	Rensselaer	47978
+Miguel	Serna	574.965.4775					12035 W. Circle Drive	Monticello	47960
+Douglass	Avila	765.418.4591					201 Spruce Street\nBox 187	Monon	47959
+Denise	Soloman						302 Northview Drive	Valporaiso	46383
+Troy	Weaver	574.565.4352					7649 W  900 N	Delphi	46923
+Melvin	Downey	574.278.7640					4963 E.  1000 N.	Monticello	47960
+Dianne	LeMaster	765.583.9411					1118 Bluewater Drive	Monticello	47960
+Gerald	Wooten	765.497.4373	765.427.1372				708 W.  750 N	West LaFayette	47906
+Stanley	Simonin	574.278.7634/cell 30	574.242.2628/				7910 N. Evergreen Drive	Monticello	47960
+June	Daulton	574.583.6360					4140 N.  600 E.	Monticello	47960
+Jon	Lilly	574.365.4326					11364 N. 1050 W.	Monticello	47960
+Bobbie	Vance	765.538.3874					205 E.  500 S	LaFayette	47909
+Brandon	Ahnert	574.567.4322		574.583.2741			6212 N.  300 E.	West LaFayette	47906
+Dennis	McGill	574.583.9103	219.869.3241				472 Lakeside Drive	Monticello	47960
+Rosalee	Shepperd	219.253.8039					306 West Harrison\nApt 803	Monon	47959
+Jerry	Danford	574.583.7606	574.581.1233				1115 Maxwell Avenue	Monticello	47960
+Cheryl	Dallinger	574.583.5312					6506 E. 250 N.	Monticello	47960
+Remington	Schilling	765.474.6050	765.412.7396				2408 Foxhall Drive	LaFayette	
+Peggy	Meyer	219.279.3175					Box 264	Wolcott	47995
+Teresa	Banks	219.567.9823					959 S. 500 E	Francesville	47946
+Vernon	Sapp	217.283.5406					321 West Orange Street	Hoopeston	60942
+Kenneth	Felker	574.583.4483					3927 Driftwood Loop	Monticello	47960
+Cyril	Doyle	219.253.2327					418 Viking Lane	Monon	47959
+ D. L.	Motors	219.863.6991					U.S. 24 West	Monticello	47960
+Certified Dealer	Services	219.661.1000					1512 West 96th Avenue	Crown Point	46307
+Kenneth	Rice	574.583.8114					720 South Maple	Monticello	47960
+Sales	Ezra	219.984.2600					203 South Kenton	Reynolds	47980
+James	Garvin	219.984.2644	219.863.3740				201 West 2nd Street	Reynolds	47980
+Ruth	Alkire	765.448.4135					4272 Sunburst Trail Apt 612	LaFayette	47905
+Russell	Farney	574.583.2557					1002 Linda Avenue	Monticello	47960
+Terrance	Burrell	317.271.2814					3736 Arbor Green Lane\nApt 311	Indianapolis	46220
+Jon	Mohn	317.965.3267					6120 S. Franklin Road	Indianapolis	46259
+Mary	Green	219.253.7830					6132 N. Bedford Bay Court	Monon	47959
+Jeffery	Ipock	765.534.4018					19320 Pilgrim Road	Noblesville	46060
+Ronald	Rahke	219.984.5731					438 w. Hillside Dr.	Reynolds	47980
+Teresa	Spear	219.984.6185	574.870.1114	574.583.5131			1005 n. 300 w	Reynolds	47980
+Rick	Read	574.583.3431					402 E. Terrace Bay ct.	Monticello	47960
+Phillip	Hammen	765.743.0786					4473 South River Road	West LaFayette	47906
+George	Tam	219.253.8154					4488 East Cherry Drive	Monticello	47960
+Hilda	Plumb	574.583.2735					546 Juanita Street	Monticello	47960
+Jack	Lundbom						2720 W. Foster avenue	Chicago	60625
+James	Austin						11449 E.  975 N	Otterbein	47970
+Bonnie	Savage	756.463.6459					Starfire Ranch\n203 Jennings Street	West LaFayette	47906
+Bret	Ramsey		574.870.2198				404 South Boone	Reynolds	47980
+Rock	Roadruck						1102 Bluewater Drive Apt D	Monticello	47960
+Carl	Bryan						7315 State Road 43 North	Battleground	47920
+Douglas	Koch						4095 S  800 W	San Pierre	46374
+Jon	Osborn	574.722.3382					1219 E. 350 S.	Logansport	46947
+Edwin	Brothers	574.583.9295					602 W. Broadway	Monticello	47960
+Margo	Rozelle						234 Blue Ridge Road	Indianapolis	46208
+Rod	Allen	765.563.5008	765.586.2868				1335 E  800 S	Brookston	47923
+Chris	Dodson	574.583.5790	NULL	NULL	NULL	NULL	804 South Main	Monticello	47960
+Constance	Saylor						320 N. Kenton	Reynolds	47980
+Ronald	Mech						6337 W. 90th Street	Oak Lawn	60453
+Joseph	Easterday						306 N. Ohio Street\n	Culver	46511
+Ted	Westfall	219.984.5365					1936 N. 200 W	Reynolds	47980
+Gary	Brooks	765.884.0288					202 E. 5th Street  Apt 6	Fowler	47944
+John	Mills	574.896.3778					1409 W. 400 S.	N. Judson	46366
+Don	Madson	574.583.2388					505 Turpie st.	Monitcello	47960
+Dean	Mullen	574.965.4647					10494 N. Corley\n	Monticello	47960
+Marvin	Eisele	219.253.6522					513 N. 100 E.	Monon	47959
+Al	Sickler	574.943.3236	574.870.1114				874 N. 1150 E.	Idaville	47950
+Kasie  L	Feltes	574.583.8268		574.583.3333			6568A E. Riverview Dr.	Monitcello	47960
+Lynn	Hankee						po. Box 371	Monon	47959
+James R.	Schnelle		574.870.4397				5763 E. Bass center Dr.	Monitcello	47960
+Dave	Feldpausch	574.583.8759					2107 s. Airport  Rd.	Monitcello	47960
+Sherry	Risley	574.5837566	765-418-7041	574.965.2876			7259 N. 700 W.	Delphi	46923
+Bill	Conley		219-863-7008				6501 W.  us 24	Remington	47977
+Marla	Jacks	Marla/870.2041	Anney/870-2945	574.722.6261/259			7934 E. us hwy 24	Monitcello	47960
+Guillermo	Castillo	219-869-1085					Box 388	Monon	47959
+Amy	Kristoff	219-663-8921					6609 W. 117 AVE.	Crown Point	46307
+Shannon	Gibbs	574.984.5629					205 S.  Boone	Reynolds	47980
+Cortney	Dewitt						9647 N. 490 E.	Demotte	46310
+Al	Brown	574-686-2015					8586 N. 175th W.	Delphi	46923
+Jennifer	Sanders	574.870.6908		574.583.7111			107 n. wood st.	Brookston	47923
+Joseph	Wozniak	219.984.5160					200 N  Boone Street\nApartment A\n\n	Reynolds	47980
+Ricky L	Magruden	219.866.6590					145 Powell Drive	Rensselaer	47978
+Aaron	Rosenfeld		219.916.3506				15 s. Nathan dr.	Valporaiso	46383
+Rob	Hammond		260.414.6087						
+Rob	Hall	219.261.2198					5014 w. county rd.1730 s.	Remington	47977
+Doug	Watkins	574.583.9309					4516 N. West Shafer Dr.	Monitcello	47960
+Phil	Parkhurst	574-652-4926					1739 s. Ridgview rd.	Logansport	46947
+Gary	McKinney	574.595.7247					7186 s. st. rd. 119	Star City	46985
+Dennis	Koebke	219.567.9284					121 n. Salem st. box 54	Francesville	47946
+Pamela	Williams	765.563.0570					407 Davis st.	Brookston	47923
+Abbie	Zook		765.412.2254				5760 w. 900 s.	Brookston	47923
+Shelly	Meier	219.253.7162	574.870.3458				box 236	Monon	47959
+Chris	Ulerick	574.857.3042					3952 w. 800 s.	Kewana	46939
+Jeremy	Reed	219.261.3989	219.863.1780	219.279.2185			  Box 221	Wolcott	47995
+Craig	Williams	574.732.0235	NULL	NULL	NULL	NULL	791 E. 350 S.	Logansport	46947
+Shawn	Allison	765.893.8099					5640 w 350 s	West Lebanon	47991
+Deana	Becker		765.420.9203				615 N. st. Apt. 11	Lafayette	47905
+Bill	Baxter	219.253.6830					505 n. pine st.	Monon	47959
+Jim	Jones		317.509.2910				344 s. Fenton Ave.	Indianapolis	46239
+James	Burns	219.279.2690.					10501 w. 500 s.	Wolcott	47995
+Michael	Deller	219.567.2473					6640 s 1100 w.	Francesville	47946
+Jason	Wiley	574.943.3565					4264 n. 1300 e.	Idaville	47950
+Orville	Hathaway	765.564.6754					601 n. Union	Delphi	46923
+Richard	Felz	765.564.4534					2835 n. 1275 w.	Delphi	46923
+Mike	Anderson						16  St  Joseph Manor	Elkhart	46516
+Fate	Warren		765.427.7958				box 304	Reynolds	47980
+Steve	Turner	574.583.6721					969 Maxwell Ave.	Monticello	47960
+Carey	Kendall	765.563.6648					307 S. Wood st.	Brookston	47923
+Bessie	Mularski	574-542-2962					7903 N 250th E.	Monterey	46960
+Valerie	Reynolds		219.819.1217				812 n Lincoln	Monon	47959
+Katherine	Tumlin	574.297.1503					105 W. Spencer St.\nApartment 308	Monticello	47960
+Carl	Shively	219.984.5624	765.427.1396				3605 W. 500 S.	Chalmers	47929
+Gary	Pearson		765.412.4085				3181 Stratus Ct.	W. Lafayette	47906
+Rex	Stinson	574.583.5086					303 Gordon Rd.	Monitcello	47960
+Robert	Peterson	574.943.3514					9978 N. 500 w.	Burnettsville	47926
+Melanie	Woods	765.563.3883						Brookston	47923
+Wendy	Carter		574.870.4494	4494			1110 Poplar Dr.	Monitcello	47960
+Carl	Wireman	219.843.0152					Box 261	Medaryville	47957
+Jeff	Howard	219.253.1589					Box 604	Monon	47959
+James	Rieken	574.583.8208					407 S. Park Dr.	Monitcello	47960
+Brad	Denton	574.583.4929					518 Lakeland Ave.	Monitcello	47960
+Brian	Phelps	574.583.6333	812.319.5572				728 S. 6th St. rm. 201	Monitcello	47960
+Gary	Handcock		574.870.4607						
+Jason	Bikes		317.255.2660				5326 Mohikan Dr.	Indianapolis	46220
+Raymond	Henson		574.581.0362				3262 w. 850 N.	Monon	47959
+Nathan	Hendress		219.207.0301				1005 E. HWY. 24	Reynolds	47980
+Mark	McPheeters	219.984.5629		574.583.3232			205 S. Boone st.	Reynolds	47980
+Josh	Wiley		574.870.4039				309 E.  4th st.	Monon	47959
+Grover	Bradley	574.278.7730					6325 W.  800 S.	Winamac	46996
+Aaron	Arthur		574.870.3240				513 W. Broadway st.	Monon	47959
+Dan	Curbox		574.870.0713						
+Eric	Gerlach	765.463.2759	765.414.1090				1922 Baybery Ln.	W. Lafayette	47906
+Angela	Haselton	765.497.4721					1 Woods Edge	W. Lafayette	47906
+James	Mason	574.583.5975					312 Northwestern Ave.	Monitcello	47960
+Amber	Fuller	574.583.9177	574.870.2356				537 S. 425 E	Monitcello	47960
+Dale	Ringer			765.427.9261					
+Hollis	Howard	219.345.5663					1422 E 600 N	Lake Village	46349
+John	Wood	574.583.8624					542 N 725 E	Monitcello	47960
+Todd	Kough		574242.0632				7691 N  us 35	Winimac	46996
+Sonny	Barrett	219.984.5226					3590 W 350 S	Chalmers	47929
+Dan	Whiteman	574.583.3111					432 E Lakeside Dr.	Monitcello	47960
+Norma	Kelley	765.543.5849					5837 US. 24 E.	Monitcello	47960
+Jordan	Schroeder		574.870.4354				173 E. Smithson Rd.	Reynolds	47980
+Dave	Heeter		219.863.9060				box 150	Buffalo	47925
+Larry	Fuller	574.686.3898					8870 N 350 W	Delphi	46923
+Kenneth	Banes	765.564.2916					2895 N 1275 W	Delphi	46923
+Robert	Oliver	574.826.4415					2164. W 1200 N	Burnetsville	47926
+Andy	Klinkhamer	765.497.2494	219.964.1057				9927 N 1000 W.	West Lafayette	47906
+Scott	Bahler	219.261.3835					18539 S. 380 W.	Remington	47977
+Nicholas	Crum	765.447.5523	765.430.0513				217 Gallop Dr.	Lafayette	47905
+Marlin	Rumfelt	317.326.8162	317.281.8750				2864 N 100th W	Greenfield	46140-8621
+Joseph	Baer	574.583.3139					218 W Market St.	Monitcello	47960
+Kyle	O'farrell	574.965.4325	574.581.4325				9650 W 800 N	Delphi	46923
+Robert	Jones	219.253.1816					506 N Viking Ln.	Monon	47959
+Nolan	Hendress		219.207.0354						
+Jeremy	Yeoman	219.567.9567	219.204.0657				541 E Ada	Francesville	47946
+Bob	Kinser	574.583.9740						Monitcello	47960
+Bev	Herr		765.418.1982	574.686.2743					
+Keith	Tolen	574.583.8479					4464 S. Yankee Dr.	Monitcello	47960
+Lindon	Salyers	219.567.9876	219.204.2789				Box 114	Francesville	47946
+Mike	Foutch	574.583.4953	219.863.2583				2287 N E Shafer Dr.	Monitcello	47960
+Frank	Griffin	219.866.5015	219.863.5369				9141 S  us. 231	Rensselaer	47979
+Will	Smaka	269.422.1884					Box 20	Stevensville	47127
+Pam	Taylor	219.261.2204					Box 532	Remington	47977
+Karry	Hawkins	574.278.6388					9835 N Valley ct.	Monitcello	47960
+Koty	Laposi		219.204.0199						
+Roger	Garringer		765.532.2770						
+Jackie	Wade	574.583.8217							
+Loretta	Geesa		219.819.1957				205 N 10th st.	Rensselaer	47978
+Rick	Cosgray	765.483.4487					1423 W 300 N	Lebanon	46052
+Tracy	Snapp	765.446.0828	765.543.8277				104 Walnut st	Lafayette	47904
+Bill	Ricks	574.567.2480						Francesville	
+John	Danford	574.583.5895					507 Beechwood Dr. E.	Monticello	47960
+Pro Tint	John Lindley	574.583.7198					623 S Main st.	Monticello	47960
+Bonita	Little	219.369.9104	219.575.2473				8804 E. Front st.	Mill Creek	46365
+Kimbal	Tetzloff		765.490.1090						
+	Lawncare	574.583.6381	574.581.0980	Pat Harper					
+Shane	Kingery	574.278.7627					105 S. Market	Monon	47959
+Josh	Robertson		765.412.3697						
+David	Castillo	219.253.1508							
+Evelyn	Kurtz	765.563.3342	765.414.3550				6091 W st. rd.18	Brookston	47923
+Michael	Burton	219.393.3325/his	219.608.8319/hers				8652 S. 300 E	Hamlet	46532
+John	Dalton		219.869.1049				5943 W shafer dr.	Monticello	47960
+Larry	Rodziewicz	574.583.6697	574.870.3415				5692 E 400 N	Monticello	47960
+John	Blackburn	574.943.3605					6358 W 1100 N	Delphi	46923
+Brian	Myers	765.497.3249	765.586.4749				2820 Linda ln.	W. Lafayette	47906
+Dave	Teter		928.208.8990						
+Riley	Barnes		574.870.4391						
+Tracey	Cunningham	574.583.4024	574.870.4025				204 Oak dr.	Monticello	47960
+Kathy	Anderson		765.748.9840				205 S 300 E	Monticello	47960
+Virginia	Gourley						407 Linville st.	Monon	47959
+Kurt	Craig	219.253.7144					1324 W 650 N	Monon	47959
+Galen	Gretencord	765.884.1242	765.366.7046				6724 W 100 S	Fowler	47944
+Rich	Talbert	574.583.2007					E lake rd 26 West shafer DR.	Monticello	47960
+Star	Nightingail		574.581.4054				Box 1143	Monticello	47960
+Ed	Hickner	765.494.6433					4481 S 179 W	Lafayette	47909
+Chelsea	Colee	219.261.4270	219.863.7005				102  W. Minnesota	Remington	47977
+Wendy	Ramsey	574.583.2951		574.583.6125			715 W. Washington St.	Monticello	47960
+M	Raisors	765.448.4582	800.960.1511	765.448.4112				Lafayette	47904
+Josh	Markin		574.727.5632				5584 E st. rd 16	Monticello	47960
+Michael	Trammell	574.583.3956					408 norhtwestern ave.	Monticello	47960
+Jonathon	Emigh		574.870.2062				5971 E Glenn Arrow dr.	Monticello	47960
+Robert	Havens	574.278.7268					5397 E 600 N	Monticello	47960
+Sherry	Young		574.870.6826	583.6008 ext. 3046			917 Bluewater dr. Apt. J.	Monticello	47960
+Lillie	Thompson	219.369.1367	219.575.2472				1693 S 875 E	Mill Creek	46365
+Tony	Holliday	219.567.2242		574.278.7136				Francesville	
+Tad	Valdez		Hers/219.775.7431						
+Adam	McCutchen	Cris/219.207.0400	765.490.3975	Adam/219.964.8681			509 1/2 Walnut st.	Monitcello	47960
+Tina	Messer	sons/219.207.0400	219.207.0518				Box 832	Monon	47959
+Ryan	Basham		219.746.0133				525 N Indiana st.	Remington	47977
+Tamae	Swafford		765.346.1552				3849 Forrest Lodge Lp.	Monitcello	47960
+Larry	Burton	765.463.1907		765.463.3321			3556 Hamilton	W. Lafayette	47906
+Howard	Reif	574.826.4128					13473 E CR.100 N	Burnettsville	47926
+Jackie	Johnson	219.253.2431					Box 217	Monon	47959
+Thomas	Prophet Jr.		574.870.9146				608 n railroad st	Monon	47959
+William	Peck	219.964.8131							
+Jim	Duvall	574.943.3597					4489 W 1000 N	Idaville	47950
+Lynn	Daugherty	574.583.7284	219.863.5468				212 Richard ct.	Monitcello	47960
+Gene	Applegate	219.984.5810							
+Mike	Manning		765.412.2737				7236 N 700 E	Remington	47997
+Tim	Kingery	765.564.6615					1112 N Dear Meadows rd	Delphi	46923
+Nick	Pritts		574.808.9830				7911 E Dale ct.	Monticello	47960
+Kevin S	Fleming		765.414.5884				9464 West Bunkum rd.	Rensselaer	47978
+Darcy	Pampel	219.261.2307					Box 103	Remington	47977
+Liberty	Township	574.278.7267					Box 152	Buffalo	47925
+Jason	Snowberger		765.418.1247				Box 55	Chalmers	47929
+Sidney	Boles		574.870.1514				10922 N 850 W	Delphi	46923
+Angelo	Valle	574.278.7431	219.746.4832				8117 Pond View ct.	Monitcello	47960
+Donald	Hileman	219.984.5870					16 E 25 N	Reynolds	47980
+Brian	Schuck		219.405.757569						
+Judith	Kupke	219.984.6591	219.207.0150				302 N kenton	Reynolds	47980
+Oscar	Martinez		574.721.7349				516 Railroad st.	Monon	47959
+Denny	Klein	219.253.6246					607 race st.	Monon	47959
+Allen	Boardman		574.339.0606				342 E 4th st.	Rochester	46975
+Pat	McVady		574.583.2002						
+Leon	Patterson	219.938.7030	260.224.3084				6123 Forrest ave.	Gary	46403
+Michael	Roecker	815.932.9847					1809 s. Hieland	St. Anne	60964
+Willie	Faulkner	219.362.0190							
+Dennis	McGill	NULL	219.863.7627	NULL	NULL	NULL	427 E lake side dr.	Monitcello	47960
+Janeen	Sparks			219.253.2000					
+Abby	Clark	219.984.5102					4738 s 450 w	Chalmers	47929
+Dave	Farrell		765.572.3020				2071 E 1600 N	Attica	47918
+Sandra	Rhoades		765.543.9688				105 Oak dr.	Monticello	47960
+Darlene	Sigman	219.253.6720	574.870.5342	870.5342			16610 w 10000 s	Monticello	47960
+Clayton	Bice		219.746.8915				503 n range	Wolcott	47995
+Allen	Bodine	219.279.2349					2698 s us 231	Wolcott	47995
+Joan	Whiteley	219.474.5305					206 E Iroquois dr.	Kentland	47951
+Yair	Flores		574.870.3964				413 n spruce st. apt. 3	Monon	47959
+Michael	Rider	574.583.9755					524 W. Washington st.	Monticello	47960
+John	Austin	574.583.6373	574.870.1600				4675 ravina Park Loop	Monticello	47960
+Willis	Kesler	574.278.6299					6529 E Maple Bend Drive	Monticello	47960
+Corey	Fillinger		765.413.3674				1404 Audobon rd.	Lafayette	47909
+Ross	Terry	574.583.0978	765.490.0757				6963 E 175 N	Monticello	47960
+Raymond	White	219.996.3932					629 s 800 w	Hebron	46341
+Greg	O`leary	765.583.0116					3109 n 650 w	W. Lafayette	47906
+Charles	Collins	574.583.3246					509 Lakeland Ave.	Monticello	47960
+Sara	Barnes	574.826.4437	574.870.5059	574.870.2114			882 S 1450 E	Burnettsville	47926
+Sarah	Dewees		219.863.6399				2685 S Logan dr.	Rensselaer	
+Tammy	Walker	765.414.7132					2500 Tiarra ct.	Lafayette	47909
+Roger	Pierson	219.279.2956					329 n 600 w	Wolcott	47995
+Allen	Smith	574.583.6979						Monticello	47960
+Susan	Haynes	574.583.9827					4285 E Chalmers rd.`	Monticello	47960
+Jared	Harrington	765.420.0032	765.491.5809				905 S 19th st.	Lafayette	47905
+Daniel	Guffy	765.457.3139						Kokomo	
+Samuel	Cartagena		219.207.0031				413 race st.	Monon	47959
+Jim	Geib	219.261.2899	765.490.0897				8066 n 1000 e	Remington	47977
+Steve	Jones		574.870.0595						
+Donna	Luse	219.253.6210							
+Alex	Clerget	574.583.8058					3773 E 375 N	Monticello	47960
+Tabby	Kohley	574.583.4317		574.583.4121			105 Crestwood dr.	Monticello	47960
+Gerald	Hanna	574.965.4122	574.870.2592/Jendy						
+Denise	Franceschina		574.583.8340				430 Sunnyside trl.	Monticello	47960
+Chuck	Remillet	574.223.6858					1105 faun trail	Rochester	46975
+Richard	Lamp		765.412.3462				524 E violet dr.	Francesville	47946
+Bill	Seward		765.464.1297				508 Woods Edge	W. Lafayette	47906
+Barbera	cree		765.479.0260				1209 w 750 n	W. Lafayette	47906
+Dave	Mitchell	219.828.5572					10180 st. rd. 10	San Pierre	46374
+Annie	Casta		765.491.1928				2071 Malibu dr	West Lafayette	47906
+Tara	Wood	219.863.0019					10545 n 300 e	Monon	47959
+Lester	Baker		219.863.3914				Box 335	Monon	47959
+Jason	Gonzales		806.228.1246	806.228.6129/his			1424 clayton st.	Borger	79007
+Annie	Costa								
+David	Vandervort	219.984.5937					307 e Earl st.	Chalmers	47929
+Sara	Dunlap	219.394.2284	219.863.9365				10847 w 700 s	Rensselaer	47978
+Justin	Brady	574.278.7523	574.581.1987				9836 n Rockridge rd.	Monitcello	47960
+Allen	Williams	574.583.3525					Box 595	Monitcello	47960
+Josh	Tackett	574.583.3742					512 Lakeland ave.	Monitcello	47960
+Jessica	Bondarevich		574.581.1029				300 e 4th st.	Reynolds	47980
+Todd	Miller	574.583.9332	574.870.2796				510 B easy st.	Monitcello	47960
+Kuiper	Boat		219.863.4293						
+Nathan	Bannister	219.285.0818	219.819.0246				610 E Beaver	Morocco	47963
+Jeff	Scott		219.220.1017				109 W. first st.	Reynolds	47980
+Mark	Ward	219.253.8309					350 E st. rd. 16	Monon	47959
+Kyle	Schubach	430.7036	765.430.4093	Mom/984.5950			586 Nicole dr	Greenwood	46143
+Valarie	Branum		765.409.5314				901 Terrace Ln.	Delphi	46923
+Greg	Suiter		765.423.2434						
+Susan	Armstrong		574.870.0211				207 s countrybrook	Monitcello	47960
+Ryan	Olson		773.339.7544				Raisors		
+Sharon	Brown	800.622.7605/1272					Nationwide Cassel Lim. Partner.\n3435 N. Cicero Ave.	Chicago	60641
+Lindsay	Lowry	Josh/863.1149	219.863.1953	574.583.5638			509B Hickory ln	Monitcello	47960
+Jerry	Stinson	219.253.8016						Monon	47959
+Carrie	Connell		219.207.0441					Rensselaer	47980
+Terry	Hiestand		574.806.2035/2034						
+Shane	Sparks		765.412.1372					Monitcello	47960
+J.J.	Biczo		765.543.6243				12230 N 1125 W	Monticello	47960
+Linda	Harrison		765.586.0549				Box 203	Monon	47959
+Steve	Luttrell		765.918.0109					Linden	
+Carla	Budreau	219.964.8183							
+Iva	Hardesty	574.943.3582							
+Victor	Wille	574.583.3702		765.446.9244			504 Easy st	Monitcello	47960
+Erin	Baughman		574.249.2603				1635 N 400 W	Reynolds	47980
+Jack	Boze		219.204.2053				810 Lincoln st.	Monon	47959
+Leroy	Simon	219.208.1907					203 w scott st.	Wolcott	47997
+Dawn	Wells	574.967.4846							
+Darrell	Smith		765.426.9228				3519 s. Freeman rd.	Monitcello	47960
+Christopher	Kuipers	765.742.3420							
+Sarah	Ward	219.253.6364					1246 W. st.  rd. 16	Monon	47959
+Kevin	Bridge		219.869.1893						
+Chris	Lloyd		574.581.1132				201 Heritage Rd.	Monitcello	47960
+Kevin	Ward		574.870.2744				4271 E. Blueberry	Monticello	47960
+Marshall	Greenbank	219.261.4288	219.208.0905						
+Rodney	Weaver	219.984.5280					2458 s 450 w	Reynolds	47980
+Steve	Snyder	574.583.5992	574.870.1987				5116 s Reagan dr.	Monitcello	47960
+Curt	Ross		219.863.2747	219.261.3449			Box 9	Remington	47977
+Jesse	Mason	574.583.5975					312 northwestern ave.	Monitcello	47960
+Diego	Saucedo	956.572.7681					1039 Valley River dr.	Brownsville	78520
+Mary	Rardon	765.563.6346	765.543.1552				504 s wood st.	Brookston	47923
+Mark	Avila		574.223.0473						
+Tim	Dodt	574.870.0185	574.870.4164/his				529 Beechwood dr.	Monitcello	47960
+Adam	Wenrick		219.869.3905				5361 E  700 S	Brook	47922
+Theresa	Spencer		765.414.2067				307 N Kenton	Reynolds	47980
+Jake	Roudebush		574.870.4543				5083 S 450 E	Monitcello	47960
+John	Worm		574.850.7933						
+Bill	Goff		765.418.7567				506 N Range	Wolcott	47995
+Fran	Behlor	574.965.2288							
+Adrian	Whitlock	574.643.9345					Box 84	Royal Center	46978
+Ron	Banister		219.866.1717				11587 Georgetown dr.	Demotte	46310
+Dennis	Bierma	219.866.5996					316 s. cullen apt. 2	Rensselaer	47978
+Dwight	Spencer	219.208.0832	219.208.1048/His				1105 Foxwood ct. apt. 203	Monitcello	47960
+Tom	Lebeau		574.870.7137				7 Circle dr.  Riley park	Mount Dora	32757
+Grand	Cayman Motors	219.984.2600	574.870.4227				203 s. Kenton st.	Reynolds	47980
+Tabby	Raderstorf		574.870.6570						
+Pat	Mullin	765.564.4927	765.490.0420						
+Scott	Criswell	hers/870.6509	574.870.6512				3532 n 1150 e	Idaville	47950
+Dylan	Johnson	574.225.2141					7888 s 475 w	Winamac	46996
+Jim	Vandervort	574.583.4633					5406 E 400 N	Monitcello	47960
+Ron	Pollock	574.583.7445		219.253.7189			Box 1005	Monon	47959
+Tony	Gross	574.278.6350					6111 N lake rd  67 E	Monitcello	47960
+HnR	Auto Sales		219.980.1069				2450 W Ridge Rd.	Gary	46408-2062
+Byron	Tiede	219.984.5338	219.863.3803				3236 N 100 W	Reynolds	47980
+Lorri	Runk	219.279.2443	765.490.8159				406 w. Winter st.	Wolcott	47995
+Steve	Oteham	765.567.4538	765-427-5944				300 High School Ave.	Battleground	47920
+Paul	Godina	219.843.0366	219.204.0670				8042 w 200 s	Francesville	47946
+Dave	Moseley	219.279.2740					411 w US hwy 24	Wolcott	47995
+Jackie	Whitaker		765.586.9968	765.586.9968				Monitcello	47960
+Charlie	Parrish	219.866.4047	219.863.2586				3910 W 275 N	Rensselaer	47978
+Mark	Culp	574.278.6452	574.				po box 239	Buffalo	47925
+Jim	Misch	574.583.9616					938 s 425 e	Monitcello	47960
+Tim	Luttrell			219.869.3494			 PO Box 121	Rensselaer	47978
+Jim	Albrecht	219.567.9531					P.O. box 202	Francesville	47946
+Misty	Tetzloff		574.870.1366				521 Maple st.	Monitcello	47960
+David	Leonard	219.279.2649							
+Amy	Carrico		574.870.5177	574.870.6391			308 E Karr	Buffalo	47925
+Paul	Brady		219.220.1005				300 S Boone st.	Reynolds	47980
+Sierra	Criswell	574.543.3139	574.943.3478/Dave				12685 e 400 n	Idaville	47950
+Jim	Elliott			574.583.5656			P.O. Box 1041	Monitcello	47960
+Austin	Souders	574.583.8431					2137 E us 24 lot 4	Monitcello	47960
+Cindy	Guy		870.3200	574.583.4666					
+Adam	Jacobs		765.776.2936	574.583.6401			500 B Foster st.	Monitcello	47960
+Marsha	Walters	574.583.5996	870.5182				212 s. park dr.	Monitcello	47960
+Alice	Melton	219.253.7792					5106 w 1000 n	Rensselaer	47978
+Billi	Hoggard	Mom/765.477.0452	765.418.9561	765.742.4876			17 w 375 s	Lafayette	47909
+Jim	Schuster	765.742.6116							
+Melinda	Wilson	765.477.0452					261 e 400 s	Lafayette	47909
+Rhonda	Greer	765.807.6354	765.412.1092				518 E 8th st.	Brookston	47923
+Irl	Sanders	574.583.2113					3954 E 375 N	Monitcello	47960
+David	Hines		574.870.2337				6692 N Apple Knob Dr.	Monon	47959
+Douglas	Whitus		765.543.8146				409 Heritage rd.	Monticello	47960
+Amanda	Jones		480.258.0885				P.O. Box 195	Monon	47959
+IN. Bureau of	Motor Vehicles			317.233.6000/3,2,2			IGCN Room N404\nVehicle Records Section\n100 North Senate Ave.	Indianapolis	46204
+Dennis	Rogers	574.870.4080	574.870.3753				4190 N Racoon circle	Monitcello	47960
+Glenn	Daniels	219.844.6825					7237 Baring pkwy	Hammond	46324
+Tom	Burbage	219.253.6524	574.870.7273				P.O. Box 693	Monon	47959
+Dominick	Patrevito		219.682.8228				15724 Colfax st. apt.a	Lowell	46356
+Jennifer	Ferdinand	219.279.2960					201 N. Burke st.	Wolcott	47995
+Livia	Trent	765.564.3921	765.412.1572				10589 W. Horshoebend	Brookston	47923
+Martin	Cotterman	574.583.5240	765.479.1465				5368 S 450 E	Monticello	47960
+Christine	Everette	219.279.2697	765.491.3703				9803 W 600 S	Wolcott	47995
+Chelsea	Knebel	219.567.2298					P.O. Box 554	Francesville	47946
+Michael	Esposito		765.543.1699				11848 W 1000 N	Monitcello	47960
+Arlen	Cottrell	574.870.7373	574.870.7129				5698 E Halas Ct.	Monticello	47960
+Gary	Weston	219.253.7700					3568 E Bailey Rd	Monitcello	47960
+Dwayne	Harrison	574.583.6528					5422 E 400 N	Monitcello	47960
+Christi	Everette	NULL	NULL	NULL	NULL	NULL	9803 W 600 S	Wolcott	47995
+Valerie	Cherry	765.567.2862							
+Jeff	Jordan	574.583.6158		574.583.7111			3001 N West Shafer Dr.	Monticello	47960
+Gary	King		765.409.8050				7532 Americus ct.	Lafayette	47905
+Mike	Smutzer	hers/363.2837	219.363.4936				8645 n st. rd. 23	Walkerton	46574
+Roger	Telfer	574.583.0105					4914 E Honeycreek ct.	Monitcello	47960
+John	Leathers	574.583.5011					112 Williams st	Monitcello	47960
+John	Likens	574.583.5668					101 Pierce circle	Monitcello	47960
+Todd	Collard	574.583.6247	870.5218				1181 n Diamond Pt. ct.	Monitcello	47960
+Shane	Yeakly		574.870.0784				1410 S. Park dr.	Monitcello	47960
+Stephen	Dold	765.563.6539		765.563.3788			11277 s 200 w	Brookston	47923
+Heather	Drain		574.870.8087				116 Sunset  Ln.	Monitcello	47960
+Abby	Whitaker		765.969.6417	steve/583.4145				Monitcello	47960
+Bob	Peck	574.583.9278					517 W Jefferson	Monitcello	47960
+Juanita	Carrillo	219.253.1522	219.863.8105				518 n Market st apt B2	Monon	47959
+Riley	Clerget						3773 E 375 N	Monitcello	47960
+Ralph	Conderman	765.538.3182					12444 S 400 E	Romney	47981
+Alex	Clark		765.404.8886				1900 Stark Circle	Lafayette	47909
+Amanda	Bilyeu		765.479.3915				200 N Washington st.	Reynolds	47980
+Tanika	Phinisee	765.474.7988					3120 Brunswick Ct South	Lafayette	47909
+Melissa	Simonin	574.278.6279	574.242.2630				PO Box 83	Buffalo	47925
+Kathleen	Peters		574.870.0140	574.583.5734			10418  W 1300 N	Monitcello	47960
+Steve	Laposi		219.207.0163				202 W Broadway	Monon	47959
+Adam	Stanley		574.808.9881				992 Devon st.	W. Lafayette	47906
+Janice	Malcho		765.427.4171	219.322.1185			11913 80 th Place	Dyer	46311
+Jeremy	Benner	219.984.5285	219.207.0165				546 W 400 N	Reynolds	47980
+Helen	Wheeldon	219.253.6439					202 Broadway	Monon	47959
+Robert	Byrd	219.866.4600					PO.Box 113	Rensselaer	47978
+Joel	Huizar		765.586.4111				1853 Shoshone dr	Lafayette	47909
+Karen	Storey		574.870.2759				510 W. Harrison	Monticello	47960
+Ben	Isom		219.863.1586				2314 W 1200 N	Burnetsville	47926
+David	Flora	219.984.5940					Box 812	Chalmers	47929
+Paula	Coonrod	219.253.6502	765.491.5236				8602 N Meridian rd	Monon	47959
+Rachel	Purdy		574.870.2647				313 W. Colonial dr.	New Castle	47362
+Amanda Cook	Atlas Cars Inc.	270.351.2277					1511 North Dixie Blvd	Radcliff	40160
+Tim	McCormick		765.479.2556				6505 N 1225 W	Monitcello	47960
+Larry	Barnett		hers/219.8694304						
+Kinsie	Stockment		765.427.1917				5715 W 900 S	Brookston	47923
+Leonard	Clark	815.945.7739	309.275.6466				717 McClellan St.	Chenoa	61726
+Josh	Slavens		219.863.0011						
+Tanya	Cadwallader		574.870.2390				410 s park dr.	Monitcello	47960
+Wendell	Wilson		319.850.2001				17463 100th st	Wapello	52653
+Matt	Whitaker		574.870.1335				301 Armory rd	Monitcello	47960
+Rodney	Wyss		815.383.2131				P.O. Box 5	Cissna Park	60924
+Eric	Wiley						4308 S St Rd 55	Oxford	47971
+Larry	George	219.253.7715					9196 n 500 w	Monon	47959
+Don	Bushong	765.563.6397	219.863.3236				825 s st.	Brookston	47923
+Kimberly	Rice		574.870.1596				4967 E 400 N	Monticello	47960
+Pat	Conn	219.253.1502					413 n Linden	Monon	47959
+Kathy	Peters	574.583.7345					10884 w 1300n	Monticello	47960
+Casey	Hall		219.285.8095				3200 s 300 w	Morocco	47963
+Jose	gon		956.566.4328						
+Jim	Runk	765.563-2077					201 s railroad St.	Brookston	47923
+Connie	Garcia		574.581.1980						
+JP	Franceschina	574.965.2507	765.426.7666				7433 N US 421	Delphi	47923
+Paige	Corbett	815.802.0210					360 W John Casey RD. #4	Bourbonnais	60914
+Roger	Gross	574.583.6005	574.870.0097	574.583.9583			418 W.  Washington St.	Monticello	47960
+Zach	Dold	574.583.7113	574.870.6398				305 S Bluff	Monticello	47960
+Carparts	Wholesale			866.828.4322			17150 s. Margay Ave.	Carson	90746
+Maria	Hassan		574.870.3570	3570			4590 NW Shafer Dr.	Monticello	47960
+Michael	Ward		574.732.4026				P.O. Box 242	Burnettsville	47926
+Gary	Mitchell						16131 ST. Rd 821	Macksburg	45746
+Nicole	Wilson	765.563.0052		574.595.0540				Brookston	
+John	Bowman	219.984.6412	219.863.4264				896 S st. rd. 43	Reynolds	47980
+Danko Rproductions Inc.	E-bay	866.626.3701					17120 N. E 14th Ave.	North Miami Beach	33162
+James	Bogart	219.843.7703					13102 W 500 N	North Judson	46366
+Ina	Patrick	765.563.2039					5406 W 800 S	Brookston	47923
+Clarence	Schubach	219.220.1018					Box 337	Reynolds	47980
+Robert	Arvin	219.279.2354					504 S Range st.	Wolcott	47995
+Shannon	Applegate		574.870.6681					Monitcello	47960
+Dave	Mote		765.652.3722				Fisher st car wash	Monitcello	47960
+Tim	Early		219.778.4944						
+Jeff	Johnson	574.278.7600	219.204.1709				8953 N 1300 E	Burnettsville	57926
+Gerald	Christiansen	574.583.4236					12914 N 1225 W	Monitcello	47960
+Brandon	 Porter		765.427.4384				10732 W  1100 N	Monitcello	47960
+Brandon	Porter		765.427.4384				10732 W 1100 N	Monticello	47960
+Chris	Christensen		765.427.1104				6055 W St. Rd. 218	Delphi	46923
+Airicka	Owens	773.641.8093	773.241.4299				1920 Northwestern ave	W. Lafayette	47906
+Betty	Saulsberry		773.241.4299				429 N Pasadena	Mesa	85201
+Karen	Turnpaugh		765.412.3061				1011 E 800 N	W. Lafayette	47906
+Sheila	Scott	219.984.5670	574.581.0267				605 E 2nd st.	Reynolds	47980
+Adam	Wright	574.583.4835					317 S Illinios st.	Monticello	47960
+John	Phillips		574.297.1158				5853 E  US 24	Monitcello	47960
+Shane	Thomas		219.964.9211				PO box 823	Chalmers	47929
+Gary	Ward	219.984.6157	765.479.0501				504 E Main	Chalmers	47929
+Lance	Metsker	765.362.1431					1380 W Countryclub rd.	Crawfordsville	47933
+Michael	Cunningham		574.808.9625				11548 N US 421	Monitcello	47960
+Lynn	Bradford		574.603.9854				515 Fairington Ave	Lafayette	47905
+Crystal	Mellady		765.838.2310				3909 U.S. 231 S. lot 45	Lafayette	47909
+Melissa	Daugherty		219.869.1114				P.O. Box 535	Francesvelle	47946
+Jessie	Tankersley	219.331.8846					11548 N US 421	Monitcello	47960
+Candice	Calderon		765.430.5780						
+Justine	Sublette		574.870.6303				10 E 375 N	Reynolds	47980
+Leslie	Thurston		574.870.6359				506 Freeman dr	Monitcello	47960
+Rodney	Hornback	219.253.7289					9580 E Lowes rd	Monon	47959
+Betty	Smith		574.870.7751				5082 N West Shafer Dr.	Monitcello	47960
+Ron	Scott		574.225.1986				11932 Woodbine st	Monitcello	47960
+Ryan	Williams	219.253.2125					504 N Greenwood St	Monon	47959
+Mandi	Altman		574.870.4718	4718			2300 Northwest Shafer dr	Monitcello	47960
+Alice	Degraffenreid		765.532.3300				2549 Eckman dr Apt. 3	Lafayette	47909
+Jamie	Bragg		574.870.8369				813 Lincoln St.	Monon	47959
+Ryan	Wilcox		765.490.3951				512 n Market st	Monon	47959
+Terry	Geyer		765.490.6666				503 Gordon	Francesville	47946
+Angela	Reynolds	574.583.7805	574.870.2397	765.449.6220			4725 E 225 N	Monitcello	47960
+Harry	Wayne		574.581.1955				P.O. Box 933	Monon	47959
+Jason	Lowe		574.870.5869				11144 W 525 N	Delphi	46923
+Roger	Clemons	765.474.5007					30 Stratford Ct	Lafayette	47909
+Phil	Dowden	219.253.2258	765.412.6681				520 N Greenwood St	Monitcello	47959
+Maggie	Michael		574.297.1515					Monitcello	47960
+Ray	Haake	574.297.5153					2262 N St rd 39	Monitcello	47960
+Mike	Murphy	219.866.5735					P.O. Box 101	Rensselaer	47978
+Tim	Foley		217.714.5196				1403-1 Juniper Dr.	Rantoul	61866
+Greg	Landis		219.863.3668				514 Lindon	Monon	47959
+Virgil	Kneadler	574.583.2988	574.581.0069				5911 E 100 N	Monitcello	47960
+Judy	Byro						338 N west shafer dr.	Monitcello	47960
+Sherry	Shepperd		423.544.6571						
+Joe	Klaus		219.208.0232				8667 E 400 N	Fowler	47944
+Trucks	Unlimited	765.344.0304					6580 S State Road 59	Carbon	47837
+Don	Pitts	574.583.8995					509 W Harrison	Monitcello	47960
+Joshua	Connell	574.984.5711					211 S Kenton	Reynolds	47980
+Eric	Hendress	219.984.5241					519 S. Meridian	Reynolds	47980
+Kent	Musick		219.869.2298				401 Linville	Monon	47959
+James	Knoll		219.771.4191				1223 S 300 E	Monitcello	47960
+Jim	Foulks		765.490.2036						
+Thomas	Young		219.204.2689				3806 E Division	Monitcello	47960
+Angela	Davis		574.870.6331	574.583.5842				Francesville	
+Jeff	Milligan		574.870.3321	574.583.7477			P.O. Box 969	Monitcello	47980
+Don	Reynolds	219.261.3366					9132 E 700 N	Remington	47977
+Bruce	McCormick		574.870.3820				P.O. box 193	Monon	47959
+Brad	Meyers	765.567.2088					6645 E county line N.	Battle Ground	47920
+Manual	Anzaldua		765.585.1512					Lafayette	
+John	Zeiseniss		574.870.6923				505 Erickson ct	Monon	47959
+Don	Dilling		219.819.2121				3450 W 1600 S	Remington	47977
+April	Page		574.242.1846				1123B N. Arbor Court	Monitcello	47960
+Grant	Montgomery		574.722.1381				6163 W 50 N	Logansport	46947
+Tim	Riddle		705.449.3178				213 W Walnut	Chalmers	47929
+Frazier	Huff		219.869.1645				P.O. Box 283	Wolcott	47995
+Ron	Brown	574.583.3555					805 S Main	Monitcello	47960
+Tad	Maudlin		574.870.1956						
+E & K Sales	Burlington			765.566.2018					
+David	Livesay	574.278.6050	574.870.1957				4543 N 550 E	Monitcello	47960
+Troy	Powell	574.583.0961					812 Bluewater dr.	Monitcello	47960
+Scott	Dye	Kelly	765.				2846 N Troy	Delphi	46923
+Nancy	Rosenkranz	219.754.2680					20804 S 1100 W	Lacrosse	46348
+Save	More		301.248.6800				9405 Livingston Rd	Fort Washington	20744
+Bailey truck	Auto			208.232.6918			5497 S 5th	Pocatello	83204
+Garrott	Musick						614 Maple st	Monon	47959
+Ronald	Pignatiello						2414 Arther St.	Hollywood	33020
+Jeremy	Peace		765.546.9742				448 Thompson st	Winchester	47394
+Brewster	Parsons	574.583.6258	870.2895/94				5308 Chandler Dr.	Monitcello	47960
+Deanna	Hess	219.253.8369					308 n pine st	Monon	47959
+Richard	Young	219.253.7480					PO box 643 st	Monon	47959
+Michael	Reed		317.410.0955				216 Argold st	Brookston	47923
+Kevin	Duvall	574.722.2192					324 W Linden Ave	Logansport	46947
+Randall	Kazik	219.253.7705	574.581.0642				3030 E McKinley Dr.	Monon	47959
+Josh	Harmon	574.278.7445	765.586.2816				P.O. Box 218	Monitcello	47960
+Jeffery	Babcock		219.253.2001				110 N. Market	Monon	47959
+Nicholas	Starrett		574.870.3152				2113 Willowbrook dr. APT.132	W. Lafayette	47906

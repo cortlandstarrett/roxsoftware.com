@@ -1,0 +1,15 @@
+0 Outside Rail for Sumo (2x)
+0 Name: SideRail.dat
+0 Author: MLCad
+0 Unofficial Model
+0 ROTATION CENTER 0 0 0 1 "Custom" 
+0 ROTATION CONFIG 0 0
+1 0 -10 -16 -170 1 0 0 0 1 0 0 0 1 3040P32.DAT
+1 0 -10 -16 0 0 0 -1 0 1 0 1 0 0 3703.DAT
+0 STEP
+1 7 -10 8 60 0 0 1 0 1 0 -1 0 0 3460.DAT
+1 7 -10 8 -80 0 0 1 0 1 0 -1 0 0 3666.DAT
+0 STEP
+1 7 -10 -24 60 0 0 1 0 1 0 -1 0 0 3460.DAT
+1 7 -10 -24 -100 0 0 1 0 1 0 -1 0 0 3460.DAT
+0

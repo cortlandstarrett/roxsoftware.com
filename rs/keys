@@ -1,0 +1,220 @@
+From support@phoenix.projtech.com Mon Dec 16 11:50:58 2002
+Date: Mon, 16 Dec 2002 12:58:36 -0700 (MST)
+From: Project Technology Technical Support <support@phoenix.projtech.com>
+To: cort@roxsoftware.com
+Subject: BP Keys
+
+
+Cort,
+
+Sorry for the mixup.  Here are your new keys:
+
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0101
+  Order No:  
+License type: Floating
+License server host type: Unix
+  Number of license servers: 1
+  Host ID: 80b6390e
+Number of licenses:
+  Builders   : 3
+  Verifiers  : 3
+  Generators : 3
+  Debuggers  : 3
+  Suite A    : 0  (MB/MV/GEN)
+  Suite B    : 0  (MB/MV/GEN/MD)
+  Misc 1     : 0
+  Misc 2     : 0
+  Misc 3     : 0
+  Misc 4     : 0
+  Misc 5     : 0
+
+Start date:      Mon Dec 16 00:00:00 2002
+Expiration date: Mon Nov 10 23:59:59 2003 (329.47 days from now.)
+Key: 7110 9820 7118 5078 4245 8244 3910 8706 1783 0870 2480 2661 7249 2091 
+9431 8
+
+
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0102
+  Order No:  
+License type: Floating
+License server host type: Windows NT/95
+  Number of license servers: 1
+  Disk ID: 4c767ad2
+Number of licenses:
+  Builders   : 3
+  Verifiers  : 3
+  Generators : 3
+  Debuggers  : 3
+  Suite A    : 0  (MB/MV/GEN)
+  Suite B    : 0  (MB/MV/GEN/MD)
+  Misc 1     : 0
+  Misc 2     : 0
+  Misc 3     : 0
+  Misc 4     : 0
+  Misc 5     : 0
+
+Start date:      Mon Dec 16 00:00:00 2002
+Expiration date: Fri Oct 31 23:59:59 2003 (319.47 days from now.)
+Key: 1310 3560 8680 3027 5264 2231 9061 4528 7881 6938 8986 1856 8999 2953 
+0121 3
+
+
+Sincerely,
+Paul
+
+Paul Coltrin
+Project Technology Technical Support
+support@projtech.com
+Phone: (800) 482-3853
+Phone: (520) 544-0808
+Fax: (520) 544-2912
+
+
+From support@projtech.com Mon Nov  3 18:41:27 2003
+Date: Fri, 31 Oct 2003 09:56:48 -0700 (MST)
+From: Project Technology Technical Support <support@projtech.com>
+To: cort@roxsoftware.com
+Cc: John R. Wolfe <jrwolfe@projtech.com>, Sheryl Campbell <sheryl@projtech.com>
+Subject: BP Keys
+
+Cort,
+
+I was checking for expiring keys and noticed that your keys
+expire today.  Neither John or Sheryl are around at the moment.
+
+Here are 30 days keys so you don't go dead in the water:
+
+---
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0101
+License type: Floating
+License server host type: Unix
+  Number of license servers: 1
+  Host ID: 80b6390e
+Number of licenses:
+  Builders   : 3
+  Verifiers  : 3
+  Generators : 3
+  Debuggers  : 3
+
+Start date:      Fri Oct 31 00:00:00 2003
+Expiration date: Sun Nov 30 23:59:59 2003 (30.59 days from now.)
+Key: 5590 5277 0111 7136 5568 2823 9986 3658 5402 2703 6900 3039 8427 
+6671 5482 6
+---
+
+---
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0102
+  Order No:  
+License type: Floating
+License server host type: Windows NT/95
+  Number of license servers: 1
+  Disk ID: a004ec87
+Number of licenses:
+  Builders   : 2
+  Verifiers  : 2
+  Generators : 2
+  Debuggers  : 2
+Start date:      Fri Oct 31 00:00:00 2003
+Expiration date: Sun Nov 30 23:59:59 2003 (30.59 days from now.)
+Key: 3209 1255 9015 4331 5211 5053 5512 9970 1135 4212 4350 7645 2079 
+4734 9502 3
+---
+
+---
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0103
+  Order No:  
+License type: Node-locked
+License server host type: Unix
+  Number of license servers: 1
+  Host ID: 809e8b9b
+Number of licenses:
+  Suite A    : 1  (MB/MV/GEN)
+Start date:      Fri Oct 31 00:00:00 2003
+Expiration date: Sun Nov 30 23:59:59 2003 (30.59 days from now.)
+Key: 7363 0730 1509 6030 3389 6197 9669 2271 9508 9189 4617 7204 0304 
+2098 9062 5
+---
+
+Sincerely,
+Paul
+
+Paul Coltrin
+Project Technology Technical Support
+support@projtech.com
+Phone: (800) 482-3853
+Phone: (520) 544-0808
+Fax: (520) 544-2912
+
+
+
+Cort,
+
+Here are new BridgePoint key:
+
+---
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0101
+License type: Floating
+License server host type: Unix
+  Number of license servers: 1
+  Host ID: 80b6390e
+Number of licenses:
+  Builders   : 3
+  Verifiers  : 3
+  Generators : 3
+  Debuggers  : 3
+Start date:      Mon Nov 10 00:00:00 2003
+Expiration date: Sun Oct 31 23:59:59 2004 (356.53 days from now.)
+Key: 0495 2361 3784 9797 2225 0459 9869 2142 3997 7169 9806 2327 4361 
+2390 8506 0
+---
+
+---
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0102
+License type: Floating
+License server host type: Windows NT/95
+  Number of license servers: 1
+  Disk ID: a004ec87
+Number of licenses:
+  Builders   : 2
+  Verifiers  : 2
+  Generators : 2
+  Debuggers  : 2
+Start date:      Mon Nov 10 00:00:00 2003
+Expiration date: Sun Oct 31 23:59:59 2004 (356.53 days from now.)
+Key: 5693 6861 8372 8649 0518 2687 1626 8978 6112 0217 5698 4817 8231 
+8676 7204 5
+---
+
+---
+Customer Name:  Cort Starrett, ROX
+  Customer ID:  ROX0103
+License type: Node-locked
+License server host type: Unix
+  Number of license servers: 1
+  Host ID: 809e8b9b
+Number of licenses:
+  Suite A    : 1  (MB/MV/GEN)
+Start date:      Mon Nov 10 00:00:00 2003
+Expiration date: Thu Jan 29 23:59:59 2004 (80.53 days from now.)
+Key: 9952 1512 8831 4527 3566 1885 9550 1356 5214 0520 9166 7393 7732 
+7973 4487 6
+---
+
+Regards,
+Paul
+
+Paul Coltrin
+Project Technology Technical Support
+support@projtech.com
+Phone: (800) 482-3853
+Phone: (520) 544-0808
+Fax: (520) 544-2912
+
+

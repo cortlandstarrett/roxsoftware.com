@@ -1,0 +1,184 @@
+
+<HTML>
+<HEAD>
+<TITLE>TIM_bridge.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:02+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:   TIM_bridge.h
+ *
+ * Description:
+ * This file provides a insulation layer between the BridgePoint built-in
+ * External Enity 'Time' (Key Letters: TIM) and the underlying implementation.
+ *
+ * OOA Timer methods:
+ * Note that in the software architecture there will be a (finite but
+ * indeterminate) delay between the expiration of a timer and the delivery
+ * of the associated event to the receiving state machine.
+ *
+ * Notice:
+ * (C) Copyright 1999, 2000 ROX Software, Inc.
+ *     All rights reserved.
+ *
+ * This document contains confidential and proprietary information and
+ * property of ROX Software, Inc.  No part of this document may be
+ * reproduced without the express written permission of ROX Software, Inc.
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef TIM_BRIDGE_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define TIM_BRIDGE_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_types.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_create_date
+ *
+ * Bridge method to create an analysis specific date instance.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern Escher_Date_t TIM_create_date( const int day,
+                                      const int hour,
+                                      const int minute,
+                                      const int month,
+                                      const int second,
+                                      const int year )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_current_date
+ *
+ * Bridge method to get the current date.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern Escher_Date_t TIM_current_date( void )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ *
+ * Bridge methods to get time piece components of a given date.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern int TIM_get_year   ( const Escher_Date_t date )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern int TIM_get_month  ( const Escher_Date_t date )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern int TIM_get_day    ( const Escher_Date_t date )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern int TIM_get_hour   ( const Escher_Date_t date )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern int TIM_get_minute ( const Escher_Date_t date )</FONT></STRONG>;
+<STRONG><FONT COLOR="#4169E1">extern int TIM_get_second ( const Escher_Date_t date )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_current_clock
+ *
+ * Bridge method to get the current clock.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern Escher_TimeStamp_t TIM_current_clock( void )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_timer_start
+ *
+ * Starts a (one shot) timer to expire in &lt;expression&gt; microseconds,
+ * sending the event instance &lt;event&gt; upon expiration.
+ * Note that upon expiration the timer will be (automatically) deleted.
+ * Returns the instance handle of the non-recurring timer.
+ ****************************************************************************/</FONT>
+extern Escher_Timer_t * TIM_timer_start( Escher_OoaEvent_s * event,
+                                         const Escher_uSec_t expression );
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_timer_start_recurring
+ *
+ * Starts a (recurring) timer to expire in &lt;expression&gt; microseconds,
+ * sending the event instance &lt;event&gt; upon expiration.
+ * Upon expiration, the timer will be restarted and fire again in
+ * &lt;expression&gt; microseconds and (re)generate the event &lt;event&gt;.
+ * Returns the instance handle of the recurring timer.
+ ****************************************************************************/</FONT>
+extern Escher_Timer_t * TIM_timer_start_recurring( Escher_OoaEvent_s * event,
+                                                   const Escher_uSec_t expression );
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_timer_remaining_time
+ *
+ * Returns the time remaining (in microseconds) before the timer
+ * specified by &lt;timer&gt; will expire.  If &lt;timer&gt; no longer exists,
+ * a zero value will be returned.  It is important to note that even
+ * if &lt;timer&gt; no longer exists, a &lt;event&gt; may still be in
+ * transit (e.g., was generated) from a previous &lt;timer&gt; expiration.
+ * Respectable analysis must account for this "ships passing" possibility.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern Escher_uSec_t TIM_timer_remaining_time( const Escher_Timer_t * const timer )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_timer_reset_time
+ *
+ * This method attempts to set an existing timer handle &lt;timer&gt; to expire
+ * in &lt;expression&gt; microseconds.  If the timer exists (e.g, it has not
+ * already expired), a 'true' value is returned.  If the timer no longer
+ * exists, a 'false' value is returned.  In either case, it is important
+ * to note that an event may still be in transit (e.g., was already
+ * generated) from a previous expiration prior to this method invocation.
+ * Respectable analysis must account for this "ships passing" possibility.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern bool TIM_timer_reset_time( const Escher_uSec_t expression,
+                                  Escher_Timer_t * const timer )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_timer_add_time
+ *
+ * This method attempts to add &lt;expression&gt; microseconds to the
+ * timer handle &lt;timer&gt;.  If the timer exists (e.g, it has not
+ * already expired), a 'true' value is returned.  If the timer no longer
+ * exists, a 'false' value is returned.  In either case, it is important
+ * to note that an event may still be in transit (e.g., was already
+ * generated) from a previous expiration prior to this method invocation.
+ * Respectable analysis must account for this "ships passing" possibility.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern bool TIM_timer_add_time( const Escher_uSec_t expression,
+                                Escher_Timer_t * const timer )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_timer_cancel
+ *
+ * This method attempts to cancel and delete the timer handle specified
+ * by &lt;timer&gt;.  If the timer still exists (e.g, it has not already
+ * expired), a 'true' value is returned.  If the timer no longer exists,
+ * 'false' value is returned.  In either case, it is important
+ * to note that an event may still be in transit (e.g., was already
+ * generated) from a previous expiration prior to this method invocation.
+ * Respectable analysis must account for this "ships passing" possibility.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern bool TIM_timer_cancel( Escher_Timer_t * const timer )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_tick
+ *
+ * This provides a periodic tick to give the timer subsystem the
+ * opportunity to check for expired timers and fire them and their
+ * respective delayed events.  Calling this routine as often as possible
+ * increases the accuracy and resolution of the delayed event timers.  One
+ * appropriate place to make this call is from UserBackgroundProcessingCallout
+ * found among the system callout routines.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void TIM_tick( void )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * TIM_init
+ *
+ * This method initializes the timer subsystem.  It must be called
+ * during system bring-up.  An appropriate place to make this call
+ * is from UserPreOoaInitializationCallout.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern void TIM_init( void )</FONT></STRONG>;
+
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif   </FONT><FONT COLOR="#B22222">/* TIM_BRIDGE_H */</FONT><FONT COLOR="#A020F0"></FONT>
+</PRE>
+</BODY>
+
+</HTML>

@@ -1,0 +1,171 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_SP_actions.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       A_SP_actions.c
+ *
+ * Description:
+ * State actions methods implementation for the following object:
+ *
+ * Object:     sampling_probe  (SP)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_enums.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"sys_init.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"TIM_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"SPPIO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"UI_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [1]: 'up'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_SP_Action_1"></A>void
+A_SP_Action_1( A_SP_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_SP_Event3_s * rcvd_evt = (A_SP_Event3_s *)event;
+  A_ROW_s * v33;  <FONT COLOR="#B22222">/* row */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_position = RCVD_EVT.altitude */</FONT>
+  self-&gt;m_current_position = rcvd_evt-&gt;m_altitude;
+
+  <FONT COLOR="#B22222">/* SELECT ONE row RELATED BY SELF-&gt;ROW[R2] */</FONT>
+  v33 = (A_ROW_s *)0;
+  { <FONT COLOR="#B22222">/* Begin navigation scope */</FONT>
+
+    A_PAA_s * p31_PAA_R2 = self-&gt;mc_PAA_R2;
+    <FONT COLOR="#4169E1">if</FONT> ( p31_PAA_R2 )
+    {
+      A_ROW_s * p32_ROW_R2 = p31_PAA_R2-&gt;mc_ROW_R2;
+      v33 = p32_ROW_R2;  
+    }
+  } <FONT COLOR="#B22222">/* End navigation scope */</FONT>
+
+  <FONT COLOR="#B22222">/* GENERATE ROW4:'sample_complete'() TO row */</FONT>
+  {
+    A_ROW_Event4_s * event34 = (A_ROW_Event4_s *) Escher_NewOoaEvent( (void *) v33, &amp;A_ROW_Event4_sc );
+    SetEventSendingInstance( event34, self );
+    Escher_SendEvent( (OoaEvent_t *)event34 );
+  }
+
+  <FONT COLOR="#B22222">/* BRIDGE UI::display_position(s:'top', length:3) */</FONT>
+  UI_display_position( 3, <FONT COLOR="#666666">"top"</FONT> );
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [2]: 'down'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_SP_Action_2"></A>void
+A_SP_Action_2( A_SP_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_SP_Event3_s * rcvd_evt = (A_SP_Event3_s *)event;
+  A_ROW_s * v38;  <FONT COLOR="#B22222">/* row */</FONT>
+  A_SP_Event1_s * v40;  <FONT COLOR="#B22222">/* move_on */</FONT>
+  Escher_Timer_t * v41;  <FONT COLOR="#B22222">/* mo_timer */</FONT>
+  int v39;  <FONT COLOR="#B22222">/* st */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ONE row RELATED BY SELF-&gt;ROW[R2] */</FONT>
+  v38 = (A_ROW_s *)0;
+  { <FONT COLOR="#B22222">/* Begin navigation scope */</FONT>
+
+    A_PAA_s * p36_PAA_R2 = self-&gt;mc_PAA_R2;
+    <FONT COLOR="#4169E1">if</FONT> ( p36_PAA_R2 )
+    {
+      A_ROW_s * p37_ROW_R2 = p36_PAA_R2-&gt;mc_ROW_R2;
+      v38 = p37_ROW_R2;  
+    }
+  } <FONT COLOR="#B22222">/* End navigation scope */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN st = row.sampling_time */</FONT>
+  v39 = v38-&gt;m_sampling_time;
+
+  <FONT COLOR="#B22222">/* CREATE EVENT INSTANCE move_on SP1:'finished_sampling'() TO SELF */</FONT>
+  v40 = (A_SP_Event1_s *) Escher_NewOoaEvent( (void *) self, &amp;A_SP_Event1_sc );
+
+  <FONT COLOR="#B22222">/* ASSIGN mo_timer = TIM::timer_start(microseconds:st, event_inst:move_on) */</FONT>
+  v41 = TIM_timer_start( (OoaEvent_t *)v40, v39 );
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [3]: 'raising'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_SP_Action_3"></A>void
+A_SP_Action_3( A_SP_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  unsigned char v42;  <FONT COLOR="#B22222">/* p */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN p = SPPIO::raise_needle(radial_position:SELF.radial_position, theta_offset:SELF.theta_offset, probe_id:SELF.probe_ID) */</FONT>
+  v42 = SPPIO_raise_needle( self-&gt;m_probe_ID, self-&gt;m_radial_position, self-&gt;m_theta_offset );
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [4]: 'lowering'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_SP_Action_4"></A>void
+A_SP_Action_4( A_SP_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_PAA_s * v44;  <FONT COLOR="#B22222">/* assignment */</FONT>
+  unsigned char v46;  <FONT COLOR="#B22222">/* p */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY assignment FROM INSTANCES OF PAA
+     WHERE (SELECTED.probe_ID == SELF.probe_ID) */</FONT>
+  v44 = (A_PAA_s *)0;
+  { <FONT COLOR="#B22222">/* Begin selection scope */</FONT>
+    A_PAA_s * w43;
+    Escher_Iterator_s iter45_PAA;
+    Escher_IteratorReset( &amp;iter45_PAA, pG_A_PAA_extent );
+    <FONT COLOR="#4169E1">while</FONT> ( (w43 = (A_PAA_s *)Escher_IteratorNext( &amp;iter45_PAA )) != 0 )
+    {
+      <FONT COLOR="#4169E1">if</FONT> ( (w43-&gt;m_probe_ID == self-&gt;m_probe_ID) )
+      {
+        v44 = w43;
+        <FONT COLOR="#4169E1">break</FONT>;
+      }
+    }
+  } <FONT COLOR="#B22222">/* End selection scope */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN p = SPPIO::lower_needle(radial_position:SELF.radial_position, theta_offset:SELF.theta_offset, probe_id:SELF.probe_ID) */</FONT>
+  v46 = SPPIO_lower_needle( self-&gt;m_probe_ID, self-&gt;m_radial_position, self-&gt;m_theta_offset );
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_position = 'down' */</FONT>
+  self-&gt;m_current_position = A_position_down_e;
+
+  <FONT COLOR="#B22222">/* BRIDGE UI::display_position(s:'low', length:3) */</FONT>
+  UI_display_position( 3, <FONT COLOR="#666666">"low"</FONT> );
+
+}
+
+</PRE>
+</BODY>
+
+</HTML>

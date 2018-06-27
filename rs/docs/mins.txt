@@ -1,0 +1,11 @@
+- 5.1 Release (2 weeks lead time)
+- Build test model with multi-transitions.
+- Static instance population by when?  Sony wants.
+- Double check not needing 2.2 for 5.1.
+- Bill will get me Toyo SIP extensions soon.  I will size.
+- More features faster.
+
+- St Jude feature requests.
+- Do recreates on old problems.
+- Put together support (ROX Software) story.
+- Design Internals Document.

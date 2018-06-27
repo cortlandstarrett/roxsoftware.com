@@ -1,0 +1,352 @@
+<HTML
+><HEAD
+><TITLE
+>Change Highlights</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.74b"><LINK
+REL="HOME"
+TITLE="MC-3020 2.2 Release Notes"
+HREF="t1.html"><LINK
+REL="PREVIOUS"
+TITLE="Installation"
+HREF="x95.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>MC-3020 2.2 Release Notes</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x95.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="AEN135"
+>Change Highlights</A
+></H1
+><P
+>MC-3020 2.2 has refined its support for the features 
+  of BridgePoint 5 and has fixed problems discovered in the 2.1 version of
+  MC-3020.  However, MC-3020 2.2 is primarily a
+  partner release to BridgePoint 5.1, required due to schema changes.</P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN138"
+>Enhancements</A
+></H2
+><P
+>A new callout function has been added to allow error
+    handling when too many Interleaved Bridges have been invoked
+    overflowing an architectural queue.</P
+><P
+>To support polymorphic events in MC-3020 2.2,
+    a $T "nosplat" filter is required in
+    <TT
+CLASS="FILENAME"
+>[PT install dir]/BridgePoint/[client_type]/client/lib/[libtrans.lib]</TT
+>.</P
+><P
+>If a customer has a custom libtrans.* (typically done for
+    internationalization purposes), that library must be updated to
+    provide "nosplat". The default libtrans.* supplied by PT has this
+    filter in it.</P
+><P
+>An example of PT "nosplat" is provided in
+    <TT
+CLASS="FILENAME"
+>[PT install dir]/BridgePoint/samples/translate/pt_trans.c</TT
+>.</P
+><P
+>The "nosplat" filter simply needs to remove the "*" character (as
+    associated with polymorphic events in ModelBuilder) from the presented
+    string.</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN147"
+>Fixes</A
+></H2
+><P
+></P
+><DIV
+CLASS="VARIABLELIST"
+><DL
+><DT
+>Change in Schema</DT
+><DD
+><P
+>The MC-3020 meta model has been changed per the release
+      notes of BridgePoint 5.1.  MC-3020 2.2 translates only
+      models generated from BridgePoint 5.1.</P
+></DD
+><DT
+>Field Issue 447:  Synchronous Service
+      Problem</DT
+><DD
+><P
+>Corrected.</P
+><P
+>In this issue, the user tried to return data
+      across an interleaved bridge.  This is not possible.
+      Interleaved bridges use "disconnected invocation"; the first
+      section of the bridge operation posts the second section to
+      a queue to be invoked at a safe time.  Therefore interleaved
+      bridges must return void.</P
+><P
+>Code was added to coloring to cause translation to fail
+      with coloring errors when the user attempts to color a non-void
+      bridge to be safe for interrupt
+      invocation.</P
+></DD
+><DT
+>Field Issue 454:  make bridge_skel</DT
+><DD
+><P
+>Fixed.</P
+><P
+>Makefile.domain had incorrect invocation of rox_get_dom_branch.
+      Removed inconsistent config_version argument to rox_get_dom_branch.
+      </P
+></DD
+><DT
+>Field Issue 455:  Interleaved Bridge
+      Callout</DT
+><DD
+><P
+>Interleaved bridging (safe for interrupts) uses
+      a queue to post the bridge operations for execution between
+      state actions.  There was no explicit recovery code to handle
+      the situation when this queue was overflowed.
+      A new user callout function <PRE
+CLASS="PROGRAMLISTING"
+>UserInterleavedBridgeOverflowCallout()</PRE
+> was added.</P
+></DD
+><DT
+>Field Issue 458:  No states in State
+      Chart</DT
+><DD
+><P
+>Corrected.</P
+><P
+>Before polymorphic events, a state model with no states,
+      transitions or events was harmless.  However, with polys,
+      it is possible for an event to land on a state chart with
+      no states.  This could be dangerous.  In this situation, there
+      is no opportunity to distinguish between Ignore and
+      Can't Happen.</P
+><P
+>A change has been made to generate code that will fail
+      to compile in this situation.</P
+></DD
+><DT
+>Field Issue 459:  max_select_extent
+      not found</DT
+><DD
+><P
+>Fixed.</P
+><P
+>domain_init.arc had a bug that is now
+      fixed.</P
+></DD
+><DT
+>Field Issue 460:  Bridge not interrupt
+      safe</DT
+><DD
+><P
+>Corrected.</P
+><P
+>This was an attempt to use a feature that does not exist.
+      Here, an old FBO type bridge action was trying to receive
+      parameters from another context.  Parameter passing across
+      interleaved bridges is supported only for synchronous
+      services (domain functions).</P
+><P
+>Added a test to fail out attempts to use FBOs for this
+      type of activity and added wording in the User Guide that
+      makes this more clear.</P
+></DD
+><DT
+>Field Issue 464:  Bool not defined</DT
+><DD
+><P
+>Fixed.</P
+><P
+>The boolean type was not defined in certain situations.
+      The required include file was added in the erroneous situation.
+      </P
+></DD
+><DT
+>Field Issue 478:  Assignment to bridge param</DT
+><DD
+><P
+>Fixed.</P
+><P
+>Code was missing for bridge parameters (by reference).
+      Added it to frag_bridge.arc and changed fragment to call new code.
+      This is consistent with sync_services and transformers.
+      </P
+></DD
+><DT
+>Field Issue 227:  Bridge coloring error</DT
+><DD
+><P
+>Fixed.</P
+><P
+>Strings were not processed correctly in
+      clr_bridge.arc.</P
+></DD
+><DT
+>Field Issue 228:  Incorrect Makefile
+      generated for transformers</DT
+><DD
+><P
+>Fixed.</P
+><P
+>When transformers were part of a bridge object,
+      correct code was generated, but the makefile did not compile
+      and link it.</P
+></DD
+><DT
+>Field Issue 230:  Bad enumeration values
+      in transformer code</DT
+><DD
+><P
+>Fixed.</P
+><P
+>An error in rval_add_parens affected the formation of
+      the enumerator value names.</P
+></DD
+><DT
+>Internal Issue 74:  bridge_skel fails on empty
+      subsystem.</DT
+><DD
+><P
+>Fixed.</P
+><P
+>When a model domain (subsystem) does not have any classes,
+      MC-3020 generates error messages when running "make bridge_skel".
+      A test for empty subsystems has been added.
+      </P
+></DD
+><DT
+>Internal Issue 75:  Make targets unavailable.</DT
+><DD
+><P
+>Fixed.</P
+><P
+>The make targets for the Single Directory Environment (SDE)
+      were not operating properly.  Additionally, the clobber target
+      was not deleting the html reports.  Note that the Single Directory
+      Environment is developed for a few compilers that cannot deal with
+      multiple directories of source and include files.
+      </P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x95.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="t1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

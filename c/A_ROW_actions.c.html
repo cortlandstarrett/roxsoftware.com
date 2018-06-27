@@ -1,0 +1,190 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_ROW_actions.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       A_ROW_actions.c
+ *
+ * Description:
+ * State actions methods implementation for the following object:
+ *
+ * Object:     row  (ROW)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_CAR_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_ASG_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"EXP_FBO_bridge.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_xform.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [1]: 'idle'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Action_1"></A>void
+A_ROW_Action_1( A_ROW_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_PAA_s * v13;  <FONT COLOR="#B22222">/* assignment */</FONT>
+  A_SP_s * v16;  <FONT COLOR="#B22222">/* probe */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_sampling_position = 0 */</FONT>
+  self-&gt;m_current_sampling_position = 0;
+
+  <FONT COLOR="#B22222">/* SELECT ONE assignment RELATED BY SELF-&gt;PAA[R2] */</FONT>
+  v13 = self-&gt;mc_PAA_R2;
+
+  <FONT COLOR="#B22222">/* SELECT ONE probe RELATED BY assignment-&gt;SP[R2] */</FONT>
+  v16 = v13-&gt;mc_SP_R2;
+
+  <FONT COLOR="#B22222">/* ASSIGN probe.available = TRUE */</FONT>
+  v16-&gt;m_available = true;
+
+  <FONT COLOR="#B22222">/* UNRELATE SELF FROM probe ACROSS R2 USING assignment */</FONT>
+  A_PAA_R2_Unlink( self, v16, v13 );
+
+  <FONT COLOR="#B22222">/* DELETE OBJECT INSTANCE assignment */</FONT>
+  A_PAA_Delete( v13 );
+
+  <FONT COLOR="#B22222">/* BRIDGE EXP::done() */</FONT>
+  EXP_FBO_done();
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [2]: 'waiting'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Action_2"></A>void
+A_ROW_Action_2( A_ROW_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.needs_probe = TRUE */</FONT>
+  self-&gt;m_needs_probe = true;
+
+  <FONT COLOR="#B22222">/* GENERATE PAA_A1:'row_needs_probe'() TO PAA ASSIGNER */</FONT>
+  {
+    A_PAA_AsgEvent1_s * event17 = (A_PAA_AsgEvent1_s *) Escher_NewOoaEvent( (void *) 0, &amp;A_PAA_AsgEvent1_sc );
+    SetEventSendingInstance( event17, self );
+    Escher_SendEvent( (OoaEvent_t *)event17 );
+  }
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [3]: 'positioning'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Action_3"></A>void
+A_ROW_Action_3( A_ROW_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_CAR_s * v20;  <FONT COLOR="#B22222">/* car */</FONT>
+  int v21;  <FONT COLOR="#B22222">/* next */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ONE car RELATED BY SELF-&gt;CAR[R1] */</FONT>
+  v20 = self-&gt;mc_CAR_R1;
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.next_sampling_position = SELF.current_sampling_position + 1 */</FONT>
+  self-&gt;m_next_sampling_position = self-&gt;m_current_sampling_position + 1;
+
+  <FONT COLOR="#B22222">/* ASSIGN next = ROW::convert_dest(radius:SELF.radius, next_sampling_position:SELF.next_sampling_position) */</FONT>
+  v21 = A_ROW_Xform_convert_dest( self-&gt;m_next_sampling_position, self-&gt;m_radius );
+
+  <FONT COLOR="#B22222">/* GENERATE CAR1:'go'(destination:next) TO car */</FONT>
+  {
+    A_CAR_Event1_s * event22 = (A_CAR_Event1_s *) Escher_NewOoaEvent( (void *) v20, &amp;A_CAR_Event1_sc );
+    event22-&gt;m_destination = v21;
+    SetEventSendingInstance( event22, self );
+    Escher_SendEvent( (OoaEvent_t *)event22 );
+  }
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [4]: 'sampling'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Action_4"></A>void
+A_ROW_Action_4( A_ROW_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+  A_SP_s * v26;  <FONT COLOR="#B22222">/* probe */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ONE probe RELATED BY SELF-&gt;PAA[R2]-&gt;SP[R2] */</FONT>
+  v26 = (A_SP_s *)0;
+  { <FONT COLOR="#B22222">/* Begin navigation scope */</FONT>
+
+    A_PAA_s * p24_PAA_R2 = self-&gt;mc_PAA_R2;
+    <FONT COLOR="#4169E1">if</FONT> ( p24_PAA_R2 )
+    {
+      A_SP_s * p25_SP_R2 = p24_PAA_R2-&gt;mc_SP_R2;
+      v26 = p25_SP_R2;  
+    }
+  } <FONT COLOR="#B22222">/* End navigation scope */</FONT>
+
+  <FONT COLOR="#B22222">/* ASSIGN SELF.current_sampling_position = SELF.current_sampling_position + 1 */</FONT>
+  self-&gt;m_current_sampling_position = self-&gt;m_current_sampling_position + 1;
+
+  <FONT COLOR="#B22222">/* GENERATE SP2:'begin_sampling'() TO probe */</FONT>
+  {
+    A_SP_Event2_s * event27 = (A_SP_Event2_s *) Escher_NewOoaEvent( (void *) v26, &amp;A_SP_Event2_sc );
+    SetEventSendingInstance( event27, self );
+    Escher_SendEvent( (OoaEvent_t *)event27 );
+  }
+
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * State [5]: 'checking'
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Action_5"></A>void
+A_ROW_Action_5( A_ROW_s * self, const OoaEvent_t * const event )</FONT></STRONG>
+{
+
+  <FONT COLOR="#B22222">/* IF (SELF.next_sampling_position &lt; SELF.maximum_sampling_positions) */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( (self-&gt;m_next_sampling_position &lt; self-&gt;m_maximum_sampling_positions) )
+  {
+    <FONT COLOR="#B22222">/* GENERATE ROW5:'next_sample'() TO SELF */</FONT>
+    {
+      A_ROW_Event5_s * event28 = (A_ROW_Event5_s *) Escher_NewOoaEvent( (void *) self, &amp;A_ROW_Event5_sc );
+      Escher_SendSelfEvent( (OoaEvent_t *)event28 );
+    }
+  }
+  <FONT COLOR="#B22222">/* ELSE */</FONT>
+  <FONT COLOR="#4169E1">else</FONT>
+  {
+    <FONT COLOR="#B22222">/* GENERATE ROW6:'sampling_complete'() TO SELF */</FONT>
+    {
+      A_ROW_Event6_s * event29 = (A_ROW_Event6_s *) Escher_NewOoaEvent( (void *) self, &amp;A_ROW_Event6_sc );
+      Escher_SendSelfEvent( (OoaEvent_t *)event29 );
+    }
+  }
+  <FONT COLOR="#B22222">/* END IF */</FONT>
+
+}
+
+</PRE>
+</BODY>
+
+</HTML>

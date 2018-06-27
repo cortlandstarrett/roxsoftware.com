@@ -1,0 +1,51 @@
+instructions for standard line follower at:
+
+http://www.workshop3d.com/rcx/linerobot.htm
+http://www.workshop3d.com/rcx/printlinerobot.htm
+
+
+Line following rules:
+
+
+
+
+
+
+MC-3020 Modeling Parameters
+
+A model of a realized domain will be supplied with the following
+bridge operations (domain functions):
+
+ubyte_t light_sensor( sensor:s );
+/* sensor is of type sensor_selector_t which is an enumerated type
+   with values light_sensor_1, light_sensor_2, light_sensor_3.    */
+
+void motor_direction( motor:m, direction:d );
+void motor_speed( motor:m, speed:s );
+/* motor is of type motor_selector_t which is an enumerated type
+   with values motor_brake, motor_coast, motor_forward, motor_reverse.
+   direction is of type motor_direction_t which is an enumerated type
+   with values motor_brake, motor_coast, motor_forward, motor_reverse.
+   speed is of type ubyte_t (unsigned char) with values ranging
+   from 0 to 255.  0 is the least power; 255 is the most power.   */
+
+
+
+
+ToDo
+
+  - get list of competitors                                                     
+  - print brackets                                                              
+  - print courses                                                               
+  - get models                                                                  
+  - print models                                                                
+  - translate models                                                            
+  - test executables                                                            
+  - make the two racing robots identical                                        
+  - get lots of fresh batteries                                                 
+  - reserve tables for the courses                                              
+  - get prizes                                                                  
+  - arrange for video coverage (Campbell)                                       
+
+  - Build sample model and publish (with generated code).
+  - Publish PIO domain with bridges and types defined.

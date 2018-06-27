@@ -1,0 +1,121 @@
+Dear Mr. Suzuki,
+
+The final touches are being put on the documentation and installation.
+MC-3020 will ship Monday 12/30.
+
+Note that the schema/colors directory has coloring files with file
+extension .jap.  These are the Japanese language versions of the coloring
+files you sent.  I added English place-holders for the new coloring
+options.  If you translate any of these and send them to me, we will
+plan on maintaining them together with their English counterparts.
+
+Note that the Prefix (file and naming) capability is in place but not
+well tested.  I am not publishing the interface to these colors yet,
+but will continue testing.  Testing so far has revealed no problems.
+When testing is complete, you will be informed.  In the mean time, the
+coloring interfaces are:
+  TagModifySystemPrefix( prefix_name )
+  TagModifySystemMethodPrefix( prefix_name )
+  TagModifySystemTypePrefix( prefix_name )
+  TagModifySystemDefinePrefix( prefix_name )
+Most of this follows a pattern very closely with work done in Japan.
+
+I went through the archetypes from the Toyo-modified files from
+MC-3020 3.0.  Almost all changes that you had identified have been
+ported into the supported code base.  The two major exceptions are
+the changes in obj_factory and obj_links.  I have kept most of the
+files having to do with instance population, but not these two files.
+The csv2pop changes to obj_factory and obj_links are incompatible
+with the Preexisting Instance support now supplied with the standard
+code base.  You should find 3.1 easy to modify.  Let me know if you
+need any help.
+
+Ask Bill or John to send you a prelimary version of the specification
+for MC-3020 3.1.  It has some excellent explanations of terms and
+requirements.
+
+One major new feature is the UML Debugger capability which you were
+introduced to in November.  Since then, international character set
+conversion has been added.  More testing is in progress on this capability,
+so do not be surprised to see an issue.  E-mail (or call) right away,
+and any issues will be addressed swiftly.
+
+Enabling debugging is simply a matter of coloring TagModelDebuggingOn().
+
+The other primary capability is support for preexisting instances (PEIs)
+defined in data.
+
+[PEI Lift Goes Here]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+To use the preexisting instance support, an XML file containing the
+preexisting instance definitions needs to be supplied to the translation
+process.  It is supplied into the <domain>/schema/sql directory.  It
+is named <domain>_pei.xml.
+
+Note that when the model is changed in any substantial way, the PEI
+data needs to be regenerated.
+
+To create this file you must run the debugger, execute some initialization
+code and save the results as XML.  Two new colors facilitate this.
+TagInitializationFunction( function_name ) marks function(s) to be
+executed during bring up.  This effectively replaces initialization
+objects.  (Initialization objects are still supported, but discouraged.)
+Functions tagged to run at initialization bring-up can also be called
+during run time processing.  Functions tagged for initialization are
+run in alphabetical order.
+
+TagFunctionTranslationOff( function_name ) disables the translation of
+functions.  This is convenient for enabling/disabling test cases.  It is
+especially nice for PEI support.  An init function can be tagged for
+running with model debugger.  It can then be tagged off for the production
+compile using Preexisting Instances defined in data.
+
+The general process is as follows:
+- Compile a model with debugging enabled.
+- Run with BPMD and run initialization code.
+- Recompile model incorporating the saved XML from the earlier session.
+
+The specific details are as follows:
+- Compile a model with debugging enabled.
+  o Identify an initialization function by coloring with
+    TagInitializationFunction( "function_name" ).
+  o TagModelDebuggingOn() to enable debugging and the transmission of XML
+    state information to the BPMD.
+  o Run the compiler.
+  o Either use make all_xml, or after compilation is finished, run
+    make gen_all_xml.  This will generate an XML representation of
+    the system for the model debugger.  (This XML does not contain
+    the preexisting instances.  This is a different file.)
+- Run with BPMD and run the initialization code.
+  o Launch BPMD.
+  o Run the compiled model.
+  o State or action step through the initialization code until all
+    desired preexisting instances are created, related and initialized.
+  o Note that if your model is very simple, the application may spin
+    so tightly that BPMD gets few cycles causing debugging to be
+    slow.  You can lower the priority of your OOA generated application
+    to make this smoother.
+- Save XML from model debugger.
+  o Under the file menu of BPMD, save as... and save XML file into
+    the <domain>/schema/sql directory as <domain>_pei.xml.
+  o Exit BPMD.
+- Recompile model with preexisting instances defined in data.
+  o TagModelDebuggingOff() to disable model debugging.
+  o Do not TagInitializationFunction( "function_name" ) for the
+    initialization function that does creates, relates and inits.
+    (You may want to run a function at bring-up for other purposes
+    such as generating events.)
+  o TagFunctionTranslationOff( "function_name" ) to prevent the
+    initialization function from being translated into code that
+    takes up time and space.
+  o make clean_all_src to erase generated source in domains.
+  o make clean_sys_src to erase generated source in domains.
+  o If you copied files into system/user/source or system/user/include,
+    you may need to change these not to include debug header files.
+  o make all to rebuild the code with the preexisting instances 
+    defined in data and without debugging code.
+
+Call or write with questions.
+
+Thank you,
+Cort

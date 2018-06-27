@@ -1,0 +1,175 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_PAA_object.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:  A_PAA_object.c
+ *
+ * Object:     probe_assignment  (PAA)
+ * Subsystem:  autosampler
+ * Domain:     A
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_PAA_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_SP_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+    
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Statically allocate space for the instance population for this object.
+ * Allocate space for the object and its attributes.
+ * Depending on the collection scheme, allocate containoids (collection
+ * nodes) for gathering instances into free and active extents.
+ ****************************************************************************/</FONT>
+static A_PAA_s A_PAA_ObjectPool_s[ A_PAA_MAX_EXTENT_SIZE ];
+static Escher_ObjectSet_s A_PAA_ActiveExtent_s; <FONT COLOR="#B22222">/* set container */</FONT>
+Escher_ObjectSet_s * pG_A_PAA_extent;
+static Escher_ObjectSet_s * p_A_PAA_inanimate;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Initialize object factory services.
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_FactoryInit"></A>void
+A_PAA_FactoryInit()</FONT></STRONG>
+{
+  unsigned int i;
+  Escher_ObjectSet_s s;
+  Escher_InitSet( &amp;s );
+
+  <FONT COLOR="#B22222">/* Initialize object instance storage free pool (inanimate list)
+   * by linking the containoids into a linear, null-terminated,
+   * singly linked list.  */</FONT>
+  <FONT COLOR="#4169E1">for</FONT> ( i = 0; i &lt; A_PAA_MAX_EXTENT_SIZE; i++ )
+  {
+    Escher_SetInsertElement( &amp;s, &amp;A_PAA_ObjectPool_s[ i ] );
+  }
+  p_A_PAA_inanimate = s.next; <FONT COLOR="#B22222">/* free list head */</FONT>
+
+  <FONT COLOR="#B22222">/* Initialize object class extent (animate list) to empty.  */</FONT>
+  Escher_InitSet( &amp;A_PAA_ActiveExtent_s );
+  pG_A_PAA_extent = &amp;A_PAA_ActiveExtent_s;
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Creation Accessor
+ ****************************************************************************/</FONT>
+A_PAA_s *
+<STRONG><FONT COLOR="#4169E1"><A NAME="_PAA_Create"></A>A_PAA_Create()</FONT></STRONG>
+{
+  Escher_ObjectSet_s * node;
+  A_PAA_s * self;
+
+  <FONT COLOR="#B22222">/* Check if object pool is empty.  */</FONT>
+  <FONT COLOR="#4169E1">if</FONT> ( !p_A_PAA_inanimate ) {
+    UserObjectPoolEmptyCallout( <FONT COLOR="#666666">"as2"</FONT>, <FONT COLOR="#666666">"probe_assignment"</FONT> );
+    <FONT COLOR="#4169E1">return</FONT> (A_PAA_s *) 0;
+  }
+
+  <FONT COLOR="#B22222">/* Acquire instance storage from object free pool.  */</FONT>
+  node = p_A_PAA_inanimate;
+  p_A_PAA_inanimate = p_A_PAA_inanimate-&gt;next;
+  self = (A_PAA_s *) node-&gt;object;
+
+  <FONT COLOR="#B22222">/* Initialize application analysis object attributes.  */</FONT>
+  self-&gt;m_radius = 0;
+  self-&gt;m_probe_ID = 0;
+
+  <FONT COLOR="#B22222">/* Initialize relationship storage */</FONT>
+  self-&gt;mc_ROW_R2 = 0;
+  self-&gt;mc_SP_R2 = 0;
+
+
+  <FONT COLOR="#B22222">/* Insert instance into active extent (animate).  */</FONT>
+  node-&gt;next = pG_A_PAA_extent-&gt;next;
+  pG_A_PAA_extent-&gt;next = node;
+
+  <FONT COLOR="#4169E1">return</FONT> self;
+}
+
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Object Deletion Accessor
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_Delete"></A>void
+A_PAA_Delete( A_PAA_s * self )</FONT></STRONG>
+{
+  Escher_ObjectSet_s * slot;
+  <FONT COLOR="#4169E1">if</FONT> ( !self )
+  {
+    <FONT COLOR="#4169E1">return</FONT>;
+  }
+  <FONT COLOR="#B22222">/* Remove instance from object extent.  */</FONT>
+  slot = Escher_SetRemoveNode( pG_A_PAA_extent, self );
+
+  <FONT COLOR="#B22222">/* Release relationship storage */</FONT>
+  self-&gt;mc_ROW_R2 = 0;
+  self-&gt;mc_SP_R2 = 0;
+  <FONT COLOR="#B22222">/* Reset identifying attribute(s) to system default values */</FONT>
+  self-&gt;m_radius = 0;
+  self-&gt;m_probe_ID = 0;
+
+  <FONT COLOR="#B22222">/* Release instance storage back to object free pool.  */</FONT>
+  slot-&gt;next = p_A_PAA_inanimate;
+  p_A_PAA_inanimate = slot;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * RELATE ROW TO SP ACROSS R2 USING PAA
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_R2_Link"></A>void
+A_PAA_R2_Link( A_ROW_s * aone, A_SP_s * aoth, A_PAA_s * assr )</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( !aone || !aoth || !assr )
+  {
+    <FONT COLOR="#4169E1">return</FONT>;
+  }
+  assr-&gt;m_radius = aone-&gt;m_radius;
+  assr-&gt;m_probe_ID = aoth-&gt;m_probe_ID;
+  <FONT COLOR="#B22222">/* Initialize optimized relationship storage extended attributes */</FONT>
+  assr-&gt;mc_ROW_R2 = aone;
+  assr-&gt;mc_SP_R2 = aoth;
+  aone-&gt;mc_PAA_R2 = assr;
+  aoth-&gt;mc_PAA_R2 = assr;
+}
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * UNRELATE ROW FROM SP ACROSS R2 USING PAA
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_PAA_R2_Unlink"></A>void
+A_PAA_R2_Unlink( A_ROW_s * aone, A_SP_s * aoth, A_PAA_s * assr )</FONT></STRONG>
+{
+  <FONT COLOR="#4169E1">if</FONT> ( !aone || !aoth || !assr )
+  {
+    <FONT COLOR="#4169E1">return</FONT>;
+  }
+  assr-&gt;m_radius = 0;
+  assr-&gt;m_probe_ID = 0;
+
+  assr-&gt;mc_ROW_R2 = (A_ROW_s *)0;
+  assr-&gt;mc_SP_R2 = (A_SP_s *)0;
+  aone-&gt;mc_PAA_R2 = (A_PAA_s *)0;
+  aoth-&gt;mc_PAA_R2 = (A_PAA_s *)0;
+}
+
+
+
+</PRE>
+</BODY>
+
+</HTML>

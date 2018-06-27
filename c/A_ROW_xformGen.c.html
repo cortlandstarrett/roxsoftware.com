@@ -1,0 +1,64 @@
+
+<HTML>
+<HEAD>
+<TITLE>A_ROW_xformGen.c</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       A_ROW_xformGen.c
+ *
+ * Description:
+ * Transformer action methods implementation for the following object:
+ *
+ * Object:     row  (ROW)
+ * Domain:     A
+ * Subsystem:  autosampler
+ * Repository: as2.ooa
+ *
+ * Notice:
+ *   (C) Copyright 1999, 2000 ROX Software, Inc.
+ *   All rights reserved.
+ *
+ * Model Compiler:  MC3020 V1.3.0
+ *
+ * Warnings:
+ *   !!! THIS IS AN AUTO-GENERATED FILE. PLEASE DO NOT EDIT. !!!
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_objects.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_object.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_events.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_ROW_xform.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Transformer: convert_dest
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1"><A NAME="A_ROW_Xform_convert_dest"></A>int
+A_ROW_Xform_convert_dest(
+    const int x_next_sampling_position,
+    const int x_radius )</FONT></STRONG>
+{
+  A_ROW_s * v2;  <FONT COLOR="#B22222">/* row */</FONT>
+  int v3;  <FONT COLOR="#B22222">/* car_dest */</FONT>
+
+  <FONT COLOR="#B22222">/* SELECT ANY row FROM INSTANCES OF ROW
+     WHERE SELECTED.radius == PARAM.radius  */</FONT>
+  <FONT COLOR="#B22222">/* MC Spec: (selected.radius == ?) */</FONT>
+  v2 = A_ROW_AnyWhere1( x_radius );
+
+  <FONT COLOR="#B22222">/* ASSIGN car_dest = (360 * (PARAM.next_sampling_position - 1)) / row.maximum_sampling_positions */</FONT>
+  v3 = (360 * (x_next_sampling_position - 1)) / v2-&gt;m_maximum_sampling_positions;
+
+  <FONT COLOR="#4169E1">return</FONT> v3;
+
+}
+
+</PRE>
+</BODY>
+
+</HTML>

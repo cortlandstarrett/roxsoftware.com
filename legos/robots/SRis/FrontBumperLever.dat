@@ -1,0 +1,16 @@
+0 Lever for Front Bumper (2X)
+0 Name: FrontBumperLever.dat
+0 Author: MLCad
+0 Unofficial Model
+0 ROTATION CENTER 0 0 0 1 "Custom" 
+0 ROTATION CONFIG 0 0
+1 0 0 -8 0 1 0 0 0 1 0 0 0 1 3737.DAT
+0 STEP
+1 7 24 -8 0 0 0 -1 0 1 0 1 0 0 4265C.DAT
+0 STEP
+1 7 40 -8 0 1 0 0 0 -1 0 0 0 -1 6553.DAT
+1 7 8 12 0 1 0 0 0 0 1 0 -1 0 32039.DAT
+0 STEP
+1 7 56 -8 0 0 0 -1 0 1 0 1 0 0 4265C.DAT
+1 7 40 -34 0 0 -1 0 0 0 -1 1 0 0 4265C.DAT
+0

@@ -1,0 +1,42 @@
+From MAILER-DAEMON Wed Sep  9 11:54:45 2009
+Date: 09 Sep 2009 11:54:45 -0700
+From: Mail System Internal Data <MAILER-DAEMON@roxsoftware.com>
+Subject: DON'T DELETE THIS MESSAGE -- FOLDER INTERNAL DATA
+Message-ID: <1252522485@roxsoftware.com>
+X-IMAP: 1250103017 0000000002
+Status: RO
+
+This text is part of the internal format of your mail folder, and is not
+a real message.  It is created automatically by the mail system software.
+If deleted, important folder data will be lost, and it will be re-created
+with the data reset to initial values.
+
+From rs@roxsoftware.com Wed Aug 12 11:52:25 2009 -0700
+Date: Wed, 12 Aug 2009 11:52:25 -0700 (PDT)
+From: "Cortland D. Starrett" <rs@roxsoftware.com>
+Sender: rs@monsoon.he.net
+Reply-To: Cortland Starrett <cort@roxsoftware.com>
+To: Customer Support <support@he.net>
+bcc: Cortland Starrett <cort@roxsoftware.com>
+Subject: resetting mysql password
+Message-ID: <Pine.LNX.4.64.0908121150440.26571@monsoon.he.net>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 1
+
+Dear Support,
+
+I tried to reset my mysql database from admin.he.net.  It successfully reset
+my shell account password (which I have since changed), but the mysql 
+database will not let me in.  Here is what I do:
+
+mysql -p
+
+The password I set it to does not work.
+
+Please advise,
+Cort
+

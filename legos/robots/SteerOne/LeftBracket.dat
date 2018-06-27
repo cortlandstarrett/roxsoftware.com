@@ -1,0 +1,13 @@
+0 Left Bracket
+0 Name: LeftBracket.dat
+0 Author: MLCad
+0 Unofficial Model
+0 ROTATION CENTER 0 0 0 1 "Custom" 
+0 ROTATION CONFIG 0 0
+1 14 -10 70 0 -1 0 0 0 0 1 0 1 0 32009.DAT
+1 0 -72 70 -10 0 1 0 0 0 1 1 0 0 4459.DAT
+1 0 -10 -10 -10 0 1 0 0 0 1 1 0 0 4459.DAT
+1 7 -90 70 -10 0 1 0 0 0 1 1 0 0 3749.DAT
+1 7 -10 -90 -10 0 1 0 0 0 1 1 0 0 3749.DAT
+1 0 -10 -50 -10 0 1 0 0 0 1 1 0 0 4459.DAT
+0

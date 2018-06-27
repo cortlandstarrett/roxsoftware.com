@@ -1,0 +1,54 @@
+
+<HTML>
+<HEAD>
+<TITLE>SPPIO_bridge.h</TITLE>
+<META NAME="generator" CONTENT="c2html 0.7.2">
+<META NAME="date" CONTENT="2000-07-11T17:59:01+00:00">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<PRE WIDTH="80"><FONT COLOR="#B22222">/*****************************************************************************
+ * File:       SPPIO_bridge.h
+ *
+ * Description:
+ *
+ * External Entity: 'PIO_2'  (SPPIO)
+ ****************************************************************************/</FONT>
+
+<FONT COLOR="#A020F0">#ifndef SPPIO_BRIDGE_H</FONT>
+<STRONG><FONT COLOR="#228B22">#define SPPIO_BRIDGE_H</FONT></STRONG>
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+extern <FONT COLOR="#666666">"C"</FONT> {
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"e_mechs.h"</FONT><FONT COLOR="#A020F0"></FONT>
+<FONT COLOR="#A020F0">#include </FONT><FONT COLOR="#666666">"A_enums.h"</FONT><FONT COLOR="#A020F0"></FONT>
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge:  raise_needle
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern unsigned char SPPIO_raise_needle(
+    const int ee_probe_id,
+    const int ee_radial_position,
+    const int ee_theta_offset )</FONT></STRONG>;
+
+<FONT COLOR="#B22222">/*****************************************************************************
+ * Bridge:  lower_needle
+ ****************************************************************************/</FONT>
+<STRONG><FONT COLOR="#4169E1">extern unsigned char SPPIO_lower_needle(
+    const int ee_probe_id,
+    const int ee_radial_position,
+    const int ee_theta_offset )</FONT></STRONG>;
+
+
+<FONT COLOR="#A020F0">#ifdef	__cplusplus</FONT>
+}
+<FONT COLOR="#A020F0">#endif</FONT>
+
+<FONT COLOR="#A020F0">#endif  </FONT><FONT COLOR="#B22222">/* SPPIO_BRIDGE_H */</FONT><FONT COLOR="#A020F0"></FONT>
+
+</PRE>
+</BODY>
+
+</HTML>
