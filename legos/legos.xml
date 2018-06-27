@@ -347,13 +347,6 @@
     See <ulink url="http://brickos.sourceforge.net/">
     brickos.sourceforge.net</ulink> for more information on the
     brickOS executive.</listitem>
-    <listitem><ulink url="firmdl3.exe"><command>firmdl3.exe</command>
-    </ulink> - This is used to download the
-    <filename>brickOS.srec</filename> into the Lego RCX programmable
-    brick.</listitem>
-    <listitem><ulink url="dll.exe"><command>dll.exe</command>
-    </ulink> - This utility downloads
-    your compiled application into the Lego RCX.</listitem>
     <listitem><ulink url="http://www.robotroom.com/SumoCircleMini.html">
     Instructions</ulink> for building a sumo ring.</listitem>
     <listitem><ulink url="http://www.24tooth.com/MazeSolvingRules.html">
