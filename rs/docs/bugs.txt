@@ -1,5 +1,0 @@
-Wrong number of parameters on mkdir.
-  Need 2.
-
-Check for empty after selects, before using.
-  For example, line 63 of ooa_domain_coloring.inc.
