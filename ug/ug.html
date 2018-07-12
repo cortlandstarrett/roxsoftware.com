@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>MC-3020 Model
 Compiler - User's Guide</title><link rel="stylesheet" href="techpub.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.66.1" /><meta name="description" content="This guide is the primary reference document&#10;  for the engineers and scientists translating&#10;  Nucleus BridgePoint&#10;  xtUML models with the MC-3020 model compiler. It explains how to use&#10;  the compiler's features and capabilities." /><link rel="start" href="#MC3020UserGuide" title="MC-3020 Model&#10;Compiler - User's Guide" /><link rel="next" href="#UsersGuide-chapter" title="Chapter 1. Users Guide" /></head><body><div class="book" lang="en" xml:lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="MC3020UserGuide"></a><span class="productname">MC-3020 Model
-Compiler<br /></span> - User's Guide</h1></div><div><h2 class="subtitle">Escher Code Generator</h2></div><div><div class="authorgroup"><h3 class="corpauthor">Mentor Graphics Corporation</h3></div></div><div><p class="copyright">Copyright © 1998-2005 Mentor Graphics Corporation</p></div><div><p class="pubdate">August 2005</p></div><div><div class="abstract"><p class="title"><b>Abstract</b></p><p>This guide is the primary reference document
+Compiler<br /></span> - User's Guide</h1></div><div><h2 class="subtitle">Escher Code Generator</h2></div><div><div class="authorgroup"><h3 class="corpauthor">xtUML.org</h3></div></div><div><p class="copyright">Creative Commons</p></div><div><p class="pubdate">August 2005</p></div><div><div class="abstract"><p class="title"><b>Abstract</b></p><p>This guide is the primary reference document
   for the engineers and scientists translating
   <span class="trademark">Nucleus BridgePoint</span>®
   xtUML models with the MC-3020 model compiler. It explains how to use
@@ -433,13 +433,8 @@ components is given in an outline format.</p></div><div class="section" lang="en
     class <span class="emphasis"><em>keyletters</em></span> is of type
     unique_ID.</p></li><li><p>The implementation of string expressions
     is somewhat inelegant.  Strings in expressions are limited to simple
-    binary operations.  For example
-    </p><pre class="programlisting">company = "Mentor" + "Graphics" + "Corp.";</pre><p>
-    results in a compilation error.  The alternative,
-    </p><pre class="programlisting">company = "Mentor" + "Graphics";</pre><p>
-    </p><pre class="programlisting">company = company + "Corp.";</pre><p>
-    must be used to
-    work around this shortcoming.</p></li><li><p>There is no support for ``N to N + 1'' release
+    binary operations.
+    <p>There is no support for ``N to N + 1'' release
     compatibility.  Changes to a model result in changes in the code,
     including event numbers, state numbers, etc.  The registration
     theme is introduced to pave the way for future N+1 release
@@ -2873,8 +2868,8 @@ power cycles.</p></div><div class="section" lang="en" xml:lang="en"><div class="
     to manually commit in a multi-tasking system.</p></div></div><div class="section" lang="en" xml:lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2491992"></a>Assumptions</h2></div></div></div><p>The implementation and deployment of the Non-Volatile Store (NVS)
   domain is the responsibility of the user.  MC-3020 supplies one or more
   sample implementations of this domain to serve as design examples and
-  source code "head starts".  Mentor Graphics Corporation will develop and collect
-  additional samples over time and make these available to users.
+  source code "head starts".  xtUML.org has collected
+  additional samples over time and makes these available to users.
   However, with the variety of non-volatile storage technologies available
   and broadly differing platform requirements this deployment is left to
   the user for the purposes of flexibility.</p><p>Class instances and relationship instances (links) are stored in
@@ -3422,13 +3417,8 @@ provided.</p></div><div class="sect1" lang="en" xml:lang="en"><div class="titlep
     object <span class="emphasis"><em>keyletters</em></span> is of type
     unique_ID.</p></li><li><p>The implementation of string expressions
     is somewhat inelegant.  Strings in expressions are limited to simple
-    binary operations.  For example
-    </p><pre class="programlisting">company = "Mentor" + "Graphics" + "Corp.";</pre><p>
-    results in a compilation error.  The alternative,
-    </p><pre class="programlisting">company = "Mentor" + "Graphics";</pre><p>
-    </p><pre class="programlisting">company = company + "Corp.";</pre><p>
-    must be used to
-    work around this shortcoming.</p></li><li><p>There is no support for ``N to N + 1'' release
+    binary operations.
+    <p>There is no support for ``N to N + 1'' release
     compatibility.  Changes to a model result in changes in the code,
     including event numbers, state numbers, etc.  The registration
     theme is introduced to pave the way for future N+1 release
